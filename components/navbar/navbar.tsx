@@ -30,7 +30,7 @@ export const Navbar = () => {
   return (
     <nav
       className={cn(
-        'fixed top-5 py-2 px-2 left-1/2 -translate-x-1/2 border border-transparent rounded-xl w-full mx-auto 2xl:max-w-screen-xl lg:max-w-screen-lg transition',
+        'fixed top-5 py-2 px-2 left-1/2 -translate-x-1/2 border border-transparent rounded-xl w-full mx-auto 2xl:max-w-screen-xl lg:max-w-screen-lg transition shadow-xl',
         !isTopOfTheScreen &&
           'bg-zinc-300/20 border-zinc-400/70 backdrop-blur-lg dark:bg-zinc-800/20 dark:border-zinc-600/70'
       )}
@@ -57,7 +57,7 @@ export const Navbar = () => {
             href='/projects'
           />
           <li>
-            <Button className='rounded-lg bg-gradient-to-br from-sky-600 via-indigo-700 to-purple-500 text-zinc-50 transition hover:shadow-[0_0_30px_10px_rgba(168,85,247,1)] dark:hover:shadow-[0_0_30px_10px_rgba(168,85,247,0.6)]'>
+            <Button className='rounded-lg bg-gradient-to-br from-sky-600 via-indigo-700 to-purple-500 text-zinc-50 transition hover:shadow-[0_0_20px_5px_rgba(168,85,247,1)] dark:hover:shadow-[0_0_20px_5px_rgba(168,85,247,0.5)]'>
               <Link
                 href='/contact'
                 className='font-bold text-base flex gap-1 items-center'
