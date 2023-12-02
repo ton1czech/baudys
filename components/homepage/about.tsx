@@ -10,7 +10,7 @@ export const About = () => {
   return (
     <Container className='grid grid-cols-2 gap-20 min-h-screen'>
       <div>
-        <img src='/me.webp' />
+        <img src='/me.webp' className='rounded-3xl' />
       </div>
       <div>
         <h3 className='text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-center mb-6'>
