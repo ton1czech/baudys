@@ -16,7 +16,7 @@ export const About = () => {
         <h3 className='text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-center mb-6'>
           Who am I?
         </h3>
-        <p className='text-lg lg:text-xl mb-8 text-zinc-700 dark:text-zinc-200 text-justify'>
+        <p className='text-lg lg:text-xl mb-8 text-zinc-700 dark:text-zinc-400 text-justify'>
           {language === 'en' && (
             <>
               I'm just a young kid who wants to make his dreams come true and I
@@ -81,7 +81,7 @@ export const About = () => {
           )}
         </p>
 
-        <p className='text-lg lg:text-xl text-zinc-700 dark:text-zinc-200 text-justify'>
+        <p className='text-lg lg:text-xl text-zinc-700 dark:text-zinc-400 text-justify'>
           {language === 'en' && (
             <>
               When I'm not sitting at the computer, I'm fixing 🔧 or tuning
