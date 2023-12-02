@@ -16,12 +16,7 @@ export const metadata: Metadata = {
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <html lang='en'>
-      <body
-        className={cn(
-          'antialiased scroll-smooth min-h-[300vh]',
-          inter.className
-        )}
-      >
+      <body className={cn('antialiased scroll-smooth', inter.className)}>
         <ThemeProvider
           attribute='class'
           defaultTheme='system'
