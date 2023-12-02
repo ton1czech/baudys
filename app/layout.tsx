@@ -18,7 +18,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     <html lang='en'>
       <body
         className={cn(
-          'antialiased scroll-smooth min-h-[300vh]',
+          'antialiased scroll-smooth overflow-x-hidden',
           inter.className
         )}
       >
