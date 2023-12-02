@@ -45,8 +45,10 @@ export const Navbar = () => {
           <NavItem label='Services' href='/services' />
           <NavItem label='Projects' href='/projects' />
           <li>
-            <Button className='rounded-lg'>
-              <Link href='/contact'>Let&apos;s talk!</Link>
+            <Button className='rounded-lg bg-gradient-to-br from-sky-600 via-purple-600 to-indigo-700 text-zinc-200'>
+              <Link href='/contact' className='font-bold text-base'>
+                Let&apos;s talk!
+              </Link>
             </Button>
           </li>
         </ul>
