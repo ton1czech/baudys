@@ -30,7 +30,7 @@ export const Navbar = () => {
   return (
     <nav
       className={cn(
-        'fixed top-5 px-2 left-1/2 h-14 -translate-x-1/2 border border-transparent rounded-xl w-full mx-auto 2xl:max-w-screen-xl lg:max-w-screen-lg transition grid items-center',
+        'fixed top-5 px-2 left-1/2 h-14 -translate-x-1/2 border border-transparent rounded-xl w-full mx-auto 2xl:max-w-screen-xl lg:max-w-screen-lg transition grid items-center z-[9999]',
         !isTopOfTheScreen &&
           'bg-zinc-300/20 border-zinc-400/70 backdrop-blur-lg dark:bg-zinc-800/20 dark:border-zinc-600/70 shadow-xl'
       )}

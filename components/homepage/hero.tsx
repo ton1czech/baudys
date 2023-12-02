@@ -10,7 +10,7 @@ export const Hero = () => {
   const { language } = useLanguage()
 
   return (
-    <>
+    <div className='overflow-hidden'>
       <Mist />
       <Container className='min-h-screen grid place-content-center'>
         <div>
@@ -38,7 +38,7 @@ export const Hero = () => {
               will encounter excellence and design combined in a unique harmony.
               My mission is to create beautiful and user-friendly environments.
               I love to go beyond the usual boundaries to make your online
-              presence shin.
+              presence shine.
             </p>
           )}
           {language === 'cs' && (
@@ -52,6 +52,6 @@ export const Hero = () => {
           )}
         </div>
       </Container>
-    </>
+    </div>
   )
 }
