@@ -7,6 +7,7 @@ import { cn } from '@/lib/utils'
 import LanguageSelector from './language-selector'
 import { ModeToggle } from './mode-toggle'
 import Link from 'next/link'
+import { ArrowRight } from 'lucide-react'
 
 export const Navbar = () => {
   const [isTopOfTheScreen, setIsTopOfTheScreen] = useState<boolean>(false)
@@ -45,9 +46,13 @@ export const Navbar = () => {
           <NavItem label='Services' href='/services' />
           <NavItem label='Projects' href='/projects' />
           <li>
-            <Button className='rounded-lg bg-gradient-to-br from-sky-600 via-purple-600 to-indigo-700 text-zinc-200'>
-              <Link href='/contact' className='font-bold text-base'>
+            <Button className='rounded-lg bg-gradient-to-br from-sky-600 via-indigo-700 to-purple-500 text-zinc-50 transition hover:shadow-[0_0_30px_10px_rgba(168,85,247,1)]'>
+              <Link
+                href='/contact'
+                className='font-bold text-base flex gap-2 items-center'
+              >
                 Let&apos;s talk!
+                <ArrowRight className='w-4 h-4' />
               </Link>
             </Button>
           </li>
