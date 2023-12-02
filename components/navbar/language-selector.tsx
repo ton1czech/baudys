@@ -13,10 +13,6 @@ import Image from 'next/image'
 import { cn } from '@/lib/utils'
 import { useLanguage } from '@/store/useLanguage'
 
-interface LanguageSelectorProps {
-  isTopOfTheScreen: boolean
-}
-
 const languages = [
   {
     value: 'en',
@@ -28,7 +24,7 @@ const languages = [
   },
 ]
 
-const LanguageSelector: FC<LanguageSelectorProps> = ({ isTopOfTheScreen }) => {
+const LanguageSelector = () => {
   const { language, imgSrc, setLanguage } = useLanguage(state => state)
 
   const [open, setOpen] = useState<boolean>(false)
@@ -40,12 +36,7 @@ const LanguageSelector: FC<LanguageSelectorProps> = ({ isTopOfTheScreen }) => {
           variant='outline'
           role='combobox'
           aria-expanded={open}
-          className={cn(
-            'w-[70px] justify-between dark:text-zinc-200 dark:hover:text-zinc-300 text-zinc-900 hover:text-zinc-800',
-            isTopOfTheScreen
-              ? 'border-zinc-400/80 dark:border-zinc-600/80 bg-zinc-100/30 dark:bg-zinc-900/30'
-              : 'bg-transparent border-transparent'
-          )}
+          className='w-[70px] border-none justify-between dark:text-zinc-200 dark:hover:text-zinc-300 text-zinc-900 hover:text-zinc-800 bg-transparent'
         >
           <Image src={imgSrc(language)} width={30} height={30} alt={language} />
           <ChevronsUpDown className='w-4 h-4 my-2 opacity-90 shrink-0' />

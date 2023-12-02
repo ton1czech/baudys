@@ -34,9 +34,9 @@ export const Navbar = () => {
       <div className='flex justify-between items-center'>
         <div className='font-bold text-2xl'>LOGO</div>
 
-        <div className='flex gap-3'>
-          <LanguageSelector isTopOfTheScreen={isTopOfTheScreen} />
-          <ModeToggle isTopOfTheScreen={isTopOfTheScreen} />
+        <div>
+          <ModeToggle />
+          <LanguageSelector />
         </div>
 
         <ul className='flex gap-6 items-center'>
