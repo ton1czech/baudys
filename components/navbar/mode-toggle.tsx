@@ -11,10 +11,11 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu'
-import { cn } from '@/lib/utils'
+import { useLanguage } from '@/store/useLanguage'
 
 export const ModeToggle = () => {
   const { setTheme } = useTheme()
+  const { language } = useLanguage()
 
   return (
     <DropdownMenu>
@@ -31,13 +32,16 @@ export const ModeToggle = () => {
       </DropdownMenuTrigger>
       <DropdownMenuContent align='end'>
         <DropdownMenuItem onClick={() => setTheme('light')}>
-          Light
+          {language === 'en' && 'Light'}
+          {language === 'cs' && 'Světlé'}
         </DropdownMenuItem>
         <DropdownMenuItem onClick={() => setTheme('dark')}>
-          Dark
+          {language === 'en' && 'Dark'}
+          {language === 'cs' && 'Tmavé'}
         </DropdownMenuItem>
         <DropdownMenuItem onClick={() => setTheme('system')}>
-          System
+          {language === 'en' && 'System'}
+          {language === 'cs' && 'Systém'}
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>

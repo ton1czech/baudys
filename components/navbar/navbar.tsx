@@ -8,8 +8,11 @@ import LanguageSelector from './language-selector'
 import { ModeToggle } from './mode-toggle'
 import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
+import { useLanguage } from '@/store/useLanguage'
 
 export const Navbar = () => {
+  const { language } = useLanguage()
+
   const [isTopOfTheScreen, setIsTopOfTheScreen] = useState<boolean>(false)
 
   useEffect(() => {
@@ -41,17 +44,27 @@ export const Navbar = () => {
         </div>
 
         <ul className='flex gap-6 items-center'>
-          <NavItem label='Home' href='/' />
-          <NavItem label='About' href='/about' />
-          <NavItem label='Services' href='/services' />
-          <NavItem label='Projects' href='/projects' />
+          <NavItem
+            label={language === 'en' ? 'About' : 'O Mně'}
+            href='/about'
+          />
+          <NavItem
+            label={language === 'en' ? 'Services' : 'Služby'}
+            href='/services'
+          />
+          <NavItem
+            label={language === 'en' ? 'Projects' : 'Projekty'}
+            href='/projects'
+          />
           <li>
-            <Button className='rounded-lg bg-gradient-to-br from-sky-600 via-indigo-700 to-purple-500 text-zinc-50 transition hover:shadow-[0_0_30px_10px_rgba(168,85,247,1)]'>
+            <Button className='rounded-lg bg-gradient-to-br from-sky-600 via-indigo-700 to-purple-500 text-zinc-50 transition hover:shadow-[0_0_30px_10px_rgba(168,85,247,1)] dark:hover:shadow-[0_0_30px_10px_rgba(168,85,247,0.6)]'>
               <Link
                 href='/contact'
-                className='font-bold text-base flex gap-2 items-center'
+                className='font-bold text-base flex gap-1 items-center'
               >
-                Let&apos;s talk!
+                {language === 'en' && <>Let&apos;s talk</>}
+                {language === 'cs' && <>Promluvme si</>}
+
                 <ArrowRight className='w-4 h-4' />
               </Link>
             </Button>
