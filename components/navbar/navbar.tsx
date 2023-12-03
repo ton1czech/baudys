@@ -33,7 +33,7 @@ export const Navbar = () => {
   return (
     <nav
       className={cn(
-        'fixed top-5 px-4 left-0 right-0 h-14 rounded-xl 2xl:max-w-screen-xl lg:max-w-screen-lg transition grid items-center z-[9999] mx-auto'
+        'fixed top-5 px-4 left-0 right-0 h-14 rounded-xl 2xl:max-w-screen-xl lg:max-w-screen-lg transition grid items-center z-50 mx-auto'
       )}
     >
       <div

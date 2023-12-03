@@ -9,7 +9,7 @@ export const About = () => {
 
   return (
     <Container className='min-h-screen'>
-      <h3 className='text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-center mb-10'>
+      <h3 className='text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-center mb-6 xl:mb-10 uppercase'>
         Who am I?
       </h3>
       <div className='grid xl:grid-cols-2 gap-8 xl:gap-20'>
@@ -18,7 +18,7 @@ export const About = () => {
         </div>
 
         <div className='sticky top-20 h-min'>
-          <p className='text-lg lg:text-xl mb-8 text-zinc-700 dark:text-zinc-400 text-justify'>
+          <p className='text-lg lg:text-xl text-zinc-700 dark:text-zinc-400 text-justify'>
             {language === 'en' && (
               <>
                 I'm just a young kid who wants to make his dreams come true and
@@ -47,7 +47,7 @@ export const About = () => {
                 have created several applications for the Pilsen Regional Office
                 👔, I have given educational lectures for children 🧑‍🏫 and I have
                 successfully passed the Microsoft Office Specialist exams 📖 in
-                PowerPoint 🟠 and Word 🔵 at the bett 2023 event in London 🇬🇧.
+                PowerPoint 🟠 and Word 🔵 at the bett 2023 event in London.
               </>
             )}
             {language === 'cs' && (
@@ -78,12 +78,12 @@ export const About = () => {
                 několik aplikací pro úřad plzeňského kraje 👔, vedl jsem výukové
                 přednášky 🧑‍🏫 pro děti a také jsem úspěšně absolvoval Microsoft
                 Office Specialist zkoušky 📖 z PowerPointu 🟠 a Wordu 🔵 na akci
-                bett 2023 v Londýně 🇬🇧.
+                bett 2023 v Londýně.
               </>
             )}
           </p>
 
-          <p className='text-lg lg:text-xl text-zinc-700 dark:text-zinc-400 text-justify'>
+          {/* <p className='text-lg lg:text-xl text-zinc-700 dark:text-zinc-400 text-justify mt-8 '>
             {language === 'en' && (
               <>
                 When I'm not sitting at the computer, I'm fixing 🔧 or tuning
@@ -103,7 +103,7 @@ export const About = () => {
                 když na to zrovna teď nevypadám 😢)
               </>
             )}
-          </p>
+          </p> */}
         </div>
       </div>
     </Container>

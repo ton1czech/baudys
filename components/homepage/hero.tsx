@@ -10,7 +10,7 @@ export const Hero = () => {
   const { language } = useLanguage()
 
   return (
-    <div className='overflow-hidden relative'>
+    <div className='relative'>
       <Mist />
       <Container className='min-h-screen grid place-content-center'>
         <div>
@@ -25,7 +25,7 @@ export const Hero = () => {
           </h1>
 
           <div className='flex justify-center 2xl:justify-end'>
-            <div className='flex items-center bg-zinc-100 dark:bg-zinc-800 px-4 py-2 border border-zinc-500 dark:border-zinc-600 rounded-lg gap-2 mt-2 relative z-10'>
+            <div className='flex items-center bg-zinc-100/70 dark:bg-zinc-800/70 px-4 py-2 border border-zinc-500 dark:border-zinc-600 rounded-lg gap-2 mt-2 relative z-10'>
               <MapPin />
               {language === 'en' && 'based in Czech Republic 🇨🇿'}
               {language === 'cs' && 'se sídlem v České republice 🇨🇿'}

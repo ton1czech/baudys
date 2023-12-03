@@ -5,6 +5,7 @@ import { cn } from '@/lib/utils'
 import { Navbar } from '@/components/navbar/navbar'
 import { ThemeProvider } from '@/providers/theme-provider'
 import { Cursor } from '@/components/cursor'
+import { Footer } from '@/components/footer/footer'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -32,6 +33,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
           <Navbar />
           {children}
+          <Footer />
         </ThemeProvider>
       </body>
     </html>
