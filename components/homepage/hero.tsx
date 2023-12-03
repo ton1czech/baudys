@@ -14,17 +14,17 @@ export const Hero = () => {
       <Mist />
       <Container className='min-h-screen grid place-content-center'>
         <div>
-          <h4 className='font-semibold md:text-lg lg:text-xl xl:text-2xl text-zinc-600 -mb-2 relative z-10'>
+          <h4 className='font-semibold md:text-lg lg:text-xl xl:text-2xl text-zinc-600 -mb-2 relative z-10 text-center 2xl:text-left'>
             {language === 'en' && <>Hey, my name is Daniel.</>}
             {language === 'cs' && <>Ahoj, jmenuji se Daniel.</>}
           </h4>
 
-          <h1 className='text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-black colorful-text py-2 text-center relative z-10'>
+          <h1 className='text-5xl xl:text-6xl 2xl:text-7xl font-black colorful-text py-2 text-center relative z-10'>
             {language === 'en' && 'Fullstack Developer'}
             {language === 'cs' && 'Fullstack Vývojář'}
           </h1>
 
-          <div className='flex justify-end'>
+          <div className='flex justify-center 2xl:justify-end'>
             <div className='flex items-center bg-zinc-100 dark:bg-zinc-800 px-4 py-2 border border-zinc-500 dark:border-zinc-600 rounded-lg gap-2 mt-2 relative z-10'>
               <MapPin />
               {language === 'en' && 'based in Czech Republic 🇨🇿'}
