@@ -10,7 +10,7 @@ export const Hero = () => {
   const { language } = useLanguage()
 
   return (
-    <div className='relative overflow-y-hidden'>
+    <div className='relative'>
       <Mist />
       <Container className='min-h-screen grid place-content-center'>
         <div>
