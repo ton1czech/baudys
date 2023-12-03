@@ -33,7 +33,7 @@ export const Hero = () => {
           </div>
 
           {language === 'en' && (
-            <p className='max-w-[70ch] mt-20 dark:text-zinc-400 text-zinc-700 text-justify relative z-10'>
+            <p className='max-w-[71ch] mt-20 dark:text-zinc-400 text-zinc-700 text-justify relative z-10'>
               I am committed to taking you into the digital universe where you
               will encounter excellence and design combined in a unique harmony.
               My mission is to create beautiful and user-friendly environments.
