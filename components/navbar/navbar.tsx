@@ -7,12 +7,15 @@ import { cn } from '@/lib/utils'
 import LanguageSelector from './language-selector'
 import { ModeToggle } from './mode-toggle'
 import Link from 'next/link'
-import { ArrowRight } from 'lucide-react'
+import { ArrowRight, Menu } from 'lucide-react'
 import { useLanguage } from '@/store/useLanguage'
+import { AnimatePresence } from 'framer-motion'
+import { MobileNavbar } from './mobile-navbar'
 
 export const Navbar = () => {
   const { language } = useLanguage()
 
+  const [isOpen, setIsOpen] = useState<boolean>(false)
   const [isTopOfTheScreen, setIsTopOfTheScreen] = useState<boolean>(false)
 
   useEffect(() => {
@@ -30,15 +33,21 @@ export const Navbar = () => {
   return (
     <nav
       className={cn(
-        'fixed top-5 px-2 left-1/2 h-14 -translate-x-1/2 border border-transparent rounded-xl w-[calc(100%-640px)] 2xl:max-w-screen-xl lg:max-w-screen-lg transition grid items-center z-[9999]',
-        !isTopOfTheScreen &&
-          'bg-zinc-300/20 border-zinc-400/70 backdrop-blur-lg dark:bg-zinc-800/20 dark:border-zinc-600/70 shadow-xl'
+        'fixed top-5 px-4 left-0 right-0 h-14 rounded-xl 2xl:max-w-screen-xl lg:max-w-screen-lg transition grid items-center z-[9999] mx-auto'
       )}
     >
-      <div className='flex justify-between items-center'>
-        <div className='font-bold text-2xl'>LOGO</div>
+      <div
+        className={cn(
+          'flex justify-between items-center px-2 rounded-xl border border-transparent h-full w-full',
+          !isTopOfTheScreen &&
+            'bg-zinc-300/20 border-zinc-400/70 backdrop-blur-lg dark:bg-zinc-800/20 dark:border-zinc-600/70 shadow-xl'
+        )}
+      >
+        <Link href='/' className='font-bold text-2xl'>
+          LOGO
+        </Link>
 
-        <div className='flex items-center'>
+        <div className='items-center hidden md:flex'>
           <div className='flex items-center'>
             <ModeToggle />
             <LanguageSelector />
@@ -47,10 +56,6 @@ export const Navbar = () => {
           <hr className='w-px h-8 bg-zinc-600/50 dark:bg-zinc-400/50 mx-16' />
 
           <ul className='flex gap-6 items-center'>
-            <NavItem
-              label={language === 'en' ? 'About' : 'O Mně'}
-              href='/about'
-            />
             <NavItem
               label={language === 'en' ? 'Services' : 'Služby'}
               href='/services'
@@ -73,6 +78,19 @@ export const Navbar = () => {
               </Button>
             </li>
           </ul>
+        </div>
+
+        <div className='flex items-center md:hidden'>
+          <ModeToggle />
+          <LanguageSelector />
+          <Menu
+            onClick={() => setIsOpen(true)}
+            className='cursor-pointer mx-2'
+          />
+
+          <AnimatePresence>
+            {isOpen && <MobileNavbar setIsOpen={setIsOpen} />}
+          </AnimatePresence>
         </div>
       </div>
     </nav>

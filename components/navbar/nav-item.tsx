@@ -17,7 +17,7 @@ export const NavItem: FC<NavItemProps> = ({ label, href }) => {
         href={href}
         className={cn(
           'after:w-full after:h-[3px] after:bg-purple-500 after:-bottom-1 after:left-0 after:right-0 after:z-10 after:absolute relative after:opacity-0 after:scale-x-0 after:hover:scale-x-100 after:hover:opacity-100 after:transition after:rounded-lg',
-          pathname === href && ''
+          pathname === href && 'text-purple-500'
         )}
       >
         {label}
