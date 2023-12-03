@@ -8,9 +8,10 @@ export const About = () => {
   const { language } = useLanguage()
 
   return (
-    <Container className='min-h-screen'>
+    <Container className='pb-20 lg:pb-60 xl:pb-80'>
       <h3 className='text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-center mb-6 xl:mb-10 uppercase'>
-        Who am I?
+        {language === 'en' && 'Who am I?'}
+        {language === 'cs' && 'Kdo jsem?'}
       </h3>
       <div className='grid xl:grid-cols-2 gap-8 xl:gap-20'>
         <div>

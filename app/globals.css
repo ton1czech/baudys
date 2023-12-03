@@ -110,6 +110,21 @@
   -webkit-background-clip: text;
 }
 
+.gold-text {
+  background-image: linear-gradient(
+    to right,
+    #573e3d 0,
+    #cb9b51 22%,
+    #b4980b 45%,
+    #9d9307 50%,
+    #b4980b 55%,
+    #cb9b51 78%,
+    #573e3d 100%
+  );
+  color: transparent;
+  -webkit-background-clip: text;
+}
+
 /* MIST */
 .mist {
   background: linear-gradient(125deg, #a855f7 3%, #6d28d9 52%);
