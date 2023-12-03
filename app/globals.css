@@ -134,6 +134,13 @@
   animation: mistMove 30s linear infinite alternate;
 }
 
+.mobile-mist {
+  background: linear-gradient(125deg, #a855f7 3%, #6d28d9 52%);
+  -webkit-mask: radial-gradient(circle at 25% 50%, black 0%, transparent 25%);
+  mask: radial-gradient(circle at 20% 50%, black 0%, transparent 25%);
+  pointer-events: none;
+}
+
 @keyframes mistMove {
   0% {
     transform: translate(1000px, 150px);

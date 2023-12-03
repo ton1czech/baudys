@@ -35,7 +35,7 @@ export const Services = () => {
         href='/services'
         className='flex items-center gap-2 justify-center hover:text-purple-500 hover:underline'
       >
-        Learn More <ArrowRight className='h-4 w-4' />
+        See All <ArrowRight className='h-4 w-4' />
       </Link>
     </Container>
   )

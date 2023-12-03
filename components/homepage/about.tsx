@@ -19,7 +19,7 @@ export const About = () => {
         </div>
 
         <div className='sticky top-20 h-min'>
-          <p className='text-lg lg:text-xl text-zinc-700 dark:text-zinc-400 text-justify'>
+          <p className='md:text-lg lg:text-xl text-zinc-700 dark:text-zinc-400 text-justify'>
             {language === 'en' && (
               <>
                 I&apos;m just a young kid who wants to make his dreams come true

@@ -28,9 +28,7 @@ export const ServiceCard: FC<ServiceCardProps> = ({
       >
         {title}
       </h4>
-      <p className='text-justify text-sm text-zinc-800 dark:text-zinc-300'>
-        {body}
-      </p>
+      <p className='text-justify text-zinc-800 dark:text-zinc-300'>{body}</p>
     </div>
   )
 }
