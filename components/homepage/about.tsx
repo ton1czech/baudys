@@ -14,19 +14,19 @@ export const About = () => {
       </h3>
       <div className='grid xl:grid-cols-2 gap-8 xl:gap-20'>
         <div>
-          <img src='/me.webp' className='rounded-3xl' />
+          <img src='/me.webp' className='rounded-3xl' alt='photo of me' />
         </div>
 
         <div className='sticky top-20 h-min'>
           <p className='text-lg lg:text-xl text-zinc-700 dark:text-zinc-400 text-justify'>
             {language === 'en' && (
               <>
-                I'm just a young kid who wants to make his dreams come true and
-                I believe that programming 💻 will lead me to it one day. In
+                I&apos;m just a young kid who wants to make his dreams come true
+                and I believe that programming 💻 will lead me to it one day. In
                 2015, I started designing and photography 📸. I first
                 encountered Programming 🖥️ in 2019 and was immediately hooked.
-                Since then I've managed to create dozens of projects, both for
-                myself and for clients. Some of my favourites include the{' '}
+                Since then I&apos;ve managed to create dozens of projects, both
+                for myself and for clients. Some of my favourites include the{' '}
                 <Link
                   href='https://planetopedia.agency'
                   target='_blank'
@@ -34,8 +34,8 @@ export const About = () => {
                 >
                   Planetopedia
                 </Link>{' '}
-                website (where I'm also a member in the programming division)
-                and graphing{' '}
+                website (where I&apos;m also a member in the programming
+                division) and graphing{' '}
                 <Link
                   href='https://inflace-cr.streamlit.app/'
                   target='_blank'
