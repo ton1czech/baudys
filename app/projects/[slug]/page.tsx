@@ -7,6 +7,7 @@ import { useCursor } from '@/store/useCursor'
 import { useLanguage } from '@/store/useLanguage'
 import Link from 'next/link'
 import { useEffect } from 'react'
+import { motion } from 'framer-motion'
 
 interface PageProps {
   params: {
@@ -40,7 +41,12 @@ export default function Page({ params }: PageProps) {
   return (
     <div className='mt-28 lg:mt-32 mb-20 lg:mb-32'>
       <Container className='pb-20 lg:pb-60 xl:pb-80'>
-        <div className='flex justify-between items-center'>
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ delay: 0.3 }}
+          className='flex justify-between items-center mb-2'
+        >
           <Link
             className='text-3xl md:text-4xl lg:text-5xl font-bold underline'
             href={url}
@@ -53,15 +59,30 @@ export default function Page({ params }: PageProps) {
           <p className='font-light text-zinc-600 dark:text-zinc-400 italic text-lg md:text-xl lg:text-2xl xl:text-3xl'>
             {year}
           </p>
-        </div>
-        <img src={image} alt={name} className='mb-32' />
+        </motion.div>
+        <motion.img
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ delay: 0.3 }}
+          src={image}
+          alt={name}
+          className='mb-32'
+        />
 
-        <h3 className='text-xl md:text-2xl lg:text-3xl xl:text-4xl font-semibold'>
+        <motion.h3
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ delay: 0.3 }}
+          className='text-xl md:text-2xl lg:text-3xl xl:text-4xl font-semibold mb-2'
+        >
           {language === 'en' && 'Showcase'}
           {language === 'cs' && 'Ukázka'}
-        </h3>
+        </motion.h3>
         {images.map(image => (
-          <img
+          <motion.img
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ delay: 0.3 }}
             key={image}
             src={image}
             alt='image'
