@@ -6,6 +6,7 @@ import { Navbar } from '@/components/navbar/navbar'
 import { ThemeProvider } from '@/providers/theme-provider'
 import { Cursor } from '@/components/cursor'
 import { Footer } from '@/components/footer/footer'
+import ToasterProvider from '@/providers/toaster-provider'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -29,6 +30,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           enableSystem
           disableTransitionOnChange
         >
+          <ToasterProvider />
           <Cursor />
 
           <Navbar />

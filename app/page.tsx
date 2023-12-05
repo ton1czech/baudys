@@ -1,3 +1,4 @@
+import { Contact } from '@/components/contact'
 import { About } from '@/components/homepage/about'
 import { Hero } from '@/components/homepage/hero'
 import { Projects } from '@/components/homepage/projects'
@@ -5,11 +6,12 @@ import { Services } from '@/components/homepage/services'
 
 export default function Page() {
   return (
-    <main>
+    <main className='mb-20 lg:mb-32'>
       <Hero />
       <About />
       <Services />
       <Projects />
+      <Contact />
     </main>
   )
 }

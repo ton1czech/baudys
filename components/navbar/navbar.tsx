@@ -43,7 +43,7 @@ export const Navbar = () => {
           className={cn(
             'flex justify-between items-center px-2 rounded-xl border border-transparent h-full w-full',
             !isTopOfTheScreen &&
-              'bg-zinc-300/20 border-zinc-400/70 backdrop-blur-lg dark:bg-zinc-800/20 dark:border-zinc-600/70 shadow-xl'
+              'bg-zinc-300/40 border-zinc-400/70 backdrop-blur-lg dark:bg-zinc-800/40 dark:border-zinc-600/70 shadow-xl'
           )}
         >
           <Link
@@ -77,11 +77,8 @@ export const Navbar = () => {
                 href='/projects'
               />
               <li onMouseEnter={setIsHovering} onMouseLeave={setIsNotHovering}>
-                <Button className='rounded-lg bg-gradient-to-br from-sky-600 via-indigo-700 to-purple-500 text-zinc-50 transition hover:shadow-[0_0_20px_5px_rgba(168,85,247,1)] dark:hover:shadow-[0_0_20px_5px_rgba(168,85,247,0.5)]'>
-                  <Link
-                    href='/contact'
-                    className='font-bold text-base flex gap-1 items-center'
-                  >
+                <Button variant='rainbow' className=''>
+                  <Link href='/contact' className='flex gap-1 items-center'>
                     {language === 'en' && <>Let&apos;s talk</>}
                     {language === 'cs' && <>Promluvme si</>}
 
