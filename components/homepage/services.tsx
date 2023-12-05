@@ -18,16 +18,16 @@ export const Services = () => {
       <div className='grid lg:grid-cols-3 gap-8 mb-10'>
         <ServiceCard
           title='Eshop Creation'
-          body='Lorem ipsum, dolor sit amet consectetur adipisicing elit. Recusandae tempore neque soluta quidem, delectus corrupti impedit sint quos iusto commodi? Iusto ullam natus officiis quos necessitatibus quae rem earum corporis modi mollitia consectetur nihil error, dolor fugit. Omnis excepturi architecto, ex, odit illum perspiciatis illo doloremque maxime obcaecati laboriosam accusantium nostrum tempora? Harum voluptate nulla, consequuntur architecto amet cum natus illum officiis adipisci temporibus beatae nam corrupti magni expedita velit, similique a iusto libero, dolor nobis optio. Iste qui voluptas asperiores ratione modi quae magnam illum! Tempora repellendus expedita sint ad incidunt, consectetur hic unde, in sit vel, est impedit.'
+          body='Lorem ipsum, dolor sit amet consectetur adipisicing elit. Recusandae tempore neque soluta quidem, delectus corrupti impedit sint quos iusto commodi? Iusto ullam natus officiis quos necessitatibus quae rem earum corporis modi mollitia consectetur nihil error, dolor fugit. Omnis excepturi architecto, ex, odit illum perspiciatis illo doloremque maxime obcaecati.'
         />
         <ServiceCard
           title='Web Development'
-          body='Lorem ipsum, dolor sit amet consectetur adipisicing elit. Recusandae tempore neque soluta quidem, delectus corrupti impedit sint quos iusto commodi? Iusto ullam natus officiis quos necessitatibus quae rem earum corporis modi mollitia consectetur nihil error, dolor fugit. Omnis excepturi architecto, ex, odit illum perspiciatis illo doloremque maxime obcaecati laboriosam accusantium nostrum tempora? Harum voluptate nulla, consequuntur architecto amet cum natus illum officiis adipisci temporibus beatae nam corrupti magni expedita velit, similique a iusto libero, dolor nobis optio. Iste qui voluptas asperiores ratione modi quae magnam illum! Tempora repellendus expedita sint ad incidunt, consectetur hic unde, in sit vel, est impedit.'
+          body='Lorem ipsum, dolor sit amet consectetur adipisicing elit. Recusandae tempore neque soluta quidem, delectus corrupti impedit sint quos iusto commodi? Iusto ullam natus officiis quos necessitatibus quae rem earum corporis modi mollitia consectetur nihil error, dolor fugit. Omnis excepturi architecto, ex, odit illum perspiciatis illo doloremque maxime obcaecati.'
           highlight
         />
         <ServiceCard
           title='Management'
-          body='Lorem ipsum, dolor sit amet consectetur adipisicing elit. Recusandae tempore neque soluta quidem, delectus corrupti impedit sint quos iusto commodi? Iusto ullam natus officiis quos necessitatibus quae rem earum corporis modi mollitia consectetur nihil error, dolor fugit. Omnis excepturi architecto, ex, odit illum perspiciatis illo doloremque maxime obcaecati laboriosam accusantium nostrum tempora? Harum voluptate nulla, consequuntur architecto amet cum natus illum officiis adipisci temporibus beatae nam corrupti magni expedita velit, similique a iusto libero, dolor nobis optio. Iste qui voluptas asperiores ratione modi quae magnam illum! Tempora repellendus expedita sint ad incidunt, consectetur hic unde, in sit vel, est impedit.'
+          body='Lorem ipsum, dolor sit amet consectetur adipisicing elit. Recusandae tempore neque soluta quidem, delectus corrupti impedit sint quos iusto commodi? Iusto ullam natus officiis quos necessitatibus quae rem earum corporis modi mollitia consectetur nihil error, dolor fugit. Omnis excepturi architecto, ex, odit illum perspiciatis illo doloremque maxime obcaecati.'
         />
       </div>
 
