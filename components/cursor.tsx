@@ -62,7 +62,7 @@ export const Cursor = () => {
     <motion.div
       className='hidden sm:block w-4 h-4 rounded-full border border-black bg-black dark:border-white dark:bg-white fixed top-0 left-0 pointer-events-none z-[9998]'
       variants={variants}
-      transition={{ type: 'tween', ease: 'backOut', duration: 0.25 }}
+      transition={{ type: 'tween', ease: 'backOut', duration: 0.19 }}
       animate={
         isHovering
           ? type === 'project'
