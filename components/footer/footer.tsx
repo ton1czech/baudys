@@ -6,6 +6,7 @@ import Link from 'next/link'
 import { FooterIcon } from './footer-icon'
 import { ArrowUp, Github, Instagram, Linkedin } from 'lucide-react'
 import { useCursor } from '@/store/useCursor'
+import { motion } from 'framer-motion'
 
 export const Footer = () => {
   const { language } = useLanguage()
@@ -14,7 +15,12 @@ export const Footer = () => {
   return (
     <footer className='pt-8 lg:pt-12 pb-12 border-t dark:border-zinc-700/50 border-zinc-500/50'>
       <Container>
-        <div className='flex justify-center mb-40'>
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ delay: 0.3 }}
+          className='flex justify-center mb-40'
+        >
           <button
             onClick={() => {
               window.scrollTo({
@@ -30,9 +36,14 @@ export const Footer = () => {
             {language === 'cs' && 'Zpět na začátek'}
             <ArrowUp className='h-4 w-4 text-sky-500' />
           </button>
-        </div>
+        </motion.div>
 
-        <div className='flex justify-center gap-4 mb-14'>
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ delay: 0.3 }}
+          className='flex justify-center gap-4 mb-14'
+        >
           <div onMouseEnter={setIsHovering} onMouseLeave={setIsNotHovering}>
             <FooterIcon
               name='github'
@@ -54,9 +65,14 @@ export const Footer = () => {
               href='https://www.linkedin.com/in/ton1czech/'
             />
           </div>
-        </div>
+        </motion.div>
 
-        <p className='mt-12 text-xs text-center text-light md:text-base sm:mt-4'>
+        <motion.p
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ delay: 0.3 }}
+          className='mt-12 text-xs text-center text-light md:text-base sm:mt-4'
+        >
           &copy;{new Date().getFullYear()}{' '}
           <Link
             href='<https://github.com/ton1czech>'
@@ -68,7 +84,7 @@ export const Footer = () => {
           </Link>
           {language === 'cs' && <> Všechna práva vyhrazena.</>}
           {language === 'en' && <> All rights reserved.</>}
-        </p>
+        </motion.p>
       </Container>
     </footer>
   )

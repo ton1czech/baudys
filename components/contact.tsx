@@ -70,7 +70,11 @@ export const Contact = () => {
 
   return (
     <div className=''>
-      <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}>
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ delay: 0.3 }}
+      >
         <Container>
           <Title
             label={language === 'en' ? "let's work together" : 'spolupracujme'}
