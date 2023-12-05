@@ -19,7 +19,10 @@ export const ModeToggle = () => {
 
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger asChild>
+      <DropdownMenuTrigger
+        asChild
+        className='hover:bg-zinc-400/70 dark:hover:bg-zinc-600/70'
+      >
         <Button
           variant='outline'
           size='icon'

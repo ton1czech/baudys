@@ -83,10 +83,7 @@ export const Navbar = () => {
         <div className='flex items-center md:hidden'>
           <ModeToggle />
           <LanguageSelector />
-          <Menu
-            onClick={() => setIsOpen(true)}
-            className='cursor-pointer mx-2'
-          />
+          <Menu onClick={() => setIsOpen(true)} className='mx-2' />
 
           <AnimatePresence>
             {isOpen && <MobileNavbar setIsOpen={setIsOpen} />}

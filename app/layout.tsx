@@ -29,7 +29,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           enableSystem
           disableTransitionOnChange
         >
-          {/* <Cursor /> */}
+          <Cursor />
 
           <Navbar />
           {children}

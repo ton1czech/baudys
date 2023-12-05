@@ -31,7 +31,10 @@ const LanguageSelector = () => {
 
   return (
     <Popover open={open} onOpenChange={setOpen}>
-      <PopoverTrigger asChild>
+      <PopoverTrigger
+        asChild
+        className='hover:bg-zinc-400/70 dark:hover:bg-zinc-600/70'
+      >
         <Button
           variant='outline'
           role='combobox'
@@ -52,7 +55,7 @@ const LanguageSelector = () => {
                   setLanguage(value)
                   setOpen(false)
                 }}
-                className='mb-2 !bg-transparent cursor-pointer hover:!bg-zinc-400/20'
+                className='mb-2 !bg-transparent hover:!bg-zinc-400/20'
               >
                 <Check
                   className={cn(

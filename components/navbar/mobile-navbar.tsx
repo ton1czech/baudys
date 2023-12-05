@@ -28,7 +28,7 @@ export const MobileNavbar: FC<MobileNavbarProps> = ({ setIsOpen }) => {
       className='fixed inset-0 w-screen h-screen z-[99999] grid justify-between origin-top bg-background'
     >
       <X
-        className='absolute top-6 right-6 text-white cursor-pointer'
+        className='absolute top-6 right-6 text-white'
         onClick={() => setIsOpen(false)}
       />
       <motion.ul

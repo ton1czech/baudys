@@ -152,3 +152,10 @@
     transform: translate(200px, -250px);
   }
 }
+
+/* CURSOR */
+*,
+*::after,
+*::before {
+  cursor: none !important;
+}
