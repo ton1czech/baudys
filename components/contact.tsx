@@ -42,12 +42,10 @@ export const Contact = () => {
   })
 
   const onSubmit: SubmitHandler<FieldValues> = async (data: any) => {
-    console.log(data)
-
     try {
       const emailResponse = await emailjs.send(
         process.env.NEXT_PUBLIC_SERVICE_ID!,
-        process.env.NEXT_PUBLIC_TEMPLATE_ID_CREATORS!,
+        process.env.NEXT_PUBLIC_TEMPLATE_ID!,
         data,
         process.env.NEXT_PUBLIC_PUBLIC_API!
       )
