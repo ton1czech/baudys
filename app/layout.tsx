@@ -7,6 +7,7 @@ import { ThemeProvider } from '@/providers/theme-provider'
 import { Cursor } from '@/components/cursor'
 import { Footer } from '@/components/footer/footer'
 import ToasterProvider from '@/providers/toaster-provider'
+import { LenisProvider } from '@/providers/lenis-provider'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -31,6 +32,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           disableTransitionOnChange
         >
           <ToasterProvider />
+          <LenisProvider />
           <Cursor />
 
           <Navbar />
