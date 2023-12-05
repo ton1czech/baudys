@@ -37,8 +37,8 @@ export const projects = [
   {
     name: 'Tespra',
     slug: 'tespra',
-    url: 'tespra',
-    href: 'tespra',
+    url: 'https://tespra.cz',
+    href: '/projects/tespra',
     year: 2023,
     image: '/projects/tespra/mockups.webp',
     images: [
