@@ -59,7 +59,12 @@ export default function Page({ params }: PageProps) {
         {language === 'cs' && 'Ukázka'}
       </h3>
       {images.map(image => (
-        <img src={image} alt='image' className='last:mb-0 mb-10 lg:mb-20' />
+        <img
+          key={image}
+          src={image}
+          alt='image'
+          className='last:mb-0 mb-10 lg:mb-20'
+        />
       ))}
     </Container>
   )
