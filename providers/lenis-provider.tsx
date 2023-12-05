@@ -18,4 +18,6 @@ export const LenisProvider = () => {
 
     requestAnimationFrame(raf)
   }, [])
+
+  return null
 }
