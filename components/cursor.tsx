@@ -3,9 +3,12 @@
 import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import { useCursor } from '@/store/useCursor'
+import { ArrowRight, FastForward } from 'lucide-react'
+import { useLanguage } from '@/store/useLanguage'
 
 export const Cursor = () => {
-  const { isHovering } = useCursor()
+  const { isHovering, type } = useCursor()
+  const { language } = useLanguage()
 
   const [mousePosition, setMousePosition] = useState({
     x: 0,
@@ -29,10 +32,19 @@ export const Cursor = () => {
 
   const variants = {
     default: {
+      height: 16,
+      width: 16,
       x: mousePosition.x - 8,
       y: mousePosition.y - 8,
     },
     hover: {
+      height: 24,
+      width: 24,
+      x: mousePosition.x - 12,
+      y: mousePosition.y - 12,
+      backgroundColor: '#a855f7',
+    },
+    project: {
       height: 80,
       width: 80,
       x: mousePosition.x - 40,
@@ -42,14 +54,16 @@ export const Cursor = () => {
 
   return (
     <motion.div
-      className='w-4 h-4 rounded-full bg-black dark:bg-white fixed top-0 left-0 pointer-events-none z-[9998]'
+      className='hidden sm:block w-4 h-4 rounded-full border border-black bg-black dark:border-white dark:bg-white fixed top-0 left-0 pointer-events-none z-[9998]'
       variants={variants}
-      transition={{ delay: 0, duration: 0.01 }}
-      animate={isHovering ? 'hover' : 'default'}
+      transition={{ type: 'tween', ease: 'backOut', duration: 0.25 }}
+      animate={
+        isHovering ? (type === 'project' ? 'project' : 'hover') : 'default'
+      }
     >
-      {isHovering && (
-        <div className='absolute grid place-content-center w-full h-full inset-0 z-[9999] transition duration-300'>
-          <p className='text-white'>open</p>
+      {isHovering && type === 'project' && (
+        <div className='pointer-events-none rounded-full absolute grid place-content-center w-full h-full inset-0 z-[9999] border bg-zinc-200 border-zinc-700/70 dark:bg-zinc-800 dark:border-zinc-300/70'>
+          <ArrowRight className='stroke-black dark:stroke-white' />
         </div>
       )}
     </motion.div>

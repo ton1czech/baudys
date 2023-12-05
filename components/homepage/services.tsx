@@ -6,15 +6,18 @@ import { ServiceCard } from './service-card'
 import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
 import { Title } from '../title'
+import { useCursor } from '@/store/useCursor'
+import { SeeAll } from './see-all'
 
 export const Services = () => {
   const { language } = useLanguage()
+  const { setIsHovering, setIsNotHovering } = useCursor()
 
   return (
     <Container className='pb-20 lg:pb-60 xl:pb-80'>
       <Title label={language === 'en' ? 'Services' : 'Služby'} />
 
-      <div className='grid lg:grid-cols-3 gap-8 mb-10'>
+      <div className='grid lg:grid-cols-3 gap-8'>
         <ServiceCard
           title='Eshop Creation'
           body='Lorem ipsum, dolor sit amet consectetur adipisicing elit. Recusandae tempore neque soluta quidem, delectus corrupti impedit sint quos iusto commodi? Iusto ullam natus officiis quos necessitatibus quae rem earum corporis modi mollitia consectetur nihil error, dolor fugit. Omnis excepturi architecto, ex, odit illum perspiciatis illo doloremque maxime obcaecati.'
@@ -30,13 +33,8 @@ export const Services = () => {
         />
       </div>
 
-      <div className='flex justify-center'>
-        <Link
-          href='/services'
-          className='flex items-center gap-2 hover:text-purple-500 hover:underline'
-        >
-          See All <ArrowRight className='h-4 w-4' />
-        </Link>
+      <div className='flex justify-center mt-10'>
+        <SeeAll href='/services' />
       </div>
     </Container>
   )

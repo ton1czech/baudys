@@ -4,9 +4,11 @@ import { useLanguage } from '@/store/useLanguage'
 import { Container } from '../container'
 import Link from 'next/link'
 import { Title } from '../title'
+import { useCursor } from '@/store/useCursor'
 
 export const About = () => {
   const { language } = useLanguage()
+  const { setIsNotHovering, setIsHovering } = useCursor()
 
   return (
     <Container className='pb-20 lg:pb-60 xl:pb-80'>
@@ -30,6 +32,8 @@ export const About = () => {
                   href='https://planetopedia.agency'
                   target='_blank'
                   className='relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-[3px] after:bg-purple-500 hover:text-purple-500 dark:hover:text-purple-500 transition font-bold dark:text-zinc-200 text-zinc-800'
+                  onMouseEnter={setIsHovering}
+                  onMouseLeave={setIsNotHovering}
                 >
                   Planetopedia
                 </Link>{' '}
@@ -38,7 +42,9 @@ export const About = () => {
                 <Link
                   href='https://inflace-cr.streamlit.app/'
                   target='_blank'
-                  className='relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-[3px] after:bg-sky-500 hover:text-sky-500 dark:hover:text-sky-500 transition font-bold dark:text-zinc-200 text-zinc-800'
+                  className='relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-[3px] after:bg-purple-500 hover:text-purple-500 dark:hover:text-sky-500 transition font-bold dark:text-zinc-200 text-zinc-800'
+                  onMouseEnter={setIsHovering}
+                  onMouseLeave={setIsNotHovering}
                 >
                   inflation
                 </Link>{' '}

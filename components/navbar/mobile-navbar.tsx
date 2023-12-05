@@ -1,13 +1,18 @@
+'use client'
+
 import { FC } from 'react'
 import { motion } from 'framer-motion'
 import { X } from 'lucide-react'
 import { MobileNavItem } from './mobile-nav-item'
+import { useCursor } from '@/store/useCursor'
 
 interface MobileNavbarProps {
   setIsOpen: (bool: boolean) => void
 }
 
 export const MobileNavbar: FC<MobileNavbarProps> = ({ setIsOpen }) => {
+  const { setIsHovering, setIsNotHovering } = useCursor()
+
   return (
     <motion.div
       initial={{ scaleY: 0 }}
@@ -25,11 +30,13 @@ export const MobileNavbar: FC<MobileNavbarProps> = ({ setIsOpen }) => {
           ease: [0.22, 1, 0.36, 1],
         },
       }}
-      className='fixed inset-0 w-screen h-screen z-[99999] grid justify-between origin-top bg-background'
+      className='fixed left-0 top-0 w-screen h-screen z-50 grid justify-between origin-top bg-background'
     >
       <X
-        className='absolute top-6 right-6 text-white'
+        className='absolute top-6 right-6'
         onClick={() => setIsOpen(false)}
+        onMouseEnter={setIsHovering}
+        onMouseLeave={setIsNotHovering}
       />
       <motion.ul
         initial={{ y: 50, opacity: 0, x: '-50%' }}

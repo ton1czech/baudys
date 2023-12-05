@@ -36,11 +36,11 @@ export const ModeToggle = () => {
       <DropdownMenuContent align='end'>
         <DropdownMenuItem onClick={() => setTheme('light')}>
           {language === 'en' && 'Light'}
-          {language === 'cs' && 'Světlé'}
+          {language === 'cs' && 'Světlý'}
         </DropdownMenuItem>
         <DropdownMenuItem onClick={() => setTheme('dark')}>
           {language === 'en' && 'Dark'}
-          {language === 'cs' && 'Tmavé'}
+          {language === 'cs' && 'Tmavý'}
         </DropdownMenuItem>
         <DropdownMenuItem onClick={() => setTheme('system')}>
           {language === 'en' && 'System'}

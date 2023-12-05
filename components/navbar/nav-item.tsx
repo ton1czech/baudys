@@ -1,4 +1,5 @@
 import { cn } from '@/lib/utils'
+import { useCursor } from '@/store/useCursor'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { FC } from 'react'
@@ -10,9 +11,10 @@ interface NavItemProps {
 
 export const NavItem: FC<NavItemProps> = ({ label, href }) => {
   const pathname = usePathname()
+  const { setIsNotHovering, setIsHovering } = useCursor()
 
   return (
-    <li>
+    <li onMouseEnter={setIsHovering} onMouseLeave={setIsNotHovering}>
       <Link
         href={href}
         className={cn(
