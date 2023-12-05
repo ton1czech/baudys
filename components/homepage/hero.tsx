@@ -26,8 +26,16 @@ export const Hero = () => {
           </h4>
 
           <h1 className='text-5xl xl:text-6xl 2xl:text-7xl font-black colorful-text py-2 text-center relative z-10'>
-            {language === 'en' && 'Fullstack Developer'}
-            {language === 'cs' && 'Fullstack Vývojář'}
+            <Typewriter
+              options={{
+                strings:
+                  language === 'en'
+                    ? ['Developer', 'Designer']
+                    : ['Vývojář', 'Designer'],
+                autoStart: true,
+                loop: true,
+              }}
+            />
           </h1>
 
           <div className='flex justify-center 2xl:justify-end'>
@@ -39,7 +47,7 @@ export const Hero = () => {
           </div>
 
           {language === 'en' && (
-            <p className='max-w-[71ch] mt-20 dark:text-zinc-400 text-zinc-700 text-justify relative z-10'>
+            <p className='max-w-[75ch] mt-20 dark:text-zinc-400 text-zinc-700 text-justify relative z-10'>
               I am committed to taking you into the digital universe where you
               will encounter excellence and design combined in a unique harmony.
               My mission is to create beautiful and user-friendly environments.

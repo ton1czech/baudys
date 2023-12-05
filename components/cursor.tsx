@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import { useCursor } from '@/store/useCursor'
-import { ArrowRight, ExternalLink, FastForward } from 'lucide-react'
+import { ArrowRight, ExternalLink } from 'lucide-react'
 
 export const Cursor = () => {
   const { isHovering, type } = useCursor()
