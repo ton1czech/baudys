@@ -53,7 +53,7 @@ export const Navbar = () => {
             <LanguageSelector />
           </div>
 
-          <hr className='w-px h-8 bg-zinc-600/50 dark:bg-zinc-400/50 mx-16' />
+          <hr className='w-px h-8 bg-zinc-600/50 dark:bg-zinc-400/50 ml-6 mr-8' />
 
           <ul className='flex gap-6 items-center'>
             <NavItem
