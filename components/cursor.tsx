@@ -4,11 +4,9 @@ import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import { useCursor } from '@/store/useCursor'
 import { ArrowRight, ExternalLink, FastForward } from 'lucide-react'
-import { useLanguage } from '@/store/useLanguage'
 
 export const Cursor = () => {
   const { isHovering, type } = useCursor()
-  const { language } = useLanguage()
 
   const [mousePosition, setMousePosition] = useState({
     x: 0,

@@ -8,7 +8,7 @@ import {
 import { Command, CommandGroup, CommandItem } from '@/components/ui/command'
 import { Check, ChevronsUpDown } from 'lucide-react'
 import { Button } from '@/components/ui/button'
-import { FC, useState } from 'react'
+import { useState } from 'react'
 import Image from 'next/image'
 import { cn } from '@/lib/utils'
 import { useLanguage } from '@/store/useLanguage'
