@@ -6,10 +6,10 @@ interface ProjectProps {
   name: string
   year: number
   image: string
-  url: string
+  href: string
 }
 
-export const Project: FC<ProjectProps> = ({ name, year, image, url }) => {
+export const Project: FC<ProjectProps> = ({ name, year, image, href }) => {
   const { setIsHovering, setIsNotHovering, setType } = useCursor()
 
   const onMouseEnter = () => {
@@ -23,7 +23,7 @@ export const Project: FC<ProjectProps> = ({ name, year, image, url }) => {
   }
 
   return (
-    <Link href={url} onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
+    <Link href={href} onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
       <img src={image} alt={name} />
 
       <div className='flex justify-between'>

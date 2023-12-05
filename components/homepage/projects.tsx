@@ -15,8 +15,8 @@ export const Projects = () => {
       <Title label={language === 'en' ? 'Projects' : 'Projekty'} />
 
       <div className='grid lg:grid-cols-2 gap-20'>
-        {projects.map(({ name, year, image, url }) => (
-          <Project name={name} year={year} image={image} url={url} />
+        {projects.map(({ name, year, image, href }) => (
+          <Project name={name} year={year} image={image} href={href} />
         ))}
       </div>
 

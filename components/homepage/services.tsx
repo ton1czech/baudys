@@ -3,15 +3,11 @@
 import { useLanguage } from '@/store/useLanguage'
 import { Container } from '../container'
 import { ServiceCard } from './service-card'
-import Link from 'next/link'
-import { ArrowRight } from 'lucide-react'
 import { Title } from '../title'
-import { useCursor } from '@/store/useCursor'
 import { SeeAll } from './see-all'
 
 export const Services = () => {
   const { language } = useLanguage()
-  const { setIsHovering, setIsNotHovering } = useCursor()
 
   return (
     <Container className='pb-20 lg:pb-60 xl:pb-80'>

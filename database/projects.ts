@@ -1,6 +1,7 @@
 export const projects = [
   {
     name: 'Planetopedia',
+    slug: 'planetopedia',
     url: 'https://planetopedia.agency',
     href: '/projects/planetopedia',
     year: 2023,
@@ -17,6 +18,7 @@ export const projects = [
   },
   {
     name: 'Pneuservis Baudyš',
+    slug: 'pneuservisbaudys',
     url: 'https://pneuservisbaudys.cz',
     href: '/projects/pneuservisbaudys',
     year: 2022,

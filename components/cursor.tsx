@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import { useCursor } from '@/store/useCursor'
-import { ArrowRight, FastForward } from 'lucide-react'
+import { ArrowRight, ExternalLink, FastForward } from 'lucide-react'
 import { useLanguage } from '@/store/useLanguage'
 
 export const Cursor = () => {
@@ -50,6 +50,12 @@ export const Cursor = () => {
       x: mousePosition.x - 40,
       y: mousePosition.y - 40,
     },
+    external: {
+      height: 80,
+      width: 80,
+      x: mousePosition.x - 40,
+      y: mousePosition.y - 40,
+    },
   }
 
   return (
@@ -58,12 +64,23 @@ export const Cursor = () => {
       variants={variants}
       transition={{ type: 'tween', ease: 'backOut', duration: 0.25 }}
       animate={
-        isHovering ? (type === 'project' ? 'project' : 'hover') : 'default'
+        isHovering
+          ? type === 'project'
+            ? 'project'
+            : type === 'external'
+            ? 'external'
+            : 'hover'
+          : 'default'
       }
     >
       {isHovering && type === 'project' && (
         <div className='pointer-events-none rounded-full absolute grid place-content-center w-full h-full inset-0 z-[9999] border bg-zinc-200 border-zinc-700/70 dark:bg-zinc-800 dark:border-zinc-300/70'>
           <ArrowRight className='stroke-black dark:stroke-white' />
+        </div>
+      )}
+      {isHovering && type === 'external' && (
+        <div className='pointer-events-none rounded-full absolute grid place-content-center w-full h-full inset-0 z-[9999] border bg-zinc-200 border-zinc-700/70 dark:bg-zinc-800 dark:border-zinc-300/70'>
+          <ExternalLink className='stroke-black dark:stroke-white' />
         </div>
       )}
     </motion.div>
