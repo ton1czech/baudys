@@ -21,37 +21,35 @@ export const metadata: Metadata = {
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <>
+    <html lang='en'>
       <Head>
         <meta
           name='viewport'
-          content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0'
+          content='width=device-width, initial-scale=1, maximum-scale=1'
         />
       </Head>
-      <html lang='en'>
-        <body
-          className={cn(
-            'antialiased scroll-smooth overflow-x-hidden',
-            inter.className
-          )}
+      <body
+        className={cn(
+          'antialiased scroll-smooth overflow-x-hidden',
+          inter.className
+        )}
+      >
+        <ThemeProvider
+          attribute='class'
+          defaultTheme='system'
+          enableSystem
+          disableTransitionOnChange
         >
-          <ThemeProvider
-            attribute='class'
-            defaultTheme='system'
-            enableSystem
-            disableTransitionOnChange
-          >
-            <ToasterProvider />
-            <LenisProvider />
-            <Cursor />
-            <ChatbotProvider />
+          <ToasterProvider />
+          <LenisProvider />
+          <Cursor />
+          <ChatbotProvider />
 
-            <Navbar />
-            {children}
-            <Footer />
-          </ThemeProvider>
-        </body>
-      </html>
-    </>
+          <Navbar />
+          {children}
+          <Footer />
+        </ThemeProvider>
+      </body>
+    </html>
   )
 }
