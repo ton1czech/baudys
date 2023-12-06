@@ -91,6 +91,10 @@
   }
 }
 
+body {
+  touch-action: pan-y;
+}
+
 /* SCROLLBAR */
 
 * {
