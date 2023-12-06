@@ -82,9 +82,9 @@
   }
 }
 
-/* * {
-  color: #979797;
-} */
+* {
+  overflow-x: hidden;
+}
 
 @layer base {
   * {
