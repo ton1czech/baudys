@@ -10,6 +10,7 @@ import { Footer } from '@/components/footer/footer'
 import ToasterProvider from '@/providers/toaster-provider'
 import { LenisProvider } from '@/providers/lenis-provider'
 import { ChatbotProvider } from '@/components/chatbot/chatbot-provider'
+import Head from 'next/head'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -20,29 +21,37 @@ export const metadata: Metadata = {
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang='en'>
-      <body
-        className={cn(
-          'antialiased scroll-smooth overflow-x-hidden',
-          inter.className
-        )}
-      >
-        <ThemeProvider
-          attribute='class'
-          defaultTheme='system'
-          enableSystem
-          disableTransitionOnChange
+    <>
+      <Head>
+        <meta
+          name='viewport'
+          content='width=device-width, initial-scale=1, maximum-scale=1'
+        />
+      </Head>
+      <html lang='en'>
+        <body
+          className={cn(
+            'antialiased scroll-smooth overflow-x-hidden',
+            inter.className
+          )}
         >
-          <ToasterProvider />
-          <LenisProvider />
-          <Cursor />
-          <ChatbotProvider />
+          <ThemeProvider
+            attribute='class'
+            defaultTheme='system'
+            enableSystem
+            disableTransitionOnChange
+          >
+            <ToasterProvider />
+            <LenisProvider />
+            <Cursor />
+            <ChatbotProvider />
 
-          <Navbar />
-          {children}
-          <Footer />
-        </ThemeProvider>
-      </body>
-    </html>
+            <Navbar />
+            {children}
+            <Footer />
+          </ThemeProvider>
+        </body>
+      </html>
+    </>
   )
 }
