@@ -32,7 +32,7 @@ export const Services = () => {
             title={language === 'en' ? 'Web Development' : 'Tvorba Webu'}
             body={
               language === 'en'
-                ? "The 'Web Creation' service brings your visions to life. I responsibly design and build websites that represent you. I provide responsive design, intuitive navigation and aesthetic elements to reach your audience. I will bring your unique stories, ideas and messages to life through a high quality, modern website."
+                ? "The 'Web Development' service brings your visions to life. I responsibly design and build websites that represent you. I provide responsive design, intuitive navigation and aesthetic elements to reach your audience. I will bring your unique stories, ideas and messages to life through a high quality, modern website."
                 : 'Služba "Tvorba Webu" přináší vašim vizím život. Zodpovědně navrhuji a vytvářím webové stránky, které vás reprezentují. Zajistím responzivní design, intuitivní navigaci a estetické prvky, abyste oslovili své publikum. Vaše jedinečné příběhy, nápady a poselství přineseu k životu prostřednictvím kvalitního a moderního webu.'
             }
             highlight
