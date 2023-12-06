@@ -12,7 +12,7 @@ export const Hero = () => {
 
   return (
     <motion.div
-      className='relative overflow-x-hidden min-h-screen mb-6 lg:mb-10'
+      className='relative overflow-x-hidden min-h-screen'
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ delay: 0.3 }}
