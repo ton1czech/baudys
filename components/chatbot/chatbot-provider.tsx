@@ -28,7 +28,7 @@ export const ChatbotProvider = () => {
     <>
       <div
         onClick={() => setIsChatbotActive(prev => !prev)}
-        className='fixed bottom-10 right-10 bg-blue-600 hover:bg-blue-700 transition rounded-full z-[999]'
+        className='fixed bottom-3 right-3 md:bottom-10 md:right-10 bg-blue-600 hover:bg-blue-700 transition rounded-full z-50'
       >
         <Bot
           className='p-4 h-14 w-14 stroke-zinc-100'

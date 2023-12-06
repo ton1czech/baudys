@@ -7,7 +7,7 @@ import { ActionProvider } from './action-provider'
 
 export const ChatbotContainer = () => {
   return (
-    <div className='fixed right-24 bottom-24 z-50'>
+    <div className='fixed right-16 bottom-16 md:right-24 md:bottom-24 z-50'>
       <Chatbot
         config={config}
         messageParser={MessageParser}
