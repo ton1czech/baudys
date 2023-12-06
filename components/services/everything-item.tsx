@@ -13,7 +13,10 @@ export const EverythingItem: FC<EverythingItemProps> = ({ title, items }) => {
       </h2>
       <ul className='flex flex-col space-y-1'>
         {items.map(item => (
-          <li className='text-zinc-700 dark:text-zinc-300 lg:text-lg xl:text-xl'>
+          <li
+            key={item}
+            className='text-zinc-700 dark:text-zinc-300 lg:text-lg xl:text-xl'
+          >
             ~ {item}
           </li>
         ))}
