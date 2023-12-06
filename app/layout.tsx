@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
 import 'react-chatbot-kit/build/main.css'
@@ -10,7 +10,6 @@ import { Footer } from '@/components/footer/footer'
 import ToasterProvider from '@/providers/toaster-provider'
 import { LenisProvider } from '@/providers/lenis-provider'
 import { ChatbotProvider } from '@/components/chatbot/chatbot-provider'
-import Head from 'next/head'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -19,15 +18,15 @@ export const metadata: Metadata = {
   description: '',
 }
 
+export const viewport: Viewport = {
+  initialScale: 1,
+  width: 'device-width',
+  maximumScale: 1,
+}
+
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <html lang='en'>
-      <Head>
-        <meta
-          name='viewport'
-          content='width=device-width, initial-scale=1, maximum-scale=1'
-        />
-      </Head>
       <body
         className={cn(
           'antialiased scroll-smooth overflow-x-hidden',
