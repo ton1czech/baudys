@@ -208,7 +208,7 @@
 
 @media screen and (max-width: 500px) {
   .react-chatbot-kit-chat-message-container {
-    height: 350px !important;
+    height: 300px !important;
   }
 }
 

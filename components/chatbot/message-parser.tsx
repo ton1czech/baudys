@@ -36,7 +36,8 @@ export const MessageParser: FC<MessageParserProps> = ({
       message.includes(language === 'en' ? 'price' : 'cena') |
       message.includes(language === 'en' ? 'cost' : 'náklady') |
       message.includes(language === 'en' ? 'cheap' : 'levné') |
-      message.includes(language === 'en' ? 'expensive' : 'drahé')
+      message.includes(language === 'en' ? 'expensive' : 'drahé') |
+      message.includes(language === 'en' ? 'how much' : 'kolik')
     ) {
       actions.price()
     } else {
