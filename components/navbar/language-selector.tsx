@@ -38,6 +38,7 @@ const LanguageSelector = () => {
         <Button
           variant='outline'
           role='combobox'
+          name='language selector'
           aria-expanded={open}
           className='w-[70px] border-none justify-between dark:text-zinc-200 dark:hover:text-zinc-300 text-zinc-900 hover:text-zinc-800 bg-transparent'
         >
