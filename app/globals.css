@@ -182,9 +182,21 @@
   border-radius: 15px !important;
 }
 
+@media screen and (max-width: 500px) {
+  .react-chatbot-kit-chat-container {
+    height: 250px !important;
+  }
+}
+
 .react-chatbot-kit-chat-inner-container {
   background: var(--chatbot-background) !important;
   border-radius: 15px !important;
+}
+
+@media screen and (max-width: 500px) {
+  .react-chatbot-kit-chat-inner-container {
+    height: 250px !important;
+  }
 }
 
 .react-chatbot-kit-chat-input-container {

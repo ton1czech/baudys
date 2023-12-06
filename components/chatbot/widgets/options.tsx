@@ -15,7 +15,7 @@ export const Options = (props: any) => {
     {
       text: language === 'en' ? 'Price' : 'Cena',
       handler: props.actionProvider.price,
-      id: 1,
+      id: 2,
     },
   ]
 
