@@ -41,8 +41,8 @@ export const Services = () => {
             title={language === 'en' ? 'Management' : 'Správa'}
             body={
               language === 'en'
-                ? "The 'Monthly Management' service keeps your digital presence alive and up to date. I'll ensure regular newsletters are sent, emails are answered and content is updated. With these services, you can be sure that your website will always be fresh and relevant to your customers. I will take care of your web platform and you can focus on your business growth."
-                : 'Služba "Měsíční Správa" udržuje vaši digitální přítomnost živou a aktuální. Zajistím pravidelné odesílání newsletterů, odpovídání na emaily a aktualizaci obsahu. S těmito službami můžete mít jistotu, že váš web bude vždy svěží a relevantní pro vaše zákazníky. Já se postarám o vaši webovou platformu a vy se můžete soustředit na váš podnikatelský růst.'
+                ? "The 'Management' service keeps your digital presence alive and up to date. I'll ensure regular newsletters are sent, emails are answered and content is updated. With these services, you can be sure that your website will always be fresh and relevant to your customers. I will take care of your web platform and you can focus on your business growth."
+                : 'Služba "Správa" udržuje vaši digitální přítomnost živou a aktuální. Zajistím pravidelné odesílání newsletterů, odpovídání na emaily a aktualizaci obsahu. S těmito službami můžete mít jistotu, že váš web bude vždy svěží a relevantní pro vaše zákazníky. Já se postarám o vaši webovou platformu a vy se můžete soustředit na váš podnikatelský růst.'
             }
           />
         </div>
