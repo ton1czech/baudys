@@ -32,7 +32,7 @@ export const Everything = () => {
                     'social site',
                     'platform',
                     '3D website',
-                    'web apps',
+                    'web app',
                   ]
                 : [
                     'front-end',
@@ -41,7 +41,7 @@ export const Everything = () => {
                     'socální síť',
                     'platforma',
                     '3D web',
-                    'webové aplikace',
+                    'webová aplikace',
                   ]
             }
           />
@@ -81,6 +81,9 @@ export const Everything = () => {
                     'database connection',
                     'payment gateway',
                     'animations',
+                    'mobile friendly',
+                    'interactive maps',
+                    'multilingualism',
                   ]
                 : [
                     'newsletter',
@@ -92,7 +95,11 @@ export const Everything = () => {
                     'CDN integrace',
                     'chatbot',
                     'napojení na databázi',
+                    'platební brána',
                     'animace',
+                    'mobilní responzivita',
+                    'interaktivní mapy',
+                    'multijazyčnost',
                   ]
             }
           />
