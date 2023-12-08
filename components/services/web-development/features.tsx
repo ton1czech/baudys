@@ -283,8 +283,8 @@ export const Features = () => {
               onMouseEnter={setIsHovering}
               onMouseLeave={setIsNotHovering}
             >
-              {language === 'en' && 'Animace'}
-              {language === 'cs' && 'Animations'}
+              {language === 'en' && 'Animations'}
+              {language === 'cs' && 'Animace'}
             </AccordionTrigger>
             <AccordionContent>
               {language === 'en' &&
