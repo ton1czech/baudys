@@ -41,10 +41,10 @@ export const ProcessItem: FC<ProcessItemProps> = ({
           align === 'right' && 'lg:order-2'
         )}
       >
-        <h2 className='text-xl md:text-2xl lg:text-3xl uppercase font-semibold'>
+        <h2 className='text-xl md:text-2xl lg:text-3xl uppercase font-semibold mb-2'>
           {label}
         </h2>
-        <p className='text-zinc-700 dark:text-zinc-300'>{body}</p>
+        <p className='text-zinc-700 dark:text-zinc-300 text-justify'>{body}</p>
       </div>
     </motion.div>
   )
