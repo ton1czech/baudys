@@ -1,5 +1,6 @@
 'use client'
 
+import { Container } from '@/components/container'
 import { Title } from '@/components/title'
 import {
   Accordion,
@@ -15,7 +16,7 @@ export const Features = () => {
   const { setIsHovering, setIsNotHovering } = useCursor()
 
   return (
-    <div>
+    <Container className='pb-20 lg:pb-60 xl:pb-80'>
       <Title label='Features' />
 
       <div className='grid lg:grid-cols-2 gap-4 lg:gap-6'>
@@ -385,6 +386,6 @@ export const Features = () => {
           </AccordionItem>
         </Accordion>
       </div>
-    </div>
+    </Container>
   )
 }
