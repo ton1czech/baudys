@@ -61,7 +61,7 @@ export const SliderItem: React.FC<PropsWithChildren<ItemProps>> = ({
   width,
 }) => (
   <div
-    className='z-10 inline-flex items-center justify-center p-3 mx-4 rounded-lg hover:bg-zinc-300'
+    className='z-10 inline-flex items-center justify-center p-3 mx-4 rounded-lg'
     style={{
       width,
     }}

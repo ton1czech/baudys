@@ -8,6 +8,7 @@ import { useLanguage } from '@/store/useLanguage'
 import Link from 'next/link'
 import { useEffect } from 'react'
 import { motion } from 'framer-motion'
+import { TechnologiesCarousel } from '@/components/technologies-carousel/technologies-carousel'
 
 interface PageProps {
   params: {
@@ -90,6 +91,7 @@ export default function Page({ params }: PageProps) {
           />
         ))}
       </Container>
+      <TechnologiesCarousel />
       <Contact />
     </div>
   )
