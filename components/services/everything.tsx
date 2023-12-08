@@ -66,6 +66,24 @@ export const Everything = () => {
             }
           />
           <EverythingItem
+            title={language === 'en' ? 'Configuration' : 'Nastavení'}
+            items={
+              language === 'en'
+                ? [
+                    'domain',
+                    'hosting platform',
+                    'search engines indexing',
+                    'SEO',
+                  ]
+                : [
+                    'doména',
+                    'hostingová platforma',
+                    'indexování ve vyhledávačích',
+                    'SEO',
+                  ]
+            }
+          />
+          <EverythingItem
             title={language === 'en' ? 'Add-ons' : 'Doplňky'}
             items={
               language === 'en'
@@ -100,24 +118,6 @@ export const Everything = () => {
                     'mobilní responzivita',
                     'interaktivní mapy',
                     'multijazyčnost',
-                  ]
-            }
-          />
-          <EverythingItem
-            title={language === 'en' ? 'Configuration' : 'Nastavení'}
-            items={
-              language === 'en'
-                ? [
-                    'domain',
-                    'hosting platform',
-                    'search engines indexing',
-                    'SEO',
-                  ]
-                : [
-                    'doména',
-                    'hostingová platforma',
-                    'indexování ve vyhledávačích',
-                    'SEO',
                   ]
             }
           />
