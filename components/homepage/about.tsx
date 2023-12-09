@@ -63,7 +63,9 @@ export const About = () => {
                 have created several applications for the Pilsen Regional Office
                 👔, I have given educational lectures for children 🧑‍🏫 and I have
                 successfully passed the Microsoft Office Specialist exams 📖 in
-                PowerPoint 🟠 and Word 🔵 at the bett 2023 event in London.
+                PowerPoint 🟠 and Word 🔵 at the bett 2023 event in London. When
+                I'm not sitting at the computer, I'm doing street workout 💪 or
+                working on cars 🏎️.
               </>
             )}
             {language === 'cs' && (
@@ -94,7 +96,8 @@ export const About = () => {
                 několik aplikací pro úřad plzeňského kraje 👔, vedl jsem výukové
                 přednášky 🧑‍🏫 pro děti a také jsem úspěšně absolvoval Microsoft
                 Office Specialist zkoušky 📖 z PowerPointu 🟠 a Wordu 🔵 na akci
-                bett 2023 v Londýně.
+                bett 2023 v Londýně. Když zrovna nesedím u počítače, tak dělám
+                street workout 💪 nebo dělám na autech 🏎.
               </>
             )}
           </p>
