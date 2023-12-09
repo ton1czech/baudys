@@ -53,13 +53,6 @@ export const Footer = () => {
           </div>
           <div onMouseEnter={setIsHovering} onMouseLeave={setIsNotHovering}>
             <FooterIcon
-              name='instagram'
-              icon={Instagram}
-              href='https://www.instagram.com/ton1czech/'
-            />
-          </div>
-          <div onMouseEnter={setIsHovering} onMouseLeave={setIsNotHovering}>
-            <FooterIcon
               name='linkedin'
               icon={Linkedin}
               href='https://www.linkedin.com/in/ton1czech/'
