@@ -12,7 +12,7 @@ export const Services = () => {
 
   return (
     <div>
-      <Container className='pb-20 lg:pb-60 xl:pb-80'>
+      <Container className='pb-40 lg:pb-60 xl:pb-80'>
         <Title label={language === 'en' ? 'Services' : 'Služby'} />
 
         <div className='grid lg:grid-cols-3 lg:gap-8'>

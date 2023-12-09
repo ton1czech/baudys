@@ -11,7 +11,7 @@ export const Projects = () => {
   const { language } = useLanguage()
 
   return (
-    <Container className='pb-20 lg:pb-60 xl:pb-80'>
+    <Container className='pb-40 lg:pb-60 xl:pb-80'>
       <Title label={language === 'en' ? 'Projects' : 'Projekty'} />
 
       <div className='grid lg:grid-cols-2 gap-20'>

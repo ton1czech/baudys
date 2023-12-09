@@ -50,7 +50,7 @@ export default function Page({ params }: PageProps) {
 
   return (
     <div className='mt-28 lg:mt-32 mb-20 lg:mb-32'>
-      <Container className='pb-20 lg:pb-60 xl:pb-80'>
+      <Container className='pb-40 lg:pb-60 xl:pb-80'>
         <div className='grid lg:grid-cols-[3fr_1fr] mb-10 lg:mb-20 xl:mb-32'>
           <motion.div
             initial={{ opacity: 0 }}

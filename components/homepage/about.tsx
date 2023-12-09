@@ -12,19 +12,24 @@ export const About = () => {
   const { setIsNotHovering, setIsHovering } = useCursor()
 
   return (
-    <Container className='pb-20 lg:pb-60 xl:pb-80'>
+    <Container className='pb-40 lg:pb-60 xl:pb-80'>
       <Title label={language === 'en' ? 'Who am I?' : 'Kdo jsem?'} />
-      <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ delay: 0.3 }}
-        className='grid xl:grid-cols-2 gap-8 xl:gap-20'
-      >
-        <div>
-          <img src='/me.webp' className='rounded-3xl' alt='photo of me' />
-        </div>
+      <div className='grid xl:grid-cols-2 gap-8 xl:gap-20'>
+        <motion.img
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ delay: 0.3 }}
+          src='/me.webp'
+          className='rounded-3xl'
+          alt='photo of me'
+        />
 
-        <div className='sticky top-20 h-min'>
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ delay: 0.3 }}
+          className='sticky top-20 h-min'
+        >
           <p className='md:text-lg lg:text-xl text-zinc-700 dark:text-zinc-400 text-justify'>
             {language === 'en' && (
               <>
@@ -93,8 +98,8 @@ export const About = () => {
               </>
             )}
           </p>
-        </div>
-      </motion.div>
+        </motion.div>
+      </div>
     </Container>
   )
 }

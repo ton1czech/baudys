@@ -10,7 +10,7 @@ export const TechnologiesCarousel = () => {
   const { language } = useLanguage()
 
   return (
-    <div className='relative z-10 overflow-hidden pb-20 lg:pb-60 xl:pb-80'>
+    <div className='relative z-10 overflow-hidden pb-40 lg:pb-60 xl:pb-80'>
       <Container>
         <Title label={language === 'en' ? 'I use' : 'Používám'} />
       </Container>

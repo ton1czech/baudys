@@ -12,7 +12,7 @@ export const Everything = () => {
     <Container>
       <Title label={language === 'en' ? 'Everything I do' : 'Vše, co dělám'} />
 
-      <div className='grid lg:grid-cols-3 gap-10 lg:gap-20 pb-20 lg:pb-60 xl:pb-80'>
+      <div className='grid lg:grid-cols-3 gap-10 lg:gap-20 pb-40 lg:pb-60 xl:pb-80'>
         <EverythingItem
           title={language === 'en' ? 'Engineering' : 'Inženýrství'}
           items={

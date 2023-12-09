@@ -17,7 +17,7 @@ export const Features = () => {
   const { setIsHovering, setIsNotHovering } = useCursor()
 
   return (
-    <Container className='pb-20 lg:pb-60 xl:pb-80'>
+    <Container className='pb-40 lg:pb-60 xl:pb-80'>
       <Title label='Features' />
 
       <div className='grid lg:grid-cols-2 gap-4 lg:gap-6'>
