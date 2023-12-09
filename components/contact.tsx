@@ -203,6 +203,8 @@ export const Contact = () => {
         <a
           href='tel:+420777530096'
           className='font-bold text-purple-500 after:w-full after:h-[3px] after:bg-purple-500 after:-bottom-1 after:left-0 after:right-0 after:z-10 after:absolute relative after:opacity-0 after:scale-x-0 after:hover:scale-x-100 after:hover:opacity-100 after:transition after:rounded-lg'
+          onMouseEnter={setIsHovering}
+          onMouseLeave={setIsNotHovering}
         >
           +420 777 530 096
         </a>
