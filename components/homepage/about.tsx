@@ -64,8 +64,8 @@ export const About = () => {
                 👔, I have given educational lectures for children 🧑‍🏫 and I have
                 successfully passed the Microsoft Office Specialist exams 📖 in
                 PowerPoint 🟠 and Word 🔵 at the bett 2023 event in London. When
-                I'm not sitting at the computer, I'm doing street workout 💪 or
-                working on cars 🏎️.
+                I&apos;m not sitting at the computer, I&apos;m doing street
+                workout 💪 or working on cars 🏎️.
               </>
             )}
             {language === 'cs' && (
