@@ -15,6 +15,7 @@ import { Container } from './container'
 import { Title } from './title'
 import { Textarea } from './ui/textarea'
 import { useCursor } from '@/store/useCursor'
+import { Phone } from 'lucide-react'
 
 export const Contact = () => {
   const { language } = useLanguage(state => state)
@@ -180,6 +181,32 @@ export const Contact = () => {
           </motion.div>
         </form>
       </Form>
+
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ delay: 0.3 }}
+        className='flex items-center gap-2 my-8 md:my-12 lg:my-16 xl:my-20 max-w-[70ch] mx-auto'
+      >
+        <span className='w-full h-px bg-muted-foreground/60 dark:bg-muted-foreground/30' />
+        <p className='text-muted-foreground'>
+          {language === 'en' && 'OR'}
+          {language === 'cs' && 'NEBO'}
+        </p>
+        <span className='w-full h-px bg-muted-foreground/60 dark:bg-muted-foreground/30' />
+      </motion.div>
+
+      <motion.p className='flex gap-2 items-center flex-nowrap text-lg md:text-xl text-center mx-auto justify-center'>
+        <Phone className='w-4 h-4' />
+        {language === 'en' && 'Call me on '}
+        {language === 'cs' && 'Zavolejte na '}
+        <a
+          href='tel:+420777530096'
+          className='font-bold text-purple-500 after:w-full after:h-[3px] after:bg-purple-500 after:-bottom-1 after:left-0 after:right-0 after:z-10 after:absolute relative after:opacity-0 after:scale-x-0 after:hover:scale-x-100 after:hover:opacity-100 after:transition after:rounded-lg'
+        >
+          +420 777 530 096
+        </a>
+      </motion.p>
     </Container>
   )
 }
