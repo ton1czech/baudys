@@ -69,106 +69,117 @@ export const Contact = () => {
   }
 
   return (
-    <div className=''>
-      <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ delay: 0.3 }}
-      >
-        <Container>
-          <Title
-            label={language === 'en' ? "let's work together" : 'spolupracujme'}
-          />
-          <Form {...form}>
-            <form
-              onSubmit={form.handleSubmit(onSubmit)}
-              className='space-y-5 max-w-[70ch] mx-auto'
-            >
-              <FormField
-                name='name'
-                render={({ field }) => (
-                  <FormItem>
-                    <FormControl>
-                      <>
-                        <Label>
-                          {language === 'en' && 'Name *'}
-                          {language === 'cs' && 'Jméno *'}
-                        </Label>
-                        <Input
-                          onMouseEnter={setIsHovering}
-                          onMouseLeave={setIsNotHovering}
-                          placeholder='John Doe'
-                          {...field}
-                          className='border-zinc-400 dark:border-zinc-700'
-                        />
-                      </>
-                    </FormControl>
-                    <FormMessage className='text-red-600' />
-                  </FormItem>
-                )}
-              />
-              <FormField
-                name='email'
-                render={({ field }) => (
-                  <FormItem>
-                    <FormControl>
-                      <>
-                        <Label>Email *</Label>
-                        <Input
-                          onMouseEnter={setIsHovering}
-                          onMouseLeave={setIsNotHovering}
-                          placeholder='johndoe@gmail.com'
-                          {...field}
-                          className='border-zinc-400 dark:border-zinc-700'
-                        />
-                      </>
-                    </FormControl>
-                    <FormMessage className='text-red-600' />
-                  </FormItem>
-                )}
-              />
-              <FormField
-                name='message'
-                render={({ field }) => (
-                  <FormItem>
-                    <FormControl>
-                      <>
-                        <Label>
-                          {language === 'en' && 'Message *'}
-                          {language === 'cs' && 'Zpráva *'}
-                        </Label>
-                        <Textarea
-                          onMouseEnter={setIsHovering}
-                          onMouseLeave={setIsNotHovering}
-                          placeholder={
-                            language === 'en'
-                              ? 'Write your message...'
-                              : 'Napištou svou zprávu...'
-                          }
-                          {...field}
-                          className='border-zinc-400 dark:border-zinc-700'
-                        />
-                      </>
-                    </FormControl>
-                    <FormMessage className='text-red-600' />
-                  </FormItem>
-                )}
-              />
+    <Container>
+      <Title
+        label={language === 'en' ? "let's work together" : 'spolupracujme'}
+      />
 
-              <Button
-                type='submit'
-                variant='rainbow'
-                className='mt-1 w-full'
-                onMouseEnter={setIsHovering}
-                onMouseLeave={setIsNotHovering}
-              >
-                {language === 'en' && 'Submit'}
-                {language === 'cs' && 'Odeslat'}
-              </Button>
-            </form>
-          </Form>
-        </Container>
-      </motion.div>
-    </div>
+      <Form {...form}>
+        <form
+          onSubmit={form.handleSubmit(onSubmit)}
+          className='space-y-5 max-w-[70ch] mx-auto'
+        >
+          <FormField
+            name='name'
+            render={({ field }) => (
+              <FormItem>
+                <FormControl>
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    transition={{ delay: 0.3 }}
+                  >
+                    <Label>
+                      {language === 'en' && 'Name *'}
+                      {language === 'cs' && 'Jméno *'}
+                    </Label>
+                    <Input
+                      onMouseEnter={setIsHovering}
+                      onMouseLeave={setIsNotHovering}
+                      placeholder='John Doe'
+                      {...field}
+                      className='border-zinc-400 dark:border-zinc-700'
+                    />
+                  </motion.div>
+                </FormControl>
+                <FormMessage className='text-red-600' />
+              </FormItem>
+            )}
+          />
+          <FormField
+            name='email'
+            render={({ field }) => (
+              <FormItem>
+                <FormControl>
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    transition={{ delay: 0.3 }}
+                  >
+                    <Label>Email *</Label>
+                    <Input
+                      onMouseEnter={setIsHovering}
+                      onMouseLeave={setIsNotHovering}
+                      placeholder='johndoe@gmail.com'
+                      {...field}
+                      className='border-zinc-400 dark:border-zinc-700'
+                    />
+                  </motion.div>
+                </FormControl>
+                <FormMessage className='text-red-600' />
+              </FormItem>
+            )}
+          />
+          <FormField
+            name='message'
+            render={({ field }) => (
+              <FormItem>
+                <FormControl>
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    transition={{ delay: 0.3 }}
+                  >
+                    <Label>
+                      {language === 'en' && 'Message *'}
+                      {language === 'cs' && 'Zpráva *'}
+                    </Label>
+                    <Textarea
+                      onMouseEnter={setIsHovering}
+                      onMouseLeave={setIsNotHovering}
+                      placeholder={
+                        language === 'en'
+                          ? 'Write your message...'
+                          : 'Napištou svou zprávu...'
+                      }
+                      {...field}
+                      className='border-zinc-400 dark:border-zinc-700'
+                    />
+                  </motion.div>
+                </FormControl>
+                <FormMessage className='text-red-600' />
+              </FormItem>
+            )}
+          />
+
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ delay: 0.3 }}
+          >
+            <Button
+              type='submit'
+              variant='rainbow'
+              className='mt-1 w-full'
+              onMouseEnter={setIsHovering}
+              onMouseLeave={setIsNotHovering}
+            >
+              {language === 'en' && 'Submit'}
+              {language === 'cs' && 'Odeslat'}
+            </Button>
+          </motion.div>
+        </form>
+      </Form>
+    </Container>
   )
 }
