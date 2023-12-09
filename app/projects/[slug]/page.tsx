@@ -9,6 +9,7 @@ import Link from 'next/link'
 import { useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { TechnologiesCarousel } from '@/components/technologies-carousel/technologies-carousel'
+import { Title } from '@/components/title'
 
 interface PageProps {
   params: {
@@ -59,28 +60,32 @@ export default function Page({ params }: PageProps) {
           >
             <div className='flex gap-20'>
               <div className='flex flex-col'>
-                <h4 className='uppercase text-zinc-600 dark:text-zinc-400'>
-                  client
+                <h4 className='uppercase text-zinc-600 dark:text-zinc-400 font-medium'>
+                  {language === 'en' && 'client'}
+                  {language === 'cs' && 'klient'}
                 </h4>
                 <Link
                   href={url}
                   target='_blank'
                   onMouseEnter={onMouseEnter}
                   onMouseLeave={onMouseLeave}
-                  className='underline text-xl md:text-2xl lg:text-3xl'
+                  className='underline text-xl md:text-2xl lg:text-3xl font-light'
                 >
                   {name}
                 </Link>
               </div>
               <div className='flex flex-col'>
-                <h4 className='uppercase text-zinc-600 dark:text-zinc-400'>
-                  year
+                <h4 className='uppercase text-zinc-600 dark:text-zinc-400 font-medium'>
+                  {language === 'en' && 'year'}
+                  {language === 'cs' && 'rok'}
                 </h4>
-                <p className='text-xl md:text-2xl lg:text-3xl'>{year}</p>
+                <p className='text-xl md:text-2xl lg:text-3xl font-light'>
+                  {year}
+                </p>
               </div>
             </div>
 
-            <h1 className='text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-semibold mt-14'>
+            <h1 className='text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-semibold mt-14'>
               {language === 'en' && <>{descriptionEn}</>}
               {language === 'cs' && <>{descriptionCs}</>}
             </h1>
@@ -94,15 +99,15 @@ export default function Page({ params }: PageProps) {
           />
         </div>
 
-        <motion.h3
+        <Title label={language === 'en' ? 'Showcase' : 'Ukázka'} />
+        <motion.img
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ delay: 0.3 }}
-          className='text-xl md:text-2xl lg:text-3xl xl:text-4xl font-semibold mb-2'
-        >
-          {language === 'en' && 'Showcase'}
-          {language === 'cs' && 'Ukázka'}
-        </motion.h3>
+          src={macbook}
+          alt={name}
+          className='mb-10 lg:mb-20 -mt-20'
+        />
         {images.map(image => (
           <motion.img
             initial={{ opacity: 0 }}
