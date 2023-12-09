@@ -32,8 +32,8 @@ export const Hero = () => {
               options={{
                 strings:
                   language === 'en'
-                    ? ['Developer', 'Designer']
-                    : ['Vývojář', 'Designer'],
+                    ? ['Developer', 'Designer', 'Programmer']
+                    : ['Vývojář', 'Designer', 'Programátor'],
                 autoStart: true,
                 loop: true,
               }}
