@@ -56,9 +56,9 @@ export default function Page({ params }: PageProps) {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ delay: 0.3 }}
-            className='grid place-content-center'
+            className='grid lg:place-content-center'
           >
-            <div className='flex gap-20'>
+            <div className='flex lg:gap-20 justify-between lg:justify-normal'>
               <div className='flex flex-col'>
                 <h4 className='uppercase text-zinc-600 dark:text-zinc-400 font-medium'>
                   {language === 'en' && 'client'}
@@ -69,7 +69,7 @@ export default function Page({ params }: PageProps) {
                   target='_blank'
                   onMouseEnter={onMouseEnter}
                   onMouseLeave={onMouseLeave}
-                  className='underline text-xl md:text-2xl lg:text-3xl font-light'
+                  className='underline text-2xl lg:text-3xl font-light'
                 >
                   {name}
                 </Link>
@@ -79,13 +79,11 @@ export default function Page({ params }: PageProps) {
                   {language === 'en' && 'year'}
                   {language === 'cs' && 'rok'}
                 </h4>
-                <p className='text-xl md:text-2xl lg:text-3xl font-light'>
-                  {year}
-                </p>
+                <p className='text-2xl lg:text-3xl font-light'>{year}</p>
               </div>
             </div>
 
-            <h1 className='text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-semibold mt-14'>
+            <h1 className='hidden lg:block lg:text-6xl xl:text-7xl 2xl:text-8xl font-semibold mt-14 text-center md:text-left'>
               {language === 'en' && <>{descriptionEn}</>}
               {language === 'cs' && <>{descriptionCs}</>}
             </h1>
@@ -96,6 +94,7 @@ export default function Page({ params }: PageProps) {
             transition={{ delay: 0.3 }}
             src={iphone}
             alt={name}
+            className='mt-10 lg:mt-0'
           />
         </div>
 
@@ -106,7 +105,7 @@ export default function Page({ params }: PageProps) {
           transition={{ delay: 0.3 }}
           src={macbook}
           alt={name}
-          className='mb-10 lg:mb-20 -mt-20'
+          className='mb-10 lg:mb-20 -mt-10 lg:-mt-20'
         />
         {images.map(image => (
           <motion.img
