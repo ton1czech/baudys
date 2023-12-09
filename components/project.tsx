@@ -45,12 +45,12 @@ export const Project: FC<ProjectProps> = ({
       >
         <img src={image} alt={name} />
 
-        <div className='flex justify-between mt-3'>
+        <div className='flex justify-between items-center mt-3'>
           <p className='font-semibold text-zinc-800 dark:text-zinc-200 text-xl md:text-2xl'>
             {language === 'en' && <>{descriptionEn}</>}
             {language === 'cs' && <>{descriptionCs}</>}
           </p>
-          <h3 className='text-zinc-600 italic dark:text-zinc-400 mb-2'>
+          <h3 className='text-zinc-600 italic dark:text-zinc-400'>
             {name}{' '}
             <span className='font-light text-sm not-italic'>| {year}</span>
           </h3>
