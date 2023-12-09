@@ -5,13 +5,17 @@ import { useLanguage } from '@/store/useLanguage'
 import Typewriter from 'typewriter-effect'
 import { MapPin } from 'lucide-react'
 import { motion } from 'framer-motion'
+// import dynamic from 'next/dynamic'
+// const LampCanvas = dynamic(() => import('./lamp/lamp'), {
+//   ssr: false,
+// })
 
 export const Hero = () => {
   const { language } = useLanguage()
 
   return (
     <motion.div
-      className='overflow-x-hidden min-h-screen'
+      className='overflow-x-hidden min-h-screen relative'
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ delay: 0.3 }}
@@ -64,6 +68,10 @@ export const Hero = () => {
           )}
         </div>
       </Container>
+
+      {/* <div className='h-screen w-screen absolute -left-52 top-3/4 -translate-y-1/2'>
+        <LampCanvas />
+      </div> */}
     </motion.div>
   )
 }

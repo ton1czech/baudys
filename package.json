@@ -17,6 +17,8 @@
     "@radix-ui/react-label": "^2.0.2",
     "@radix-ui/react-popover": "^1.0.7",
     "@radix-ui/react-slot": "^1.0.2",
+    "@react-three/drei": "^9.90.1",
+    "@react-three/fiber": "^8.15.12",
     "@studio-freight/lenis": "^1.0.29",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",
@@ -33,7 +35,9 @@
     "react-icons": "^4.12.0",
     "tailwind-merge": "^2.0.0",
     "tailwindcss-animate": "^1.0.7",
+    "three": "^0.159.0",
     "typewriter-effect": "^2.21.0",
+    "webgl-sdf-generator": "^1.1.1",
     "zod": "^3.22.4",
     "zustand": "^4.4.7"
   },
