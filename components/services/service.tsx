@@ -5,6 +5,7 @@ import { Button } from '../ui/button'
 import { useCursor } from '@/store/useCursor'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 
 interface ServiceProps {
   img: string
@@ -29,11 +30,14 @@ export const Service: FC<ServiceProps> = ({ img, label, body, href }) => {
         onMouseLeave={setIsNotHovering}
         className='grid lg:grid-cols-2 gap-4 lg:gap-10'
       >
-        <img
-          src={img}
-          alt={label}
-          className='rounded-lg group-hover:scale-[101%] transition'
-        />
+        <div className='rounded-lg aspect-video relative w-full h-full overflow-hidden'>
+          <Image
+            src={img}
+            alt={label}
+            fill
+            className='rounded-lg group-hover:scale-105 transition duration-300 object-cover object-center'
+          />
+        </div>
 
         <div className='grid place-content-center'>
           <h3 className='text-lg md:text-xl lg:text-2xl xl:text-3xl font-semibold mb-1'>

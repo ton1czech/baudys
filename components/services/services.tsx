@@ -8,16 +8,30 @@ export const Services = () => {
   const { language } = useLanguage()
 
   return (
-    <Container className='pb-40 lg:pb-60 xl:pb-80'>
+    <Container className='pb-40 lg:pb-60 xl:pb-80 space-y-8 md:space-y-20'>
       <Service
-        label='Web Development'
+        label={language === 'en' ? 'Web Development' : 'Tvorba Webu'}
         body={
           language === 'en'
             ? 'I will bring your visions to life. I responsibly design and build websites that represent you. I provide responsive design, intuitive navigation and aesthetic elements to reach your audience. I will bring your unique stories, ideas and messages to life through a high quality, modern website.'
             : 'Přinesu vašim vizím život. Zodpovědně navrhuji a vytvářím webové stránky, které vás reprezentují. Zajistím responzivní design, intuitivní navigaci a estetické prvky, abyste oslovili své publikum. Vaše jedinečné příběhy, nápady a poselství přineseu k životu prostřednictvím kvalitního a moderního webu.'
         }
-        img='/services/webdev.webp'
+        img='/services/web-development/hero.webp'
         href='/services/web-development'
+      />
+      <Service
+        label={
+          language === 'en'
+            ? 'Functions (BMW, MINI, SUPRA MK5)'
+            : 'Funkce (BMW, MINI, SUPRA MK5)'
+        }
+        body={
+          language === 'en'
+            ? 'Your vehicle holds endless possibilities that I can unlock and customise to your liking. I specialize in programming hidden features for BMW, MINI and Toyota Supra MK5. Thanks to my know-how, you can discover hidden possibilities and customize your car to your exact wishes.'
+            : 'Vaše vozidlo skrývá nekonečné možnosti, které mohu odblokovat a přizpůsobit podle vašich představ. Specializuji se v programování skrytých funkcí pro vozy BMW, MINI a Toyota Supra MK5. Díky mému know-how můžete objevit skryté možnosti a upravit si své auto přesně podle vašich přání.'
+        }
+        img='/services/functions/hero.webp'
+        href='/services/functions'
       />
     </Container>
   )
