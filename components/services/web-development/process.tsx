@@ -14,7 +14,7 @@ export const Process = () => {
         label={language === 'en' ? 'A unique approach' : 'Jedinečný přístup'}
         body={
           language === 'en'
-            ? 'I approach each project with a unique approach. Each website is unique to me and I try to bring personality and originality to it. I do not use any templates or pre-made projects. I create the entire website in a programming language and therefore there are no limitations. My goal is not just to create an ordinary website, but to create an environment that truly reflects your vision and values.'
+            ? 'I handle each project with a unique approach. Each website is special to me and I try to bring personality and originality to it. I do not use any templates or pre-made projects. I create the entire website in a programming language and therefore there are no limitations. My goal is not just to create an ordinary website, but to create an environment that truly reflects your vision and values.'
             : 'Každému projektu se věnuji s jedinečným přístupem. Každý web je pro mě unikátní a snažím se do něj přinést osobitost a originalitu. Nepoužívám žádné šablony ani předvytvořené projekty. Celý web vytvořím v programovacím jazyce a proto zde nejsou žádné omezení. Mým cílem není jen vytvořit běžný web, ale vytvořit prostředí, které skutečně odráží vaše vize a hodnoty.'
         }
         img='/services/process-1.webp'
