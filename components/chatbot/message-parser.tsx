@@ -40,6 +40,12 @@ export const MessageParser: FC<MessageParserProps> = ({
       message.includes(language === 'en' ? 'how much' : 'kolik')
     ) {
       actions.price()
+    } else if (
+      message.includes(language === 'en' ? 'experience' : 'zkušenosti') |
+      message.includes(language === 'en' ? 'history' : 'historie') |
+      message.includes(language === 'en' ? 'past' : 'minulost')
+    ) {
+      actions.experience()
     } else {
       actions.fallback()
     }

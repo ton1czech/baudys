@@ -79,6 +79,19 @@ export const ActionProvider: FC<ActionProviderProps> = ({
     }))
   }
 
+  const experience = () => {
+    const message = createChatBotMessage(
+      language === 'en'
+        ? 'I have been doing photography and design since 2015, programming since 2019.'
+        : 'Fotografování a designu se věnuji od roku 2015, programování od roku 2019.'
+    )
+
+    setState((prev: any) => ({
+      ...prev,
+      messages: [...prev.messages, message],
+    }))
+  }
+
   return (
     <div>
       {React.Children.map(children, child => {
@@ -89,6 +102,7 @@ export const ActionProvider: FC<ActionProviderProps> = ({
             question,
             time,
             price,
+            experience,
           },
         })
       })}

@@ -17,6 +17,11 @@ export const Options = (props: any) => {
       handler: props.actionProvider.price,
       id: 2,
     },
+    {
+      text: language === 'en' ? 'Experience' : 'Zkušenosti',
+      handler: props.actionProvider.experience,
+      id: 3,
+    },
   ]
 
   const buttonsMarkup = options.map(option => (
