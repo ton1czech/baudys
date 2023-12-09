@@ -4,16 +4,27 @@ import { useCursor } from '@/store/useCursor'
 import Link from 'next/link'
 import { FC } from 'react'
 import { motion } from 'framer-motion'
+import { useLanguage } from '@/store/useLanguage'
 
 interface ProjectProps {
   name: string
   year: number
   image: string
   href: string
+  descriptionEn: string
+  descriptionCs: string
 }
 
-export const Project: FC<ProjectProps> = ({ name, year, image, href }) => {
+export const Project: FC<ProjectProps> = ({
+  name,
+  year,
+  image,
+  href,
+  descriptionEn,
+  descriptionCs,
+}) => {
   const { setIsHovering, setIsNotHovering, setType } = useCursor()
+  const { language } = useLanguage()
 
   const onMouseEnter = () => {
     setIsHovering()
@@ -34,13 +45,15 @@ export const Project: FC<ProjectProps> = ({ name, year, image, href }) => {
       >
         <img src={image} alt={name} />
 
-        <div className='flex justify-between'>
-          <h3 className='font-semibold text-zinc-800 dark:text-zinc-200 text-lg'>
-            {name}
-          </h3>
-          <p className='font-light text-zinc-600 dark:text-zinc-400 italic text-sm'>
-            {year}
+        <div className='flex justify-between mt-3'>
+          <p className='font-semibold text-zinc-800 dark:text-zinc-200 text-xl md:text-2xl'>
+            {language === 'en' && <>{descriptionEn}</>}
+            {language === 'cs' && <>{descriptionCs}</>}
           </p>
+          <h3 className='text-zinc-600 italic dark:text-zinc-400 mb-2'>
+            {name}{' '}
+            <span className='font-light text-sm not-italic'>| {year}</span>
+          </h3>
         </div>
       </motion.div>
     </Link>

@@ -1,6 +1,5 @@
 import { Contact } from '@/components/contact'
-import { Container } from '@/components/container'
-import { Projects } from '@/components/homepage/projects'
+import { Projects } from '@/components/projects'
 import { Features } from '@/components/services/web-development/features'
 import { Intro } from '@/components/services/web-development/intro'
 import { Process } from '@/components/services/web-development/process'
