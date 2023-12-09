@@ -48,11 +48,11 @@ export const Navbar = () => {
         >
           <Link
             href='/'
-            className='font-bold text-2xl'
+            className='font-bold text-2xl hover:text-purple-500 transition duration-300'
             onMouseEnter={setIsHovering}
             onMouseLeave={setIsNotHovering}
           >
-            LOGO
+            BAUDYŠ
           </Link>
 
           <div className='items-center hidden md:flex'>
