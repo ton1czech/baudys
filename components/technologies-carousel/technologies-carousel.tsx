@@ -17,14 +17,9 @@ export const TechnologiesCarousel = () => {
       className='relative z-10 overflow-hidden pb-20 lg:pb-60 xl:pb-80'
     >
       <Container>
-        <Title
-          label={
-            language === 'en'
-              ? 'The Technologies I Use'
-              : 'Technologie, Které Používám'
-          }
-        />
+        <Title label={language === 'en' ? 'I use' : 'Používám'} />
       </Container>
+
       <Logos />
     </motion.div>
   )
