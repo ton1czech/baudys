@@ -6,19 +6,11 @@ import { useCursor } from '@/store/useCursor'
 import { ArrowRight, ExternalLink } from 'lucide-react'
 
 export const Cursor = () => {
-  const { isHovering, type } = useCursor()
-
-  const [mousePosition, setMousePosition] = useState({
-    x: 0,
-    y: 0,
-  })
+  const { isHovering, type, mousePosition, setMousePosition } = useCursor()
 
   useEffect(() => {
     const mouseMove = (e: MouseEvent) => {
-      setMousePosition({
-        x: e.clientX,
-        y: e.clientY,
-      })
+      setMousePosition(e.clientX, e.clientY)
     }
 
     window.addEventListener('mousemove', mouseMove)
