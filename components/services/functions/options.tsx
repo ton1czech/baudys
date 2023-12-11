@@ -1,6 +1,9 @@
+'use client'
+
 import { Container } from '@/components/container'
 import { Title } from '@/components/title'
 import { useLanguage } from '@/store/useLanguage'
+import { motion } from 'framer-motion'
 
 interface ItemProps {
   label: string
@@ -8,11 +11,16 @@ interface ItemProps {
 
 const Item = ({ label }: ItemProps) => {
   return (
-    <div className='border border-purple-500/50 rounded-lg p-2 bg-purple-500/10'>
+    <motion.div
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ delay: 0.3 }}
+      className='border border-purple-500/50 rounded-lg p-2 bg-purple-500/10'
+    >
       <p className='text-lg text-zinc-800 dark:text-zinc-200 text-center'>
         {label}
       </p>
-    </div>
+    </motion.div>
   )
 }
 
@@ -78,10 +86,15 @@ export const Options = () => {
         <Item
           label={language === 'en' ? 'Video in Motion' : 'Video v Pohybu'}
         />
-        <p className='text-center p-2 text-lg text-zinc-800 dark:text-zinc-200'>
+        <motion.p
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ delay: 0.3 }}
+          className='text-center p-2 text-lg text-zinc-800 dark:text-zinc-200'
+        >
           {language === 'en' && 'and much more...'}
           {language === 'cs' && 'a mnohem více...'}
-        </p>
+        </motion.p>
       </div>
     </Container>
   )
