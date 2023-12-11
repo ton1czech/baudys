@@ -32,6 +32,18 @@ export const Services = () => {
         }
         img='/services/functions/hero.webp'
         href='/services/functions'
+        center
+      />
+      <Service
+        label={language === 'en' ? 'TPMS' : 'TPMS'}
+        body={
+          language === 'en'
+            ? 'I specialize in providing TPMS (tire pressure monitoring system) services and smart valve installation for compatible vehicles. With an emphasis on expertise and care, I focus on precision TPMS installation with smart valves if your vehicle is compatible with this technology.'
+            : 'Specializuji se na poskytování služeb v oblasti TPMS (systému sledování tlaku v pneumatikách) a instalaci chytrých ventilků pro kompatibilní vozidla. S důrazem na odborné znalosti a pečlivost se zaměřuji na precizní instalaci TPMS s chytrými ventilkami, pokud je vaše vozidlo kompatibilní s touto technologií.'
+        }
+        img='/services/tpms/hero.webp'
+        href='/services/tpms'
+        center
       />
     </Container>
   )

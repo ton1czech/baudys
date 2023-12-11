@@ -6,15 +6,23 @@ import { useCursor } from '@/store/useCursor'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
+import { cn } from '@/lib/utils'
 
 interface ServiceProps {
   img: string
   label: string
   body: string
   href: string
+  center?: boolean
 }
 
-export const Service: FC<ServiceProps> = ({ img, label, body, href }) => {
+export const Service: FC<ServiceProps> = ({
+  img,
+  label,
+  body,
+  href,
+  center,
+}) => {
   const { setIsHovering, setIsNotHovering } = useCursor()
 
   return (
@@ -35,7 +43,10 @@ export const Service: FC<ServiceProps> = ({ img, label, body, href }) => {
             src={img}
             alt={label}
             fill
-            className='rounded-lg group-hover:scale-105 transition duration-300 object-cover object-center'
+            className={cn(
+              'rounded-lg group-hover:scale-105 transition duration-300 object-cover',
+              center ? 'object-center' : 'object-bottom'
+            )}
           />
         </div>
 
