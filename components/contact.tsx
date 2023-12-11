@@ -196,7 +196,12 @@ export const Contact = () => {
         <span className='w-full h-px bg-muted-foreground/60 dark:bg-muted-foreground/30' />
       </motion.div>
 
-      <motion.p className='flex gap-2 items-center flex-nowrap text-lg md:text-xl text-center mx-auto justify-center'>
+      <motion.p
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ delay: 0.3 }}
+        className='flex gap-2 items-center flex-nowrap text-lg md:text-xl text-center mx-auto justify-center'
+      >
         <Phone className='w-4 h-4' />
         {language === 'en' && 'Call me on '}
         {language === 'cs' && 'Zavolejte na '}
