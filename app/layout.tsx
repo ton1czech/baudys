@@ -56,7 +56,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
         <Script
           async
-          src='https://www.googletagmanager.com/gtag/js?id=G-HHFFWCNQY9'
+          src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GTAG}`}
         ></Script>
         <Script>
           {`
@@ -64,7 +64,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
              function gtag(){dataLayer.push(arguments);}
              gtag('js', new Date());
 
-             gtag('config', 'G-HHFFWCNQY9');
+             gtag('config', '${process.env.NEXT_PUBLIC_GTAG}');
           `}
         </Script>
       </body>
