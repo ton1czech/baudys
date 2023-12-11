@@ -24,7 +24,7 @@ export const Features = () => {
         <Accordion
           type='multiple'
           className='space-y-4'
-          defaultValue={['frontend', 'newsletter']}
+          defaultValue={['frontend', 'newsletter', 'analytics']}
         >
           <motion.div
             initial={{ opacity: 0 }}
