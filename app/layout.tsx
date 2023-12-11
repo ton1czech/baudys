@@ -58,7 +58,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           async
           src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GTAG}`}
         ></Script>
-        <Script>
+        <Script id='gtag'>
           {`
              window.dataLayer = window.dataLayer || [];
              function gtag(){dataLayer.push(arguments);}
