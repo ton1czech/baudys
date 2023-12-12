@@ -52,7 +52,7 @@ export const Navbar = () => {
             onMouseEnter={setIsHovering}
             onMouseLeave={setIsNotHovering}
           >
-            BAUDYŠ
+            <img src='/logo.webp' alt='logo' className='w-12 h-12' />
           </Link>
 
           <div className='items-center hidden md:flex'>
