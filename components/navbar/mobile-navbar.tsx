@@ -2,10 +2,12 @@
 
 import { FC } from 'react'
 import { motion } from 'framer-motion'
-import { X } from 'lucide-react'
+import { ArrowRight, X } from 'lucide-react'
 import { MobileNavItem } from './mobile-nav-item'
 import { useCursor } from '@/store/useCursor'
 import { useLanguage } from '@/store/useLanguage'
+import { Button } from '../ui/button'
+import Link from 'next/link'
 
 interface MobileNavbarProps {
   setIsOpen: (bool: boolean) => void
@@ -56,6 +58,16 @@ export const MobileNavbar: FC<MobileNavbarProps> = ({ setIsOpen }) => {
           href='/projects'
           setIsOpen={setIsOpen}
         />
+        <li onMouseEnter={setIsHovering} onMouseLeave={setIsNotHovering}>
+          <Button variant='rainbow' className=''>
+            <Link href='/contact' className='flex gap-1 items-center'>
+              {language === 'en' && <>Let&apos;s talk</>}
+              {language === 'cs' && <>Promluvme si</>}
+
+              <ArrowRight className='w-4 h-4' />
+            </Link>
+          </Button>
+        </li>
       </motion.ul>
     </motion.div>
   )
