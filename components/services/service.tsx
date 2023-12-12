@@ -7,6 +7,7 @@ import Link from 'next/link'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import { cn } from '@/lib/utils'
+import { useLanguage } from '@/store/useLanguage'
 
 interface ServiceProps {
   img: string
@@ -24,6 +25,7 @@ export const Service: FC<ServiceProps> = ({
   center,
 }) => {
   const { setIsHovering, setIsNotHovering } = useCursor()
+  const { language } = useLanguage()
 
   return (
     <motion.div
@@ -57,7 +59,10 @@ export const Service: FC<ServiceProps> = ({
           <p className='text-justify text-zinc-700 dark:text-zinc-400 mb-6'>
             {body}
           </p>
-          <Button variant='rainbow'>Learn More</Button>
+          <Button variant='rainbow'>
+            {language === 'en' && 'Learn More'}
+            {language === 'cs' && 'Dozvědět se Více'}
+          </Button>
         </div>
       </Link>
     </motion.div>

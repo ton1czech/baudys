@@ -22,7 +22,7 @@ export const ProcessItem: FC<ProcessItemProps> = ({
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ delay: 0.3 }}
-      className='grid reverse lg:grid-cols-2 lg:gap-10'
+      className='grid reverse lg:grid-cols-2 gap-3 lg:gap-10'
     >
       <div
         className={cn(
@@ -41,7 +41,7 @@ export const ProcessItem: FC<ProcessItemProps> = ({
           align === 'right' && 'lg:order-2'
         )}
       >
-        <h2 className='text-xl md:text-2xl lg:text-3xl uppercase font-semibold mb-2'>
+        <h2 className='text-xl md:text-2xl lg:text-3xl uppercase font-semibold mb-1 md:mb-2'>
           {label}
         </h2>
         <p className='text-zinc-700 dark:text-zinc-300 text-justify'>{body}</p>
