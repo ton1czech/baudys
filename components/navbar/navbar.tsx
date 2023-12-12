@@ -48,7 +48,7 @@ export const Navbar = () => {
         >
           <Link
             href='/'
-            className='font-bold text-2xl hover:text-purple-500 transition duration-300'
+            className='hover:scale-[101%] transition duration-300'
             onMouseEnter={setIsHovering}
             onMouseLeave={setIsNotHovering}
           >
