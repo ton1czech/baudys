@@ -11,13 +11,17 @@ import ToasterProvider from '@/providers/toaster-provider'
 import { LenisProvider } from '@/providers/lenis-provider'
 import { ChatbotProvider } from '@/components/chatbot/chatbot-provider'
 import Script from 'next/script'
+import { siteConfig } from '@/config/site'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://baudys.dev'),
-  title: 'Daniel Anthony Baudyš',
-  description: '',
+  title: {
+    default: siteConfig.name,
+    template: `%s | ${siteConfig.name}`,
+  },
+  description: siteConfig.description,
   authors: [
     { name: 'Daniel Anthony Baudyš', url: 'https://github.com/ton1czech' },
   ],
