@@ -5,6 +5,7 @@ import { motion } from 'framer-motion'
 import { X } from 'lucide-react'
 import { MobileNavItem } from './mobile-nav-item'
 import { useCursor } from '@/store/useCursor'
+import { useLanguage } from '@/store/useLanguage'
 
 interface MobileNavbarProps {
   setIsOpen: (bool: boolean) => void
@@ -12,6 +13,7 @@ interface MobileNavbarProps {
 
 export const MobileNavbar: FC<MobileNavbarProps> = ({ setIsOpen }) => {
   const { setIsHovering, setIsNotHovering } = useCursor()
+  const { language } = useLanguage()
 
   return (
     <motion.div
@@ -45,12 +47,12 @@ export const MobileNavbar: FC<MobileNavbarProps> = ({ setIsOpen }) => {
         className='flex flex-col gap-6 absolute left-1/2 top-60 -translate-x-1/2'
       >
         <MobileNavItem
-          label='Services'
+          label={language === 'en' ? 'Services' : 'Služby'}
           href='/services'
           setIsOpen={setIsOpen}
         />
         <MobileNavItem
-          label='Projects'
+          label={language === 'en' ? 'Projects' : 'Projekty'}
           href='/projects'
           setIsOpen={setIsOpen}
         />
