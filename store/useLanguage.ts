@@ -14,8 +14,8 @@ export const useLanguage = create(
     set => ({
       language:
         typeof localStorage !== 'undefined'
-          ? localStorage.getItem('language-storage') || 'en'
-          : 'en',
+          ? localStorage.getItem('language-storage') || 'cs'
+          : 'cs',
       imgSrc: lang => `/flags/${lang}.webp`,
       setLanguage: value => {
         set({ language: value })
