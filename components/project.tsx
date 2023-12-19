@@ -36,8 +36,11 @@ export const Project: FC<ProjectProps> = ({ name, year, image, href }) => {
       >
         <img src={image} alt={name} />
 
-        <h3 className='text-zinc-600 italic dark:text-zinc-400 mt-3'>
-          {name} <span className='font-light text-sm not-italic'>| {year}</span>
+        <h3 className='text-zinc-700 italic dark:text-zinc-300 mt-3'>
+          {name}{' '}
+          <span className='font-light text-sm not-italic text-zinc-600 dark:text-zinc-400'>
+            | {year}
+          </span>
         </h3>
       </motion.div>
     </Link>
