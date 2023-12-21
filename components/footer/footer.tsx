@@ -69,6 +69,7 @@ export const Footer = () => {
           &copy;{new Date().getFullYear()}{' '}
           <Link
             href='https://github.com/ton1czech'
+            target='_blank'
             className='underline'
             onMouseEnter={setIsHovering}
             onMouseLeave={setIsNotHovering}
