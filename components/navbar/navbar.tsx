@@ -48,11 +48,15 @@ export const Navbar = () => {
         >
           <Link
             href='/'
-            className='hover:scale-[101%] transition duration-300'
+            className='transition duration-300'
             onMouseEnter={setIsHovering}
             onMouseLeave={setIsNotHovering}
           >
-            <img src='/logo.webp' alt='logo' className='w-12 h-12' />
+            <img
+              src='/logo.webp'
+              alt='logo'
+              className='w-12 h-12 hover:scale-[103%] transition'
+            />
           </Link>
 
           <div className='items-center hidden md:flex'>
