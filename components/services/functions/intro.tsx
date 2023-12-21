@@ -14,7 +14,7 @@ export const Intro = () => {
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ delay: 0.3 }}
-        className='w-full'
+        className='w-full rounded-lg'
       >
         <source src='https://i.imgur.com/LHDtFdI.mp4' />
       </motion.video>

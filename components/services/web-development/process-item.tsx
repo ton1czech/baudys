@@ -26,12 +26,16 @@ export const ProcessItem: FC<ProcessItemProps> = ({
     >
       <div
         className={cn(
-          'relative overflow-hidden aspect-video',
+          'relative overflow-hidden aspect-video rounded-lg',
           align === 'left' && 'lg:order-2',
           align === 'right' && 'lg:order-1'
         )}
       >
-        <img src={img} alt={label} className='absolute object-cover' />
+        <img
+          src={img}
+          alt={label}
+          className='absolute object-cover rounded-lg'
+        />
         <div className='w-full h-full bg-black/30 absolute' />
       </div>
       <div
