@@ -18,14 +18,16 @@ import Link from 'next/link'
 import { FC } from 'react'
 import { motion } from 'framer-motion'
 import { FaDocker, FaKaggle, FaSteam } from 'react-icons/fa'
+import { cn } from '@/lib/utils'
 
 interface LinkItemProps {
   icon: LucideIcon
   label: string
   href: string
+  color?: string
 }
 
-const LinkItem: FC<LinkItemProps> = ({ icon: Icon, label, href }) => {
+const LinkItem: FC<LinkItemProps> = ({ icon: Icon, label, href, color }) => {
   const { setIsHovering, setIsNotHovering } = useCursor()
 
   return (
@@ -36,7 +38,12 @@ const LinkItem: FC<LinkItemProps> = ({ icon: Icon, label, href }) => {
       className='w-full'
     >
       <Button
-        className='w-full lg:w-1/2 text-lg font-semibold border bg-zinc-300/80 hover:bg-zinc-400/70 border-zinc-800/50 text-zinc-800 dark:bg-zinc-800/80 dark:hover:bg-zinc-900/70 dark:border-zinc-200/50 dark:text-zinc-200'
+        className={cn(
+          'w-full lg:w-1/2 text-lg font-semibold border border-zinc-800/50 dark:border-zinc-200/50 dark:text-zinc-200',
+          color
+            ? color
+            : 'bg-zinc-300/80 hover:bg-zinc-400/70 text-zinc-800 dark:bg-zinc-800/80 dark:hover:bg-zinc-900/70'
+        )}
         onMouseEnter={setIsHovering}
         onMouseLeave={setIsNotHovering}
       >
@@ -105,31 +112,37 @@ export default function Page() {
             href='https://www.linkedin.com/in/ton1czech/'
             label='Linkedin'
             icon={Linkedin}
+            color='bg-teal-600/80 hover:bg-teal-700/80'
           />
           <LinkItem
             href='https://gitlab.com/ton1czech/'
             label='Github'
             icon={Github}
+            color='bg-fuchsia-700/80 hover:bg-fuchsia-800/80'
           />
           <LinkItem
             href='https://github.com/ton1czech/'
             label='Gitlab'
             icon={Gitlab}
+            color='bg-fuchsia-700/80 hover:bg-fuchsia-800/80'
           />
           <LinkItem
             href='https://hub.docker.com/u/ton1czech'
             label='DockerHub'
             icon={FaDocker}
+            color='bg-fuchsia-700/80 hover:bg-fuchsia-800/80'
           />
           <LinkItem
             href='https://www.kaggle.com/ton1czech'
             label='Kaggle'
             icon={FaKaggle}
+            color='bg-fuchsia-700/80 hover:bg-fuchsia-800/80'
           />
           <LinkItem
             href='https://steamcommunity.com/id/ton1czech/'
             label='Steam'
             icon={FaSteam}
+            color='bg-indigo-700/80 hover:bg-indigo-800/80'
           />
         </div>
       </Container>
