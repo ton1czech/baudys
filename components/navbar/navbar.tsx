@@ -12,8 +12,10 @@ import { useLanguage } from '@/store/useLanguage'
 import { AnimatePresence } from 'framer-motion'
 import { MobileNavbar } from './mobile-navbar'
 import { useCursor } from '@/store/useCursor'
+import { usePathname } from 'next/navigation'
 
 export const Navbar = () => {
+  const pathname = usePathname()
   const { language } = useLanguage()
   const { setIsHovering, setIsNotHovering } = useCursor()
 
@@ -71,26 +73,46 @@ export const Navbar = () => {
 
             <hr className='w-px h-8 bg-zinc-600/50 dark:bg-zinc-400/50 ml-6 mr-8' />
 
-            <ul className='flex gap-6 items-center'>
-              <NavItem
-                label={language === 'en' ? 'Services' : 'Služby'}
-                href='/services'
-              />
-              <NavItem
-                label={language === 'en' ? 'Projects' : 'Projekty'}
-                href='/projects'
-              />
-              <li onMouseEnter={setIsHovering} onMouseLeave={setIsNotHovering}>
-                <Button variant='rainbow' className=''>
-                  <Link href='/contact' className='flex gap-1 items-center'>
-                    {language === 'en' && <>Let&apos;s talk</>}
-                    {language === 'cs' && <>Promluvme si</>}
+            {pathname.startsWith('/services') ? (
+              <ul className='flex gap-6 items-center'>
+                <NavItem
+                  label={language === 'en' ? 'Web Development' : 'Tvorba Webu'}
+                  href='/services/web-development'
+                />
+                <NavItem
+                  label={language === 'en' ? 'Functions' : 'Funkce'}
+                  href='/services/functions'
+                />
+                <NavItem
+                  label={language === 'en' ? 'TPMS' : 'TPMS'}
+                  href='/services/tpms'
+                />
+              </ul>
+            ) : (
+              <ul className='flex gap-6 items-center'>
+                <NavItem
+                  label={language === 'en' ? 'Services' : 'Služby'}
+                  href='/services'
+                />
+                <NavItem
+                  label={language === 'en' ? 'Projects' : 'Projekty'}
+                  href='/projects'
+                />
+                <li
+                  onMouseEnter={setIsHovering}
+                  onMouseLeave={setIsNotHovering}
+                >
+                  <Button variant='rainbow' className=''>
+                    <Link href='/contact' className='flex gap-1 items-center'>
+                      {language === 'en' && <>Let&apos;s talk</>}
+                      {language === 'cs' && <>Promluvme si</>}
 
-                    <ArrowRight className='w-4 h-4' />
-                  </Link>
-                </Button>
-              </li>
-            </ul>
+                      <ArrowRight className='w-4 h-4' />
+                    </Link>
+                  </Button>
+                </li>
+              </ul>
+            )}
           </div>
 
           <div className='flex items-center md:hidden'>
