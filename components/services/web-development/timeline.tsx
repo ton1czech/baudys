@@ -1,6 +1,7 @@
 'use client'
 
 import { Container } from '@/components/container'
+import { Title } from '@/components/title'
 import { useLanguage } from '@/store/useLanguage'
 import { motion } from 'framer-motion'
 
@@ -9,6 +10,11 @@ export const Timeline = () => {
 
   return (
     <Container className='pb-40 lg:pb-60 xl:pb-80'>
+      <Title
+        label={
+          language === 'en' ? 'collaboration timeline' : 'průběh spolupráce'
+        }
+      />
       <ol className='border-l-2 border-zinc-400 dark:border-zinc-600 space-y-20 lg:space-y-10 max-w-prose mx-auto'>
         <motion.li
           initial={{ opacity: 0 }}
