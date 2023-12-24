@@ -18,7 +18,7 @@ export const Features = () => {
 
   return (
     <Container className='pb-40 lg:pb-60 xl:pb-80'>
-      <Title label='Features' />
+      <Title label={language === 'en' ? 'Features' : 'Funkce'} />
 
       <div className='grid lg:grid-cols-2 gap-4 lg:gap-6'>
         <Accordion
