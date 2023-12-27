@@ -15,7 +15,7 @@ export const Timeline = () => {
           language === 'en' ? 'collaboration timeline' : 'průběh spolupráce'
         }
       />
-      <ol className='border-l-2 border-zinc-400 dark:border-zinc-600 space-y-20 lg:space-y-10 max-w-prose mx-auto'>
+      <ol className='border-l-2 border-zinc-400 dark:border-zinc-600 space-y-20 lg:space-y-32 max-w-[80ch] mx-auto'>
         <motion.li
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -39,6 +39,7 @@ export const Timeline = () => {
               {language === 'cs' &&
                 ' V prvním týdnu se společně zaměříme na vytvoření základní struktury a designu webu. Kreativita se setká s funkcionalitou, abychom vytvořili vizuální podobu, která bude zaujímat a lákat návštěvníky.'}
             </p>
+            <img src='/services/web-development/timeline/1.webp' />
           </div>
         </motion.li>
         <motion.li
@@ -64,6 +65,7 @@ export const Timeline = () => {
               {language === 'cs' &&
                 'Druhý týden bude věnován naplnění obsahu, který bude nejen esteticky působivý, ale bude také sdělovat důležité informace. Společně pracujeme na textech, obrázcích a dalších prvcích, které dodají obsahu webu jeho význam a hodnotu.'}
             </p>
+            <img src='/services/web-development/timeline/2.webp' />
           </div>
         </motion.li>
         <motion.li
@@ -89,6 +91,7 @@ export const Timeline = () => {
               {language === 'cs' &&
                 'Třetí týden se zaměříme na detaily a jemné úpravy. Věnujeme se všem drobným úpravám, které zajistí, že web bude působit profesionálně a přesně podle vašich představ.'}
             </p>
+            <img src='/services/web-development/timeline/3.webp' />
           </div>
         </motion.li>
         <motion.li
@@ -114,6 +117,7 @@ export const Timeline = () => {
               {language === 'cs' &&
                 'Poslední týden je věnován finálním přípravám k spuštění webu. Zkontrolujeme všechny prvky, abychom zajistili, že váš web je připraven k uvedení do provozu a k přivítání vašich návštěvníků.'}
             </p>
+            <img src='/services/web-development/timeline/4.webp' />
           </div>
         </motion.li>
       </ol>
