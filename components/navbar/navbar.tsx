@@ -7,7 +7,7 @@ import { cn } from '@/lib/utils'
 import LanguageSelector from './language-selector'
 import { ModeToggle } from './mode-toggle'
 import Link from 'next/link'
-import { ArrowRight, Menu } from 'lucide-react'
+import { ArrowLeft, ArrowRight, Menu } from 'lucide-react'
 import { useLanguage } from '@/store/useLanguage'
 import { AnimatePresence } from 'framer-motion'
 import { MobileNavbar } from './mobile-navbar'
@@ -21,6 +21,7 @@ export const Navbar = () => {
 
   const [isOpen, setIsOpen] = useState<boolean>(false)
   const [isTopOfTheScreen, setIsTopOfTheScreen] = useState<boolean>(false)
+  const [isServicesPage, setIsServicesPage] = useState<boolean>(false)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -33,6 +34,12 @@ export const Navbar = () => {
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
+
+  useEffect(() => {
+    if (pathname.startsWith('/services')) {
+      setIsServicesPage(true)
+    }
+  }, [pathname])
 
   return (
     <>
@@ -73,8 +80,14 @@ export const Navbar = () => {
 
             <hr className='w-px h-8 bg-zinc-600/50 dark:bg-zinc-400/50 ml-6 mr-8' />
 
-            {pathname.startsWith('/services') ? (
+            {isServicesPage ? (
               <ul className='flex gap-6 items-center'>
+                <ArrowLeft
+                  className='text-zinc-600 dark:text-zinc-400 w-5 h-5'
+                  onMouseEnter={setIsHovering}
+                  onMouseLeave={setIsNotHovering}
+                  onClick={() => setIsServicesPage(false)}
+                />
                 <NavItem
                   label={language === 'en' ? 'Web Development' : 'Tvorba Webu'}
                   href='/services/web-development'
