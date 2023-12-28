@@ -46,7 +46,7 @@ export const MobileNavbar: FC<MobileNavbarProps> = ({ setIsOpen }) => {
         initial={{ y: 50, opacity: 0, x: '-50%' }}
         animate={{ y: 0, opacity: 1, x: '-50%' }}
         transition={{ delay: 0.5 }}
-        className='flex flex-col gap-6 absolute left-1/2 top-60 -translate-x-1/2'
+        className='flex flex-col gap-6 absolute left-1/2 top-60 -translate-x-1/2 items-center text-center'
       >
         <MobileNavItem
           label={language === 'en' ? 'Services' : 'Služby'}
@@ -59,12 +59,12 @@ export const MobileNavbar: FC<MobileNavbarProps> = ({ setIsOpen }) => {
           setIsOpen={setIsOpen}
         />
         <li onMouseEnter={setIsHovering} onMouseLeave={setIsNotHovering}>
-          <Button variant='rainbow' className=''>
-            <Link href='/contact' className='flex gap-1 items-center'>
+          <Button variant='rainbow' className='py-8'>
+            <Link href='/contact' className='flex gap-2 items-center text-4xl'>
               {language === 'en' && <>Let&apos;s talk</>}
               {language === 'cs' && <>Promluvme si</>}
 
-              <ArrowRight className='w-4 h-4' />
+              <ArrowRight className='w-8 h-8' />
             </Link>
           </Button>
         </li>
