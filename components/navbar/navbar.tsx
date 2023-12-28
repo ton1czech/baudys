@@ -64,7 +64,7 @@ export const Navbar = () => {
             <img
               src='/logo.webp'
               alt='logo'
-              className='w-12 h-12 hover:scale-[103%] transition'
+              className='w-12 h-12 hover:scale-[103%] hover:rotate-6 transition'
             />
           </Link>
 
