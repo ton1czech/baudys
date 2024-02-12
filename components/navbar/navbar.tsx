@@ -41,6 +41,12 @@ export const Navbar = () => {
     }
   }, [pathname])
 
+  useEffect(() => {
+    if (!pathname.startsWith('/services')) {
+      setIsServicesPage(false)
+    }
+  }, [pathname])
+
   return (
     <>
       <nav
