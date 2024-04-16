@@ -43,7 +43,7 @@ const LanguageSelector = () => {
           className='w-[70px] border-none justify-between dark:text-zinc-200 dark:hover:text-zinc-300 text-zinc-900 hover:text-zinc-800 bg-transparent'
         >
           <Image src={imgSrc(language)} width={30} height={30} alt={language} />
-          <ChevronsUpDown className='w-4 h-4 my-2 opacity-90 shrink-0' />
+          <ChevronsUpDown className='w-4 h-4 my-2 opacity-70 shrink-0 ml-1' />
         </Button>
       </PopoverTrigger>
       <PopoverContent className='w-[100px] p-2 z-[1001] bg-zinc-100 dark:bg-zinc-900 backdrop-blur-lg border-zinc-500/40'>
