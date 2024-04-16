@@ -1,14 +1,14 @@
 import type { Metadata, Viewport } from 'next'
 import { Inter } from 'next/font/google'
-import './globals.css'
 import { cn } from '@/lib/utils'
 import { Navbar } from '@/components/navbar/navbar'
 import { ThemeProvider } from '@/providers/theme-provider'
 import { Cursor } from '@/components/cursor'
 import { Footer } from '@/components/footer/footer'
 import ToasterProvider from '@/providers/toaster-provider'
-import Script from 'next/script'
 import { siteConfig } from '@/config/site'
+import './globals.css'
+import { Cookies } from '@/components/cookies'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -47,25 +47,12 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         >
           <ToasterProvider />
           <Cursor />
+          <Cookies />
 
           <Navbar />
           {children}
           <Footer />
         </ThemeProvider>
-
-        <Script
-          async
-          src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GTAG}`}
-        ></Script>
-        <Script id='gtag'>
-          {`
-             window.dataLayer = window.dataLayer || [];
-             function gtag(){dataLayer.push(arguments);}
-             gtag('js', new Date());
-
-             gtag('config', '${process.env.NEXT_PUBLIC_GTAG}');
-          `}
-        </Script>
       </body>
     </html>
   )
