@@ -10,6 +10,7 @@ import { useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { TechnologiesCarousel } from '@/components/technologies-carousel/technologies-carousel'
 import { Title } from '@/components/title'
+import { ChevronRight } from 'lucide-react'
 
 interface PageProps {
   params: {
@@ -51,6 +52,18 @@ export default function Page({ params }: PageProps) {
   return (
     <div className='mt-28 lg:mt-32 mb-20 lg:mb-32'>
       <Container className='pb-40 lg:pb-60 xl:pb-80'>
+        <p className='inline-flex items-center gap-2 text-zinc-600 dark:text-zinc-400'>
+          <Link
+            onMouseEnter={setIsHovering}
+            onMouseLeave={setIsNotHovering}
+            href='/projects'
+          >
+            {language === 'en' && 'projects'}
+            {language === 'cs' && 'projekty'}
+          </Link>
+          <ChevronRight size={18} />
+          <span className='font-bold'>{name}</span>
+        </p>
         <div className='grid lg:grid-cols-[3fr_1fr] mb-10 lg:mb-20 xl:mb-32'>
           <motion.div
             initial={{ opacity: 0 }}

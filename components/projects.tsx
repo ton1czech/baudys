@@ -17,15 +17,15 @@ export const Projects = () => {
       <div className='grid lg:grid-cols-2 gap-20'>
         {projects
           .slice(0, 2)
-          .map(({ name, year, image, href, descriptionEn, descriptionCs }) => (
+          .map(({ name, year, image, href, servicesEn, servicesCs }) => (
             <Project
               key={href}
               name={name}
               year={year}
               image={image}
               href={href}
-              descriptionEn={descriptionEn}
-              descriptionCs={descriptionCs}
+              servicesCs={servicesCs}
+              servicesEn={servicesEn}
             />
           ))}
       </div>
