@@ -56,7 +56,10 @@ export const Project: FC<ProjectProps> = ({
           {language === 'cs' && (
             <div className='flex items-center gap-3'>
               {servicesCs.map(service => (
-                <span className='text-sm bg-violet-600/20 px-1 py-0.5 rounded-md'>
+                <span
+                  key={service}
+                  className='text-sm bg-violet-600/20 px-1 py-0.5 rounded-md'
+                >
                   {service}
                 </span>
               ))}
@@ -65,7 +68,10 @@ export const Project: FC<ProjectProps> = ({
           {language === 'en' && (
             <div className='flex items-center gap-3'>
               {servicesEn.map(service => (
-                <span className='text-sm bg-violet-600/20 px-1 py-0.5 rounded-md'>
+                <span
+                  key={service}
+                  className='text-sm bg-violet-600/20 px-1 py-0.5 rounded-md'
+                >
                   {service}
                 </span>
               ))}
