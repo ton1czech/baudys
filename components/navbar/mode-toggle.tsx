@@ -10,7 +10,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu'
-import { useLanguage } from '@/store/useLanguage'
+import { useLanguage } from '@/store/use-language'
 
 export const ModeToggle = () => {
   const { setTheme } = useTheme()

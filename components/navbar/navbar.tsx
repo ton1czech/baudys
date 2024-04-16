@@ -8,10 +8,10 @@ import LanguageSelector from './language-selector'
 import { ModeToggle } from './mode-toggle'
 import Link from 'next/link'
 import { ArrowLeft, ArrowRight, Menu } from 'lucide-react'
-import { useLanguage } from '@/store/useLanguage'
+import { useLanguage } from '@/store/use-language'
 import { AnimatePresence } from 'framer-motion'
 import { MobileNavbar } from './mobile-navbar'
-import { useCursor } from '@/store/useCursor'
+import { useCursor } from '@/store/use-cursor'
 import { usePathname } from 'next/navigation'
 
 export const Navbar = () => {

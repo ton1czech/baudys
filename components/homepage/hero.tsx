@@ -1,15 +1,11 @@
 'use client'
 
 import { Container } from '@/components/container'
-import { useLanguage } from '@/store/useLanguage'
+import { useLanguage } from '@/store/use-language'
 import Typewriter from 'typewriter-effect'
 import { MapPin } from 'lucide-react'
 import { motion } from 'framer-motion'
 import { Mist } from '../mist'
-// import dynamic from 'next/dynamic'
-// const LampCanvas = dynamic(() => import('./lamp/lamp'), {
-//   ssr: false,
-// })
 
 export const Hero = () => {
   const { language } = useLanguage()
@@ -76,10 +72,6 @@ export const Hero = () => {
           )}
         </div>
       </Container>
-
-      {/* <div className='h-screen w-screen absolute -left-52 top-3/4 -translate-y-1/2'>
-        <LampCanvas />
-      </div> */}
     </motion.div>
   )
 }

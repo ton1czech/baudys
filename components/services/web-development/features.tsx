@@ -8,8 +8,8 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion'
-import { useCursor } from '@/store/useCursor'
-import { useLanguage } from '@/store/useLanguage'
+import { useCursor } from '@/store/use-cursor'
+import { useLanguage } from '@/store/use-language'
 import { motion } from 'framer-motion'
 
 export const Features = () => {

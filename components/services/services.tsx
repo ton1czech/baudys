@@ -1,6 +1,6 @@
 'use client'
 
-import { useLanguage } from '@/store/useLanguage'
+import { useLanguage } from '@/store/use-language'
 import { Container } from '../container'
 import { Service } from './service'
 

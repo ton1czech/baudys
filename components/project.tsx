@@ -1,6 +1,6 @@
 'use client'
 
-import { useCursor } from '@/store/useCursor'
+import { useCursor } from '@/store/use-cursor'
 import Link from 'next/link'
 import { FC } from 'react'
 import { motion } from 'framer-motion'

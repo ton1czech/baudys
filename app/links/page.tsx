@@ -3,8 +3,8 @@
 import { Container } from '@/components/container'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { Button } from '@/components/ui/button'
-import { useCursor } from '@/store/useCursor'
-import { useLanguage } from '@/store/useLanguage'
+import { useCursor } from '@/store/use-cursor'
+import { useLanguage } from '@/store/use-language'
 import {
   FolderKanban,
   Github,
@@ -19,9 +19,10 @@ import { FC } from 'react'
 import { motion } from 'framer-motion'
 import { FaDocker, FaKaggle, FaSteam } from 'react-icons/fa'
 import { cn } from '@/lib/utils'
+import { IconType } from 'react-icons/lib'
 
 interface LinkItemProps {
-  icon: LucideIcon
+  icon: LucideIcon | IconType
   label: string
   href: string
   color?: string

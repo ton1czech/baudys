@@ -11,7 +11,7 @@ import { Button } from '@/components/ui/button'
 import { useState } from 'react'
 import Image from 'next/image'
 import { cn } from '@/lib/utils'
-import { useLanguage } from '@/store/useLanguage'
+import { useLanguage } from '@/store/use-language'
 
 const languages = [
   {

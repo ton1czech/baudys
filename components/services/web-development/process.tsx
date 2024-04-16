@@ -2,7 +2,7 @@
 
 import { Container } from '@/components/container'
 import { ProcessItem } from './process-item'
-import { useLanguage } from '@/store/useLanguage'
+import { useLanguage } from '@/store/use-language'
 
 export const Process = () => {
   const { language } = useLanguage()

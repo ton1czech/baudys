@@ -2,7 +2,7 @@
 
 import { Container } from '@/components/container'
 import { Title } from '@/components/title'
-import { useLanguage } from '@/store/useLanguage'
+import { useLanguage } from '@/store/use-language'
 import { TimelineItem } from './timeline-item'
 import { useRef } from 'react'
 import { useScroll, motion } from 'framer-motion'

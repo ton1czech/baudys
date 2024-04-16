@@ -1,10 +1,10 @@
 'use client'
 
-import { useLanguage } from '@/store/useLanguage'
+import { useLanguage } from '@/store/use-language'
 import { Container } from '../container'
 import Link from 'next/link'
 import { Title } from '../title'
-import { useCursor } from '@/store/useCursor'
+import { useCursor } from '@/store/use-cursor'
 import { motion } from 'framer-motion'
 
 export const About = () => {

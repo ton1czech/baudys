@@ -1,11 +1,11 @@
 'use client'
 
-import { useLanguage } from '@/store/useLanguage'
+import { useLanguage } from '@/store/use-language'
 import { Container } from '../container'
 import Link from 'next/link'
 import { FooterIcon } from './footer-icon'
 import { ArrowUp, Github, Instagram, Linkedin } from 'lucide-react'
-import { useCursor } from '@/store/useCursor'
+import { useCursor } from '@/store/use-cursor'
 import { motion } from 'framer-motion'
 
 export const Footer = () => {

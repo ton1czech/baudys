@@ -4,7 +4,7 @@ import { Contact } from '@/components/contact'
 import { Everything } from '@/components/services/everything'
 import { Services } from '@/components/services/services'
 import { TechnologiesCarousel } from '@/components/technologies-carousel/technologies-carousel'
-import { useCursor } from '@/store/useCursor'
+import { useCursor } from '@/store/use-cursor'
 import { useEffect } from 'react'
 
 export default function Page() {

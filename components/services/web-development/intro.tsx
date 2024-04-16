@@ -1,7 +1,7 @@
 'use client'
 
 import { Container } from '@/components/container'
-import { useLanguage } from '@/store/useLanguage'
+import { useLanguage } from '@/store/use-language'
 import { motion } from 'framer-motion'
 
 export const Intro = () => {

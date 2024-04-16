@@ -3,7 +3,7 @@
 import { Container } from '../container'
 import { motion } from 'framer-motion'
 import { Logos } from './logos'
-import { useLanguage } from '@/store/useLanguage'
+import { useLanguage } from '@/store/use-language'
 import { Title } from '../title'
 
 export const TechnologiesCarousel = () => {

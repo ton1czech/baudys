@@ -1,15 +1,12 @@
 import type { Metadata, Viewport } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
-import 'react-chatbot-kit/build/main.css'
 import { cn } from '@/lib/utils'
 import { Navbar } from '@/components/navbar/navbar'
 import { ThemeProvider } from '@/providers/theme-provider'
 import { Cursor } from '@/components/cursor'
 import { Footer } from '@/components/footer/footer'
 import ToasterProvider from '@/providers/toaster-provider'
-import { LenisProvider } from '@/providers/lenis-provider'
-import { ChatbotProvider } from '@/components/chatbot/chatbot-provider'
 import Script from 'next/script'
 import { siteConfig } from '@/config/site'
 
@@ -49,9 +46,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           disableTransitionOnChange
         >
           <ToasterProvider />
-          <LenisProvider />
           <Cursor />
-          <ChatbotProvider />
 
           <Navbar />
           {children}

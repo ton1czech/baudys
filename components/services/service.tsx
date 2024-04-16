@@ -2,12 +2,12 @@
 
 import { FC } from 'react'
 import { Button } from '../ui/button'
-import { useCursor } from '@/store/useCursor'
+import { useCursor } from '@/store/use-cursor'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import { cn } from '@/lib/utils'
-import { useLanguage } from '@/store/useLanguage'
+import { useLanguage } from '@/store/use-language'
 
 interface ServiceProps {
   img: string

@@ -1,7 +1,7 @@
 'use client'
 
-import { useCursor } from '@/store/useCursor'
-import { useLanguage } from '@/store/useLanguage'
+import { useCursor } from '@/store/use-cursor'
+import { useLanguage } from '@/store/use-language'
 import { ArrowRight } from 'lucide-react'
 import Link from 'next/link'
 import { FC } from 'react'
