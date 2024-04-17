@@ -23,7 +23,6 @@ export default function Page({ params }: PageProps) {
   const { setIsNotHovering, setIsHovering, setType } = useCursor()
 
   const {
-    image,
     images,
     name,
     url,
