@@ -9,6 +9,7 @@ import ToasterProvider from '@/providers/toaster-provider'
 import { siteConfig } from '@/config/site'
 import './globals.css'
 import { Cookies } from '@/components/cookies'
+import { AnalyticsProvider } from '@/providers/analytics-provider'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -46,6 +47,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           disableTransitionOnChange
         >
           <ToasterProvider />
+          <AnalyticsProvider />
+
           <Cursor />
           <Cookies />
 

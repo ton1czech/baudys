@@ -3,7 +3,7 @@
 import { useCookies } from '@/store/use-cookies'
 import { GoogleAnalytics } from '@next/third-parties/google'
 
-export const GoogleAnalyticsProvider = () => {
+export const AnalyticsProvider = () => {
   const { cookiesEnabled } = useCookies()
 
   return (
