@@ -20,11 +20,6 @@ export const Cookies = () => {
     setCookiesEnabled,
   } = useCookies()
 
-  const handleSubmit = () => {
-    setCookiesEnabled()
-    closeCookiesPermanently()
-  }
-
   useEffect(() => {
     if (!document.cookie.includes('cookiesClosed')) {
       openCookies()
@@ -57,7 +52,7 @@ export const Cookies = () => {
           className='bg-violet-800 fixed w-screen left-0 bottom-0 z-[999] origin-bottom'
         >
           <Container className='relative flex flex-col gap-8 py-4 lg:py-12'>
-            <h3>
+            <h3 className='text-zinc-200'>
               {language === 'cs' &&
                 'Cookies používám pouze pro analytické účely a pro ukládání zvoleného jazyka do prohlížeče.'}
               {language === 'en' &&
@@ -82,7 +77,7 @@ export const Cookies = () => {
                 onClick={closeCookiesPermanently}
                 className='bg-white rounded-2xl py-6 text-lg text-black hover:bg-zinc-100 w-full font-bold'
               >
-                {language === 'cs' && 'Neouhlasím'}
+                {language === 'cs' && 'Nesouhlasím'}
                 {language === 'en' && 'Disagree'}
               </Button>
               <Button
