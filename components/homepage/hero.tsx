@@ -5,7 +5,6 @@ import { useLanguage } from '@/store/use-language'
 import Typewriter from 'typewriter-effect'
 import { MapPin } from 'lucide-react'
 import { motion } from 'framer-motion'
-import { Mist } from '../mist'
 
 export const Hero = () => {
   const { language } = useLanguage()
@@ -17,8 +16,6 @@ export const Hero = () => {
       whileInView={{ opacity: 1 }}
       transition={{ delay: 0.3 }}
     >
-      <Mist />
-
       <Container className='min-h-screen grid place-content-center'>
         <div>
           <h4 className='font-semibold md:text-lg lg:text-xl xl:text-2xl text-zinc-600 -mb-2 relative z-10 text-center 2xl:text-left'>

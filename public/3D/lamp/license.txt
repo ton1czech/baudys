@@ -1,8 +1,0 @@
-Model Information:
-* title:	Neon lamp (cyberpunk style)
-* source:	https://sketchfab.com/3d-models/neon-lamp-cyberpunk-style-5cb864940166497caa3c4a61aec0424e
-* author:	tkkjee ​🕊​ (https://sketchfab.com/tkkjee)
-
-Model License:
-* license type:	SKETCHFAB Standard (https://sketchfab.com/licenses)
-* requirements:	Under basic restrictions, use worldwide, on all types of media, commercially or not, and in all types of derivative works
