@@ -49,7 +49,7 @@ export default function Page({ params }: Props) {
 
         <Title label={language === 'en' ? labelEn : labelCs} />
 
-        <div className='columns-2 space-y-4'>
+        <div className='sm:columns-2 space-y-4'>
           {images.map(image => (
             <motion.img
               key={image}
