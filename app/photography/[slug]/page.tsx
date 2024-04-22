@@ -26,6 +26,7 @@ export default function Page({ params }: Props) {
         <div className='columns-2 space-y-4'>
           {images.map(image => (
             <motion.img
+              key={image}
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               src={image}
