@@ -94,8 +94,8 @@ export const gallery = [
     ],
   },
   {
-    labelEn: 'Blooming Youngtimer',
-    labelCs: 'Kvetoucí Youngtimer',
+    labelEn: 'Devil in paradise',
+    labelCs: 'Ďábel v ráji',
     href: '/gallery/toyota',
     slug: 'toyota',
     images: [
