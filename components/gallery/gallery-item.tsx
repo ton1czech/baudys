@@ -30,7 +30,7 @@ export const GalleryItem = ({ item }: Props) => {
       <img
         src={item.images[0]}
         className='transition duration-300 rounded-xl'
-        style={{ filter: isHovered ? 'brightness(100%)' : 'brightness(65%)' }}
+        style={{ filter: isHovered ? 'brightness(100%)' : 'brightness(85%)' }}
       />
       <p className='text-sm text-zinc-700 dark:text-zinc-300 absolute bottom-2 left-2'>
         {language === 'en' && item.labelEn}
