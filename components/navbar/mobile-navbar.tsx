@@ -58,6 +58,11 @@ export const MobileNavbar: FC<MobileNavbarProps> = ({ setIsOpen }) => {
           href='/projects'
           setIsOpen={setIsOpen}
         />
+        <MobileNavItem
+          label={language === 'en' ? 'Gallery' : 'Galerie'}
+          href='/gallery'
+          setIsOpen={setIsOpen}
+        />
         <li onMouseEnter={setIsHovering} onMouseLeave={setIsNotHovering}>
           <Button variant='rainbow' className='py-8'>
             <Link href='/contact' className='flex gap-2 items-center text-4xl'>

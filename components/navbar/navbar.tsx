@@ -117,6 +117,10 @@ export const Navbar = () => {
                   label={language === 'en' ? 'Projects' : 'Projekty'}
                   href='/projects'
                 />
+                <NavItem
+                  label={language === 'en' ? 'Gallery' : 'Galerie'}
+                  href='/gallery'
+                />
                 <li
                   onMouseEnter={setIsHovering}
                   onMouseLeave={setIsNotHovering}
