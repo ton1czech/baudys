@@ -2,7 +2,7 @@ export const gallery = [
   {
     labelEn: 'Legend in the woods',
     labelCs: 'Legenda v lese',
-    date: '10-4-2024',
+    date: '10-04-2024',
     href: '/gallery/alpina-d3',
     slug: 'alpina-d3',
     categories: ['cars'],
@@ -24,7 +24,7 @@ export const gallery = [
   {
     labelEn: 'Impostor',
     labelCs: 'Imitátor',
-    date: '12-4-2024',
+    date: '12-04-2024',
     href: '/gallery/peter',
     slug: 'peter',
     categories: ['animals'],
@@ -43,7 +43,7 @@ export const gallery = [
   {
     labelEn: "Julia's Beast",
     labelCs: 'Juliina Bestie',
-    date: '21-3-2024',
+    date: '21-03-2024',
     href: '/gallery/julia-f30',
     slug: 'julia-f30',
     categories: ['cars'],
@@ -58,7 +58,7 @@ export const gallery = [
   {
     labelEn: 'New Face',
     labelCs: 'Nová Tvář',
-    date: '21-3-2024',
+    date: '21-03-2024',
     href: '/gallery/g80',
     slug: 'g80',
     categories: ['cars'],
@@ -73,7 +73,7 @@ export const gallery = [
   {
     labelEn: 'Night Car Only',
     labelCs: 'Pouze noční vůz',
-    date: '9-4-2024',
+    date: '9-04-2024',
     href: '/gallery/mazda',
     slug: 'mazda',
     categories: ['cars'],
@@ -89,7 +89,7 @@ export const gallery = [
   {
     labelEn: '10 cylinders is not enough',
     labelCs: '10 válců nestačí',
-    date: '25-3-2024',
+    date: '25-03-2024',
     href: '/gallery/ferrari',
     slug: 'ferrari',
     categories: ['cars'],
@@ -108,7 +108,7 @@ export const gallery = [
   {
     labelEn: 'Devil in paradise',
     labelCs: 'Ďábel v ráji',
-    date: '11-4-2024',
+    date: '11-04-2024',
     href: '/gallery/toyota',
     slug: 'toyota',
     categories: ['cars'],

@@ -9,16 +9,12 @@ export const Gallery = () => {
   const { animals, cars } = useGallery()
 
   const getFilteredGallery = () => {
-    if (animals && cars) {
-      return gallery
-    }
-
     return gallery.filter(item => {
       if (animals && cars) {
         return true
-      } else if (animals) {
+      } else if (animals && !cars) {
         return item.categories.includes('animals')
-      } else if (cars) {
+      } else if (!animals && cars) {
         return item.categories.includes('cars')
       }
       return false
