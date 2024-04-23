@@ -20,7 +20,7 @@ export default function Page({ params }: Props) {
   const { language } = useLanguage()
   const { setIsHovering, setIsNotHovering } = useCursor()
 
-  const { labelEn, labelCs, images } = gallery.filter(
+  const { labelEn, labelCs, date, images } = gallery.filter(
     (data: any) => data.slug === params.slug
   )[0]
 

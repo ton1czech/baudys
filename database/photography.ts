@@ -2,8 +2,10 @@ export const gallery = [
   {
     labelEn: 'Legend in the woods',
     labelCs: 'Legenda v lese',
+    date: '10-4-2024',
     href: '/gallery/alpina-d3',
     slug: 'alpina-d3',
+    categories: ['cars'],
     images: [
       '/gallery/alpina-d3/1.webp',
       '/gallery/alpina-d3/2.webp',
@@ -22,8 +24,10 @@ export const gallery = [
   {
     labelEn: 'Impostor',
     labelCs: 'Imitátor',
+    date: '12-4-2024',
     href: '/gallery/peter',
     slug: 'peter',
+    categories: ['animals'],
     images: [
       '/gallery/peter/1.webp',
       '/gallery/peter/2.webp',
@@ -39,8 +43,10 @@ export const gallery = [
   {
     labelEn: "Julia's Beast",
     labelCs: 'Juliina Bestie',
+    date: '21-3-2024',
     href: '/gallery/julia-f30',
     slug: 'julia-f30',
+    categories: ['cars'],
     images: [
       '/gallery/julia-f30/1.webp',
       '/gallery/julia-f30/2.webp',
@@ -52,8 +58,10 @@ export const gallery = [
   {
     labelEn: 'New Face',
     labelCs: 'Nová Tvář',
+    date: '21-3-2024',
     href: '/gallery/g80',
     slug: 'g80',
+    categories: ['cars'],
     images: [
       '/gallery/g80/1.webp',
       '/gallery/g80/2.webp',
@@ -65,8 +73,10 @@ export const gallery = [
   {
     labelEn: 'Night Car Only',
     labelCs: 'Pouze noční vůz',
+    date: '9-4-2024',
     href: '/gallery/mazda',
     slug: 'mazda',
+    categories: ['cars'],
     images: [
       '/gallery/mazda/1.webp',
       '/gallery/mazda/2.webp',
@@ -79,8 +89,10 @@ export const gallery = [
   {
     labelEn: '10 cylinders is not enough',
     labelCs: '10 válců nestačí',
+    date: '25-3-2024',
     href: '/gallery/ferrari',
     slug: 'ferrari',
+    categories: ['cars'],
     images: [
       '/gallery/ferrari/1.webp',
       '/gallery/ferrari/2.webp',
@@ -96,8 +108,10 @@ export const gallery = [
   {
     labelEn: 'Devil in paradise',
     labelCs: 'Ďábel v ráji',
+    date: '11-4-2024',
     href: '/gallery/toyota',
     slug: 'toyota',
+    categories: ['cars'],
     images: [
       '/gallery/toyota/1.webp',
       '/gallery/toyota/2.webp',
