@@ -64,6 +64,17 @@ export const Footer = () => {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ delay: 0.3 }}
+          className='text-center text-sm'
+        >
+          {language === 'en' && 'Id No.: '}
+          {language === 'cs' && 'IČO: '}
+          19933312
+        </motion.p>
+
+        <motion.p
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ delay: 0.3 }}
           className='mt-12 text-xs text-center text-light md:text-base sm:mt-4'
         >
           &copy;{new Date().getFullYear()}{' '}
