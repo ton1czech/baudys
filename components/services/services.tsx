@@ -43,6 +43,8 @@ export const Services = () => {
         }
         img='/services/tpms/hero.webp'
         href='/services/tpms'
+        tag={language === 'en' ? 'In collaboration with ' : 'Ve spolupráci s '}
+        tagLink='pneuservisbaudys.cz'
         center
       />
     </Container>

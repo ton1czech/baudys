@@ -14,6 +14,8 @@ interface ServiceProps {
   label: string
   body: string
   href: string
+  tag?: string
+  tagLink?: string
   center?: boolean
 }
 
@@ -22,6 +24,8 @@ export const Service: FC<ServiceProps> = ({
   label,
   body,
   href,
+  tag,
+  tagLink,
   center,
 }) => {
   const { setIsHovering, setIsNotHovering } = useCursor()
@@ -50,6 +54,18 @@ export const Service: FC<ServiceProps> = ({
               center ? 'object-center' : 'object-bottom'
             )}
           />
+          {tag && (
+            <p className='absolute bg-zinc-700/50 backdrop-blur-sm text-sm p-1 rounded-md bottom-2 right-2'>
+              {tag}
+              <Link
+                href={`https://${tagLink}`}
+                target='_blank'
+                className='underline font-bold'
+              >
+                {tagLink}
+              </Link>
+            </p>
+          )}
         </div>
 
         <div className='grid place-content-center'>
