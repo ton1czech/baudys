@@ -106,7 +106,7 @@ export const gallery = [
     ],
   },
   {
-    labelEn: 'Devil in paradise',
+    labelEn: 'The Devil in paradise',
     labelCs: 'Ďábel v ráji',
     date: '11-04-2024',
     href: '/gallery/toyota',
