@@ -58,7 +58,7 @@ export const Project: FC<ProjectProps> = ({
               {servicesCs.map(service => (
                 <span
                   key={service}
-                  className='text-xs bg-violet-600/20 px-1 py-0.5 rounded-md'
+                  className='text-xs bg-violet-600/20 px-1 py-0.5 rounded-md font-light text-zinc-200'
                 >
                   {service}
                 </span>
@@ -70,7 +70,7 @@ export const Project: FC<ProjectProps> = ({
               {servicesEn.map(service => (
                 <span
                   key={service}
-                  className='text-xs bg-violet-600/20 px-1 py-0.5 rounded-md'
+                  className='text-xs bg-violet-600/20 px-1 py-0.5 rounded-md font-light text-zinc-200'
                 >
                   {service}
                 </span>
