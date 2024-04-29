@@ -2,9 +2,8 @@
 
 import { useLanguage } from '@/store/use-language'
 import { Container } from '../container'
-import Link from 'next/link'
 import { FooterIcon } from './footer-icon'
-import { ArrowUp, Github, Instagram, Linkedin } from 'lucide-react'
+import { ArrowUp, Github, Linkedin } from 'lucide-react'
 import { useCursor } from '@/store/use-cursor'
 import { motion } from 'framer-motion'
 
@@ -77,16 +76,7 @@ export const Footer = () => {
           transition={{ delay: 0.3 }}
           className='mt-12 text-xs text-center text-light md:text-base sm:mt-4'
         >
-          &copy;{new Date().getFullYear()}{' '}
-          <Link
-            href='https://github.com/ton1czech'
-            target='_blank'
-            className='underline'
-            onMouseEnter={setIsHovering}
-            onMouseLeave={setIsNotHovering}
-          >
-            Daniel Anthony Baudyš.
-          </Link>
+          &copy;{new Date().getFullYear()} Daniel Anthony Baudyš.
           {language === 'cs' && <> Všechna práva vyhrazena.</>}
           {language === 'en' && <> All rights reserved.</>}
         </motion.p>
