@@ -24,6 +24,7 @@ export const Services = () => {
                 : 'Zahájení projektu s pečlivým nastavením.'
             }
             icon={Cog}
+            image='/home/services/1.webp'
           />
           <ServiceCard
             title={language === 'en' ? 'Web Development' : 'Tvorba Webu'}
@@ -33,6 +34,7 @@ export const Services = () => {
                 : 'Přináším vašim vizím život pomocí zodpovědné tvorby webových stránkek, které vás reprezentují.'
             }
             icon={Laptop}
+            image='/home/services/2.webp'
             highlight
           />
           <ServiceCard
@@ -43,6 +45,7 @@ export const Services = () => {
                 : 'Udržuje vaši digitální přítomnost živou a aktuální.'
             }
             icon={CalendarCheck}
+            image='/home/services/3.webp'
           />
         </div>
 

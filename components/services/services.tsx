@@ -18,6 +18,7 @@ export const Services = () => {
         }
         img='/services/web-development/hero.webp'
         href='/services/web-development'
+        center
       />
       <Service
         label={language === 'en' ? 'ECU Tune (BMW)' : 'Ladění ECU (BMW)'}

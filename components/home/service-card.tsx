@@ -10,6 +10,7 @@ interface ServiceCardProps {
   body: string
   highlight?: boolean
   icon: LucideIcon
+  image: string
 }
 
 export const ServiceCard: FC<ServiceCardProps> = ({
@@ -17,6 +18,7 @@ export const ServiceCard: FC<ServiceCardProps> = ({
   body,
   highlight,
   icon: Icon,
+  image,
 }) => {
   return (
     <motion.div
@@ -34,6 +36,7 @@ export const ServiceCard: FC<ServiceCardProps> = ({
         <Icon className={cn('w-7 h-7', highlight && 'stroke-yellow-600')} />
         {title}
       </h4>
+      <img src={image} alt={title} className='rounded-2xl mb-2' />
       <p className='text-justify text-zinc-800 dark:text-zinc-300'>{body}</p>
     </motion.div>
   )
