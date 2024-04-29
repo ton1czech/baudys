@@ -6,20 +6,24 @@ import { Button } from '@/components/ui/button'
 import { useCursor } from '@/store/use-cursor'
 import { useLanguage } from '@/store/use-language'
 import {
+  Camera,
   FolderKanban,
   Github,
   Gitlab,
   Globe,
   Hammer,
+  Instagram,
   Linkedin,
   LucideIcon,
+  Youtube,
 } from 'lucide-react'
 import Link from 'next/link'
 import { FC } from 'react'
 import { motion } from 'framer-motion'
-import { FaDocker, FaKaggle, FaSteam } from 'react-icons/fa'
+import { FaDocker, FaKaggle } from 'react-icons/fa'
 import { cn } from '@/lib/utils'
 import { IconType } from 'react-icons/lib'
+import { FaTiktok } from 'react-icons/fa6'
 
 interface LinkItemProps {
   icon: LucideIcon | IconType
@@ -74,7 +78,7 @@ export default function Page() {
           className='w-full'
         >
           <Avatar className='w-32 h-32 lg:w-60 lg:h-60 mb-4 mx-auto'>
-            <AvatarImage src='/avatar.webp' />
+            <AvatarImage src='/links/avatar.webp' />
             <AvatarFallback className='font-bold text-3xl md:text-4xl lg:text-5xl'>
               DAB
             </AvatarFallback>
@@ -94,7 +98,8 @@ export default function Page() {
           transition={{ delay: 0.3 }}
           className='mb-10 md:mb-14'
         >
-          Designer a Programátor
+          {language === 'en' && 'Programmer | Designer | Photographer'}
+          {language === 'cs' && 'Programátor | Designer | Fotograf'}
         </motion.p>
 
         <div className='space-y-3 md:space-y-4 flex flex-col justify-center items-center'>
@@ -108,6 +113,29 @@ export default function Page() {
             href='/services'
             label={language === 'en' ? 'Services' : 'Služby'}
             icon={Hammer}
+          />
+          <LinkItem
+            href='/gallery'
+            label={language === 'en' ? 'Gallery' : 'Galerie'}
+            icon={Camera}
+          />
+          <LinkItem
+            href='https://www.instagram.com/baudys.dev/'
+            label='Instagram'
+            icon={Instagram}
+            color='bg-teal-600/80 hover:bg-teal-700/80'
+          />
+          <LinkItem
+            href='https://www.tiktok.com/@baudys.dev'
+            label='Tiktok'
+            icon={FaTiktok}
+            color='bg-teal-600/80 hover:bg-teal-700/80'
+          />
+          <LinkItem
+            href='https://www.youtube.com/channel/UCblA_CnykG2Dw_6IMwZ9z9A'
+            label='YouTube'
+            icon={Youtube}
+            color='bg-teal-600/80 hover:bg-teal-700/80'
           />
           <LinkItem
             href='https://www.linkedin.com/in/ton1czech/'
@@ -138,12 +166,6 @@ export default function Page() {
             label='Kaggle'
             icon={FaKaggle}
             color='bg-fuchsia-700/80 hover:bg-fuchsia-800/80'
-          />
-          <LinkItem
-            href='https://steamcommunity.com/id/ton1czech/'
-            label='Steam'
-            icon={FaSteam}
-            color='bg-indigo-700/80 hover:bg-indigo-800/80'
           />
         </div>
       </Container>
