@@ -99,8 +99,8 @@ export const Navbar = () => {
                   href='/services/web-development'
                 />
                 <NavItem
-                  label={language === 'en' ? 'Functions' : 'Funkce'}
-                  href='/services/functions'
+                  label={language === 'en' ? 'ECU Tune' : 'Ladění ECU'}
+                  href='/services/ecu-tune'
                 />
                 <NavItem
                   label={language === 'en' ? 'TPMS' : 'TPMS'}

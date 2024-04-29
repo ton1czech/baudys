@@ -20,18 +20,14 @@ export const Services = () => {
         href='/services/web-development'
       />
       <Service
-        label={
-          language === 'en'
-            ? 'Functions (BMW, MINI, SUPRA MK5)'
-            : 'Funkce (BMW, MINI, SUPRA MK5)'
-        }
+        label={language === 'en' ? 'ECU Tune (BMW)' : 'Ladění ECU (BMW)'}
         body={
           language === 'en'
             ? 'Your vehicle holds endless possibilities that I can unlock and customise to your liking. I specialize in programming hidden features for BMW, MINI and Toyota Supra MK5. Thanks to my know-how, you can discover hidden possibilities and customize your car to your exact wishes.'
             : 'Vaše vozidlo skrývá nekonečné možnosti, které mohu odblokovat a přizpůsobit podle vašich představ. Specializuji se v programování skrytých funkcí pro vozy BMW, MINI a Toyota Supra MK5. Díky mému know-how můžete objevit skryté možnosti a upravit si své auto přesně podle vašich přání.'
         }
-        img='/services/functions/hero.webp'
-        href='/services/functions'
+        img='/services/ecu-tune/hero.webp'
+        href='/services/ecu-tune'
         center
       />
       <Service
