@@ -5,7 +5,7 @@ import { Container } from './container'
 import { Title } from './title'
 import { projects } from '@/database/projects'
 import { Project } from './project'
-import { SeeAll } from './homepage/see-all'
+import { SeeAll } from './see-all'
 
 export const Projects = () => {
   const { language } = useLanguage()

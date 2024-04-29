@@ -4,7 +4,7 @@ import { useLanguage } from '@/store/use-language'
 import { Container } from '../container'
 import { ServiceCard } from './service-card'
 import { Title } from '../title'
-import { SeeAll } from './see-all'
+import { SeeAll } from '../see-all'
 import { CalendarCheck, Cog, Laptop } from 'lucide-react'
 
 export const Services = () => {

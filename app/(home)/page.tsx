@@ -1,8 +1,8 @@
 import { Contact } from '@/components/contact'
-import { About } from '@/components/homepage/about'
-import { Hero } from '@/components/homepage/hero'
+import { About } from '@/components/home/about'
+import { Hero } from '@/components/home/hero'
 import { Projects } from '@/components/projects'
-import { Services } from '@/components/homepage/services'
+import { Services } from '@/components/home/services'
 import { TechnologiesCarousel } from '@/components/technologies-carousel/technologies-carousel'
 
 export default function Page() {
