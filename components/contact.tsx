@@ -75,6 +75,12 @@ export const Contact = () => {
         label={language === 'en' ? "let's work together" : 'spolupracujme'}
       />
 
+      <motion.img
+        src='/contact/contact.webp'
+        alt='contact me'
+        className='max-w-[70ch] mx-auto rounded-2xl mb-10'
+      />
+
       <Form {...form}>
         <form
           onSubmit={form.handleSubmit(onSubmit)}
