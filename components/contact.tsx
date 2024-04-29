@@ -78,7 +78,7 @@ export const Contact = () => {
       <motion.img
         src='/contact/contact.webp'
         alt='contact me'
-        className='max-w-[70ch] mx-auto rounded-2xl mb-10'
+        className='w-full max-w-[70ch] mx-auto rounded-2xl mb-10'
       />
 
       <Form {...form}>
