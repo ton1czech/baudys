@@ -34,7 +34,7 @@ export const ProcessItem: FC<ProcessItemProps> = ({
         <img
           src={img}
           alt={label}
-          className='absolute object-cover rounded-lg'
+          className='absolute object-cover rounded-lg bottom-0'
         />
         <div className='w-full h-full bg-black/30 absolute' />
       </div>
