@@ -15,7 +15,7 @@ export const Services = () => {
       <Container className='pb-40 lg:pb-60 xl:pb-80'>
         <Title label={language === 'en' ? 'Services' : 'Služby'} />
 
-        <div className='grid lg:grid-cols-3 lg:gap-8'>
+        <div className='grid lg:grid-cols-3'>
           <ServiceCard
             title={language === 'en' ? 'Configuration' : 'Konfigurace'}
             body={

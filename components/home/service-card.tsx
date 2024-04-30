@@ -25,19 +25,21 @@ export const ServiceCard: FC<ServiceCardProps> = ({
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ delay: 0.3 }}
-      className='w-full p-8 relative border border-transparent'
+      className='p-8'
     >
       <h4
         className={cn(
-          'text-center font-semibold mb-2 text-lg md:text-xl flex items-center gap-4',
+          'text-center font-semibold mb-2 text-lg md:text-xl flex items-center justify-center gap-2',
           highlight && 'gold-text'
         )}
       >
-        <Icon className={cn('w-7 h-7', highlight && 'stroke-yellow-600')} />
+        <Icon size={23} className={cn(highlight && 'stroke-yellow-600')} />
         {title}
       </h4>
       <img src={image} alt={title} className='rounded-2xl mb-2' />
-      <p className='text-justify text-zinc-800 dark:text-zinc-300'>{body}</p>
+      <p className='text-justify text-zinc-800 dark:text-zinc-300 text-sm'>
+        {body}
+      </p>
     </motion.div>
   )
 }
