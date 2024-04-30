@@ -115,6 +115,32 @@ export const Everything = () => {
                   'TPMS (programování + montáž)',
                 ]
           }
+        />{' '}
+        <EverythingItem
+          title={language === 'en' ? 'Photography' : 'Fotografování'}
+          items={
+            language === 'en'
+              ? [
+                  'cars',
+                  'portraits',
+                  'modeling',
+                  'events',
+                  'architecture',
+                  'travel',
+                  'nature',
+                  'animals',
+                ]
+              : [
+                  'auta',
+                  'portréty',
+                  'modeling',
+                  'akce',
+                  'architektura',
+                  'cestování',
+                  'příroda',
+                  'zvířata',
+                ]
+          }
         />
       </div>
     </Container>
