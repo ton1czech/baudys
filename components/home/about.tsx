@@ -9,7 +9,7 @@ import { motion } from 'framer-motion'
 
 export const About = () => {
   const { language } = useLanguage()
-  const { setIsNotHovering, setIsHovering } = useCursor()
+  const { setIsNotHovering, setIsHovering, setType } = useCursor()
 
   return (
     <Container className='pb-40 lg:pb-60 xl:pb-80'>
@@ -40,11 +40,14 @@ export const About = () => {
                 I&apos;ve managed to create dozens of projects, both for myself
                 and for clients. Some of my favourites include my portfolio and{' '}
                 <Link
+                  onMouseEnter={() => {
+                    setIsHovering()
+                    setType('external')
+                  }}
+                  onMouseLeave={setIsNotHovering}
                   href='https://planetopedia.agency'
                   target='_blank'
                   className='relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-[3px] after:bg-purple-500 hover:text-purple-500 dark:hover:text-purple-500 transition font-bold dark:text-zinc-200 text-zinc-800'
-                  onMouseEnter={setIsHovering}
-                  onMouseLeave={setIsNotHovering}
                 >
                   Planetopedia
                 </Link>{' '}
@@ -64,8 +67,13 @@ export const About = () => {
                 designem a fotografováním 📸. S Programováním 🖥 jsem se poprvé
                 setkal v roce 2019 a hned mě to pohltilo. Od té doby jsem stihl
                 vytvořit desítky projektů, ať už sám pro sebe, tak i pro
-                klienty. Mezi mé nejoblíbenější patří moje portfolio a{' '}
+                klienty. Mezi mé nejoblíbenější patří moje portfolio a web{' '}
                 <Link
+                  onMouseEnter={() => {
+                    setIsHovering()
+                    setType('external')
+                  }}
+                  onMouseLeave={setIsNotHovering}
                   href='https://planetopedia.agency'
                   target='_blank'
                   className='relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-[3px] after:bg-purple-500 hover:text-purple-500 dark:hover:text-purple-500 transition font-bold dark:text-zinc-200 text-zinc-800'
