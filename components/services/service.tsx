@@ -28,7 +28,7 @@ export const Service: FC<ServiceProps> = ({
   tagLink,
   center,
 }) => {
-  const { setIsHovering, setIsNotHovering } = useCursor()
+  const { setIsHovering, setIsNotHovering, setType } = useCursor()
   const { language } = useLanguage()
 
   return (
@@ -55,12 +55,21 @@ export const Service: FC<ServiceProps> = ({
             )}
           />
           {tag && (
-            <p className='absolute bg-zinc-700/50 backdrop-blur-sm text-sm p-1 rounded-md bottom-2 right-2'>
+            <p className='absolute bg-zinc-700/50 backdrop-blur-sm text-sm py-1 px-2 rounded-md bottom-2 right-2'>
               {tag}
               <Link
+                onClick={e => e.stopPropagation()}
+                onMouseEnter={() => {
+                  setIsHovering()
+                  setType('external')
+                }}
+                onMouseLeave={() => {
+                  setIsNotHovering()
+                  setType('')
+                }}
                 href={`https://${tagLink}`}
                 target='_blank'
-                className='underline font-bold'
+                className='underline font-bold relative'
               >
                 {tagLink}
               </Link>
