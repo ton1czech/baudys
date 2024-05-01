@@ -41,18 +41,7 @@ export default function Page({ params }: PageProps) {
     <div className='mt-28 lg:mt-32 mb-20 lg:mb-32'>
       <Container className='pb-40 lg:pb-60 xl:pb-80'>
         <p className='inline-flex items-center gap-2 text-zinc-600 dark:text-zinc-400'>
-          <Link
-            onMouseEnter={() => {
-              setIsHovering()
-              setType('external')
-            }}
-            onMouseLeave={() => {
-              setIsNotHovering()
-              setType('')
-            }}
-            href='/projects'
-            className='hover:underline'
-          >
+          <Link href='/projects' className='hover:underline'>
             {language === 'en' && 'projects'}
             {language === 'cs' && 'projekty'}
           </Link>
@@ -73,6 +62,14 @@ export default function Page({ params }: PageProps) {
                   {language === 'cs' && 'klient'}
                 </h4>
                 <Link
+                  onMouseEnter={() => {
+                    setIsHovering()
+                    setType('external')
+                  }}
+                  onMouseLeave={() => {
+                    setIsNotHovering()
+                    setType('')
+                  }}
                   href={url}
                   target='_blank'
                   className='underline text-2xl lg:text-3xl font-light'
