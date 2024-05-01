@@ -3,10 +3,12 @@
 import { Container } from '@/components/container'
 import { Title } from '@/components/title'
 import { gallery } from '@/database/photography'
+import { useCursor } from '@/store/use-cursor'
 import { useLanguage } from '@/store/use-language'
 import { motion } from 'framer-motion'
 import { ChevronRight } from 'lucide-react'
 import Link from 'next/link'
+import { useEffect } from 'react'
 
 interface Props {
   params: {
@@ -16,10 +18,15 @@ interface Props {
 
 export default function Page({ params }: Props) {
   const { language } = useLanguage()
+  const { setIsNotHovering } = useCursor()
 
   const { labelEn, labelCs, images } = gallery.filter(
     (data: any) => data.slug === params.slug
   )[0]
+
+  useEffect(() => {
+    setIsNotHovering()
+  }, [])
 
   return (
     <div className='mt-28 lg:mt-32 mb-20 lg:mb-32'>

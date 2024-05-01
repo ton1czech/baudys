@@ -12,7 +12,7 @@ interface Props {
 
 export const GalleryItem = ({ item }: Props) => {
   const { language } = useLanguage()
-  const { setIsHovering, setIsNotHovering } = useCursor()
+  const { setType, setIsHovering, setIsNotHovering } = useCursor()
   const [isHovered, setIsHovered] = useState(false)
 
   return (
@@ -25,10 +25,12 @@ export const GalleryItem = ({ item }: Props) => {
         onMouseEnter={() => {
           setIsHovering()
           setIsHovered(true)
+          setType('photography')
         }}
         onMouseLeave={() => {
           setIsNotHovering()
           setIsHovered(false)
+          setType('')
         }}
         href={`/gallery/${item.slug}`}
         className='flex flex-col flex-nowrap group relative'

@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import { useCursor } from '@/store/use-cursor'
-import { ArrowRight, ExternalLink } from 'lucide-react'
+import { ArrowRight, Camera, ExternalLink } from 'lucide-react'
 
 export const Cursor = () => {
   const { isHovering, type } = useCursor()
@@ -29,30 +29,31 @@ export const Cursor = () => {
   }, [])
 
   const variants = {
-    default: {
-      height: 16,
-      width: 16,
-      x: mousePosition.x - 8,
-      y: mousePosition.y - 8,
+    base: {
+      height: 0,
+      width: 0,
       opacity: 0,
-    },
-    hover: {
-      height: 24,
-      width: 24,
-      x: mousePosition.x - 12,
-      y: mousePosition.y - 12,
-      backgroundColor: '#a855f7',
-      opacity: 0,
+      x: mousePosition.x,
+      y: mousePosition.y,
     },
     project: {
       height: 80,
       width: 80,
+      opacity: 1,
       x: mousePosition.x - 40,
       y: mousePosition.y - 40,
     },
     external: {
       height: 80,
       width: 80,
+      opacity: 1,
+      x: mousePosition.x - 40,
+      y: mousePosition.y - 40,
+    },
+    photography: {
+      height: 80,
+      width: 80,
+      opacity: 1,
       x: mousePosition.x - 40,
       y: mousePosition.y - 40,
     },
@@ -60,17 +61,19 @@ export const Cursor = () => {
 
   return (
     <motion.div
-      className='hidden sm:block w-4 h-4 rounded-full border bg-black border-white  fixed top-0 left-0 pointer-events-none z-[9998]'
+      className='hidden sm:block w-0 h-0 opacity-0 rounded-full border bg-black border-white fixed top-0 left-0 pointer-events-none z-[9998]'
       variants={variants}
-      transition={{ type: 'tween', ease: 'backOut', duration: 0.19 }}
+      transition={{ type: 'tween', ease: 'backOut', duration: 0.12 }}
       animate={
         isHovering
           ? type === 'project'
             ? 'project'
             : type === 'external'
             ? 'external'
-            : 'hover'
-          : 'default'
+            : type === 'photography'
+            ? 'photography'
+            : ''
+          : 'base'
       }
     >
       {isHovering && type === 'project' && (
@@ -81,6 +84,11 @@ export const Cursor = () => {
       {isHovering && type === 'external' && (
         <div className='pointer-events-none rounded-full absolute grid place-content-center w-full h-full inset-0 z-[9999] border bg-zinc-200 border-zinc-700/70 dark:bg-zinc-800 dark:border-zinc-300/70'>
           <ExternalLink className='stroke-black dark:stroke-white' />
+        </div>
+      )}
+      {isHovering && type === 'photography' && (
+        <div className='pointer-events-none rounded-full absolute grid place-content-center w-full h-full inset-0 z-[9999] border bg-zinc-200 border-zinc-700/70 dark:bg-zinc-800 dark:border-zinc-300/70'>
+          <Camera className='stroke-black dark:stroke-white' />
         </div>
       )}
     </motion.div>
