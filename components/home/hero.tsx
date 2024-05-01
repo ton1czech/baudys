@@ -59,7 +59,7 @@ export const Hero = () => {
             {language === 'cs' && (
               <p className='max-w-[50ch] mt-12 text-zinc-400 text-justify relative mx-auto'>
                 Jsem odhodlaný zavést vás do digitálního vesmíru, kde se setkáte
-                s excelencí a designem spojeným v jedinečné harmonii.{' '}
+                s excelencí a designem spojeným v jedinečné harmonii.
               </p>
             )}
             <div className='flex justify-center mt-28'>

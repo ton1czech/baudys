@@ -3,8 +3,9 @@
 import { useLanguage } from '@/store/use-language'
 import { Container } from '../container'
 import { FooterIcon } from './footer-icon'
-import { ArrowUp, Github, Linkedin } from 'lucide-react'
+import { ArrowUp, Github, Instagram, Linkedin, Youtube } from 'lucide-react'
 import { motion } from 'framer-motion'
+import { FaTiktok } from 'react-icons/fa6'
 
 export const Footer = () => {
   const { language } = useLanguage()
@@ -39,20 +40,31 @@ export const Footer = () => {
           transition={{ delay: 0.3 }}
           className='flex justify-center gap-4 mb-14'
         >
-          <div>
-            <FooterIcon
-              name='github'
-              icon={Github}
-              href='https://www.github.com/ton1czech/'
-            />
-          </div>
-          <div>
-            <FooterIcon
-              name='linkedin'
-              icon={Linkedin}
-              href='https://www.linkedin.com/in/ton1czech/'
-            />
-          </div>
+          <FooterIcon
+            name='instagram'
+            icon={Instagram}
+            href='https://www.instagram.com/baudys.dev/'
+          />
+          <FooterIcon
+            name='tiktok'
+            icon={FaTiktok}
+            href='https://www.tiktok.com/@baudys.dev'
+          />
+          <FooterIcon
+            name='youtube'
+            icon={Youtube}
+            href='https://www.youtube.com/channel/UCblA_CnykG2Dw_6IMwZ9z9A'
+          />
+          <FooterIcon
+            name='linkedin'
+            icon={Linkedin}
+            href='https://www.linkedin.com/in/ton1czech/'
+          />
+          <FooterIcon
+            name='github'
+            icon={Github}
+            href='https://www.github.com/ton1czech/'
+          />
         </motion.div>
 
         <motion.p

@@ -1,9 +1,10 @@
 import { LucideIcon } from 'lucide-react'
 import Link from 'next/link'
 import { FC } from 'react'
+import { IconType } from 'react-icons/lib'
 
 interface FooterIconProps {
-  icon: LucideIcon
+  icon: LucideIcon | IconType
   href: string
   name: string
 }
