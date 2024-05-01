@@ -26,7 +26,7 @@ export const Gallery = () => {
   return (
     <Container className='sm:columns-2 lg:columns-3 space-y-6'>
       {filteredGallery.map(item => (
-        <GalleryItem key={item.href} item={item} />
+        <GalleryItem key={item.slug} item={item} />
       ))}
     </Container>
   )

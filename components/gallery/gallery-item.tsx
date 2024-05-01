@@ -30,7 +30,7 @@ export const GalleryItem = ({ item }: Props) => {
           setIsNotHovering()
           setIsHovered(false)
         }}
-        href={item.href}
+        href={`/gallery/${item.slug}`}
         className='flex flex-col flex-nowrap group relative'
       >
         <img
