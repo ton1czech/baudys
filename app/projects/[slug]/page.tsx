@@ -56,6 +56,7 @@ export default function Page({ params }: PageProps) {
             onMouseEnter={setIsHovering}
             onMouseLeave={setIsNotHovering}
             href='/projects'
+            className='hover:underline'
           >
             {language === 'en' && 'projects'}
             {language === 'cs' && 'projekty'}
