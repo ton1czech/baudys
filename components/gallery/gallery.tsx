@@ -24,7 +24,7 @@ export const Gallery = () => {
   const filteredGallery = getFilteredGallery()
 
   return (
-    <Container className='sm:columns-2 lg:columns-3 space-y-6'>
+    <Container className='sm:columns-2 lg:columns-3 space-y-6 pb-40 lg:pb-60 xl:pb-80'>
       {filteredGallery.map(item => (
         <GalleryItem key={item.slug} item={item} />
       ))}
