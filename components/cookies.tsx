@@ -5,7 +5,6 @@ import { useLanguage } from '@/store/use-language'
 import { Button } from './ui/button'
 import { useEffect } from 'react'
 import { Container } from './container'
-import { X } from 'lucide-react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { useCursor } from '@/store/use-cursor'
 

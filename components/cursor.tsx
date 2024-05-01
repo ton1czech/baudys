@@ -34,6 +34,7 @@ export const Cursor = () => {
       width: 16,
       x: mousePosition.x - 8,
       y: mousePosition.y - 8,
+      opacity: 0,
     },
     hover: {
       height: 24,
@@ -41,6 +42,7 @@ export const Cursor = () => {
       x: mousePosition.x - 12,
       y: mousePosition.y - 12,
       backgroundColor: '#a855f7',
+      opacity: 0,
     },
     project: {
       height: 80,
