@@ -64,7 +64,7 @@ export default function Page({ params }: PageProps) {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ delay: 0.3 }}
-            className='grid lg:place-content-center'
+            className='flex flex-col lg:justify-center'
           >
             <div className='flex lg:gap-20 justify-between lg:justify-normal'>
               <div className='flex flex-col'>
