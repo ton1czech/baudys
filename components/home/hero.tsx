@@ -23,7 +23,7 @@ export const Hero = () => {
       <Container>
         <div className='relative h-[80vh] w-full mt-28 lg:mt-32 bg-[url(/home/hero.webp)] rounded-3xl bg-cover bg-center'>
           <div className='absolute inset-0 bg-black/80 rounded-3xl' />
-          <div className='flex justify-center flex-col w-full h-full'>
+          <div className='flex justify-center flex-col w-full h-full p-4'>
             <h4 className='md:text-lg lg:text-xl xl:text-2xl text-zinc-500 -mb-2 relative z-10 text-center'>
               Daniel Anthony Baudyš
             </h4>
