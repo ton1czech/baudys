@@ -8,13 +8,11 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion'
-import { useCursor } from '@/store/use-cursor'
 import { useLanguage } from '@/store/use-language'
 import { motion } from 'framer-motion'
 
 export const Features = () => {
   const { language } = useLanguage()
-  const { setIsHovering, setIsNotHovering } = useCursor()
 
   return (
     <Container className='pb-40 lg:pb-60 xl:pb-80'>
@@ -32,10 +30,7 @@ export const Features = () => {
             transition={{ delay: 0.3 }}
           >
             <AccordionItem value='frontend'>
-              <AccordionTrigger
-                onMouseEnter={setIsHovering}
-                onMouseLeave={setIsNotHovering}
-              >
+              <AccordionTrigger>
                 {language === 'en' && 'Front-end'}
                 {language === 'cs' && 'Front-end'}
               </AccordionTrigger>
@@ -53,10 +48,7 @@ export const Features = () => {
             transition={{ delay: 0.3 }}
           >
             <AccordionItem value='ecommerce'>
-              <AccordionTrigger
-                onMouseEnter={setIsHovering}
-                onMouseLeave={setIsNotHovering}
-              >
+              <AccordionTrigger>
                 {language === 'en' && 'E-Commerce'}
                 {language === 'cs' && 'Eshop'}
               </AccordionTrigger>
@@ -74,10 +66,7 @@ export const Features = () => {
             transition={{ delay: 0.3 }}
           >
             <AccordionItem value='booking'>
-              <AccordionTrigger
-                onMouseEnter={setIsHovering}
-                onMouseLeave={setIsNotHovering}
-              >
+              <AccordionTrigger>
                 {language === 'en' && 'Booking Service'}
                 {language === 'cs' && 'Rezervační Systém'}
               </AccordionTrigger>
@@ -95,10 +84,7 @@ export const Features = () => {
             transition={{ delay: 0.3 }}
           >
             <AccordionItem value='social'>
-              <AccordionTrigger
-                onMouseEnter={setIsHovering}
-                onMouseLeave={setIsNotHovering}
-              >
+              <AccordionTrigger>
                 {language === 'en' && 'Social Site'}
                 {language === 'cs' && 'Sociální Síť'}
               </AccordionTrigger>
@@ -116,10 +102,7 @@ export const Features = () => {
             transition={{ delay: 0.3 }}
           >
             <AccordionItem value='platform'>
-              <AccordionTrigger
-                onMouseEnter={setIsHovering}
-                onMouseLeave={setIsNotHovering}
-              >
+              <AccordionTrigger>
                 {language === 'en' && 'Platform'}
                 {language === 'cs' && 'Platforma'}
               </AccordionTrigger>
@@ -137,10 +120,7 @@ export const Features = () => {
             transition={{ delay: 0.3 }}
           >
             <AccordionItem value='3d web'>
-              <AccordionTrigger
-                onMouseEnter={setIsHovering}
-                onMouseLeave={setIsNotHovering}
-              >
+              <AccordionTrigger>
                 {language === 'en' && '3D Website'}
                 {language === 'cs' && '3D Web'}
               </AccordionTrigger>
@@ -158,10 +138,7 @@ export const Features = () => {
             transition={{ delay: 0.3 }}
           >
             <AccordionItem value='webapp'>
-              <AccordionTrigger
-                onMouseEnter={setIsHovering}
-                onMouseLeave={setIsNotHovering}
-              >
+              <AccordionTrigger>
                 {language === 'en' && 'Web Application'}
                 {language === 'cs' && 'Webová aplikace'}
               </AccordionTrigger>
@@ -179,10 +156,7 @@ export const Features = () => {
             transition={{ delay: 0.3 }}
           >
             <AccordionItem value='newsletter'>
-              <AccordionTrigger
-                onMouseEnter={setIsHovering}
-                onMouseLeave={setIsNotHovering}
-              >
+              <AccordionTrigger>
                 {language === 'en' && 'Newsletter'}
                 {language === 'cs' && 'Newsletter'}
               </AccordionTrigger>
@@ -200,10 +174,7 @@ export const Features = () => {
             transition={{ delay: 0.3 }}
           >
             <AccordionItem value='hosting'>
-              <AccordionTrigger
-                onMouseEnter={setIsHovering}
-                onMouseLeave={setIsNotHovering}
-              >
+              <AccordionTrigger>
                 {language === 'en' && 'Hosting'}
                 {language === 'cs' && 'Hosting'}
               </AccordionTrigger>
@@ -221,10 +192,7 @@ export const Features = () => {
             transition={{ delay: 0.3 }}
           >
             <AccordionItem value='analytics'>
-              <AccordionTrigger
-                onMouseEnter={setIsHovering}
-                onMouseLeave={setIsNotHovering}
-              >
+              <AccordionTrigger>
                 {language === 'en' && 'Analytics Reports'}
                 {language === 'cs' && 'Analytické Přehledy'}
               </AccordionTrigger>
@@ -242,10 +210,7 @@ export const Features = () => {
             transition={{ delay: 0.3 }}
           >
             <AccordionItem value='email form'>
-              <AccordionTrigger
-                onMouseEnter={setIsHovering}
-                onMouseLeave={setIsNotHovering}
-              >
+              <AccordionTrigger>
                 {language === 'en' && 'Email Form'}
                 {language === 'cs' && 'Emailový Formulář'}
               </AccordionTrigger>
@@ -263,10 +228,7 @@ export const Features = () => {
             transition={{ delay: 0.3 }}
           >
             <AccordionItem value='3d elements'>
-              <AccordionTrigger
-                onMouseEnter={setIsHovering}
-                onMouseLeave={setIsNotHovering}
-              >
+              <AccordionTrigger>
                 {language === 'en' && '3D Elements'}
                 {language === 'cs' && '3D Prvky'}
               </AccordionTrigger>
@@ -291,10 +253,7 @@ export const Features = () => {
             transition={{ delay: 0.3 }}
           >
             <AccordionItem value='admin interface'>
-              <AccordionTrigger
-                onMouseEnter={setIsHovering}
-                onMouseLeave={setIsNotHovering}
-              >
+              <AccordionTrigger>
                 {language === 'en' && 'Admin Interface'}
                 {language === 'cs' && 'Administrační Rozhraní'}
               </AccordionTrigger>
@@ -312,10 +271,7 @@ export const Features = () => {
             transition={{ delay: 0.3 }}
           >
             <AccordionItem value='popups'>
-              <AccordionTrigger
-                onMouseEnter={setIsHovering}
-                onMouseLeave={setIsNotHovering}
-              >
+              <AccordionTrigger>
                 {language === 'en' && 'Popups'}
                 {language === 'cs' && 'Vyskakovací Okna'}
               </AccordionTrigger>
@@ -333,10 +289,7 @@ export const Features = () => {
             transition={{ delay: 0.3 }}
           >
             <AccordionItem value='cdn'>
-              <AccordionTrigger
-                onMouseEnter={setIsHovering}
-                onMouseLeave={setIsNotHovering}
-              >
+              <AccordionTrigger>
                 {language === 'en' && 'CDN Integration'}
                 {language === 'cs' && 'CDN Integrace'}
               </AccordionTrigger>
@@ -354,10 +307,7 @@ export const Features = () => {
             transition={{ delay: 0.3 }}
           >
             <AccordionItem value='chatbot'>
-              <AccordionTrigger
-                onMouseEnter={setIsHovering}
-                onMouseLeave={setIsNotHovering}
-              >
+              <AccordionTrigger>
                 {language === 'en' && 'Chatbot'}
                 {language === 'cs' && 'Chatbot'}
               </AccordionTrigger>
@@ -375,10 +325,7 @@ export const Features = () => {
             transition={{ delay: 0.3 }}
           >
             <AccordionItem value='db'>
-              <AccordionTrigger
-                onMouseEnter={setIsHovering}
-                onMouseLeave={setIsNotHovering}
-              >
+              <AccordionTrigger>
                 {language === 'en' && 'Database Connection'}
                 {language === 'cs' && 'Napojení na Databázi'}
               </AccordionTrigger>
@@ -396,10 +343,7 @@ export const Features = () => {
             transition={{ delay: 0.3 }}
           >
             <AccordionItem value='anims'>
-              <AccordionTrigger
-                onMouseEnter={setIsHovering}
-                onMouseLeave={setIsNotHovering}
-              >
+              <AccordionTrigger>
                 {language === 'en' && 'Animations'}
                 {language === 'cs' && 'Animace'}
               </AccordionTrigger>
@@ -417,10 +361,7 @@ export const Features = () => {
             transition={{ delay: 0.3 }}
           >
             <AccordionItem value='mobile'>
-              <AccordionTrigger
-                onMouseEnter={setIsHovering}
-                onMouseLeave={setIsNotHovering}
-              >
+              <AccordionTrigger>
                 {language === 'en' && 'Mobile Friendly'}
                 {language === 'cs' && 'Mobilní Responzivita'}
               </AccordionTrigger>
@@ -438,10 +379,7 @@ export const Features = () => {
             transition={{ delay: 0.3 }}
           >
             <AccordionItem value='domain'>
-              <AccordionTrigger
-                onMouseEnter={setIsHovering}
-                onMouseLeave={setIsNotHovering}
-              >
+              <AccordionTrigger>
                 {language === 'en' && 'Domain'}
                 {language === 'cs' && 'Doména'}
               </AccordionTrigger>
@@ -459,10 +397,7 @@ export const Features = () => {
             transition={{ delay: 0.3 }}
           >
             <AccordionItem value='indexing'>
-              <AccordionTrigger
-                onMouseEnter={setIsHovering}
-                onMouseLeave={setIsNotHovering}
-              >
+              <AccordionTrigger>
                 {language === 'en' && 'Search Engines Indexing'}
                 {language === 'cs' && 'Indexování ve Vyhledávačích'}
               </AccordionTrigger>
@@ -480,10 +415,7 @@ export const Features = () => {
             transition={{ delay: 0.3 }}
           >
             <AccordionItem value='seo'>
-              <AccordionTrigger
-                onMouseEnter={setIsHovering}
-                onMouseLeave={setIsNotHovering}
-              >
+              <AccordionTrigger>
                 {language === 'en' && 'SEO'}
                 {language === 'cs' && 'SEO'}
               </AccordionTrigger>
@@ -501,10 +433,7 @@ export const Features = () => {
             transition={{ delay: 0.3 }}
           >
             <AccordionItem value='multilang'>
-              <AccordionTrigger
-                onMouseEnter={setIsHovering}
-                onMouseLeave={setIsNotHovering}
-              >
+              <AccordionTrigger>
                 {language === 'en' && 'Multilingualism'}
                 {language === 'cs' && 'Multijazyžnost'}
               </AccordionTrigger>
@@ -522,10 +451,7 @@ export const Features = () => {
             transition={{ delay: 0.3 }}
           >
             <AccordionItem value='maps'>
-              <AccordionTrigger
-                onMouseEnter={setIsHovering}
-                onMouseLeave={setIsNotHovering}
-              >
+              <AccordionTrigger>
                 {language === 'en' && 'Interactive Maps'}
                 {language === 'cs' && 'Interaktivní Mapy'}
               </AccordionTrigger>

@@ -14,12 +14,10 @@ import { motion } from 'framer-motion'
 import { Container } from './container'
 import { Title } from './title'
 import { Textarea } from './ui/textarea'
-import { useCursor } from '@/store/use-cursor'
 import { Phone } from 'lucide-react'
 
 export const Contact = () => {
   const { language } = useLanguage(state => state)
-  const { setIsNotHovering, setIsHovering } = useCursor()
 
   const schema = z.object({
     name: z.string().min(1, {
@@ -101,8 +99,6 @@ export const Contact = () => {
                       {language === 'cs' && 'Jméno *'}
                     </Label>
                     <Input
-                      onMouseEnter={setIsHovering}
-                      onMouseLeave={setIsNotHovering}
                       placeholder='John Doe'
                       {...field}
                       className='border-zinc-400 dark:border-zinc-700'
@@ -125,8 +121,6 @@ export const Contact = () => {
                   >
                     <Label>Email *</Label>
                     <Input
-                      onMouseEnter={setIsHovering}
-                      onMouseLeave={setIsNotHovering}
                       placeholder='johndoe@gmail.com'
                       {...field}
                       className='border-zinc-400 dark:border-zinc-700'
@@ -152,8 +146,6 @@ export const Contact = () => {
                       {language === 'cs' && 'Zpráva *'}
                     </Label>
                     <Textarea
-                      onMouseEnter={setIsHovering}
-                      onMouseLeave={setIsNotHovering}
                       placeholder={
                         language === 'en'
                           ? 'Write your message...'
@@ -174,13 +166,7 @@ export const Contact = () => {
             whileInView={{ opacity: 1 }}
             transition={{ delay: 0.3 }}
           >
-            <Button
-              type='submit'
-              variant='rainbow'
-              className='mt-1 w-full'
-              onMouseEnter={setIsHovering}
-              onMouseLeave={setIsNotHovering}
-            >
+            <Button type='submit' variant='rainbow' className='mt-1 w-full'>
               {language === 'en' && 'Submit'}
               {language === 'cs' && 'Odeslat'}
             </Button>
@@ -214,8 +200,6 @@ export const Contact = () => {
         <a
           href='tel:+420777530096'
           className='font-bold text-purple-500 after:w-full after:h-[3px] after:bg-purple-500 after:-bottom-1 after:left-0 after:right-0 after:z-10 after:absolute relative after:opacity-0 after:scale-x-0 after:hover:scale-x-100 after:hover:opacity-100 after:transition after:rounded-lg'
-          onMouseEnter={setIsHovering}
-          onMouseLeave={setIsNotHovering}
         >
           +420 777 530 096
         </a>

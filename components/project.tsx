@@ -26,18 +26,18 @@ export const Project: FC<ProjectProps> = ({
   const { language } = useLanguage()
   const { setIsHovering, setIsNotHovering, setType } = useCursor()
 
-  const onMouseEnter = () => {
-    setIsHovering()
-    setType('project')
-  }
-
-  const onMouseLeave = () => {
-    setIsNotHovering()
-    setType('')
-  }
-
   return (
-    <Link href={href} onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
+    <Link
+      href={href}
+      onMouseEnter={() => {
+        setIsHovering()
+        setType('project')
+      }}
+      onMouseLeave={() => {
+        setIsNotHovering()
+        setType('')
+      }}
+    >
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}

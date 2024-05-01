@@ -8,11 +8,10 @@ import { useCursor } from '@/store/use-cursor'
 import { useEffect } from 'react'
 
 export default function Page() {
-  const { setIsNotHovering, setType } = useCursor()
+  const { setIsNotHovering } = useCursor()
 
   useEffect(() => {
     setIsNotHovering()
-    setType('')
   }, [])
 
   return (

@@ -7,11 +7,9 @@ import { MapPin } from 'lucide-react'
 import { motion } from 'framer-motion'
 import { ButtonGradient } from '../ui/button-gradient'
 import Link from 'next/link'
-import { useCursor } from '@/store/use-cursor'
 
 export const Hero = () => {
   const { language } = useLanguage()
-  const { setIsHovering, setIsNotHovering } = useCursor()
 
   return (
     <motion.div
@@ -65,11 +63,7 @@ export const Hero = () => {
               </p>
             )}
             <div className='flex justify-center mt-28'>
-              <Link
-                onMouseEnter={setIsHovering}
-                onMouseLeave={setIsNotHovering}
-                href='/services'
-              >
+              <Link href='/services'>
                 <ButtonGradient className='py-2 px-6 font-semibold text-lg'>
                   {language === 'en' && 'Take Action!'}
                   {language === 'cs' && 'Jednej!'}

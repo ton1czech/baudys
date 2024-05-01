@@ -61,7 +61,7 @@ export const Cursor = () => {
 
   return (
     <motion.div
-      className='hidden sm:block w-0 h-0 opacity-0 rounded-full border bg-black border-white fixed top-0 left-0 pointer-events-none z-[9998]'
+      className='hidden sm:block w-0 h-0 opacity-0 fixed top-0 left-0 pointer-events-none z-[9998]'
       variants={variants}
       transition={{ type: 'tween', ease: 'backOut', duration: 0.12 }}
       animate={

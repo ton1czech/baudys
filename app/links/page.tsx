@@ -3,7 +3,6 @@
 import { Container } from '@/components/container'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { Button } from '@/components/ui/button'
-import { useCursor } from '@/store/use-cursor'
 import { useLanguage } from '@/store/use-language'
 import {
   Camera,
@@ -33,8 +32,6 @@ interface LinkItemProps {
 }
 
 const LinkItem: FC<LinkItemProps> = ({ icon: Icon, label, href, color }) => {
-  const { setIsHovering, setIsNotHovering } = useCursor()
-
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -49,8 +46,6 @@ const LinkItem: FC<LinkItemProps> = ({ icon: Icon, label, href, color }) => {
             ? color
             : 'bg-zinc-300/80 hover:bg-zinc-400/70 text-zinc-800 dark:bg-zinc-800/80 dark:hover:bg-zinc-900/70'
         )}
-        onMouseEnter={setIsHovering}
-        onMouseLeave={setIsNotHovering}
       >
         <Link
           href={href}

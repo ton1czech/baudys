@@ -4,7 +4,6 @@ import { FC } from 'react'
 import { motion } from 'framer-motion'
 import { ArrowRight, X } from 'lucide-react'
 import { MobileNavItem } from './mobile-nav-item'
-import { useCursor } from '@/store/use-cursor'
 import { useLanguage } from '@/store/use-language'
 import { Button } from '../ui/button'
 import Link from 'next/link'
@@ -14,7 +13,6 @@ interface MobileNavbarProps {
 }
 
 export const MobileNavbar: FC<MobileNavbarProps> = ({ setIsOpen }) => {
-  const { setIsHovering, setIsNotHovering } = useCursor()
   const { language } = useLanguage()
 
   return (
@@ -36,12 +34,7 @@ export const MobileNavbar: FC<MobileNavbarProps> = ({ setIsOpen }) => {
       }}
       className='fixed left-0 top-0 w-screen h-screen z-50 grid justify-between origin-top bg-background'
     >
-      <X
-        className='absolute top-6 right-6'
-        onClick={() => setIsOpen(false)}
-        onMouseEnter={setIsHovering}
-        onMouseLeave={setIsNotHovering}
-      />
+      <X className='absolute top-6 right-6' onClick={() => setIsOpen(false)} />
       <motion.ul
         initial={{ y: 50, opacity: 0, x: '-50%' }}
         animate={{ y: 0, opacity: 1, x: '-50%' }}
@@ -63,7 +56,7 @@ export const MobileNavbar: FC<MobileNavbarProps> = ({ setIsOpen }) => {
           href='/gallery'
           setIsOpen={setIsOpen}
         />
-        <li onMouseEnter={setIsHovering} onMouseLeave={setIsNotHovering}>
+        <li>
           <Button variant='rainbow' className='py-8'>
             <Link href='/contact' className='flex gap-2 items-center text-4xl'>
               {language === 'en' && <>Let&apos;s talk</>}

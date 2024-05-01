@@ -6,11 +6,9 @@ import { Button } from './ui/button'
 import { useEffect } from 'react'
 import { Container } from './container'
 import { AnimatePresence, motion } from 'framer-motion'
-import { useCursor } from '@/store/use-cursor'
 
 export const Cookies = () => {
   const { language } = useLanguage()
-  const { setIsHovering, setIsNotHovering } = useCursor()
   const {
     isOpen,
     openCookies,
@@ -59,8 +57,6 @@ export const Cookies = () => {
             </h3>
             <div className='flex flex-col md:flex-row gap-4'>
               <Button
-                onMouseEnter={setIsHovering}
-                onMouseLeave={setIsNotHovering}
                 onClick={() => {
                   setCookiesEnabled()
                   closeCookiesPermanently()
@@ -71,8 +67,6 @@ export const Cookies = () => {
                 {language === 'en' && 'Agree'}
               </Button>
               <Button
-                onMouseEnter={setIsHovering}
-                onMouseLeave={setIsNotHovering}
                 onClick={closeCookiesPermanently}
                 className='bg-white rounded-2xl py-6 text-lg text-black hover:bg-zinc-100 w-full font-bold'
               >
@@ -80,8 +74,6 @@ export const Cookies = () => {
                 {language === 'en' && 'Disagree'}
               </Button>
               <Button
-                onMouseEnter={setIsHovering}
-                onMouseLeave={setIsNotHovering}
                 onClick={closeCookies}
                 className='bg-white rounded-2xl py-6 text-lg text-black hover:bg-zinc-100 w-full font-bold'
               >

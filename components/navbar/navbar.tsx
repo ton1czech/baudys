@@ -11,13 +11,11 @@ import { ArrowLeft, ArrowRight, Menu } from 'lucide-react'
 import { useLanguage } from '@/store/use-language'
 import { AnimatePresence } from 'framer-motion'
 import { MobileNavbar } from './mobile-navbar'
-import { useCursor } from '@/store/use-cursor'
 import { usePathname } from 'next/navigation'
 
 export const Navbar = () => {
   const pathname = usePathname()
   const { language } = useLanguage()
-  const { setIsHovering, setIsNotHovering } = useCursor()
 
   const [isOpen, setIsOpen] = useState<boolean>(false)
   const [isTopOfTheScreen, setIsTopOfTheScreen] = useState<boolean>(false)
@@ -38,11 +36,7 @@ export const Navbar = () => {
   useEffect(() => {
     if (pathname.startsWith('/services')) {
       setIsServicesPage(true)
-    }
-  }, [pathname])
-
-  useEffect(() => {
-    if (!pathname.startsWith('/services')) {
+    } else {
       setIsServicesPage(false)
     }
   }, [pathname])
@@ -61,12 +55,7 @@ export const Navbar = () => {
               'bg-zinc-300/40 border-zinc-400/70 backdrop-blur-lg dark:bg-zinc-800/40 dark:border-zinc-600/70 shadow-xl'
           )}
         >
-          <Link
-            href='/'
-            className='transition duration-300'
-            onMouseEnter={setIsHovering}
-            onMouseLeave={setIsNotHovering}
-          >
+          <Link href='/' className='transition duration-300'>
             <img
               src='/logo.webp'
               alt='logo'
@@ -76,10 +65,10 @@ export const Navbar = () => {
 
           <div className='items-center hidden md:flex'>
             <div className='flex gap-2 items-center'>
-              <div onMouseEnter={setIsHovering} onMouseLeave={setIsNotHovering}>
+              <div>
                 <ModeToggle />
               </div>
-              <div onMouseEnter={setIsHovering} onMouseLeave={setIsNotHovering}>
+              <div>
                 <LanguageSelector />
               </div>
             </div>
@@ -89,9 +78,7 @@ export const Navbar = () => {
             {isServicesPage ? (
               <ul className='flex gap-6 items-center'>
                 <ArrowLeft
-                  className='text-zinc-600 dark:text-zinc-400 w-5 h-5'
-                  onMouseEnter={setIsHovering}
-                  onMouseLeave={setIsNotHovering}
+                  className='text-zinc-600 dark:text-zinc-400 w-5 h-5 cursor-pointer'
                   onClick={() => setIsServicesPage(false)}
                 />
                 <NavItem
@@ -121,10 +108,7 @@ export const Navbar = () => {
                   label={language === 'en' ? 'Gallery' : 'Galerie'}
                   href='/gallery'
                 />
-                <li
-                  onMouseEnter={setIsHovering}
-                  onMouseLeave={setIsNotHovering}
-                >
+                <li>
                   <Button variant='rainbow' className=''>
                     <Link href='/contact' className='flex gap-1 items-center'>
                       {language === 'en' && <>Let&apos;s talk</>}
@@ -139,13 +123,13 @@ export const Navbar = () => {
           </div>
 
           <div className='flex items-center md:hidden'>
-            <div onMouseEnter={setIsHovering} onMouseLeave={setIsNotHovering}>
+            <div>
               <ModeToggle />
             </div>
-            <div onMouseEnter={setIsHovering} onMouseLeave={setIsNotHovering}>
+            <div>
               <LanguageSelector />
             </div>
-            <div onMouseEnter={setIsHovering} onMouseLeave={setIsNotHovering}>
+            <div>
               <Menu onClick={() => setIsOpen(true)} className='mx-2' />
             </div>
           </div>

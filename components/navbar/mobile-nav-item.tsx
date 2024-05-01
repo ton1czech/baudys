@@ -1,7 +1,6 @@
 'use client'
 
 import { cn } from '@/lib/utils'
-import { useCursor } from '@/store/use-cursor'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { FC } from 'react'
@@ -18,10 +17,9 @@ export const MobileNavItem: FC<MobileNavItemProps> = ({
   setIsOpen,
 }) => {
   const pathname = usePathname()
-  const { setIsNotHovering, setIsHovering } = useCursor()
 
   return (
-    <li onMouseEnter={setIsHovering} onMouseLeave={setIsNotHovering}>
+    <li>
       <Link
         href={href}
         onClick={() => setIsOpen(false)}

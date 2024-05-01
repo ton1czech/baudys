@@ -38,12 +38,7 @@ export const Service: FC<ServiceProps> = ({
       transition={{ delay: 0.3 }}
       className='group'
     >
-      <Link
-        href={href}
-        onMouseEnter={setIsHovering}
-        onMouseLeave={setIsNotHovering}
-        className='grid lg:grid-cols-2 gap-4 lg:gap-10'
-      >
+      <Link href={href} className='grid lg:grid-cols-2 gap-4 lg:gap-10'>
         <div className='rounded-lg aspect-video relative w-full h-full overflow-hidden'>
           <Image
             src={img}

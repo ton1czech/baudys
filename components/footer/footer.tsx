@@ -4,12 +4,10 @@ import { useLanguage } from '@/store/use-language'
 import { Container } from '../container'
 import { FooterIcon } from './footer-icon'
 import { ArrowUp, Github, Linkedin } from 'lucide-react'
-import { useCursor } from '@/store/use-cursor'
 import { motion } from 'framer-motion'
 
 export const Footer = () => {
   const { language } = useLanguage()
-  const { setIsHovering, setIsNotHovering } = useCursor()
 
   return (
     <footer className='pt-8 lg:pt-12 pb-12 border-t dark:border-zinc-700/50 border-zinc-500/50'>
@@ -28,8 +26,6 @@ export const Footer = () => {
               })
             }}
             className='flex items-center gap-1 colorful-text text-sm font-semibold relative after:w-full after:h-[3px] after:bg-purple-500 after:-bottom-1 after:left-0 after:right-0 after:z-10 after:absolute after:opacity-0 after:scale-x-0 after:hover:scale-x-100 after:hover:opacity-100 after:transition after:rounded-lg'
-            onMouseEnter={setIsHovering}
-            onMouseLeave={setIsNotHovering}
           >
             {language === 'en' && 'Back to top'}
             {language === 'cs' && 'Zpět na začátek'}
@@ -43,14 +39,14 @@ export const Footer = () => {
           transition={{ delay: 0.3 }}
           className='flex justify-center gap-4 mb-14'
         >
-          <div onMouseEnter={setIsHovering} onMouseLeave={setIsNotHovering}>
+          <div>
             <FooterIcon
               name='github'
               icon={Github}
               href='https://www.github.com/ton1czech/'
             />
           </div>
-          <div onMouseEnter={setIsHovering} onMouseLeave={setIsNotHovering}>
+          <div>
             <FooterIcon
               name='linkedin'
               icon={Linkedin}

@@ -8,7 +8,6 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion'
-import { useCursor } from '@/store/use-cursor'
 import { useLanguage } from '@/store/use-language'
 import { motion } from 'framer-motion'
 
@@ -28,7 +27,6 @@ const AccordionContentItem = ({ label, year }: AccordionContentItemProps) => {
 
 export const Supported = () => {
   const { language } = useLanguage()
-  const { setIsHovering, setIsNotHovering } = useCursor()
 
   return (
     <Container className='pb-40 lg:pb-60 xl:pb-80'>
@@ -43,21 +41,11 @@ export const Supported = () => {
             transition={{ delay: 0.3 }}
           >
             <AccordionItem value='bmw'>
-              <AccordionTrigger
-                onMouseEnter={setIsHovering}
-                onMouseLeave={setIsNotHovering}
-                className='text-xl'
-              >
-                BMW
-              </AccordionTrigger>
+              <AccordionTrigger className='text-xl'>BMW</AccordionTrigger>
               <AccordionContent>
                 <Accordion type='multiple' className='space-y-4'>
                   <AccordionItem value='1 series'>
-                    <AccordionTrigger
-                      onMouseEnter={setIsHovering}
-                      onMouseLeave={setIsNotHovering}
-                      className='text-lg'
-                    >
+                    <AccordionTrigger className='text-lg'>
                       1 Series
                     </AccordionTrigger>
                     <AccordionContent className='space-y-6'>
@@ -74,11 +62,7 @@ export const Supported = () => {
                     </AccordionContent>
                   </AccordionItem>
                   <AccordionItem value='2 series'>
-                    <AccordionTrigger
-                      onMouseEnter={setIsHovering}
-                      onMouseLeave={setIsNotHovering}
-                      className='text-lg'
-                    >
+                    <AccordionTrigger className='text-lg'>
                       2 Series
                     </AccordionTrigger>
                     <AccordionContent className='space-y-6'>
@@ -93,11 +77,7 @@ export const Supported = () => {
                     </AccordionContent>
                   </AccordionItem>
                   <AccordionItem value='3 series'>
-                    <AccordionTrigger
-                      onMouseEnter={setIsHovering}
-                      onMouseLeave={setIsNotHovering}
-                      className='text-lg'
-                    >
+                    <AccordionTrigger className='text-lg'>
                       3 Series
                     </AccordionTrigger>
                     <AccordionContent className='space-y-6'>
@@ -120,11 +100,7 @@ export const Supported = () => {
                     </AccordionContent>
                   </AccordionItem>
                   <AccordionItem value='4 series'>
-                    <AccordionTrigger
-                      onMouseEnter={setIsHovering}
-                      onMouseLeave={setIsNotHovering}
-                      className='text-lg'
-                    >
+                    <AccordionTrigger className='text-lg'>
                       4 Series
                     </AccordionTrigger>
                     <AccordionContent className='space-y-6'>
@@ -139,11 +115,7 @@ export const Supported = () => {
                     </AccordionContent>
                   </AccordionItem>
                   <AccordionItem value='5 series'>
-                    <AccordionTrigger
-                      onMouseEnter={setIsHovering}
-                      onMouseLeave={setIsNotHovering}
-                      className='text-lg'
-                    >
+                    <AccordionTrigger className='text-lg'>
                       5 Series
                     </AccordionTrigger>
                     <AccordionContent className='space-y-6'>
@@ -160,11 +132,7 @@ export const Supported = () => {
                     </AccordionContent>
                   </AccordionItem>
                   <AccordionItem value='6 series'>
-                    <AccordionTrigger
-                      onMouseEnter={setIsHovering}
-                      onMouseLeave={setIsNotHovering}
-                      className='text-lg'
-                    >
+                    <AccordionTrigger className='text-lg'>
                       6 Series
                     </AccordionTrigger>
                     <AccordionContent className='space-y-6'>
@@ -178,11 +146,7 @@ export const Supported = () => {
                     </AccordionContent>
                   </AccordionItem>
                   <AccordionItem value='7 series'>
-                    <AccordionTrigger
-                      onMouseEnter={setIsHovering}
-                      onMouseLeave={setIsNotHovering}
-                      className='text-lg'
-                    >
+                    <AccordionTrigger className='text-lg'>
                       7 Series
                     </AccordionTrigger>
                     <AccordionContent className='space-y-6'>
@@ -198,11 +162,7 @@ export const Supported = () => {
                     </AccordionContent>
                   </AccordionItem>
                   <AccordionItem value='8 series'>
-                    <AccordionTrigger
-                      onMouseEnter={setIsHovering}
-                      onMouseLeave={setIsNotHovering}
-                      className='text-lg'
-                    >
+                    <AccordionTrigger className='text-lg'>
                       8 Series
                     </AccordionTrigger>
                     <AccordionContent className='space-y-6'>
@@ -213,38 +173,20 @@ export const Supported = () => {
                     </AccordionContent>
                   </AccordionItem>
                   <AccordionItem value='x1'>
-                    <AccordionTrigger
-                      onMouseEnter={setIsHovering}
-                      onMouseLeave={setIsNotHovering}
-                      className='text-lg'
-                    >
-                      X1
-                    </AccordionTrigger>
+                    <AccordionTrigger className='text-lg'>X1</AccordionTrigger>
                     <AccordionContent className='space-y-6'>
                       <AccordionContentItem label='E84' year='2009-2015' />
                       <AccordionContentItem label='F48' year='2015-2022' />
                     </AccordionContent>
                   </AccordionItem>
                   <AccordionItem value='x2'>
-                    <AccordionTrigger
-                      onMouseEnter={setIsHovering}
-                      onMouseLeave={setIsNotHovering}
-                      className='text-lg'
-                    >
-                      X2
-                    </AccordionTrigger>
+                    <AccordionTrigger className='text-lg'>X2</AccordionTrigger>
                     <AccordionContent className='space-y-6'>
                       <AccordionContentItem label='F39' year='2018+' />
                     </AccordionContent>
                   </AccordionItem>
                   <AccordionItem value='x3'>
-                    <AccordionTrigger
-                      onMouseEnter={setIsHovering}
-                      onMouseLeave={setIsNotHovering}
-                      className='text-lg'
-                    >
-                      X3
-                    </AccordionTrigger>
+                    <AccordionTrigger className='text-lg'>X3</AccordionTrigger>
                     <AccordionContent className='space-y-6'>
                       <AccordionContentItem label='E83' year='2003-2010' />
                       <AccordionContentItem label='F25' year='2010-2017' />
@@ -252,26 +194,14 @@ export const Supported = () => {
                     </AccordionContent>
                   </AccordionItem>
                   <AccordionItem value='x4'>
-                    <AccordionTrigger
-                      onMouseEnter={setIsHovering}
-                      onMouseLeave={setIsNotHovering}
-                      className='text-lg'
-                    >
-                      X4
-                    </AccordionTrigger>
+                    <AccordionTrigger className='text-lg'>X4</AccordionTrigger>
                     <AccordionContent className='space-y-6'>
                       <AccordionContentItem label='F26' year='2014-2018' />
                       <AccordionContentItem label='G02, F98' year='2018+' />
                     </AccordionContent>
                   </AccordionItem>
                   <AccordionItem value='x5'>
-                    <AccordionTrigger
-                      onMouseEnter={setIsHovering}
-                      onMouseLeave={setIsNotHovering}
-                      className='text-lg'
-                    >
-                      X5
-                    </AccordionTrigger>
+                    <AccordionTrigger className='text-lg'>X5</AccordionTrigger>
                     <AccordionContent className='space-y-6'>
                       <AccordionContentItem label='E70' year='2006-2007' />
                       <AccordionContentItem label='E70' year='2008-2013' />
@@ -283,13 +213,7 @@ export const Supported = () => {
                     </AccordionContent>
                   </AccordionItem>
                   <AccordionItem value='x6'>
-                    <AccordionTrigger
-                      onMouseEnter={setIsHovering}
-                      onMouseLeave={setIsNotHovering}
-                      className='text-lg'
-                    >
-                      X6
-                    </AccordionTrigger>
+                    <AccordionTrigger className='text-lg'>X6</AccordionTrigger>
                     <AccordionContent className='space-y-6'>
                       <AccordionContentItem label='E71, E72' year='2008-2014' />
                       <AccordionContentItem label='F16, F85' year='2014-2019' />
@@ -300,13 +224,7 @@ export const Supported = () => {
                     </AccordionContent>
                   </AccordionItem>
                   <AccordionItem value='x7'>
-                    <AccordionTrigger
-                      onMouseEnter={setIsHovering}
-                      onMouseLeave={setIsNotHovering}
-                      className='text-lg'
-                    >
-                      X7
-                    </AccordionTrigger>
+                    <AccordionTrigger className='text-lg'>X7</AccordionTrigger>
                     <AccordionContent className='space-y-6'>
                       <AccordionContentItem
                         label='G07 (PRE-LCI)'
@@ -315,13 +233,7 @@ export const Supported = () => {
                     </AccordionContent>
                   </AccordionItem>
                   <AccordionItem value='z4'>
-                    <AccordionTrigger
-                      onMouseEnter={setIsHovering}
-                      onMouseLeave={setIsNotHovering}
-                      className='text-lg'
-                    >
-                      Z4
-                    </AccordionTrigger>
+                    <AccordionTrigger className='text-lg'>Z4</AccordionTrigger>
                     <AccordionContent className='space-y-6'>
                       <AccordionContentItem label='E85' year='2002-2008' />
                       <AccordionContentItem label='E89' year='2009-2016' />
@@ -329,49 +241,25 @@ export const Supported = () => {
                     </AccordionContent>
                   </AccordionItem>
                   <AccordionItem value='i3'>
-                    <AccordionTrigger
-                      onMouseEnter={setIsHovering}
-                      onMouseLeave={setIsNotHovering}
-                      className='text-lg'
-                    >
-                      i3
-                    </AccordionTrigger>
+                    <AccordionTrigger className='text-lg'>i3</AccordionTrigger>
                     <AccordionContent className='space-y-6'>
                       <AccordionContentItem label='I01' year='2013+' />
                     </AccordionContent>
                   </AccordionItem>
                   <AccordionItem value='i4'>
-                    <AccordionTrigger
-                      onMouseEnter={setIsHovering}
-                      onMouseLeave={setIsNotHovering}
-                      className='text-lg'
-                    >
-                      i4
-                    </AccordionTrigger>
+                    <AccordionTrigger className='text-lg'>i4</AccordionTrigger>
                     <AccordionContent className='space-y-6'>
                       <AccordionContentItem label='G26E' year='2021+' />
                     </AccordionContent>
                   </AccordionItem>
                   <AccordionItem value='i8'>
-                    <AccordionTrigger
-                      onMouseEnter={setIsHovering}
-                      onMouseLeave={setIsNotHovering}
-                      className='text-lg'
-                    >
-                      i8
-                    </AccordionTrigger>
+                    <AccordionTrigger className='text-lg'>i8</AccordionTrigger>
                     <AccordionContent className='space-y-6'>
                       <AccordionContentItem label='I12, I15' year='2013+' />
                     </AccordionContent>
                   </AccordionItem>
                   <AccordionItem value='iX3'>
-                    <AccordionTrigger
-                      onMouseEnter={setIsHovering}
-                      onMouseLeave={setIsNotHovering}
-                      className='text-lg'
-                    >
-                      iX3
-                    </AccordionTrigger>
+                    <AccordionTrigger className='text-lg'>iX3</AccordionTrigger>
                     <AccordionContent className='space-y-6'>
                       <AccordionContentItem label='G08' year='2021+' />
                     </AccordionContent>
@@ -388,21 +276,11 @@ export const Supported = () => {
             transition={{ delay: 0.3 }}
           >
             <AccordionItem value='mini'>
-              <AccordionTrigger
-                onMouseEnter={setIsHovering}
-                onMouseLeave={setIsNotHovering}
-                className='text-xl'
-              >
-                MINI
-              </AccordionTrigger>
+              <AccordionTrigger className='text-xl'>MINI</AccordionTrigger>
               <AccordionContent>
                 <Accordion type='multiple' className='space-y-4'>
                   <AccordionItem value='cooper'>
-                    <AccordionTrigger
-                      onMouseEnter={setIsHovering}
-                      onMouseLeave={setIsNotHovering}
-                      className='text-lg'
-                    >
+                    <AccordionTrigger className='text-lg'>
                       Cooper
                     </AccordionTrigger>
                     <AccordionContent className='space-y-6'>
@@ -413,11 +291,7 @@ export const Supported = () => {
                     </AccordionContent>
                   </AccordionItem>
                   <AccordionItem value='convertible'>
-                    <AccordionTrigger
-                      onMouseEnter={setIsHovering}
-                      onMouseLeave={setIsNotHovering}
-                      className='text-lg'
-                    >
+                    <AccordionTrigger className='text-lg'>
                       Convertible
                     </AccordionTrigger>
                     <AccordionContent className='space-y-6'>
@@ -427,11 +301,7 @@ export const Supported = () => {
                     </AccordionContent>
                   </AccordionItem>
                   <AccordionItem value='coupe'>
-                    <AccordionTrigger
-                      onMouseEnter={setIsHovering}
-                      onMouseLeave={setIsNotHovering}
-                      className='text-lg'
-                    >
+                    <AccordionTrigger className='text-lg'>
                       Coupe
                     </AccordionTrigger>
                     <AccordionContent>
@@ -439,11 +309,7 @@ export const Supported = () => {
                     </AccordionContent>
                   </AccordionItem>
                   <AccordionItem value='roadster'>
-                    <AccordionTrigger
-                      onMouseEnter={setIsHovering}
-                      onMouseLeave={setIsNotHovering}
-                      className='text-lg'
-                    >
+                    <AccordionTrigger className='text-lg'>
                       Roadster
                     </AccordionTrigger>
                     <AccordionContent>
@@ -451,11 +317,7 @@ export const Supported = () => {
                     </AccordionContent>
                   </AccordionItem>
                   <AccordionItem value='countryman'>
-                    <AccordionTrigger
-                      onMouseEnter={setIsHovering}
-                      onMouseLeave={setIsNotHovering}
-                      className='text-lg'
-                    >
+                    <AccordionTrigger className='text-lg'>
                       Countryman
                     </AccordionTrigger>
                     <AccordionContent className='space-y-6'>
@@ -464,11 +326,7 @@ export const Supported = () => {
                     </AccordionContent>
                   </AccordionItem>
                   <AccordionItem value='paceman'>
-                    <AccordionTrigger
-                      onMouseEnter={setIsHovering}
-                      onMouseLeave={setIsNotHovering}
-                      className='text-lg'
-                    >
+                    <AccordionTrigger className='text-lg'>
                       Paceman
                     </AccordionTrigger>
                     <AccordionContent>
@@ -476,11 +334,7 @@ export const Supported = () => {
                     </AccordionContent>
                   </AccordionItem>
                   <AccordionItem value='clubman'>
-                    <AccordionTrigger
-                      onMouseEnter={setIsHovering}
-                      onMouseLeave={setIsNotHovering}
-                      className='text-lg'
-                    >
+                    <AccordionTrigger className='text-lg'>
                       Clubman
                     </AccordionTrigger>
                     <AccordionContent className='space-y-6'>
@@ -500,21 +354,11 @@ export const Supported = () => {
             transition={{ delay: 0.3 }}
           >
             <AccordionItem value='toyota'>
-              <AccordionTrigger
-                onMouseEnter={setIsHovering}
-                onMouseLeave={setIsNotHovering}
-                className='text-xl'
-              >
-                Toyota
-              </AccordionTrigger>
+              <AccordionTrigger className='text-xl'>Toyota</AccordionTrigger>
               <AccordionContent>
                 <Accordion type='multiple' className='space-y-4'>
                   <AccordionItem value='supra'>
-                    <AccordionTrigger
-                      onMouseEnter={setIsHovering}
-                      onMouseLeave={setIsNotHovering}
-                      className='text-lg'
-                    >
+                    <AccordionTrigger className='text-lg'>
                       Supra
                     </AccordionTrigger>
                     <AccordionContent>
