@@ -40,7 +40,7 @@ export const Footer = () => {
           transition={{ delay: 0.3 }}
           className='flex justify-center gap-4 mb-14'
         >
-          <FooterIcon
+          {/* <FooterIcon
             name='instagram'
             icon={Instagram}
             href='https://www.instagram.com/baudys.dev/'
@@ -54,7 +54,7 @@ export const Footer = () => {
             name='youtube'
             icon={Youtube}
             href='https://www.youtube.com/channel/UCblA_CnykG2Dw_6IMwZ9z9A'
-          />
+          /> */}
           <FooterIcon
             name='linkedin'
             icon={Linkedin}
