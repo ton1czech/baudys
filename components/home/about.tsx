@@ -2,19 +2,19 @@
 
 import { useLanguage } from '@/store/use-language'
 import { Container } from '../container'
-import Link from 'next/link'
+// import Link from 'next/link'
 import { Title } from '../title'
-import { useCursor } from '@/store/use-cursor'
+// import { useCursor } from '@/store/use-cursor'
 import { motion } from 'framer-motion'
 
 export const About = () => {
   const { language } = useLanguage()
-  const { setIsNotHovering, setIsHovering, setType } = useCursor()
+  //   const { setIsNotHovering, setIsHovering, setType } = useCursor()
 
   return (
     <Container className='pb-40 lg:pb-60 xl:pb-80'>
       <Title label={language === 'en' ? 'Who am I?' : 'Kdo jsem?'} />
-      <div className='grid xl:grid-cols-2 gap-8 xl:gap-20'>
+      <div className='grid xl:grid-cols-2 gap-4 md:gap-8 xl:gap-20'>
         <motion.img
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -39,7 +39,7 @@ export const About = () => {
                 Programming 🖥️ in 2019 and was immediately hooked. Since then
                 I&apos;ve managed to create dozens of projects, both for myself
                 and for clients. Some of my favourites include my portfolio and{' '}
-                <Link
+                {/* <Link
                   onMouseEnter={() => {
                     setIsHovering()
                     setType('external')
@@ -53,14 +53,14 @@ export const About = () => {
                   className='relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-[3px] after:bg-purple-500 hover:text-purple-500 dark:hover:text-purple-500 transition font-bold dark:text-zinc-200 text-zinc-800'
                 >
                   Planetopedia
-                </Link>{' '}
-                website. It is also worth mentioning that I have created several
-                applications for the Pilsen Regional Office 👔, I have given
-                educational lectures for children 🧑‍🏫 and I have successfully
-                passed the Microsoft Office Specialist exams 📖 in PowerPoint 🟠
-                and Word 🔵 at the bett 2023 event in London. When I&apos;m not
-                sitting at the computer, I&apos;m doing street workout 💪 or
-                working on cars 🏎️.
+                </Link> */}
+                Planetopedia website. It is also worth mentioning that I have
+                created several applications for the Pilsen Regional Office 👔,
+                I have given educational lectures for children 🧑‍🏫 and I have
+                successfully passed the Microsoft Office Specialist exams 📖 in
+                PowerPoint 🟠 and Word 🔵 at the bett 2023 event in London. When
+                I&apos;m not sitting at the computer, I&apos;m doing street
+                workout 💪 or working on cars 🏎️.
               </>
             )}
             {language === 'cs' && (
@@ -71,7 +71,7 @@ export const About = () => {
                 setkal v roce 2019 a hned mě to pohltilo. Od té doby jsem stihl
                 vytvořit desítky projektů, ať už sám pro sebe, tak i pro
                 klienty. Mezi mé nejoblíbenější patří moje portfolio a web{' '}
-                <Link
+                {/* <Link
                   onMouseEnter={() => {
                     setIsHovering()
                     setType('external')
@@ -85,13 +85,13 @@ export const About = () => {
                   className='relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-[3px] after:bg-purple-500 hover:text-purple-500 dark:hover:text-purple-500 transition font-bold dark:text-zinc-200 text-zinc-800'
                 >
                   Planetopedia
-                </Link>
-                . Za zmínku také stojí, že jsem vytvořil několik aplikací pro
-                úřad plzeňského kraje 👔, vedl jsem výukové přednášky 🧑‍🏫 pro
-                děti a také jsem úspěšně absolvoval Microsoft Office Specialist
-                zkoušky 📖 z PowerPointu 🟠 a Wordu 🔵 na akci bett 2023 v
-                Londýně. Když zrovna nesedím u počítače, tak cvičím street
-                workout 💪 nebo pracuji na autech 🏎.
+                </Link> */}
+                Planetopedia . Za zmínku také stojí, že jsem vytvořil několik
+                aplikací pro úřad plzeňského kraje 👔, vedl jsem výukové
+                přednášky 🧑‍🏫 pro děti a také jsem úspěšně absolvoval Microsoft
+                Office Specialist zkoušky 📖 z PowerPointu 🟠 a Wordu 🔵 na akci
+                bett 2023 v Londýně. Když zrovna nesedím u počítače, tak cvičím
+                street workout 💪 nebo pracuji na autech 🏎.
               </>
             )}
           </p>
