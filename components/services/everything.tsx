@@ -106,14 +106,8 @@ export const Everything = () => {
           title={language === 'en' ? 'Cars' : 'Auta'}
           items={
             language === 'en'
-              ? [
-                  'functions (BMW, MINI, SUPRA MK5)',
-                  'TPMS (programming + installation)',
-                ]
-              : [
-                  'funkce (BMW, MINI, SUPRA MK5)',
-                  'TPMS (programování + montáž)',
-                ]
+              ? ['ECU tune (BMW)', 'TPMS (programming + installation)']
+              : ['Ladění ECU (BMW)', 'TPMS (programování + montáž)']
           }
         />{' '}
         <EverythingItem
