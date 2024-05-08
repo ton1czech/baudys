@@ -50,7 +50,7 @@ export const Service: FC<ServiceProps> = ({
             )}
           />
           {tag && (
-            <p className='absolute bg-zinc-700/50 backdrop-blur-sm text-sm py-1 px-2 rounded-md bottom-2 right-2'>
+            <p className='absolute bg-zinc-700/50 backdrop-blur-sm text-sm py-1 px-2 rounded-md bottom-2 right-2 text-white'>
               {tag}
               <Link
                 onClick={e => e.stopPropagation()}
