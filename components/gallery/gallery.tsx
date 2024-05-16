@@ -6,18 +6,76 @@ import { GalleryItem } from './gallery-item'
 import { useGallery } from '@/store/use-gallery'
 
 export const Gallery = () => {
-  const { animals, cars } = useGallery()
+  const { animals, cars, events, fitness } = useGallery()
 
   const getFilteredGallery = () => {
     return gallery.filter(item => {
-      if (animals && cars) {
+      if (animals && cars && events && fitness) {
         return true
-      } else if (animals && !cars) {
+      } else if (animals && !cars && !events && !fitness) {
         return item.categories.includes('animals')
-      } else if (!animals && cars) {
+      } else if (!animals && cars && !events && !fitness) {
         return item.categories.includes('cars')
+      } else if (!animals && !cars && events && !fitness) {
+        return item.categories.includes('events')
+      } else if (!animals && !cars && !events && fitness) {
+        return item.categories.includes('fitness')
+      } else if (animals && cars && !events && !fitness) {
+        return (
+          item.categories.includes('animals') ||
+          item.categories.includes('cars')
+        )
+      } else if (animals && !cars && events && !fitness) {
+        return (
+          item.categories.includes('animals') ||
+          item.categories.includes('events')
+        )
+      } else if (animals && !cars && !events && fitness) {
+        return (
+          item.categories.includes('animals') ||
+          item.categories.includes('fitness')
+        )
+      } else if (!animals && cars && events && !fitness) {
+        return (
+          item.categories.includes('cars') || item.categories.includes('events')
+        )
+      } else if (!animals && cars && !events && fitness) {
+        return (
+          item.categories.includes('cars') ||
+          item.categories.includes('fitness')
+        )
+      } else if (!animals && !cars && events && fitness) {
+        return (
+          item.categories.includes('events') ||
+          item.categories.includes('fitness')
+        )
+      } else if (animals && cars && events && !fitness) {
+        return (
+          item.categories.includes('animals') ||
+          item.categories.includes('cars') ||
+          item.categories.includes('events')
+        )
+      } else if (animals && cars && !events && fitness) {
+        return (
+          item.categories.includes('animals') ||
+          item.categories.includes('cars') ||
+          item.categories.includes('fitness')
+        )
+      } else if (animals && !cars && events && fitness) {
+        return (
+          item.categories.includes('animals') ||
+          item.categories.includes('events') ||
+          item.categories.includes('fitness')
+        )
+      } else if (!animals && cars && events && fitness) {
+        return (
+          item.categories.includes('cars') ||
+          item.categories.includes('events') ||
+          item.categories.includes('fitness')
+        )
+      } else {
+        return false
       }
-      return false
     })
   }
 

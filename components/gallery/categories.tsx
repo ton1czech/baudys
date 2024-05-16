@@ -10,7 +10,16 @@ import { Container } from '../container'
 
 export const Categories = () => {
   const { language } = useLanguage()
-  const { animals, cars, setAnimals, setCars } = useGallery()
+  const {
+    animals,
+    cars,
+    events,
+    fitness,
+    setAnimals,
+    setCars,
+    setEvents,
+    setFitness,
+  } = useGallery()
 
   const [isOpen, setIsOpen] = useState(false)
 
@@ -45,6 +54,22 @@ export const Categories = () => {
             >
               {language === 'en' && 'animals'}
               {language === 'cs' && 'zvířata'}
+            </Button>
+            <Button
+              onClick={setEvents}
+              variant='category'
+              className={cn(events && 'bg-white text-zinc-900')}
+            >
+              {language === 'en' && 'events'}
+              {language === 'cs' && 'akce'}
+            </Button>
+            <Button
+              onClick={setFitness}
+              variant='category'
+              className={cn(fitness && 'bg-white text-zinc-900')}
+            >
+              {language === 'en' && 'fitness'}
+              {language === 'cs' && 'fitness'}
             </Button>
           </div>
         )}

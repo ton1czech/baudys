@@ -5,6 +5,7 @@ import { useCursor } from '@/store/use-cursor'
 import { useLanguage } from '@/store/use-language'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
+import { cn } from '@/lib/utils'
 
 interface Props {
   item: any
@@ -37,7 +38,7 @@ export const GalleryItem = ({ item }: Props) => {
       >
         <img
           src={item.images[0]}
-          className='transition duration-300 rounded-xl'
+          className={cn('transition duration-300 rounded-xl')}
           style={{ filter: isHovered ? 'brightness(100%)' : 'brightness(85%)' }}
         />
         <p className='text-sm text-zinc-200 absolute bottom-2 left-2 bg-black/20 p-1 rounded-md'>

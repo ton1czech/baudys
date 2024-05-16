@@ -5,6 +5,10 @@ interface GalleryStore {
   setCars: () => void
   animals: boolean
   setAnimals: () => void
+  events: boolean
+  setEvents: () => void
+  fitness: boolean
+  setFitness: () => void
 }
 
 export const useGallery = create<GalleryStore>(set => ({
@@ -12,4 +16,8 @@ export const useGallery = create<GalleryStore>(set => ({
   setCars: () => set(state => ({ cars: !state.cars })),
   animals: true,
   setAnimals: () => set(state => ({ animals: !state.animals })),
+  events: true,
+  setEvents: () => set(state => ({ events: !state.events })),
+  fitness: true,
+  setFitness: () => set(state => ({ fitness: !state.fitness })),
 }))
