@@ -15,10 +15,14 @@ export const Categories = () => {
     cars,
     events,
     fitness,
+    nature,
+    monuments,
     setAnimals,
     setCars,
     setEvents,
     setFitness,
+    setNature,
+    setMonuments,
   } = useGallery()
 
   const [isOpen, setIsOpen] = useState(false)
@@ -70,6 +74,22 @@ export const Categories = () => {
             >
               {language === 'en' && 'fitness'}
               {language === 'cs' && 'fitness'}
+            </Button>
+            <Button
+              onClick={setNature}
+              variant='category'
+              className={cn(nature && 'bg-white text-zinc-900')}
+            >
+              {language === 'en' && 'nature'}
+              {language === 'cs' && 'příroda'}
+            </Button>
+            <Button
+              onClick={setMonuments}
+              variant='category'
+              className={cn(monuments && 'bg-white text-zinc-900')}
+            >
+              {language === 'en' && 'monuments'}
+              {language === 'cs' && 'památky'}
             </Button>
           </div>
         )}

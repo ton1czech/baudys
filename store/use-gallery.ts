@@ -9,6 +9,10 @@ interface GalleryStore {
   setEvents: () => void
   fitness: boolean
   setFitness: () => void
+  nature: boolean
+  setNature: () => void
+  monuments: boolean
+  setMonuments: () => void
 }
 
 export const useGallery = create<GalleryStore>(set => ({
@@ -20,4 +24,8 @@ export const useGallery = create<GalleryStore>(set => ({
   setEvents: () => set(state => ({ events: !state.events })),
   fitness: true,
   setFitness: () => set(state => ({ fitness: !state.fitness })),
+  nature: true,
+  setNature: () => set(state => ({ nature: !state.nature })),
+  monuments: true,
+  setMonuments: () => set(state => ({ monuments: !state.monuments })),
 }))
