@@ -111,6 +111,21 @@ export const gallery = [
     ],
   },
   {
+    labelEn: 'Rýzmberk',
+    labelCs: 'Rýzmberk',
+    date: '01-05-2024',
+    slug: 'ryzmberk',
+    categories: ['nature', 'monuments'],
+    images: [
+      '/gallery/ryzmberk/1.webp',
+      '/gallery/ryzmberk/2.webp',
+      '/gallery/ryzmberk/3.webp',
+      '/gallery/ryzmberk/4.webp',
+      '/gallery/ryzmberk/5.webp',
+      '/gallery/ryzmberk/6.webp',
+    ],
+  },
+  {
     labelEn: 'Ferrari Testarossa',
     labelCs: 'Ferrari Testarossa',
     date: '25-03-2024',
