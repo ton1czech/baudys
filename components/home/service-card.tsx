@@ -25,7 +25,6 @@ export const ServiceCard: FC<ServiceCardProps> = ({
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ delay: 0.3 }}
-      className='p-8'
     >
       <h4
         className={cn(
