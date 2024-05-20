@@ -1,6 +1,7 @@
 import { getPosts } from '@/actions/get-posts'
-import { Cateogries } from '@/components/blog/categories'
+import { Categories } from '@/components/blog/categories'
 import { Posts } from '@/components/blog/posts'
+import { Contact } from '@/components/contact'
 import { Title } from '@/components/title'
 
 export default async function Page() {
@@ -9,8 +10,9 @@ export default async function Page() {
   return (
     <main>
       <Title label='BLOG' />
-      <Cateogries />
+      <Categories />
       <Posts posts={posts} />
+      <Contact />
     </main>
   )
 }

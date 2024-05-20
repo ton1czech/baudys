@@ -5,8 +5,12 @@ import { cn } from '@/lib/utils'
 import { ChevronDown } from 'lucide-react'
 import Link from 'next/link'
 import { useState } from 'react'
+import { Button, buttonVariants } from '../ui/button'
+import { usePathname } from 'next/navigation'
 
-export const Cateogries = () => {
+export const Categories = () => {
+  const pathname = usePathname()
+
   const [isOpen, setIsOpen] = useState(false)
 
   return (
@@ -24,7 +28,17 @@ export const Cateogries = () => {
       {isOpen && (
         <div className='mt-2 flex gap-2'>
           {categories.map(category => (
-            <Link href={`/blog/${category}`}>{category}</Link>
+            <Link key={category} href={`/blog/${category}`}>
+              <Button
+                variant='category'
+                className={cn(
+                  '',
+                  pathname.includes(category) && 'bg-white text-zinc-900'
+                )}
+              >
+                {category}
+              </Button>
+            </Link>
           ))}
         </div>
       )}

@@ -49,14 +49,10 @@ export const Contact = () => {
         process.env.NEXT_PUBLIC_PUBLIC_API!
       )
 
-      console.log(emailResponse)
-
       toast.success(
         language === 'en' ? 'Sent Successfully.' : 'Úspěšně odesláno.'
       )
     } catch (error) {
-      console.log('Error sending email:', error)
-
       toast.error(
         language === 'en'
           ? 'Something went wrong, please try again later.'

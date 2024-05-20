@@ -1,22 +1,23 @@
 import { Post } from '@/types/blog'
-import Link from 'next/link'
+import { Card } from './card'
 
-export const Posts = ({ posts }: { posts: Post[] }) => {
+interface Props {
+  posts: Post[]
+}
+
+export const Posts = ({ posts }: Props) => {
   return (
-    <ol>
-      {posts.map(({ slug, title, publishDate, categories }) => (
-        <li key={slug}>
-          <h2>
-            <Link href={`/blog/(posts)/${slug}`}>{title}</Link>
-          </h2>
-          <p>
-            <strong>Published:</strong>{' '}
-            {new Date(publishDate).toLocaleDateString()}{' '}
-            <strong>Categories:</strong>{' '}
-            {categories.map((cat, i) => `${i ? ', ' : ''}${cat}`)}
-          </p>
-        </li>
+    <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-10 mt-10 mb-32 md:mb-44 lg:mb-60'>
+      {posts.map(({ slug, title, image, publishDate, categories }) => (
+        <Card
+          key={slug}
+          slug={slug}
+          title={title}
+          image={image}
+          publishDate={publishDate}
+          categories={categories}
+        />
       ))}
-    </ol>
+    </div>
   )
 }
