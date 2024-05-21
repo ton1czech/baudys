@@ -31,6 +31,7 @@ export default function Page({ params }: Props) {
   const [zoomLevel, setZoomLevel] = useState<number>(1)
   const [transformOrigin, setTransformOrigin] = useState<string>('')
   const [touchStartX, setTouchStartX] = useState<number>(0)
+  const [isSwiping, setIsSwiping] = useState<boolean>(false)
 
   const prevImage = () => {
     const isFirst = currentIdx === 1
@@ -65,17 +66,22 @@ export default function Page({ params }: Props) {
 
   const handleTouchStart = (event: React.TouchEvent<HTMLDivElement>) => {
     setTouchStartX(event.touches[0].clientX)
+    setIsSwiping(true)
   }
 
   const handleTouchMove = (event: React.TouchEvent<HTMLDivElement>) => {
+    if (!isSwiping) return
+
     const touchMoveX = event.touches[0].clientX
     const deltaX = touchMoveX - touchStartX
     if (deltaX > 50) {
       prevImage()
       setTouchStartX(0)
+      setIsSwiping(false)
     } else if (deltaX < -50) {
       nextImage()
       setTouchStartX(0)
+      setIsSwiping(false)
     }
   }
 
@@ -143,12 +149,12 @@ export default function Page({ params }: Props) {
               <X className='size-4 md:size-8' />
             </div>
             <ChevronRight
-              className='absolute right-5 bg-violet-700 hover:bg-violet-800 border border-zinc-100/60 rounded-full p-2 md:right-40 text-zinc-200 top-[50%] w-12 h-12 md:w-16 md:h-16 cursor-pointer translate-y-[-50%]'
+              className='absolute right-2 bg-violet-700 hover:bg-violet-800 border border-zinc-100/60 rounded-full p-2 md:right-40 text-zinc-200 top-[50%] w-10 h-10 md:w-14 md:h-14 cursor-pointer translate-y-[-50%]'
               onClick={() => nextImage()}
             />
 
             <ChevronLeft
-              className='absolute left-5 bg-violet-700 hover:bg-violet-800 border border-zinc-100/60 rounded-full p-2 md:left-40 text-zinc-200 top-[50%] w-12 h-12 md:w-16 md:h-16 cursor-pointer translate-y-[-50%]'
+              className='absolute left-2 bg-violet-700 hover:bg-violet-800 border border-zinc-100/60 rounded-full p-2 md:left-40 text-zinc-200 top-[50%] w-10 h-10 md:w-14 md:h-14 cursor-pointer translate-y-[-50%]'
               onClick={() => prevImage()}
             />
           </Container>
