@@ -8,7 +8,7 @@ import { cn } from '@/lib/utils'
 import { useCursor } from '@/store/use-cursor'
 import { useLanguage } from '@/store/use-language'
 import { motion } from 'framer-motion'
-import { ChevronRight, X } from 'lucide-react'
+import { ChevronRight, ChevronLeft, X } from 'lucide-react'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
 
@@ -22,20 +22,32 @@ export default function Page({ params }: Props) {
   const { language } = useLanguage()
   const { setIsNotHovering } = useCursor()
 
-  const [fullscreen, setFullscreen] = useState<boolean>(false)
-  const [currentImage, setCurrentImage] = useState<string>()
-  const [zoomLevel, setZoomLevel] = useState<number>(1)
-  const [transformOrigin, setTransformOrigin] =
-    useState<string>('center center')
-
   const { labelEn, labelCs, images } = gallery.filter(
     (data: any) => data.slug === params.slug
   )[0]
 
-  const enterFullscreenView = (image: string): void => {
+  const [fullscreen, setFullscreen] = useState<boolean>(false)
+  const [currentIdx, setCurrentIdx] = useState<number>(0)
+  const [zoomLevel, setZoomLevel] = useState<number>(1)
+  const [transformOrigin, setTransformOrigin] = useState<string>('')
+  const [touchStartX, setTouchStartX] = useState<number>(0)
+
+  const prevImage = () => {
+    const isFirst = currentIdx === 1
+    const newIndex = isFirst ? gallery.length - 1 : currentIdx - 1
+    setCurrentIdx(newIndex)
+  }
+
+  const nextImage = () => {
+    const isLast = currentIdx === gallery.length
+    const newIndex = isLast ? 1 : currentIdx + 1
+    setCurrentIdx(newIndex)
+  }
+
+  const enterFullscreenView = (idx: number): void => {
     setFullscreen(true)
     setZoomLevel(1)
-    setCurrentImage(image)
+    setCurrentIdx(idx + 1)
   }
 
   const exitFullscreenView = () => {
@@ -49,6 +61,22 @@ export default function Page({ params }: Props) {
 
     setTransformOrigin(`${x}px ${y}px`)
     setZoomLevel(prevZoomLevel => (prevZoomLevel < 2 ? prevZoomLevel + 1 : 1))
+  }
+
+  const handleTouchStart = (event: React.TouchEvent<HTMLDivElement>) => {
+    setTouchStartX(event.touches[0].clientX)
+  }
+
+  const handleTouchMove = (event: React.TouchEvent<HTMLDivElement>) => {
+    const touchMoveX = event.touches[0].clientX
+    const deltaX = touchMoveX - touchStartX
+    if (deltaX > 50) {
+      prevImage()
+      setTouchStartX(0)
+    } else if (deltaX < -50) {
+      nextImage()
+      setTouchStartX(0)
+    }
   }
 
   useEffect(() => {
@@ -73,14 +101,15 @@ export default function Page({ params }: Props) {
         <Title label={language === 'en' ? labelEn : labelCs} />
 
         <div className='sm:columns-2 space-y-4'>
-          {images.map(image => (
+          {images.map((image, idx) => (
             <motion.img
               key={image}
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
-              onClick={() => enterFullscreenView(image)}
+              onClick={() => enterFullscreenView(idx)}
               src={image}
               alt='image'
+              className='cursor-pointer'
             />
           ))}
         </div>
@@ -88,10 +117,14 @@ export default function Page({ params }: Props) {
       <Contact />
 
       {fullscreen && (
-        <div className='fixed top-0 bottom-0 left-0 right-0 z-10 grid w-full h-full overflow-hidden bg-black select-none place-content-center'>
+        <div
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          className='fixed top-0 bottom-0 left-0 right-0 z-10 grid w-full h-full overflow-hidden bg-black select-none place-content-center'
+        >
           <Container className='relative flex flex-col gap-2 overflow-hidden px-0 mx-4'>
             <img
-              src={currentImage}
+              src={`/gallery/${params.slug}/${currentIdx}.webp`}
               alt='image'
               className={cn(
                 'lg:h-[82vh] lg:m-auto overflow-hidden select-none',
@@ -105,10 +138,19 @@ export default function Page({ params }: Props) {
             />
             <div
               onClick={exitFullscreenView}
-              className='absolute rounded-md cursor-pointer right-2 top-2 bg-violet-700 hover:bg-violet-800 transition p-2 place-self-end'
+              className='absolute rounded-md cursor-pointer right-2 top-2 bg-red-600 hover:bg-red-500 transition p-2 place-self-end'
             >
               <X className='size-4 md:size-8' />
             </div>
+            <ChevronRight
+              className='absolute right-5 bg-violet-700 hover:bg-violet-800 border border-zinc-100/60 rounded-full p-2 md:right-40 text-zinc-200 top-[50%] w-12 h-12 md:w-16 md:h-16 cursor-pointer translate-y-[-50%]'
+              onClick={() => nextImage()}
+            />
+
+            <ChevronLeft
+              className='absolute left-5 bg-violet-700 hover:bg-violet-800 border border-zinc-100/60 rounded-full p-2 md:left-40 text-zinc-200 top-[50%] w-12 h-12 md:w-16 md:h-16 cursor-pointer translate-y-[-50%]'
+              onClick={() => prevImage()}
+            />
           </Container>
         </div>
       )}
