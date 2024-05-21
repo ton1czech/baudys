@@ -126,7 +126,7 @@ export default function Page({ params }: Props) {
         <div
           onTouchStart={handleTouchStart}
           onTouchMove={handleTouchMove}
-          className='fixed top-0 bottom-0 left-0 right-0 z-10 grid w-full h-full overflow-hidden bg-black select-none place-content-center'
+          className='fixed top-0 bottom-0 left-0 right-0 z-10 grid w-full h-full overflow-hidden bg-background select-none place-content-center'
         >
           <Container className='relative flex flex-col gap-2 overflow-hidden px-0 mx-4'>
             <img
