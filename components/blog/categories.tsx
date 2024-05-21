@@ -33,7 +33,8 @@ export const Categories = () => {
                 variant='category'
                 className={cn(
                   '',
-                  pathname.includes(category) && 'bg-white text-zinc-900'
+                  pathname.includes(category) &&
+                    'dark:bg-white dark:text-zinc-900 bg-zinc-800 text-zinc-100'
                 )}
               >
                 {category}
