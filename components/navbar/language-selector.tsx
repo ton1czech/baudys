@@ -8,10 +8,11 @@ import {
 import { Command, CommandGroup, CommandItem } from '@/components/ui/command'
 import { Check, ChevronsUpDown } from 'lucide-react'
 import { Button } from '@/components/ui/button'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Image from 'next/image'
 import { cn } from '@/lib/utils'
 import { useLanguage } from '@/store/use-language'
+import { usePathname, useRouter, useSearchParams } from 'next/navigation'
 
 const languages = [
   {
@@ -25,9 +26,29 @@ const languages = [
 ]
 
 const LanguageSelector = () => {
+  const pathname = usePathname()
+  const searchParams = useSearchParams()
+  const router = useRouter()
+
   const { language, imgSrc, setLanguage } = useLanguage(state => state)
 
   const [open, setOpen] = useState<boolean>(false)
+
+  useEffect(() => {
+    const lang = searchParams.get('lang')
+    if (lang && lang !== language) {
+      setLanguage(lang)
+    }
+  }, [])
+
+  useEffect(() => {
+    const currentLang = searchParams.get('lang')
+    if (currentLang !== language) {
+      const newSearchParams = new URLSearchParams(searchParams.toString())
+      newSearchParams.set('lang', language)
+      router.replace(`${pathname}?${newSearchParams.toString()}`)
+    }
+  }, [language, pathname, searchParams, router])
 
   return (
     <Popover open={open} onOpenChange={setOpen}>
