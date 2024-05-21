@@ -45,7 +45,7 @@ export const GalleryItem = ({ item }: Props) => {
           {language === 'en' && item.labelEn}
           {language === 'cs' && item.labelCs}
         </p>
-        <p className='absolute bottom-2 right-2 text-xs bg-black/5 p-1 rounded-md text-zinc-400'>
+        <p className='absolute bottom-2 right-2 text-xs bg-black/5 p-1 rounded-md text-zinc-300'>
           {item.date}
         </p>
       </Link>
