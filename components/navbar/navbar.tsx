@@ -130,7 +130,10 @@ export const Navbar = () => {
               <LanguageSelector />
             </div>
             <div>
-              <Menu onClick={() => setIsOpen(true)} className='mx-2' />
+              <Menu
+                onClick={() => setIsOpen(true)}
+                className='mx-2 cursor-pointer'
+              />
             </div>
           </div>
         </div>

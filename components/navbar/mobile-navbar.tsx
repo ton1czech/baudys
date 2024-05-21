@@ -34,7 +34,10 @@ export const MobileNavbar: FC<MobileNavbarProps> = ({ setIsOpen }) => {
       }}
       className='fixed left-0 top-0 w-screen h-screen z-50 grid justify-between origin-top bg-background'
     >
-      <X className='absolute top-6 right-6' onClick={() => setIsOpen(false)} />
+      <X
+        onClick={() => setIsOpen(false)}
+        className='absolute top-6 right-6 cursor-pointer'
+      />
       <motion.ul
         initial={{ y: 50, opacity: 0, x: '-50%' }}
         animate={{ y: 0, opacity: 1, x: '-50%' }}
@@ -56,7 +59,7 @@ export const MobileNavbar: FC<MobileNavbarProps> = ({ setIsOpen }) => {
           href='/gallery'
           setIsOpen={setIsOpen}
         />
-        <li>
+        <li onClick={() => setIsOpen(false)}>
           <Button variant='rainbow' className='py-8'>
             <Link href='/contact' className='flex gap-2 items-center text-4xl'>
               {language === 'en' && <>Let&apos;s talk</>}
