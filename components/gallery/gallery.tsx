@@ -23,11 +23,52 @@ export const Gallery = () => {
 
   const filteredGallery = getFilteredGallery()
 
+  const totalItems = filteredGallery.length
+  const itemsPer2Column = Math.ceil(totalItems / 2)
+  const itemsPer3Column = Math.ceil(totalItems / 3)
+
   return (
-    <Container className='sm:columns-2 lg:columns-3 space-y-6 pb-40 lg:pb-60 xl:pb-80'>
-      {filteredGallery.map(item => (
-        <GalleryItem key={item.slug} item={item} />
-      ))}
+    <Container className='pb-40 lg:pb-60 xl:pb-80'>
+      <div className='grid sm:hidden gap-6'>
+        {filteredGallery.map(item => (
+          <GalleryItem key={item.slug} item={item} />
+        ))}
+      </div>
+
+      <div className='hidden sm:grid lg:hidden grid-cols-2 gap-6'>
+        <div className='flex flex-col gap-6'>
+          {filteredGallery.slice(0, itemsPer2Column).map(item => (
+            <GalleryItem key={item.slug} item={item} />
+          ))}
+        </div>
+        <div className='flex flex-col gap-6'>
+          {filteredGallery.slice(itemsPer2Column).map(item => (
+            <GalleryItem key={item.slug} item={item} />
+          ))}
+        </div>
+      </div>
+
+      <div className='hidden lg:grid grid-cols-3 gap-6'>
+        <div className='flex flex-col gap-6'>
+          {filteredGallery.slice(0, itemsPer3Column).map(item => (
+            <GalleryItem key={item.slug} item={item} />
+          ))}
+        </div>
+        <div className='flex flex-col gap-6'>
+          {filteredGallery
+            .slice(itemsPer3Column, itemsPer3Column * 2)
+            .map(item => (
+              <GalleryItem key={item.slug} item={item} />
+            ))}
+        </div>
+        <div className='flex flex-col gap-6'>
+          {filteredGallery
+            .slice(itemsPer3Column * 2, itemsPer3Column * 3)
+            .map(item => (
+              <GalleryItem key={item.slug} item={item} />
+            ))}
+        </div>
+      </div>
     </Container>
   )
 }

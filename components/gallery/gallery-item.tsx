@@ -45,7 +45,7 @@ export const GalleryItem = ({ item }: Props) => {
           src={item.images[0]}
           alt={language === 'en' ? item.labelEn : item.labelCs}
           onLoad={() => setIsLoading(false)}
-          className={cn('transition duration-300 rounded-xl')}
+          className='transition duration-300 rounded-xl object-cover'
           style={{
             display: isLoading ? 'none' : 'block',
             filter: isHovered ? 'brightness(100%)' : 'brightness(85%)',
