@@ -9,6 +9,7 @@ import { Skeleton } from '@/components/ui/skeleton'
 import { X } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { SeeAll } from '@/components/see-all'
+import { FeedItem } from './feed-item'
 
 export const Feed = () => {
   const [fullscreen, setFullscreen] = useState<boolean>(false)
@@ -41,28 +42,9 @@ export const Feed = () => {
         <Title label='Feed' />
 
         <div className='grid grid-cols-3 gap-3'>
-          {feed.map((photo, idx) => {
-            const [isLoading, setIsLoading] = useState(true)
-
-            return (
-              <>
-                {isLoading && <Skeleton className='w-full h-[500px]' />}
-                <motion.img
-                  key={photo}
-                  initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  onClick={() => enterFullscreenView(photo)}
-                  onLoad={() => setIsLoading(false)}
-                  src={photo}
-                  alt='image'
-                  className='cursor-pointer'
-                  style={{
-                    display: isLoading ? 'none' : 'block',
-                  }}
-                />
-              </>
-            )
-          })}
+          {feed.map(image => (
+            <FeedItem image={image} enterFullscreenView={enterFullscreenView} />
+          ))}
         </div>
 
         <div className='flex justify-center mt-10'>
