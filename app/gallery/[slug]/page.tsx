@@ -2,6 +2,7 @@
 
 import { Contact } from '@/components/contact'
 import { Container } from '@/components/container'
+import { AlbumItem } from '@/components/gallery/album-item'
 import { Title } from '@/components/title'
 import { Skeleton } from '@/components/ui/skeleton'
 import { gallery } from '@/database/photography'
@@ -117,52 +118,20 @@ export default function Page({ params }: Props) {
 
         <div className='grid sm:grid-cols-2 gap-4'>
           <div className='flex flex-col gap-4'>
-            {imagesWithIds.slice(0, itemsPerColumn).map((image, idx) => {
-              const [isLoading, setIsLoading] = useState(true)
-
-              return (
-                <>
-                  {isLoading && <Skeleton className='w-full h-[500px]' />}
-                  <motion.img
-                    key={image.id}
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    onClick={() => enterFullscreenView(image.id - 1)}
-                    onLoad={() => setIsLoading(false)}
-                    src={image.url}
-                    alt='image'
-                    className='cursor-pointer'
-                    style={{
-                      display: isLoading ? 'none' : 'block',
-                    }}
-                  />
-                </>
-              )
-            })}
+            {imagesWithIds.slice(0, itemsPerColumn).map(image => (
+              <AlbumItem
+                image={image}
+                enterFullscreenView={enterFullscreenView}
+              />
+            ))}
           </div>
           <div className='flex flex-col gap-4'>
-            {imagesWithIds.slice(itemsPerColumn).map((image, idx) => {
-              const [isLoading, setIsLoading] = useState(true)
-
-              return (
-                <>
-                  {isLoading && <Skeleton className='w-full h-[500px]' />}
-                  <motion.img
-                    key={image.id}
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    onClick={() => enterFullscreenView(image.id - 1)}
-                    onLoad={() => setIsLoading(false)}
-                    src={image.url}
-                    alt='image'
-                    className='cursor-pointer'
-                    style={{
-                      display: isLoading ? 'none' : 'block',
-                    }}
-                  />
-                </>
-              )
-            })}
+            {imagesWithIds.slice(itemsPerColumn).map(image => (
+              <AlbumItem
+                image={image}
+                enterFullscreenView={enterFullscreenView}
+              />
+            ))}
           </div>
         </div>
       </Container>
