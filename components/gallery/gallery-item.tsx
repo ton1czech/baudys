@@ -6,6 +6,8 @@ import { useLanguage } from '@/store/use-language'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { cn } from '@/lib/utils'
+import Image from 'next/image'
+import { Skeleton } from '../ui/skeleton'
 
 interface Props {
   item: any
@@ -14,6 +16,8 @@ interface Props {
 export const GalleryItem = ({ item }: Props) => {
   const { language } = useLanguage()
   const { setType, setIsHovering, setIsNotHovering } = useCursor()
+
+  const [isLoading, setIsLoading] = useState(true)
   const [isHovered, setIsHovered] = useState(false)
 
   return (
@@ -36,10 +40,16 @@ export const GalleryItem = ({ item }: Props) => {
         href={`/gallery/${item.slug}`}
         className='flex flex-col flex-nowrap group relative cursor-none'
       >
+        {isLoading && <Skeleton className='w-full h-[450px]' />}
         <img
           src={item.images[0]}
+          alt={language === 'en' ? item.labelEn : item.labelCs}
+          onLoad={() => setIsLoading(false)}
           className={cn('transition duration-300 rounded-xl')}
-          style={{ filter: isHovered ? 'brightness(100%)' : 'brightness(85%)' }}
+          style={{
+            display: isLoading ? 'none' : 'block',
+            filter: isHovered ? 'brightness(100%)' : 'brightness(85%)',
+          }}
         />
         <p className='text-sm text-zinc-200 absolute bottom-2 left-2 bg-black/20 p-1 rounded-md'>
           {language === 'en' && item.labelEn}
