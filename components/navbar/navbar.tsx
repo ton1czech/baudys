@@ -86,6 +86,10 @@ export const Navbar = () => {
                   href='/services/web-development'
                 />
                 <NavItem
+                  label={language === 'en' ? 'Photography' : 'Fotografování'}
+                  href='/services/photography'
+                />
+                <NavItem
                   label={language === 'en' ? 'ECU Tune' : 'Ladění ECU'}
                   href='/services/ecu-tune'
                 />
