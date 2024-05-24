@@ -5,8 +5,6 @@ import { useCursor } from '@/store/use-cursor'
 import { useLanguage } from '@/store/use-language'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
-import { cn } from '@/lib/utils'
-import Image from 'next/image'
 import { Skeleton } from '../ui/skeleton'
 
 interface Props {
@@ -45,7 +43,7 @@ export const GalleryItem = ({ item }: Props) => {
           src={item.images[0]}
           alt={language === 'en' ? item.labelEn : item.labelCs}
           onLoad={() => setIsLoading(false)}
-          className='transition duration-300 rounded-xl object-cover'
+          className='transition duration-300 rounded-xl'
           style={{
             display: isLoading ? 'none' : 'block',
             filter: isHovered ? 'brightness(100%)' : 'brightness(85%)',

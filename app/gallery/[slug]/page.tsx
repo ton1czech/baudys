@@ -3,6 +3,7 @@
 import { Contact } from '@/components/contact'
 import { Container } from '@/components/container'
 import { Title } from '@/components/title'
+import { Skeleton } from '@/components/ui/skeleton'
 import { gallery } from '@/database/photography'
 import { cn } from '@/lib/utils'
 import { useCursor } from '@/store/use-cursor'
@@ -33,14 +34,17 @@ export default function Page({ params }: Props) {
   const [touchStartX, setTouchStartX] = useState<number>(0)
   const [isSwiping, setIsSwiping] = useState<boolean>(false)
 
+  const totalItems = images.length
+  const itemsPerColumn = Math.ceil(totalItems / 2)
+
   const prevImage = () => {
     const isFirst = currentIdx === 1
-    const newIndex = isFirst ? gallery.length - 1 : currentIdx - 1
+    const newIndex = isFirst ? images.length : currentIdx - 1
     setCurrentIdx(newIndex)
   }
 
   const nextImage = () => {
-    const isLast = currentIdx === gallery.length
+    const isLast = currentIdx === images.length
     const newIndex = isLast ? 1 : currentIdx + 1
     setCurrentIdx(newIndex)
   }
@@ -106,18 +110,55 @@ export default function Page({ params }: Props) {
 
         <Title label={language === 'en' ? labelEn : labelCs} />
 
-        <div className='sm:columns-2 space-y-4'>
-          {images.map((image, idx) => (
-            <motion.img
-              key={image}
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              onClick={() => enterFullscreenView(idx)}
-              src={image}
-              alt='image'
-              className='cursor-pointer'
-            />
-          ))}
+        <div className='grid sm:grid-cols-2 gap-4'>
+          <div className='flex flex-col gap-4'>
+            {images.slice(0, itemsPerColumn).map((image, idx) => {
+              const [isLoading, setIsLoading] = useState(true)
+
+              return (
+                <>
+                  {isLoading && <Skeleton className='w-full h-[500px]' />}
+                  <motion.img
+                    key={image}
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    onClick={() => enterFullscreenView(idx)}
+                    onLoad={() => setIsLoading(false)}
+                    src={image}
+                    alt='image'
+                    className='cursor-pointer'
+                    style={{
+                      display: isLoading ? 'none' : 'block',
+                    }}
+                  />
+                </>
+              )
+            })}
+          </div>
+          <div className='flex flex-col gap-4'>
+            {images.slice(itemsPerColumn).map((image, idx) => {
+              const [isLoading, setIsLoading] = useState(true)
+
+              return (
+                <>
+                  {isLoading && <Skeleton className='w-full h-[500px]' />}
+                  <motion.img
+                    key={image}
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    onClick={() => enterFullscreenView(idx)}
+                    onLoad={() => setIsLoading(false)}
+                    src={image}
+                    alt='image'
+                    className='cursor-pointer'
+                    style={{
+                      display: isLoading ? 'none' : 'block',
+                    }}
+                  />
+                </>
+              )
+            })}
+          </div>
         </div>
       </Container>
       <Contact />
@@ -133,7 +174,7 @@ export default function Page({ params }: Props) {
               src={`/gallery/${params.slug}/${currentIdx}.webp`}
               alt='image'
               className={cn(
-                'lg:h-[82vh] lg:m-auto overflow-hidden select-none',
+                'lg:h-full max-h-[82vh] overflow-hidden select-none',
                 zoomLevel === 1 ? 'cursor-zoom-in' : 'cursor-zoom-out'
               )}
               style={{
@@ -142,19 +183,21 @@ export default function Page({ params }: Props) {
               }}
               onClick={handleZoomLevel}
             />
+
             <div
               onClick={exitFullscreenView}
               className='absolute rounded-md cursor-pointer right-2 top-2 bg-red-600 hover:bg-red-500 transition p-2 place-self-end'
             >
               <X className='size-4 md:size-8' />
             </div>
+
             <ChevronRight
-              className='absolute right-2 bg-violet-700 hover:bg-violet-800 border border-zinc-100/60 rounded-full p-2 md:right-40 text-zinc-200 top-[50%] w-10 h-10 md:w-14 md:h-14 cursor-pointer translate-y-[-50%]'
+              className='absolute right-2 bg-violet-700 hover:bg-violet-800 border border-zinc-100/60 rounded-full p-2 md:p-3 text-zinc-200 top-[50%] w-10 h-10 md:w-14 md:h-14 cursor-pointer translate-y-[-50%]'
               onClick={() => nextImage()}
             />
 
             <ChevronLeft
-              className='absolute left-2 bg-violet-700 hover:bg-violet-800 border border-zinc-100/60 rounded-full p-2 md:left-40 text-zinc-200 top-[50%] w-10 h-10 md:w-14 md:h-14 cursor-pointer translate-y-[-50%]'
+              className='absolute left-2 bg-violet-700 hover:bg-violet-800 border border-zinc-100/60 rounded-full p-2 md:p-3 text-zinc-200 top-[50%] w-10 h-10 md:w-14 md:h-14 cursor-pointer translate-y-[-50%]'
               onClick={() => prevImage()}
             />
           </Container>
