@@ -37,6 +37,11 @@ export default function Page({ params }: Props) {
   const totalItems = images.length
   const itemsPerColumn = Math.ceil(totalItems / 2)
 
+  const imagesWithIds = images.map((image, index) => ({
+    url: image,
+    id: index + 1,
+  }))
+
   const prevImage = () => {
     const isFirst = currentIdx === 1
     const newIndex = isFirst ? images.length : currentIdx - 1
@@ -112,19 +117,19 @@ export default function Page({ params }: Props) {
 
         <div className='grid sm:grid-cols-2 gap-4'>
           <div className='flex flex-col gap-4'>
-            {images.slice(0, itemsPerColumn).map((image, idx) => {
+            {imagesWithIds.slice(0, itemsPerColumn).map((image, idx) => {
               const [isLoading, setIsLoading] = useState(true)
 
               return (
                 <>
                   {isLoading && <Skeleton className='w-full h-[500px]' />}
                   <motion.img
-                    key={image}
+                    key={image.id}
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
-                    onClick={() => enterFullscreenView(idx)}
+                    onClick={() => enterFullscreenView(image.id - 1)}
                     onLoad={() => setIsLoading(false)}
-                    src={image}
+                    src={image.url}
                     alt='image'
                     className='cursor-pointer'
                     style={{
@@ -136,19 +141,19 @@ export default function Page({ params }: Props) {
             })}
           </div>
           <div className='flex flex-col gap-4'>
-            {images.slice(itemsPerColumn).map((image, idx) => {
+            {imagesWithIds.slice(itemsPerColumn).map((image, idx) => {
               const [isLoading, setIsLoading] = useState(true)
 
               return (
                 <>
                   {isLoading && <Skeleton className='w-full h-[500px]' />}
                   <motion.img
-                    key={image}
+                    key={image.id}
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
-                    onClick={() => enterFullscreenView(idx)}
+                    onClick={() => enterFullscreenView(image.id - 1)}
                     onLoad={() => setIsLoading(false)}
-                    src={image}
+                    src={image.url}
                     alt='image'
                     className='cursor-pointer'
                     style={{
