@@ -14,14 +14,14 @@ export const Hero = () => {
 
   return (
     <motion.div
-      className='overflow-x-hidden relative pb-40 lg:pb-60 xl:pb-80'
+      className='overflow-x-hidden pb-40 lg:pb-60 xl:pb-80'
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ delay: 0.3 }}
     >
       <BackgroundBeams />
       <Container>
-        <div className='relative h-[80vh] w-full mt-28 lg:mt-32'>
+        <div className='h-[80vh] w-full mt-28 lg:mt-32'>
           <div className='flex justify-center flex-col w-full h-full p-4'>
             <h4 className='md:text-lg lg:text-xl xl:text-2xl text-zinc-500 -mb-2 text-center'>
               Daniel Anthony Baudyš

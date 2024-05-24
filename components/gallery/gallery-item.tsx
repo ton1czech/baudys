@@ -34,7 +34,7 @@ export const GalleryItem = ({ item }: Props) => {
           setType('')
         }}
         href={`/gallery/${item.slug}`}
-        className='flex flex-col flex-nowrap group relative'
+        className='flex flex-col flex-nowrap group relative cursor-none'
       >
         <img
           src={item.images[0]}

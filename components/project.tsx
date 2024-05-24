@@ -37,6 +37,7 @@ export const Project: FC<ProjectProps> = ({
         setIsNotHovering()
         setType('')
       }}
+      className='cursor-none'
     >
       <motion.div
         initial={{ opacity: 0 }}

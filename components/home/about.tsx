@@ -50,7 +50,7 @@ export const About = () => {
                   }}
                   href='https://planetopedia.agency'
                   target='_blank'
-                  className='relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-[3px] after:bg-purple-500 hover:text-purple-500 dark:hover:text-purple-500 transition font-bold dark:text-zinc-200 text-zinc-800'
+                  className='relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-[3px] after:bg-purple-500 hover:text-purple-500 dark:hover:text-purple-500 transition font-bold dark:text-zinc-200 text-zinc-800 cursor-none'
                 >
                   Planetopedia
                 </Link> */}

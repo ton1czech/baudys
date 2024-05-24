@@ -72,7 +72,7 @@ export default function Page({ params }: PageProps) {
                   }}
                   href={url}
                   target='_blank'
-                  className='underline text-2xl lg:text-3xl font-light'
+                  className='underline text-2xl lg:text-3xl font-light cursor-none'
                 >
                   {name}
                 </Link>

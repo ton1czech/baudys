@@ -64,7 +64,7 @@ export const Service: FC<ServiceProps> = ({
                 }}
                 href={`https://${tagLink}`}
                 target='_blank'
-                className='underline font-bold relative'
+                className='underline font-bold relative cursor-none'
               >
                 {tagLink}
               </Link>
