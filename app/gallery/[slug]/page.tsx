@@ -120,6 +120,7 @@ export default function Page({ params }: Props) {
           <div className='flex flex-col gap-4'>
             {imagesWithIds.slice(0, itemsPerColumn).map(image => (
               <AlbumItem
+                key={image.url}
                 image={image}
                 enterFullscreenView={enterFullscreenView}
               />
