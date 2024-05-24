@@ -41,7 +41,11 @@ export const Feed = () => {
 
         <div className='grid grid-cols-3 gap-3'>
           {feed.map(image => (
-            <FeedItem image={image} enterFullscreenView={enterFullscreenView} />
+            <FeedItem
+              key={image}
+              image={image}
+              enterFullscreenView={enterFullscreenView}
+            />
           ))}
         </div>
 
