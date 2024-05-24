@@ -21,6 +21,17 @@ export const Services = () => {
         center
       />
       <Service
+        label={language === 'en' ? 'Photography' : 'Fotografování'}
+        body={
+          language === 'en'
+            ? "I capture moments and create memories that last a lifetime. Whether it's cars, portraits, modeling, events, architecture, travel, nature, or animals, I bring a professional touch to each shot. My photography services provide high-quality images that tell your unique story."
+            : 'Zachycuji okamžiky a vytvářím vzpomínky, které přetrvají celý život. Ať už se jedná o auta, portréty, modeling, akce, architekturu, cestování, přírodu nebo zvířata, ke každému záběru přistupuji s profesionálním přístupem. Mé fotografické služby poskytují vysoce kvalitní snímky, které vyprávějí váš jedinečný příběh.'
+        }
+        img='/services/photography/hero.webp'
+        href='/services/photography'
+        center
+      />
+      <Service
         label={language === 'en' ? 'ECU Tune (BMW)' : 'Ladění ECU (BMW)'}
         body={
           language === 'en'
