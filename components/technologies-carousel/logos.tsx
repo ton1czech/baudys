@@ -10,6 +10,7 @@ import {
   FaNodeJs,
   FaGitAlt,
   FaGithub,
+  FaApple,
 } from 'react-icons/fa'
 import {
   SiJavascript,
@@ -23,6 +24,8 @@ import {
   SiVisualstudiocode,
   SiNeovim,
   SiArchlinux,
+  SiFujifilm,
+  SiLogitech,
 } from 'react-icons/si'
 import { FaGolang } from 'react-icons/fa6'
 
@@ -84,6 +87,15 @@ export const Logos: FC = () => (
     </SliderItem>
     <SliderItem width={100}>
       <FaGithub className='h-10 w-10 text-zinc-700 dark:text-zinc-300' />
+    </SliderItem>
+    <SliderItem width={100}>
+      <FaApple className='h-10 w-10 text-zinc-700 dark:text-zinc-300' />
+    </SliderItem>
+    <SliderItem width={100}>
+      <SiLogitech className='h-10 w-10 text-zinc-700 dark:text-zinc-300' />
+    </SliderItem>
+    <SliderItem width={100}>
+      <SiFujifilm className='h-10 w-10 text-zinc-700 dark:text-zinc-300' />
     </SliderItem>
   </SliderContainer>
 )
