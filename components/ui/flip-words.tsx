@@ -56,13 +56,13 @@ export const FlipWords = ({
         }}
         exit={{
           opacity: 0,
-          y: -40,
-          x: 40,
+          y: -100,
+          x: 0,
           filter: 'blur(8px)',
           scale: 2,
           position: 'absolute',
         }}
-        className={cn('z-10 inline-block relative text-left px-2', className)}
+        className={cn('z-10 inline-block relative', className)}
         key={currentWord}
       >
         {currentWord.split('').map((letter, index) => (
