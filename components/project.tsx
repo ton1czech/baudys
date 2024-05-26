@@ -46,8 +46,8 @@ export const Project: FC<ProjectProps> = ({
       >
         <img src={image} alt={name} />
 
-        <div className='flex justify-between items-center'>
-          <h3 className='text-zinc-700 italic dark:text-zinc-300 mt-3'>
+        <div className='flex justify-between items-center mt-3'>
+          <h3 className='text-zinc-700 italic dark:text-zinc-300'>
             {name}{' '}
             <span className='font-light text-sm not-italic text-zinc-600 dark:text-zinc-400'>
               | {year}
@@ -55,7 +55,7 @@ export const Project: FC<ProjectProps> = ({
           </h3>
 
           {language === 'cs' && (
-            <div className='flex items-center gap-3'>
+            <div className='flex gap-3'>
               {servicesCs.map(service => (
                 <span
                   key={service}
@@ -67,7 +67,7 @@ export const Project: FC<ProjectProps> = ({
             </div>
           )}
           {language === 'en' && (
-            <div className='flex items-center gap-3'>
+            <div className='flex gap-3'>
               {servicesEn.map(service => (
                 <span
                   key={service}
