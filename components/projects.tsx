@@ -14,7 +14,7 @@ export const Projects = () => {
     <Container className='pb-40 lg:pb-60 xl:pb-80'>
       <Title label={language === 'en' ? 'Projects' : 'Projekty'} />
 
-      <div className='grid lg:grid-cols-2 gap-20'>
+      <div className='grid sm:grid-cols-2 gap-20'>
         {projects
           .slice(0, 2)
           .map(({ name, year, image, href, servicesEn, servicesCs }) => (
