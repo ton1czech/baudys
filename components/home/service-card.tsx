@@ -4,6 +4,7 @@ import { cn } from '@/lib/utils'
 import { LucideIcon } from 'lucide-react'
 import { FC } from 'react'
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 
 interface ServiceCardProps {
   title: string
@@ -35,7 +36,15 @@ export const ServiceCard: FC<ServiceCardProps> = ({
         <Icon size={23} className={cn(highlight && 'stroke-yellow-600')} />
         {title}
       </h4>
-      <img src={image} alt={title} className='rounded-2xl mb-2' />
+
+      <div className='rounded-lg aspect-video relative overflow-hidden'>
+        <Image
+          src={image}
+          alt={title}
+          fill
+          className='rounded-lg object-cover object-center'
+        />
+      </div>
       <p className='text-justify text-zinc-800 dark:text-zinc-300 text-sm'>
         {body}
       </p>

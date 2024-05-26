@@ -5,7 +5,7 @@ import { Container } from '../container'
 import { ServiceCard } from './service-card'
 import { Title } from '../title'
 import { SeeAll } from '../see-all'
-import { CalendarCheck, Cog, Laptop } from 'lucide-react'
+import { CalendarCheck, Laptop, Camera } from 'lucide-react'
 
 export const Services = () => {
   const { language } = useLanguage()
@@ -17,13 +17,13 @@ export const Services = () => {
 
         <div className='grid lg:grid-cols-3 gap-8'>
           <ServiceCard
-            title={language === 'en' ? 'Configuration' : 'Konfigurace'}
+            title={language === 'en' ? 'Photography' : 'Fotografování'}
             body={
               language === 'en'
-                ? 'Start the project with a careful setup.'
-                : 'Zahájení projektu s pečlivým nastavením.'
+                ? 'I capture moments and create memories that last a lifetime.'
+                : 'Zachycuji okamžiky a vytvářím vzpomínky, které přetrvají celý život.'
             }
-            icon={Cog}
+            icon={Camera}
             image='/home/services/1.webp'
           />
           <ServiceCard
@@ -41,8 +41,8 @@ export const Services = () => {
             title={language === 'en' ? 'Management' : 'Správa'}
             body={
               language === 'en'
-                ? 'It keeps your digital presence alive and up to date.'
-                : 'Udržuje vaši digitální přítomnost živou a aktuální.'
+                ? 'I keep your digital presence alive and up to date.'
+                : 'Udržuji vaši digitální přítomnost živou a aktuální.'
             }
             icon={CalendarCheck}
             image='/home/services/3.webp'
