@@ -116,7 +116,7 @@ export default function Page({ params }: Props) {
 
         <Title label={language === 'en' ? labelEn : labelCs} />
 
-        <div className='grid sm:grid-cols-2 gap-4'>
+        <div className='grid grid-cols-2 gap-4'>
           <div className='flex flex-col gap-4'>
             {imagesWithIds.slice(0, itemsPerColumn).map(image => (
               <AlbumItem

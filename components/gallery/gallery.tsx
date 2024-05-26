@@ -29,13 +29,7 @@ export const Gallery = () => {
 
   return (
     <Container className='pb-40 lg:pb-60 xl:pb-80'>
-      <div className='grid sm:hidden gap-6'>
-        {filteredGallery.map(item => (
-          <GalleryItem key={item.slug} item={item} />
-        ))}
-      </div>
-
-      <div className='hidden sm:grid lg:hidden grid-cols-2 gap-6'>
+      <div className='grid md:hidden grid-cols-2 gap-6'>
         <div className='flex flex-col gap-6'>
           {filteredGallery.slice(0, itemsPer2Column).map(item => (
             <GalleryItem key={item.slug} item={item} />
@@ -48,7 +42,7 @@ export const Gallery = () => {
         </div>
       </div>
 
-      <div className='hidden lg:grid grid-cols-3 gap-6'>
+      <div className='hidden md:grid grid-cols-3 gap-6'>
         <div className='flex flex-col gap-6'>
           {filteredGallery.slice(0, itemsPer3Column).map(item => (
             <GalleryItem key={item.slug} item={item} />
