@@ -26,23 +26,25 @@ export const Hero = () => {
             <h4 className='md:text-lg lg:text-xl xl:text-2xl text-zinc-500 -mb-2 text-center'>
               Daniel Anthony Baudyš
             </h4>
-            <h1 className='text-5xl xl:text-6xl 2xl:text-7xl font-black py-2 text-center text-violet-600'>
-              {language === 'en' && (
-                <FlipWords
-                  words={[
-                    'Developer',
-                    'Designer',
-                    'Programmer',
-                    'Photographer',
-                  ]}
-                />
-              )}
-              {language === 'cs' && (
-                <FlipWords
-                  words={['Vývojář', 'Designer', 'Programátor', 'Fotograf']}
-                />
-              )}
-            </h1>
+            <div className='flex justify-center'>
+              <h1 className='text-5xl xl:text-6xl 2xl:text-7xl font-black py-2 text-violet-600'>
+                {language === 'en' && (
+                  <FlipWords
+                    words={[
+                      'Developer',
+                      'Designer',
+                      'Programmer',
+                      'Photographer',
+                    ]}
+                  />
+                )}
+                {language === 'cs' && (
+                  <FlipWords
+                    words={['Vývojář', 'Designer', 'Programátor', 'Fotograf']}
+                  />
+                )}
+              </h1>
+            </div>
             <div className='flex justify-center'>
               <div className='flex items-center bg-zinc-200/70 dark:bg-zinc-800/70 px-4 py-2 border border-zinc-400 dark:border-zinc-600 rounded-lg gap-2 mt-2 w-full justify-center sm:w-auto text-zinc-600 dark:text-zinc-400'>
                 <MapPin size={22} />
