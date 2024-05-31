@@ -34,6 +34,8 @@ export const viewport: Viewport = {
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <html lang='en'>
+      <AnalyticsProvider />
+
       <body
         className={cn(
           'antialiased scroll-smooth overflow-x-hidden',
@@ -47,7 +49,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           disableTransitionOnChange
         >
           <ToasterProvider />
-          <AnalyticsProvider />
 
           <Cursor />
           <Cookies />

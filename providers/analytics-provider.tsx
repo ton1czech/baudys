@@ -1,7 +1,7 @@
 'use client'
 
 import { useCookies } from '@/store/use-cookies'
-import { GoogleAnalytics } from '@next/third-parties/google'
+import Script from 'next/script'
 import { useEffect, useState } from 'react'
 
 export const AnalyticsProvider = () => {
@@ -17,13 +17,31 @@ export const AnalyticsProvider = () => {
     <>
       {mounted && (
         <>
-          {cookiesEnabled ||
-            (window &&
-              window?.localStorage
-                .getItem('cookies-storage')
-                ?.includes('"cookiesEnabled":true') && (
-                <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GTAG!} />
-              ))}
+          {(cookiesEnabled ||
+            window?.localStorage
+              .getItem('cookies-storage')
+              ?.includes('"cookiesEnabled":true')) && (
+            <>
+              <Script
+                strategy='afterInteractive'
+                src={`https://www.googletagmanager.com/gtag/js?id=${process.env
+                  .NEXT_PUBLIC_GTAG!}`}
+              />
+              <Script
+                id='google-analytics'
+                strategy='afterInteractive'
+                dangerouslySetInnerHTML={{
+                  __html: `
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+
+                gtag('config', '${process.env.NEXT_PUBLIC_GTAG!}');
+                `,
+                }}
+              />
+            </>
+          )}
         </>
       )}
     </>
