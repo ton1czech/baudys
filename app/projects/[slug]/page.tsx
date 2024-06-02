@@ -29,8 +29,10 @@ export default function Page({ params }: PageProps) {
     year,
     iphone,
     macbook,
-    descriptionCs,
     descriptionEn,
+    descriptionCs,
+    featuresEn,
+    featuresCs,
   } = projects.filter((data: any) => data.slug === params.slug)[0]
 
   useEffect(() => {
@@ -40,7 +42,7 @@ export default function Page({ params }: PageProps) {
   return (
     <div className='mt-28 lg:mt-32 mb-20 lg:mb-32'>
       <Container className='pb-40 lg:pb-60 xl:pb-80'>
-        <p className='inline-flex items-center gap-2 text-zinc-600 dark:text-zinc-400'>
+        <p className='inline-flex items-center gap-2 text-zinc-600 dark:text-zinc-400 mb-4'>
           <Link href='/projects' className='hover:underline'>
             {language === 'en' && 'projects'}
             {language === 'cs' && 'projekty'}
@@ -48,14 +50,15 @@ export default function Page({ params }: PageProps) {
           <ChevronRight size={18} />
           <span className='font-bold'>{name}</span>
         </p>
-        <div className='grid lg:grid-cols-[3fr_1fr] mb-10 lg:mb-20 xl:mb-32'>
+
+        <div className='grid md:grid-cols-[3fr_1fr] mb-10 lg:mb-20 xl:mb-32'>
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ delay: 0.3 }}
-            className='flex flex-col lg:justify-center'
+            className='flex flex-col md:justify-center'
           >
-            <div className='flex lg:gap-20 justify-between lg:justify-normal'>
+            <div className='flex md:gap-20 justify-between md:justify-normal'>
               <div className='flex flex-col'>
                 <h4 className='uppercase text-zinc-600 dark:text-zinc-400 font-medium'>
                   {language === 'en' && 'client'}
@@ -100,6 +103,19 @@ export default function Page({ params }: PageProps) {
             className='mt-10 lg:mt-0'
           />
         </div>
+
+        <Title label={language === 'en' ? 'Features' : 'Funkce'} />
+        <motion.ul
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ delay: 0.3 }}
+          className='mb-10 lg:mb-20 xl:mb-32 text-xl sm:text-2xl lg:text-3xl'
+        >
+          {language === 'en' &&
+            featuresEn?.map(feature => <li>~ {feature}</li>)}
+          {language === 'cs' &&
+            featuresCs?.map(feature => <li>~ {feature}</li>)}
+        </motion.ul>
 
         <Title label={language === 'en' ? 'Showcase' : 'Ukázka'} />
         <motion.img
