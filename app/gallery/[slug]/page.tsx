@@ -102,7 +102,7 @@ export default function Page({ params }: Props) {
   return (
     <div className='mt-28 lg:mt-32 mb-20 lg:mb-32'>
       <Container className='pb-40 lg:pb-60 xl:pb-80'>
-        <p className='inline-flex items-center gap-2 text-zinc-600 dark:text-zinc-400'>
+        <p className='inline-flex items-center gap-2 text-zinc-600 dark:text-zinc-400 mb-4'>
           <Link href='/gallery' className='hover:underline'>
             {language === 'en' && 'gallery'}
             {language === 'cs' && 'galerie'}
