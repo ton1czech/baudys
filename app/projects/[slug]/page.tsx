@@ -112,9 +112,9 @@ export default function Page({ params }: PageProps) {
           className='mb-10 lg:mb-20 xl:mb-32 text-xl sm:text-2xl lg:text-3xl'
         >
           {language === 'en' &&
-            featuresEn?.map(feature => <li>~ {feature}</li>)}
+            featuresEn?.map(feature => <li key={feature}>~ {feature}</li>)}
           {language === 'cs' &&
-            featuresCs?.map(feature => <li>~ {feature}</li>)}
+            featuresCs?.map(feature => <li key={feature}>~ {feature}</li>)}
         </motion.ul>
 
         <Title label={language === 'en' ? 'Showcase' : 'Ukázka'} />
