@@ -2,14 +2,11 @@
 
 import { useLanguage } from '@/store/use-language'
 import { Container } from '../container'
-// import Link from 'next/link'
 import { Title } from '../title'
-// import { useCursor } from '@/store/use-cursor'
 import { motion } from 'framer-motion'
 
 export const About = () => {
   const { language } = useLanguage()
-  //   const { setIsNotHovering, setIsHovering, setType } = useCursor()
 
   return (
     <Container className='pb-40 lg:pb-60 xl:pb-80'>
@@ -39,21 +36,6 @@ export const About = () => {
                 Programming 🖥️ in 2019 and was immediately hooked. Since then
                 I&apos;ve managed to create dozens of projects, both for myself
                 and for clients. Some of my favourites include my portfolio and{' '}
-                {/* <Link
-                  onMouseEnter={() => {
-                    setIsHovering()
-                    setType('external')
-                  }}
-                  onMouseLeave={() => {
-                    setIsNotHovering()
-                    setType('')
-                  }}
-                  href='https://planetopedia.agency'
-                  target='_blank'
-                  className='relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-[3px] after:bg-purple-500 hover:text-purple-500 dark:hover:text-purple-500 transition font-bold dark:text-zinc-200 text-zinc-800 cursor-none'
-                >
-                  Planetopedia
-                </Link> */}
                 Planetopedia website. It is also worth mentioning that I have
                 created several applications for the Pilsen Regional Office 👔,
                 I have given educational lectures for children 🧑‍🏫 and I have
@@ -71,21 +53,6 @@ export const About = () => {
                 setkal v roce 2019 a hned mě to pohltilo. Od té doby jsem stihl
                 vytvořit desítky projektů, ať už sám pro sebe, tak i pro
                 klienty. Mezi mé nejoblíbenější patří moje portfolio a web{' '}
-                {/* <Link
-                  onMouseEnter={() => {
-                    setIsHovering()
-                    setType('external')
-                  }}
-                  onMouseLeave={() => {
-                    setIsNotHovering()
-                    setType('')
-                  }}
-                  href='https://planetopedia.agency'
-                  target='_blank'
-                  className='relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-[3px] after:bg-purple-500 hover:text-purple-500 dark:hover:text-purple-500 transition font-bold dark:text-zinc-200 text-zinc-800'
-                >
-                  Planetopedia
-                </Link> */}
                 Planetopedia . Za zmínku také stojí, že jsem vytvořil několik
                 aplikací pro úřad plzeňského kraje 👔, vedl jsem výukové
                 přednášky 🧑‍🏫 pro děti a také jsem úspěšně absolvoval Microsoft
