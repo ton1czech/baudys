@@ -9,7 +9,6 @@ import Link from 'next/link'
 
 interface ServiceCardProps {
   title: string
-  body: string
   highlight?: boolean
   icon: LucideIcon
   image: string
@@ -18,7 +17,6 @@ interface ServiceCardProps {
 
 export const ServiceCard: FC<ServiceCardProps> = ({
   title,
-  body,
   highlight,
   icon: Icon,
   image,
@@ -49,7 +47,6 @@ export const ServiceCard: FC<ServiceCardProps> = ({
             className='rounded-lg object-cover object-center transition duration-300 hover:scale-110'
           />
         </div>
-        <p className='text-justify text-sm text-zinc-300'>{body}</p>
       </motion.div>
     </Link>
   )
