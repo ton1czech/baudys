@@ -9,7 +9,7 @@ import { useEffect, useState } from 'react'
 import { cn } from '@/lib/utils'
 
 export const Contact = () => {
-  const { language } = useLanguage(state => state)
+  const { language } = useLanguage((state) => state)
 
   const [clicked, setClicked] = useState(false)
 
@@ -27,68 +27,79 @@ export const Contact = () => {
         label={language === 'en' ? "let's work together" : 'spolupracujme'}
       />
 
-      <motion.img
-        src='/contact/contact.webp'
-        alt='contact me'
-        className='w-full max-w-[70ch] mx-auto rounded-2xl mb-10'
-      />
+      <div className='grid grid-cols-2 gap-10'>
+        <div className='flex flex-col justify-between'>
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ delay: 0.3 }}
+          >
+            <h3 className='text-lg font-semibold md:text-xl'>
+              Daniel Anthony Baudyš
+            </h3>
+            <p className='text-sm text-zinc-300'>Hájek 29</p>
+            <p className='text-sm text-zinc-300'>345 06 Kdyně</p>
+            <p className='mt-4 font-semibold'>
+              {language === 'en' && 'Id No.: '}
+              {language === 'cs' && 'IČO: '}
+              199 333 12
+            </p>
+            <p className='text-sm text-zinc-300'>fyzická osoba</p>
+            <p className='text-sm text-zinc-300'>neplátce DPH</p>
+          </motion.div>
 
-      <motion.p
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ delay: 0.3 }}
-        className='flex gap-2 items-center flex-nowrap md:text-lg text-center mx-auto justify-center'
-      >
-        <Mail className='w-4 h-4' />
-        <span
-          onClick={() => {
-            setClicked(true)
-            navigator.clipboard.writeText('danielanthonybaudys@gmail.com')
-          }}
-          className='font-bold text-purple-500 after:w-full after:h-[3px] after:bg-purple-500 after:-bottom-1 after:left-0 after:right-0 after:z-10 after:absolute relative after:opacity-0 after:scale-x-0 after:hover:scale-x-100 after:hover:opacity-100 after:transition after:rounded-lg cursor-pointer'
-        >
-          danielanthonybaudys@gmail.com
-        </span>
+          <div className='space-y-1'>
+            <motion.p
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ delay: 0.3 }}
+              className='flex flex-nowrap items-center gap-2 text-center'
+            >
+              <Phone className='h-4 w-4' />
+              <a
+                href='tel:+420777530096'
+                className='relative font-bold text-purple-500 after:absolute after:-bottom-1 after:left-0 after:right-0 after:z-10 after:h-[3px] after:w-full after:scale-x-0 after:rounded-lg after:bg-purple-500 after:opacity-0 after:transition after:hover:scale-x-100 after:hover:opacity-100'
+              >
+                +420 777 530 096
+              </a>
+            </motion.p>
 
-        <motion.span
-          className={cn(
-            'mt-4 text-right opacity-0 transition text-zinc-800/70 absolute translate-y-[25px] translate-x-[100px]',
-            clicked && 'opacity-100'
-          )}
-        >
-          {language === 'en' && 'Copied'}
-          {language === 'cs' && 'Zkopírováno'}
-        </motion.span>
-      </motion.p>
+            <motion.p
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ delay: 0.3 }}
+              className='flex flex-nowrap items-center gap-2 text-center'
+            >
+              <Mail className='h-4 w-4' />
+              <span
+                onClick={() => {
+                  setClicked(true)
+                  navigator.clipboard.writeText('danielanthonybaudys@gmail.com')
+                }}
+                className='relative cursor-pointer font-bold text-purple-500 after:absolute after:-bottom-1 after:left-0 after:right-0 after:z-10 after:h-[3px] after:w-full after:scale-x-0 after:rounded-lg after:bg-purple-500 after:opacity-0 after:transition after:hover:scale-x-100 after:hover:opacity-100'
+              >
+                danielanthonybaudys@gmail.com
+              </span>
 
-      <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ delay: 0.3 }}
-        className='flex items-center gap-2 my-4 md:my-6 lg:my-8 xl:my-10 max-w-[70ch] mx-auto'
-      >
-        <span className='w-full h-px bg-muted-foreground/60 dark:bg-muted-foreground/30' />
-        <p className='text-muted-foreground'>
-          {language === 'en' && 'OR'}
-          {language === 'cs' && 'NEBO'}
-        </p>
-        <span className='w-full h-px bg-muted-foreground/60 dark:bg-muted-foreground/30' />
-      </motion.div>
+              <motion.span
+                className={cn(
+                  'absolute mt-4 translate-x-[100px] translate-y-[25px] text-right text-zinc-800/70 opacity-0 transition',
+                  clicked && 'opacity-100',
+                )}
+              >
+                {language === 'en' && 'Copied'}
+                {language === 'cs' && 'Zkopírováno'}
+              </motion.span>
+            </motion.p>
+          </div>
+        </div>
 
-      <motion.p
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ delay: 0.3 }}
-        className='flex gap-2 items-center flex-nowrap md:text-lg text-center mx-auto justify-center'
-      >
-        <Phone className='w-4 h-4' />
-        <a
-          href='tel:+420777530096'
-          className='font-bold text-purple-500 after:w-full after:h-[3px] after:bg-purple-500 after:-bottom-1 after:left-0 after:right-0 after:z-10 after:absolute relative after:opacity-0 after:scale-x-0 after:hover:scale-x-100 after:hover:opacity-100 after:transition after:rounded-lg'
-        >
-          +420 777 530 096
-        </a>
-      </motion.p>
+        <motion.img
+          src='/contact/contact.webp'
+          alt='contact me'
+          className='mx-auto w-full rounded-2xl'
+        />
+      </div>
     </Container>
   )
 }
