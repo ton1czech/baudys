@@ -6,24 +6,21 @@ import { motion } from 'framer-motion'
 
 interface Props {
   image: any
-  enterFullscreenView: (id: number) => void
 }
 
-export const AlbumItem = ({ image, enterFullscreenView }: Props) => {
+export const AlbumItem = ({ image }: Props) => {
   const [isLoading, setIsLoading] = useState(true)
 
   return (
     <>
-      {isLoading && <Skeleton className='w-full h-[500px]' />}
+      {isLoading && <Skeleton className='h-[500px] w-full' />}
       <motion.img
         key={image.id}
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
-        onClick={() => enterFullscreenView(image.id - 1)}
         onLoad={() => setIsLoading(false)}
         src={image.url}
         alt='image'
-        className='cursor-pointer'
         style={{
           display: isLoading ? 'none' : 'block',
         }}

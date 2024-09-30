@@ -49,11 +49,6 @@ export const Cursor = () => {
           <ExternalLink className='stroke-white' />
         </div>
       )}
-      {isHovering && type === 'photography' && (
-        <div className='pointer-events-none absolute inset-0 z-[9999] grid h-full w-full place-content-center rounded-full border border-zinc-300/70 bg-zinc-800'>
-          <Camera className='stroke-white' />
-        </div>
-      )}
     </div>
   )
 }
