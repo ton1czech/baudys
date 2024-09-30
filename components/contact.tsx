@@ -27,7 +27,7 @@ export const Contact = () => {
         label={language === 'en' ? "let's work together" : 'spolupracujme'}
       />
 
-      <div className='grid grid-cols-2 gap-10'>
+      <div className='grid gap-4 md:grid-cols-2 md:gap-10'>
         <div className='flex flex-col justify-between'>
           <motion.div
             initial={{ opacity: 0 }}
@@ -48,7 +48,7 @@ export const Contact = () => {
             <p className='text-sm text-zinc-300'>neplátce DPH</p>
           </motion.div>
 
-          <div className='space-y-1'>
+          <div className='mt-8 space-y-1'>
             <motion.p
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
