@@ -5,7 +5,6 @@ const {
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  darkMode: ['class'],
   content: [
     './pages/**/*.{ts,tsx}',
     './components/**/*.{ts,tsx}',
@@ -83,7 +82,7 @@ module.exports = {
 function addVariablesForColors({ addBase, theme }: any) {
   let allColors = flattenColorPalette(theme('colors'))
   let newVars = Object.fromEntries(
-    Object.entries(allColors).map(([key, val]) => [`--${key}`, val])
+    Object.entries(allColors).map(([key, val]) => [`--${key}`, val]),
   )
 
   addBase({

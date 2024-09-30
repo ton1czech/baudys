@@ -15,9 +15,9 @@ const Item = ({ label }: ItemProps) => {
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ delay: 0.3 }}
-      className='border border-purple-500/50 rounded-lg p-2 bg-purple-500/10'
+      className='rounded-lg border border-purple-500/50 bg-purple-500/10 p-2'
     >
-      <p className='text-lg text-zinc-800 dark:text-zinc-200 text-center truncate whitespace-nowrap'>
+      <p className='truncate whitespace-nowrap text-center text-lg text-zinc-200'>
         {label}
       </p>
     </motion.div>
@@ -30,7 +30,7 @@ export const Options = () => {
   return (
     <Container className='pb-40 lg:pb-60 xl:pb-80'>
       <Title label={language === 'en' ? 'Options' : 'Možnosti'} />
-      <div className='grid sm:grid-cols-2 gap-4 md:grid-cols-3 md:gap-6 lg:grid-cols-4 lg:gap-8'>
+      <div className='grid gap-4 sm:grid-cols-2 md:grid-cols-3 md:gap-6 lg:grid-cols-4 lg:gap-8'>
         <Item
           label={language === 'en' ? 'Ambient Lighting' : 'Ambientní Osvětlení'}
         />
@@ -82,7 +82,7 @@ export const Options = () => {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ delay: 0.3 }}
-          className='text-center p-2 text-lg text-zinc-800 dark:text-zinc-200'
+          className='p-2 text-center text-lg text-zinc-200'
         >
           {language === 'en' && 'and much more...'}
           {language === 'cs' && 'a mnohem více...'}

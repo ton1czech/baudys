@@ -30,7 +30,7 @@ const LanguageSelector = () => {
   const searchParams = useSearchParams()
   const router = useRouter()
 
-  const { language, imgSrc, setLanguage } = useLanguage(state => state)
+  const { language, imgSrc, setLanguage } = useLanguage((state) => state)
 
   const [open, setOpen] = useState<boolean>(false)
 
@@ -52,22 +52,19 @@ const LanguageSelector = () => {
 
   return (
     <Popover open={open} onOpenChange={setOpen}>
-      <PopoverTrigger
-        asChild
-        className='hover:bg-zinc-400/70 dark:hover:bg-zinc-600/70'
-      >
+      <PopoverTrigger asChild className='hover:bg-zinc-600/70'>
         <Button
           variant='outline'
           role='combobox'
           name='language selector'
           aria-expanded={open}
-          className='w-[70px] border-none justify-between dark:text-zinc-200 dark:hover:text-zinc-300 text-zinc-900 hover:text-zinc-800 bg-transparent'
+          className='w-[70px] justify-between border-none bg-transparent text-zinc-200 hover:text-zinc-300'
         >
           <Image src={imgSrc(language)} width={30} height={30} alt={language} />
-          <ChevronsUpDown className='w-4 h-4 my-2 opacity-70 shrink-0 ml-1' />
+          <ChevronsUpDown className='my-2 ml-1 h-4 w-4 shrink-0 opacity-70' />
         </Button>
       </PopoverTrigger>
-      <PopoverContent className='w-[100px] p-2 z-[1001] bg-zinc-100 dark:bg-zinc-900 backdrop-blur-lg border-zinc-500/40'>
+      <PopoverContent className='z-[1001] w-[100px] border-zinc-500/40 bg-zinc-900 p-2 backdrop-blur-lg'>
         <Command className='!bg-transparent'>
           <CommandGroup className='space-y-2'>
             {languages.map(({ src, value }: { src: string; value: string }) => (
@@ -81,8 +78,8 @@ const LanguageSelector = () => {
               >
                 <Check
                   className={cn(
-                    'mr-2 h-4 w-4 text-zinc-900 dark:text-zinc-100',
-                    language === value ? 'opacity-100' : 'opacity-0'
+                    'mr-2 h-4 w-4 text-zinc-100',
+                    language === value ? 'opacity-100' : 'opacity-0',
                   )}
                 />
                 <Image src={src} width={30} height={30} alt={value} />

@@ -16,8 +16,8 @@ export const Categories = () => {
   return (
     <div>
       <h3
-        onClick={() => setIsOpen(prev => !prev)}
-        className='inline-flex gap-1 items-center select-none cursor-pointer'
+        onClick={() => setIsOpen((prev) => !prev)}
+        className='inline-flex cursor-pointer select-none items-center gap-1'
       >
         Categories
         <ChevronDown
@@ -27,14 +27,13 @@ export const Categories = () => {
       </h3>
       {isOpen && (
         <div className='mt-2 flex gap-2'>
-          {categories.map(category => (
+          {categories.map((category) => (
             <Link key={category} href={`/blog/${category}`}>
               <Button
                 variant='category'
                 className={cn(
                   '',
-                  pathname.includes(category) &&
-                    'dark:bg-white dark:text-zinc-900 bg-zinc-800 text-zinc-100'
+                  pathname.includes(category) && 'bg-white text-zinc-900',
                 )}
               >
                 {category}

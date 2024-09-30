@@ -11,7 +11,7 @@ export const About = () => {
   return (
     <Container className='pb-40 lg:pb-60 xl:pb-80'>
       <Title label={language === 'en' ? 'Who am I?' : 'Kdo jsem?'} />
-      <div className='grid xl:grid-cols-2 gap-4 md:gap-8 xl:gap-20'>
+      <div className='grid gap-4 md:gap-8 xl:grid-cols-2 xl:gap-20'>
         <motion.img
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -27,7 +27,7 @@ export const About = () => {
           transition={{ delay: 0.3 }}
           className='sticky top-20 h-min'
         >
-          <p className='md:text-lg lg:text-xl text-zinc-700 dark:text-zinc-400 text-justify'>
+          <p className='text-justify text-zinc-400 md:text-lg lg:text-xl'>
             {language === 'en' && (
               <>
                 I&apos;m just a young person who wants to make his dreams come

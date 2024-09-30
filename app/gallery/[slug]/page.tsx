@@ -4,12 +4,10 @@ import { Contact } from '@/components/contact'
 import { Container } from '@/components/container'
 import { AlbumItem } from '@/components/gallery/album-item'
 import { Title } from '@/components/title'
-import { Skeleton } from '@/components/ui/skeleton'
 import { gallery } from '@/database/photography'
 import { cn } from '@/lib/utils'
 import { useCursor } from '@/store/use-cursor'
 import { useLanguage } from '@/store/use-language'
-import { motion } from 'framer-motion'
 import { ChevronRight, ChevronLeft, X } from 'lucide-react'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
@@ -25,7 +23,7 @@ export default function Page({ params }: Props) {
   const { setIsNotHovering } = useCursor()
 
   const { labelEn, labelCs, images } = gallery.filter(
-    (data: any) => data.slug === params.slug
+    (data: any) => data.slug === params.slug,
   )[0]
 
   const [fullscreen, setFullscreen] = useState<boolean>(false)
@@ -71,7 +69,7 @@ export default function Page({ params }: Props) {
     const y = event.clientY - rect.top
 
     setTransformOrigin(`${x}px ${y}px`)
-    setZoomLevel(prevZoomLevel => (prevZoomLevel < 2 ? prevZoomLevel + 1 : 1))
+    setZoomLevel((prevZoomLevel) => (prevZoomLevel < 2 ? prevZoomLevel + 1 : 1))
   }
 
   const handleTouchStart = (event: React.TouchEvent<HTMLDivElement>) => {
@@ -100,9 +98,9 @@ export default function Page({ params }: Props) {
   }, [])
 
   return (
-    <div className='mt-28 lg:mt-32 mb-20 lg:mb-32'>
+    <div className='mb-20 mt-28 lg:mb-32 lg:mt-32'>
       <Container className='pb-40 lg:pb-60 xl:pb-80'>
-        <p className='inline-flex items-center gap-2 text-zinc-600 dark:text-zinc-400 mb-4'>
+        <p className='mb-4 inline-flex items-center gap-2 text-zinc-400'>
           <Link href='/gallery' className='hover:underline'>
             {language === 'en' && 'gallery'}
             {language === 'cs' && 'galerie'}
@@ -118,7 +116,7 @@ export default function Page({ params }: Props) {
 
         <div className='grid grid-cols-2 gap-4'>
           <div className='flex flex-col gap-4'>
-            {imagesWithIds.slice(0, itemsPerColumn).map(image => (
+            {imagesWithIds.slice(0, itemsPerColumn).map((image) => (
               <AlbumItem
                 key={image.url}
                 image={image}
@@ -127,7 +125,7 @@ export default function Page({ params }: Props) {
             ))}
           </div>
           <div className='flex flex-col gap-4'>
-            {imagesWithIds.slice(itemsPerColumn).map(image => (
+            {imagesWithIds.slice(itemsPerColumn).map((image) => (
               <AlbumItem
                 key={image.url}
                 image={image}
@@ -143,15 +141,15 @@ export default function Page({ params }: Props) {
         <div
           onTouchStart={handleTouchStart}
           onTouchMove={handleTouchMove}
-          className='fixed top-0 bottom-0 left-0 right-0 z-10 grid w-full h-full overflow-hidden bg-background select-none place-content-center'
+          className='fixed bottom-0 left-0 right-0 top-0 z-10 grid h-full w-full select-none place-content-center overflow-hidden bg-background'
         >
-          <Container className='relative flex flex-col gap-2 overflow-hidden px-0 mx-4'>
+          <Container className='relative mx-4 flex flex-col gap-2 overflow-hidden px-0'>
             <img
               src={`/gallery/${params.slug}/${currentIdx}.webp`}
               alt='image'
               className={cn(
-                'lg:h-full max-h-[82vh] overflow-hidden select-none',
-                zoomLevel === 1 ? 'cursor-zoom-in' : 'cursor-zoom-out'
+                'max-h-[82vh] select-none overflow-hidden lg:h-full',
+                zoomLevel === 1 ? 'cursor-zoom-in' : 'cursor-zoom-out',
               )}
               style={{
                 scale: zoomLevel,
@@ -162,18 +160,18 @@ export default function Page({ params }: Props) {
 
             <div
               onClick={exitFullscreenView}
-              className='absolute rounded-md cursor-pointer right-2 top-2 bg-red-600 hover:bg-red-500 transition p-2 place-self-end'
+              className='absolute right-2 top-2 cursor-pointer place-self-end rounded-md bg-red-600 p-2 transition hover:bg-red-500'
             >
               <X className='size-4 md:size-8' />
             </div>
 
             <ChevronRight
-              className='absolute right-2 bg-violet-700 hover:bg-violet-800 border border-zinc-100/60 rounded-full p-2 md:p-3 text-zinc-200 top-[50%] w-10 h-10 md:w-14 md:h-14 cursor-pointer translate-y-[-50%]'
+              className='absolute right-2 top-[50%] h-10 w-10 translate-y-[-50%] cursor-pointer rounded-full border border-zinc-100/60 bg-violet-700 p-2 text-zinc-200 hover:bg-violet-800 md:h-14 md:w-14 md:p-3'
               onClick={() => nextImage()}
             />
 
             <ChevronLeft
-              className='absolute left-2 bg-violet-700 hover:bg-violet-800 border border-zinc-100/60 rounded-full p-2 md:p-3 text-zinc-200 top-[50%] w-10 h-10 md:w-14 md:h-14 cursor-pointer translate-y-[-50%]'
+              className='absolute left-2 top-[50%] h-10 w-10 translate-y-[-50%] cursor-pointer rounded-full border border-zinc-100/60 bg-violet-700 p-2 text-zinc-200 hover:bg-violet-800 md:h-14 md:w-14 md:p-3'
               onClick={() => prevImage()}
             />
           </Container>

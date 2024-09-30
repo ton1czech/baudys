@@ -3,16 +3,14 @@ import type { MDXComponents } from 'mdx/types'
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
     h1: ({ children }) => (
-      <h1 className='text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-center mb-6 xl:mb-10 uppercase py-2'>
+      <h1 className='mb-6 py-2 text-center text-4xl font-bold uppercase md:text-5xl lg:text-6xl xl:mb-10 xl:text-7xl'>
         {children}
       </h1>
     ),
     p: ({ children }) => (
-      <p className='md:text-lg lg:text-xl text-zinc-700 dark:text-zinc-300'>
-        {children}
-      </p>
+      <p className='text-zinc-300 md:text-lg lg:text-xl'>{children}</p>
     ),
-    img: props => <img className='mx-auto' {...props} />,
+    img: (props) => <img className='mx-auto' {...props} />,
     ...components,
   }
 }

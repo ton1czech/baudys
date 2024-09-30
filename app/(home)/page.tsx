@@ -3,7 +3,6 @@ import { About } from '@/components/home/about'
 import { Hero } from '@/components/home/hero'
 import { Projects } from '@/components/projects'
 import { Services } from '@/components/home/services'
-import { TechnologiesCarousel } from '@/components/technologies-carousel/technologies-carousel'
 
 export default function Page() {
   return (
@@ -12,7 +11,6 @@ export default function Page() {
       <About />
       <Services />
       <Projects />
-      <TechnologiesCarousel />
       <Contact />
     </main>
   )

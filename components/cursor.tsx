@@ -29,7 +29,7 @@ export const Cursor = () => {
 
   return (
     <div
-      className='hidden sm:block w-0 h-0 fixed top-0 left-0 pointer-events-none z-[9998]'
+      className='pointer-events-none fixed left-0 top-0 z-[9998] hidden h-0 w-0 sm:block'
       style={{
         height: isHovering ? 80 : 0,
         width: isHovering ? 80 : 0,
@@ -40,18 +40,18 @@ export const Cursor = () => {
       }}
     >
       {isHovering && type === 'project' && (
-        <div className='pointer-events-none rounded-full absolute grid place-content-center w-full h-full inset-0 z-[9999] border bg-zinc-200 border-zinc-700/70 dark:bg-zinc-800 dark:border-zinc-300/70'>
-          <ArrowRight className='stroke-black dark:stroke-white' />
+        <div className='pointer-events-none absolute inset-0 z-[9999] grid h-full w-full place-content-center rounded-full border border-zinc-300/70 bg-zinc-800'>
+          <ArrowRight className='stroke-white' />
         </div>
       )}
       {isHovering && type === 'external' && (
-        <div className='pointer-events-none rounded-full absolute grid place-content-center w-full h-full inset-0 z-[9999] border bg-zinc-200 border-zinc-700/70 dark:bg-zinc-800 dark:border-zinc-300/70'>
-          <ExternalLink className='stroke-black dark:stroke-white' />
+        <div className='pointer-events-none absolute inset-0 z-[9999] grid h-full w-full place-content-center rounded-full border border-zinc-300/70 bg-zinc-800'>
+          <ExternalLink className='stroke-white' />
         </div>
       )}
       {isHovering && type === 'photography' && (
-        <div className='pointer-events-none rounded-full absolute grid place-content-center w-full h-full inset-0 z-[9999] border bg-zinc-200 border-zinc-700/70 dark:bg-zinc-800 dark:border-zinc-300/70'>
-          <Camera className='stroke-black dark:stroke-white' />
+        <div className='pointer-events-none absolute inset-0 z-[9999] grid h-full w-full place-content-center rounded-full border border-zinc-300/70 bg-zinc-800'>
+          <Camera className='stroke-white' />
         </div>
       )}
     </div>

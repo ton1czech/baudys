@@ -28,11 +28,11 @@ export const Categories = () => {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <Container className='flex justify-between mb-10'>
+    <Container className='mb-10 flex justify-between'>
       <div>
         <h3
-          onClick={() => setIsOpen(prev => !prev)}
-          className='inline-flex gap-1 items-center select-none cursor-pointer'
+          onClick={() => setIsOpen((prev) => !prev)}
+          className='inline-flex cursor-pointer select-none items-center gap-1'
         >
           {language === 'en' && 'Categories'}
           {language === 'cs' && 'Kategorie'}
@@ -42,14 +42,11 @@ export const Categories = () => {
           />
         </h3>
         {isOpen && (
-          <div className='mt-2 flex gap-2 flex-wrap'>
+          <div className='mt-2 flex flex-wrap gap-2'>
             <Button
               onClick={setCars}
               variant='category'
-              className={cn(
-                cars &&
-                  'dark:bg-white dark:text-zinc-900 bg-zinc-800 text-zinc-100'
-              )}
+              className={cn(cars && 'bg-white text-zinc-900')}
             >
               {language === 'en' && 'cars'}
               {language === 'cs' && 'auta'}
@@ -57,10 +54,7 @@ export const Categories = () => {
             <Button
               onClick={setAnimals}
               variant='category'
-              className={cn(
-                animals &&
-                  'dark:bg-white dark:text-zinc-900 bg-zinc-800 text-zinc-100'
-              )}
+              className={cn(animals && 'bg-white text-zinc-900')}
             >
               {language === 'en' && 'animals'}
               {language === 'cs' && 'zvířata'}
@@ -68,10 +62,7 @@ export const Categories = () => {
             <Button
               onClick={setEvents}
               variant='category'
-              className={cn(
-                events &&
-                  'dark:bg-white dark:text-zinc-900 bg-zinc-800 text-zinc-100'
-              )}
+              className={cn(events && 'bg-white text-zinc-900')}
             >
               {language === 'en' && 'events'}
               {language === 'cs' && 'akce'}
@@ -79,10 +70,7 @@ export const Categories = () => {
             <Button
               onClick={setFitness}
               variant='category'
-              className={cn(
-                fitness &&
-                  'dark:bg-white dark:text-zinc-900 bg-zinc-800 text-zinc-100'
-              )}
+              className={cn(fitness && 'bg-white text-zinc-900')}
             >
               {language === 'en' && 'fitness'}
               {language === 'cs' && 'fitness'}
@@ -90,10 +78,7 @@ export const Categories = () => {
             <Button
               onClick={setNature}
               variant='category'
-              className={cn(
-                nature &&
-                  'dark:bg-white dark:text-zinc-900 bg-zinc-800 text-zinc-100'
-              )}
+              className={cn(nature && 'bg-white text-zinc-900')}
             >
               {language === 'en' && 'nature'}
               {language === 'cs' && 'příroda'}
@@ -101,10 +86,7 @@ export const Categories = () => {
             <Button
               onClick={setMonuments}
               variant='category'
-              className={cn(
-                monuments &&
-                  'dark:bg-white dark:text-zinc-900 bg-zinc-800 text-zinc-100'
-              )}
+              className={cn(monuments && 'bg-white text-zinc-900')}
             >
               {language === 'en' && 'monuments'}
               {language === 'cs' && 'památky'}

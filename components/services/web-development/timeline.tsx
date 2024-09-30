@@ -25,10 +25,10 @@ export const Timeline = () => {
       />
       <ol
         ref={ref}
-        className='relative border-l-2 border-zinc-400 dark:border-zinc-600 space-y-20 lg:space-y-32 max-w-[80ch] mx-auto'
+        className='relative mx-auto max-w-[80ch] space-y-20 border-l-2 border-zinc-600 lg:space-y-32'
       >
         <motion.div
-          className='absolute -left-[3px] z-10 w-[4px] h-full bg-purple-500 origin-top'
+          className='absolute -left-[3px] z-10 h-full w-[4px] origin-top bg-purple-500'
           style={{ scaleY: scrollYProgress }}
         />
         <TimelineItem

@@ -38,22 +38,22 @@ export const Service: FC<ServiceProps> = ({
       transition={{ delay: 0.3 }}
       className='group'
     >
-      <Link href={href} className='grid lg:grid-cols-2 gap-4 lg:gap-10'>
-        <div className='rounded-lg aspect-video relative w-full h-full overflow-hidden'>
+      <Link href={href} className='grid gap-4 lg:grid-cols-2 lg:gap-10'>
+        <div className='relative aspect-video h-full w-full overflow-hidden rounded-lg'>
           <Image
             src={img}
             alt={label}
             fill
             className={cn(
-              'rounded-lg group-hover:scale-105 transition duration-300 object-cover',
-              center ? 'object-center' : 'object-bottom'
+              'rounded-lg object-cover transition duration-300 group-hover:scale-105',
+              center ? 'object-center' : 'object-bottom',
             )}
           />
           {tag && (
-            <p className='absolute bg-zinc-700/50 backdrop-blur-sm text-sm py-1 px-2 rounded-md bottom-2 right-2 text-white'>
+            <p className='absolute bottom-2 right-2 rounded-md bg-zinc-700/50 px-2 py-1 text-sm text-white backdrop-blur-sm'>
               {tag}
               <Link
-                onClick={e => e.stopPropagation()}
+                onClick={(e) => e.stopPropagation()}
                 onMouseEnter={() => {
                   setIsHovering()
                   setType('external')
@@ -64,7 +64,7 @@ export const Service: FC<ServiceProps> = ({
                 }}
                 href={`https://${tagLink}`}
                 target='_blank'
-                className='underline font-bold relative cursor-none'
+                className='relative cursor-none font-bold underline'
               >
                 {tagLink}
               </Link>
@@ -73,12 +73,10 @@ export const Service: FC<ServiceProps> = ({
         </div>
 
         <div className='grid place-content-center'>
-          <h3 className='text-lg md:text-xl lg:text-2xl xl:text-3xl font-semibold mb-1'>
+          <h3 className='mb-1 text-lg font-semibold md:text-xl lg:text-2xl xl:text-3xl'>
             {label}
           </h3>
-          <p className='text-justify text-zinc-700 dark:text-zinc-400 mb-6'>
-            {body}
-          </p>
+          <p className='mb-6 text-justify text-zinc-400'>{body}</p>
           <Button variant='rainbow'>
             {language === 'en' && 'Learn More'}
             {language === 'cs' && 'Dozvědět se Více'}

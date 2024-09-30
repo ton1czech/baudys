@@ -2,7 +2,6 @@ import type { Metadata, Viewport } from 'next'
 import { Inter } from 'next/font/google'
 import { cn } from '@/lib/utils'
 import { Navbar } from '@/components/navbar/navbar'
-import { ThemeProvider } from '@/providers/theme-provider'
 import { Cursor } from '@/components/cursor'
 import { Footer } from '@/components/footer/footer'
 import { siteConfig } from '@/config/site'
@@ -37,23 +36,16 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
       <body
         className={cn(
-          'antialiased scroll-smooth overflow-x-hidden',
-          inter.className
+          'overflow-x-hidden scroll-smooth antialiased',
+          inter.className,
         )}
       >
-        <ThemeProvider
-          attribute='class'
-          defaultTheme='system'
-          enableSystem
-          disableTransitionOnChange
-        >
-          <Cursor />
-          <Cookies />
+        <Cursor />
+        <Cookies />
 
-          <Navbar />
-          {children}
-          <Footer />
-        </ThemeProvider>
+        <Navbar />
+        {children}
+        <Footer />
       </body>
     </html>
   )

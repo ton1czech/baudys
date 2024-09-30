@@ -38,15 +38,13 @@ export const TimelineItem: FC<TimelineItemProps> = ({
         transition={{ delay: 0.3 }}
         className='flex-start flex items-center pt-3'
       >
-        <div className='-ml-[5px] mr-3 h-[9px] w-[9px] rounded-full bg-zinc-400 dark:bg-zinc-600' />
+        <div className='-ml-[5px] mr-3 h-[9px] w-[9px] rounded-full bg-zinc-600' />
         <motion.div
           ref={ref}
           style={{ opacity: scrollYColorProgress }}
-          className='absolute -ml-[5px] mr-3 h-[9px] w-[9px] rounded-full z-10 bg-purple-500'
+          className='absolute z-10 -ml-[5px] mr-3 h-[9px] w-[9px] rounded-full bg-purple-500'
         />
-        <p className='absolute ml-3 text-sm text-zinc-600 dark:text-zinc-400'>
-          {step}
-        </p>
+        <p className='absolute ml-3 text-sm text-zinc-400'>{step}</p>
         <motion.p
           ref={ref}
           style={{ opacity: scrollYColorProgress }}
@@ -60,7 +58,7 @@ export const TimelineItem: FC<TimelineItemProps> = ({
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ delay: 0.3 }}
-          className='mb-3 font-semibold text-xl'
+          className='mb-3 text-xl font-semibold'
         >
           {label}
         </motion.h3>

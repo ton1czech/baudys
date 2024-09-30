@@ -11,7 +11,7 @@ export const Footer = () => {
   const { language } = useLanguage()
 
   return (
-    <footer className='border-t border-zinc-500/50 pb-12 pt-8 dark:border-zinc-700/50 lg:pt-12'>
+    <footer className='border-t border-zinc-700/50 pb-12 pt-8 lg:pt-12'>
       <Container>
         <motion.div
           initial={{ opacity: 0 }}

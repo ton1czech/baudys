@@ -29,15 +29,15 @@ export const ServiceCard: FC<ServiceCardProps> = ({
     >
       <h4
         className={cn(
-          'text-center font-semibold mb-2 text-lg md:text-xl flex items-center justify-center gap-2',
-          highlight && 'gold-text'
+          'mb-2 flex items-center justify-center gap-2 text-center text-lg font-semibold md:text-xl',
+          highlight && 'gold-text',
         )}
       >
         <Icon size={23} className={cn(highlight && 'stroke-yellow-600')} />
         {title}
       </h4>
 
-      <div className='rounded-lg aspect-video relative overflow-hidden'>
+      <div className='relative aspect-video overflow-hidden rounded-lg'>
         <Image
           src={image}
           alt={title}
@@ -45,9 +45,7 @@ export const ServiceCard: FC<ServiceCardProps> = ({
           className='rounded-lg object-cover object-center'
         />
       </div>
-      <p className='text-justify text-zinc-800 dark:text-zinc-300 text-sm'>
-        {body}
-      </p>
+      <p className='text-justify text-sm text-zinc-300'>{body}</p>
     </motion.div>
   )
 }

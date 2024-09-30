@@ -46,20 +46,20 @@ export const Project: FC<ProjectProps> = ({
       >
         <img src={image} alt={name} />
 
-        <div className='flex justify-between items-center mt-3'>
-          <h3 className='text-zinc-700 italic dark:text-zinc-300'>
+        <div className='mt-3 flex items-center justify-between'>
+          <h3 className='italic text-zinc-300'>
             {name}{' '}
-            <span className='font-light text-sm not-italic text-zinc-600 dark:text-zinc-400'>
+            <span className='text-sm font-light not-italic text-zinc-400'>
               | {year}
             </span>
           </h3>
 
           {language === 'cs' && (
             <div className='flex gap-3'>
-              {servicesCs.map(service => (
+              {servicesCs.map((service) => (
                 <span
                   key={service}
-                  className='text-xs bg-violet-600/20 px-1 py-0.5 rounded-md font-light text-zinc-800 dark:text-zinc-200'
+                  className='rounded-md bg-violet-600/20 px-1 py-0.5 text-xs font-light text-zinc-200'
                 >
                   {service}
                 </span>
@@ -68,10 +68,10 @@ export const Project: FC<ProjectProps> = ({
           )}
           {language === 'en' && (
             <div className='flex gap-3'>
-              {servicesEn.map(service => (
+              {servicesEn.map((service) => (
                 <span
                   key={service}
-                  className='text-xs bg-violet-600/20 px-1 py-0.5 rounded-md font-light text-zinc-800 dark:text-zinc-200'
+                  className='rounded-md bg-violet-600/20 px-1 py-0.5 text-xs font-light text-zinc-200'
                 >
                   {service}
                 </span>

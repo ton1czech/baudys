@@ -22,7 +22,7 @@ export default async function Category({
 
   return (
     <main>
-      <p className='inline-flex items-center gap-2 text-zinc-600 dark:text-zinc-400'>
+      <p className='inline-flex items-center gap-2 text-zinc-400'>
         <Link href='/blog' className='hover:underline'>
           blog
         </Link>
@@ -38,7 +38,7 @@ export default async function Category({
 }
 
 export function generateStaticParams() {
-  return categories.map(category => ({
+  return categories.map((category) => ({
     category,
   }))
 }

@@ -4,7 +4,7 @@ import Link from 'next/link'
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <>
-      <p className='inline-flex items-center gap-2 text-zinc-600 dark:text-zinc-400 mb-4'>
+      <p className='mb-4 inline-flex items-center gap-2 text-zinc-400'>
         <Link href='/blog' className='hover:underline'>
           blog
         </Link>

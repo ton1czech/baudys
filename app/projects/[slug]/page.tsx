@@ -8,7 +8,6 @@ import { useLanguage } from '@/store/use-language'
 import Link from 'next/link'
 import { useEffect } from 'react'
 import { motion } from 'framer-motion'
-import { TechnologiesCarousel } from '@/components/technologies-carousel/technologies-carousel'
 import { Title } from '@/components/title'
 import { ChevronRight } from 'lucide-react'
 
@@ -40,9 +39,9 @@ export default function Page({ params }: PageProps) {
   }, [])
 
   return (
-    <div className='mt-28 lg:mt-32 mb-20 lg:mb-32'>
+    <div className='mb-20 mt-28 lg:mb-32 lg:mt-32'>
       <Container className='pb-40 lg:pb-60 xl:pb-80'>
-        <p className='inline-flex items-center gap-2 text-zinc-600 dark:text-zinc-400 mb-4'>
+        <p className='mb-4 inline-flex items-center gap-2 text-zinc-400'>
           <Link href='/projects' className='hover:underline'>
             {language === 'en' && 'projects'}
             {language === 'cs' && 'projekty'}
@@ -51,16 +50,16 @@ export default function Page({ params }: PageProps) {
           <span className='font-bold'>{name}</span>
         </p>
 
-        <div className='grid md:grid-cols-[3fr_1fr] mb-10 lg:mb-20 xl:mb-32'>
+        <div className='mb-10 grid md:grid-cols-[3fr_1fr] lg:mb-20 xl:mb-32'>
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ delay: 0.3 }}
             className='flex flex-col md:justify-center'
           >
-            <div className='flex md:gap-20 justify-between md:justify-normal'>
+            <div className='flex justify-between md:justify-normal md:gap-20'>
               <div className='flex flex-col'>
-                <h4 className='uppercase text-zinc-600 dark:text-zinc-400 font-medium'>
+                <h4 className='font-medium uppercase text-zinc-400'>
                   {language === 'en' && 'client'}
                   {language === 'cs' && 'klient'}
                 </h4>
@@ -75,21 +74,21 @@ export default function Page({ params }: PageProps) {
                   }}
                   href={url}
                   target='_blank'
-                  className='underline text-2xl lg:text-3xl font-light cursor-none'
+                  className='cursor-none text-2xl font-light underline lg:text-3xl'
                 >
                   {name}
                 </Link>
               </div>
               <div className='flex flex-col'>
-                <h4 className='uppercase text-zinc-600 dark:text-zinc-400 font-medium'>
+                <h4 className='font-medium uppercase text-zinc-400'>
                   {language === 'en' && 'year'}
                   {language === 'cs' && 'rok'}
                 </h4>
-                <p className='text-2xl lg:text-3xl font-light'>{year}</p>
+                <p className='text-2xl font-light lg:text-3xl'>{year}</p>
               </div>
             </div>
 
-            <h1 className='hidden lg:block lg:text-6xl xl:text-7xl 2xl:text-8xl font-semibold mt-14 text-center md:text-left'>
+            <h1 className='mt-14 hidden text-center font-semibold md:text-left lg:block lg:text-6xl xl:text-7xl 2xl:text-8xl'>
               {language === 'en' && <>{descriptionEn}</>}
               {language === 'cs' && <>{descriptionCs}</>}
             </h1>
@@ -109,12 +108,12 @@ export default function Page({ params }: PageProps) {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ delay: 0.3 }}
-          className='mb-10 lg:mb-20 xl:mb-32 text-xl sm:text-2xl lg:text-3xl'
+          className='mb-10 text-xl sm:text-2xl lg:mb-20 lg:text-3xl xl:mb-32'
         >
           {language === 'en' &&
-            featuresEn?.map(feature => <li key={feature}>~ {feature}</li>)}
+            featuresEn?.map((feature) => <li key={feature}>~ {feature}</li>)}
           {language === 'cs' &&
-            featuresCs?.map(feature => <li key={feature}>~ {feature}</li>)}
+            featuresCs?.map((feature) => <li key={feature}>~ {feature}</li>)}
         </motion.ul>
 
         <Title label={language === 'en' ? 'Showcase' : 'Ukázka'} />
@@ -124,9 +123,9 @@ export default function Page({ params }: PageProps) {
           transition={{ delay: 0.3 }}
           src={macbook}
           alt={name}
-          className='mb-10 lg:mb-20 -mt-10 lg:-mt-20'
+          className='-mt-10 mb-10 lg:-mt-20 lg:mb-20'
         />
-        {images.map(image => (
+        {images.map((image) => (
           <motion.img
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -134,11 +133,10 @@ export default function Page({ params }: PageProps) {
             key={image}
             src={image}
             alt='image'
-            className='last:mb-0 mb-10 lg:mb-20'
+            className='mb-10 last:mb-0 lg:mb-20'
           />
         ))}
       </Container>
-      <TechnologiesCarousel />
       <Contact />
     </div>
   )

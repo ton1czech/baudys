@@ -5,7 +5,6 @@ import { Button } from '../ui/button'
 import { useEffect, useState } from 'react'
 import { cn } from '@/lib/utils'
 import LanguageSelector from './language-selector'
-import { ModeToggle } from './mode-toggle'
 import Link from 'next/link'
 import { ArrowLeft, ArrowRight, Menu } from 'lucide-react'
 import { useLanguage } from '@/store/use-language'
@@ -45,40 +44,35 @@ export const Navbar = () => {
     <>
       <nav
         className={cn(
-          'fixed top-5 px-4 left-0 right-0 h-14 rounded-xl 2xl:max-w-screen-xl lg:max-w-screen-lg transition grid items-center z-50 mx-auto'
+          'fixed left-0 right-0 top-5 z-50 mx-auto grid h-14 items-center rounded-xl px-4 transition lg:max-w-screen-lg 2xl:max-w-screen-xl',
         )}
       >
         <div
           className={cn(
-            'flex justify-between items-center px-2 rounded-xl border border-transparent h-full w-full',
+            'flex h-full w-full items-center justify-between rounded-xl border border-transparent px-2',
             !isTopOfTheScreen &&
-              'bg-zinc-300/40 border-zinc-400/70 backdrop-blur-lg dark:bg-zinc-800/40 dark:border-zinc-600/70 shadow-xl'
+              'border-zinc-600/70 bg-zinc-800/40 shadow-xl backdrop-blur-lg',
           )}
         >
           <Link href='/' className='transition duration-300'>
             <img
               src='/logo.webp'
               alt='logo'
-              className='w-12 h-12 hover:scale-[103%] hover:rotate-6 transition'
+              className='h-12 w-12 transition hover:rotate-6 hover:scale-[103%]'
             />
           </Link>
 
-          <div className='items-center hidden md:flex'>
-            <div className='flex gap-2 items-center'>
-              <div>
-                <ModeToggle />
-              </div>
-              <div>
-                <LanguageSelector />
-              </div>
+          <div className='hidden items-center md:flex'>
+            <div>
+              <LanguageSelector />
             </div>
 
-            <hr className='w-px h-8 bg-zinc-600/50 dark:bg-zinc-400/50 ml-6 mr-8' />
+            <hr className='ml-6 mr-8 h-8 w-px bg-zinc-400/50' />
 
             {isServicesPage ? (
-              <ul className='flex gap-6 items-center'>
+              <ul className='flex items-center gap-6'>
                 <ArrowLeft
-                  className='text-zinc-600 dark:text-zinc-400 w-5 h-5 cursor-pointer'
+                  className='h-5 w-5 cursor-pointer text-zinc-400'
                   onClick={() => setIsServicesPage(false)}
                 />
                 <NavItem
@@ -99,7 +93,7 @@ export const Navbar = () => {
                 />
               </ul>
             ) : (
-              <ul className='flex gap-6 items-center'>
+              <ul className='flex items-center gap-6'>
                 <NavItem
                   label={language === 'en' ? 'Services' : 'Služby'}
                   href='/services'
@@ -114,11 +108,11 @@ export const Navbar = () => {
                 />
                 <li>
                   <Button variant='rainbow' className=''>
-                    <Link href='/contact' className='flex gap-1 items-center'>
+                    <Link href='/contact' className='flex items-center gap-1'>
                       {language === 'en' && <>Let&apos;s talk</>}
                       {language === 'cs' && <>Promluvme si</>}
 
-                      <ArrowRight className='w-4 h-4' />
+                      <ArrowRight className='h-4 w-4' />
                     </Link>
                   </Button>
                 </li>
@@ -127,9 +121,6 @@ export const Navbar = () => {
           </div>
 
           <div className='flex items-center md:hidden'>
-            <div>
-              <ModeToggle />
-            </div>
             <div>
               <LanguageSelector />
             </div>
