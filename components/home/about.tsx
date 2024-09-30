@@ -4,6 +4,7 @@ import { useLanguage } from '@/store/use-language'
 import { Container } from '../container'
 import { Title } from '../title'
 import { motion } from 'framer-motion'
+import Link from 'next/link'
 
 export const About = () => {
   const { language } = useLanguage()
@@ -11,7 +12,7 @@ export const About = () => {
   return (
     <Container className='pb-40 lg:pb-60 xl:pb-80'>
       <Title label={language === 'en' ? 'Who am I?' : 'Kdo jsem?'} />
-      <div className='grid gap-4 md:gap-8 xl:grid-cols-2 xl:gap-20'>
+      <div className='grid gap-4 md:gap-8 xl:grid-cols-2'>
         <motion.img
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -30,35 +31,37 @@ export const About = () => {
           <p className='text-justify text-zinc-400 md:text-lg lg:text-xl'>
             {language === 'en' && (
               <>
-                I&apos;m just a young person who wants to make his dreams come
-                true and I believe that programming is my future. In 2015, I
-                started designing and photography 📸. I first encountered
-                Programming 🖥️ in 2019 and was immediately hooked. Since then
-                I&apos;ve managed to create dozens of projects, both for myself
-                and for clients. Some of my favourites include my portfolio and{' '}
-                Planetopedia website. It is also worth mentioning that I have
-                created several applications for the Pilsen Regional Office 👔,
-                I have given educational lectures for children 🧑‍🏫 and I have
-                successfully passed the Microsoft Office Specialist exams 📖 in
-                PowerPoint 🟠 and Word 🔵 at the bett 2023 event in London. When
-                I&apos;m not sitting at the computer, I&apos;m doing street
-                workout 💪 or working on cars 🏎️.
+                In 2015, I started designing and photography 📸. I first
+                encountered Programming 🖥️ in 2019 and was immediately hooked.
+                Since then I&apos;ve managed to create dozens of projects, both
+                for myself and for clients. Some of my favourites include my
+                portfolio and{' '}
+                <Link href='https://rozmluv.se' target='_blank'>
+                  Rozmluv se
+                </Link>{' '}
+                website. It is also worth mentioning that I have created several
+                applications for the Pilsen Regional Office in cooperation with
+                Microsoft 👔, I have given educational lectures for children 🧑‍🏫
+                and I have successfully passed the Microsoft Office Specialist
+                exams 📖 in PowerPoint 🟠 and Word 🔵 at the bett 2023 event in
+                London.
               </>
             )}
             {language === 'cs' && (
               <>
-                Jsem jen mladý člověk, co si chce splnit svoje sny a věřím, že
-                programování je moje budoucnost. V roce 2015 jsem začal s
-                designem a fotografováním 📸. S Programováním 🖥 jsem se poprvé
-                setkal v roce 2019 a hned mě to pohltilo. Od té doby jsem stihl
-                vytvořit desítky projektů, ať už sám pro sebe, tak i pro
-                klienty. Mezi mé nejoblíbenější patří moje portfolio a web{' '}
-                Planetopedia . Za zmínku také stojí, že jsem vytvořil několik
-                aplikací pro úřad plzeňského kraje 👔, vedl jsem výukové
-                přednášky 🧑‍🏫 pro děti a také jsem úspěšně absolvoval Microsoft
-                Office Specialist zkoušky 📖 z PowerPointu 🟠 a Wordu 🔵 na akci
-                bett 2023 v Londýně. Když zrovna nesedím u počítače, tak cvičím
-                street workout 💪 nebo pracuji na autech 🏎.
+                V roce 2015 jsem začal s designem a fotografováním 📸. S
+                Programováním 🖥 jsem se poprvé setkal v roce 2019 a hned mě to
+                pohltilo. Od té doby jsem stihl vytvořit desítky projektů, ať už
+                sám pro sebe, tak i pro klienty. Mezi mé nejoblíbenější patří
+                moje portfolio a web{' '}
+                <Link href='https://rozmluv.se' target='_blank'>
+                  Rozmluv se
+                </Link>{' '}
+                . Za zmínku také stojí, že jsem vytvořil několik aplikací pro
+                úřad plzeňského kraje ve spolupráci s Microsoftem 👔, vedl jsem
+                výukové přednášky 🧑‍🏫 pro děti a také jsem úspěšně absolvoval
+                Microsoft Office Specialist zkoušky 📖 z PowerPointu 🟠 a Wordu
+                🔵 na akci bett 2023 v Londýně.
               </>
             )}
           </p>
