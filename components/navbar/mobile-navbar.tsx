@@ -5,8 +5,8 @@ import { motion } from 'framer-motion'
 import { ArrowRight, X } from 'lucide-react'
 import { MobileNavItem } from './mobile-nav-item'
 import { useLanguage } from '@/store/use-language'
-import { Button } from '../ui/button'
 import Link from 'next/link'
+import ShinyButton from '../ui/shiny-button'
 
 interface MobileNavbarProps {
   setIsOpen: (bool: boolean) => void
@@ -60,17 +60,14 @@ export const MobileNavbar: FC<MobileNavbarProps> = ({ setIsOpen }) => {
           setIsOpen={setIsOpen}
         />
         <li onClick={() => setIsOpen(false)}>
-          <Button variant='rainbow' className='py-8'>
-            <Link
-              href='/contact'
-              className='flex items-center gap-2 rounded-lg text-4xl'
-            >
+          <Link href='/contact'>
+            <ShinyButton className='flex flex-nowrap items-center gap-2 rounded-lg text-4xl'>
               {language === 'en' && <>Let&apos;s talk</>}
               {language === 'cs' && <>Promluvme si</>}
 
               <ArrowRight className='h-8 w-8' />
-            </Link>
-          </Button>
+            </ShinyButton>
+          </Link>
         </li>
       </motion.ul>
     </motion.div>

@@ -1,7 +1,6 @@
 'use client'
 
 import { NavItem } from './nav-item'
-import { Button } from '../ui/button'
 import { useEffect, useState } from 'react'
 import { cn } from '@/lib/utils'
 import LanguageSelector from './language-selector'
@@ -11,6 +10,7 @@ import { useLanguage } from '@/store/use-language'
 import { AnimatePresence } from 'framer-motion'
 import { MobileNavbar } from './mobile-navbar'
 import { usePathname } from 'next/navigation'
+import ShinyButton from '../ui/shiny-button'
 
 export const Navbar = () => {
   const pathname = usePathname()
@@ -107,14 +107,13 @@ export const Navbar = () => {
                   href='/gallery'
                 />
                 <li>
-                  <Button variant='rainbow' className=''>
-                    <Link href='/contact' className='flex items-center gap-1'>
+                  <Link href='/contact'>
+                    <ShinyButton className='flex items-center gap-1 text-base'>
                       {language === 'en' && <>Let&apos;s talk</>}
                       {language === 'cs' && <>Promluvme si</>}
-
                       <ArrowRight className='h-4 w-4' />
-                    </Link>
-                  </Button>
+                    </ShinyButton>
+                  </Link>
                 </li>
               </ul>
             )}

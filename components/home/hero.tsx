@@ -3,84 +3,131 @@
 import { Container } from '@/components/container'
 import { useLanguage } from '@/store/use-language'
 import { MapPin } from 'lucide-react'
-import { motion } from 'framer-motion'
-import { ButtonGradient } from '../ui/button-gradient'
+import { AnimatePresence, motion } from 'framer-motion'
 import Link from 'next/link'
-import { BackgroundBeams } from '../ui/background-beams'
-import { FlipWords } from '../ui/flip-words'
+import { useCallback, useEffect, useState } from 'react'
+import { cn } from '@/lib/utils'
+import ShinyButton from '../ui/shiny-button'
+import { RainbowButton } from '../ui/rainbow-button'
+
+const images = [
+  '/home/hero/developer.webp',
+  '/home/hero/designer.webp',
+  '/home/hero/programmer.webp',
+  '/home/hero/photographer.webp',
+]
+
+const enWords = ['Developer', 'Designer', 'Programmer', 'Photographer']
+const csWords = ['Vývojář', 'Designer', 'Programátor', 'Fotograf']
+
+const colors = [
+  'text-violet-600',
+  'text-blue-600',
+  'text-cyan-600',
+  'text-red-600',
+]
 
 export const Hero = () => {
   const { language } = useLanguage()
 
+  const [currentIndex, setCurrentImageIndex] = useState(0)
+  const [isAnimating, setIsAnimating] = useState(false)
+
+  const startAnimation = useCallback(() => {
+    const nextImageIndex = (currentIndex + 1) % images.length
+    setCurrentImageIndex(nextImageIndex)
+    setIsAnimating(true)
+  }, [currentIndex, images.length, language])
+
+  useEffect(() => {
+    if (!isAnimating) {
+      const timeout = setTimeout(() => {
+        startAnimation()
+      }, 3000)
+      return () => clearTimeout(timeout)
+    }
+  }, [isAnimating, startAnimation, language])
+
   return (
-    <motion.div
-      className='overflow-x-hidden pb-40 lg:pb-60 xl:pb-80'
+    <motion.section
+      className='relative left-0 right-0 top-0 h-[90vh] overflow-hidden pb-40 md:h-screen lg:pb-60 xl:pb-80'
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ delay: 0.3 }}
     >
-      <BackgroundBeams />
-      <Container>
-        <div className='mt-28 h-[80vh] w-full lg:mt-32'>
-          <div className='flex h-full w-full flex-col justify-center p-4'>
-            <h4 className='-mb-2 text-center text-zinc-500 md:text-lg lg:text-xl xl:text-2xl'>
+      <AnimatePresence
+        onExitComplete={() => {
+          setIsAnimating(false)
+        }}
+      >
+        <motion.img
+          key={currentIndex}
+          initial={{ opacity: 0, y: 0, filter: 'blur(8px)' }}
+          animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+          transition={{
+            type: 'spring',
+            stiffness: 100,
+            damping: 10,
+            duration: 0.5,
+          }}
+          exit={{
+            opacity: 0,
+            y: -40,
+            filter: 'blur(8px)',
+            scale: 2,
+            position: 'absolute',
+          }}
+          src={images[currentIndex]}
+          alt='hero'
+          className='absolute left-0 top-0 aspect-video h-full w-full object-cover'
+        />
+      </AnimatePresence>
+      <div className='absolute inset-0 bg-black/50' />
+      <div className='absolute inset-0 bg-gradient-to-t from-[#07001a] to-transparent' />
+
+      <div className='absolute inset-0 h-full w-full'>
+        <Container className='grid h-full w-full items-center justify-center'>
+          <div className='text-center text-white'>
+            <h4 className='-mb-2 text-center text-zinc-300/70 lg:text-lg xl:text-xl'>
               Daniel Anthony Baudyš
             </h4>
-            <div className='flex justify-center'>
-              <h1 className='py-2 text-5xl font-black text-violet-600 xl:text-6xl 2xl:text-7xl'>
-                {language === 'en' && (
-                  <FlipWords
-                    words={[
-                      'Developer',
-                      'Designer',
-                      'Programmer',
-                      'Photographer',
-                    ]}
-                  />
-                )}
-                {language === 'cs' && (
-                  <FlipWords
-                    words={['Vývojář', 'Designer', 'Programátor', 'Fotograf']}
-                  />
-                )}
-              </h1>
-            </div>
-            <div className='flex justify-center'>
-              <div className='mt-2 flex w-full items-center justify-center gap-2 rounded-lg border border-zinc-600 bg-zinc-800/70 px-4 py-2 text-zinc-400 sm:w-auto'>
-                <MapPin size={22} />
-                {language === 'en' && 'based in Czech Republic'}
-                {language === 'cs' && 'se sídlem v České republice'}
-                <img
-                  src='/flags/cs.webp'
-                  alt='czech republic flag'
-                  className='w-5'
-                />
-              </div>
-            </div>
-            {language === 'en' && (
-              <p className='mx-auto mt-12 max-w-[52ch] text-justify text-zinc-400'>
-                I am committed to taking you into the digital universe where you
-                will encounter excellence and design combined in a unique
-                harmony.
-              </p>
-            )}
-            {language === 'cs' && (
-              <p className='mx-auto mt-12 max-w-[50ch] text-justify text-zinc-400'>
-                Jsem odhodlaný zavést vás do digitálního vesmíru, kde se setkáte
-                s excelencí a designem spojeným v jedinečné harmonii.
-              </p>
-            )}
-            <div className='mt-28 flex justify-center'>
+            <motion.h1
+              key={currentIndex}
+              initial={{ opacity: 0.2, y: 0, filter: 'blur(8px)' }}
+              animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+              transition={{
+                type: 'spring',
+                stiffness: 100,
+                damping: 10,
+                duration: 0.5,
+              }}
+              exit={{
+                opacity: 0.2,
+                y: -40,
+                filter: 'blur(8px)',
+                scale: 5,
+                position: 'absolute',
+              }}
+              className={cn(
+                'mx-auto py-2 text-5xl font-black xl:text-6xl 2xl:text-7xl',
+                colors[currentIndex],
+              )}
+            >
+              {language === 'en' && enWords[currentIndex]}
+              {language === 'cs' && csWords[currentIndex]}
+            </motion.h1>
+
+            <div className='mt-10 flex justify-center'>
               <Link href='/services'>
-                <ButtonGradient className='bg-zinc-900 px-6 py-2 text-lg font-semibold text-white'>
-                  {language === 'en' && 'Take Action!'}
-                  {language === 'cs' && 'Jednej!'}
-                </ButtonGradient>
+                <RainbowButton>
+                  {language === 'en' && 'Let Me Help You'}
+                  {language === 'cs' && 'Dovolte, Abych Vám Pomohl'}
+                </RainbowButton>
               </Link>
             </div>
           </div>
-        </div>
-      </Container>
-    </motion.div>
+        </Container>
+      </div>
+    </motion.section>
   )
 }
