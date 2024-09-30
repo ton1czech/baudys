@@ -15,17 +15,7 @@ export const Services = () => {
       <Container className='pb-40 lg:pb-60 xl:pb-80'>
         <Title label={language === 'en' ? 'Services' : 'Služby'} />
 
-        <div className='grid lg:grid-cols-3 gap-8'>
-          <ServiceCard
-            title={language === 'en' ? 'Photography' : 'Fotografování'}
-            body={
-              language === 'en'
-                ? 'I capture moments and create memories that last a lifetime.'
-                : 'Zachycuji okamžiky a vytvářím vzpomínky, které přetrvají celý život.'
-            }
-            icon={Camera}
-            image='/home/services/1.webp'
-          />
+        <div className='grid gap-8 lg:grid-cols-2'>
           <ServiceCard
             title={language === 'en' ? 'Web Development' : 'Tvorba Webu'}
             body={
@@ -35,21 +25,22 @@ export const Services = () => {
             }
             icon={Laptop}
             image='/home/services/2.webp'
-            highlight
+            href='/services/web-development'
           />
           <ServiceCard
-            title={language === 'en' ? 'Management' : 'Správa'}
+            title={language === 'en' ? 'Photography' : 'Fotografování'}
             body={
               language === 'en'
-                ? 'I keep your digital presence alive and up to date.'
-                : 'Udržuji vaši digitální přítomnost živou a aktuální.'
+                ? 'I capture moments and create memories that last a lifetime.'
+                : 'Zachycuji okamžiky a vytvářím vzpomínky, které přetrvají celý život.'
             }
-            icon={CalendarCheck}
-            image='/home/services/3.webp'
+            icon={Camera}
+            image='/home/services/1.webp'
+            href='/services/photography'
           />
         </div>
 
-        <div className='flex justify-center mt-10'>
+        <div className='mt-10 flex justify-center'>
           <SeeAll href='/services' />
         </div>
       </Container>
