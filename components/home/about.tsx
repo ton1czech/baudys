@@ -5,6 +5,7 @@ import { Container } from '../container'
 import { Title } from '../title'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
+import { LinkPreview } from '../ui/link-preview'
 
 export const About = () => {
   const { language } = useLanguage()
@@ -36,9 +37,14 @@ export const About = () => {
                 Since then I&apos;ve managed to create dozens of projects, both
                 for myself and for clients. Some of my favourites include my
                 portfolio and{' '}
-                <Link href='https://rozmluv.se' target='_blank'>
+                <LinkPreview
+                  isStatic
+                  url='https://rozmluv.se'
+                  imageSrc='/projects/rozmluvse/macbook.webp'
+                  className='font-semibold text-green-500'
+                >
                   Rozmluv se
-                </Link>{' '}
+                </LinkPreview>{' '}
                 website. It is also worth mentioning that I have created several
                 applications for the Pilsen Regional Office in cooperation with
                 Microsoft 👔, I have given educational lectures for children 🧑‍🏫
@@ -54,9 +60,14 @@ export const About = () => {
                 pohltilo. Od té doby jsem stihl vytvořit desítky projektů, ať už
                 sám pro sebe, tak i pro klienty. Mezi mé nejoblíbenější patří
                 moje portfolio a web{' '}
-                <Link href='https://rozmluv.se' target='_blank'>
+                <LinkPreview
+                  isStatic
+                  url='https://rozmluv.se'
+                  imageSrc='/projects/rozmluvse/macbook.webp'
+                  className='font-semibold text-green-500'
+                >
                   Rozmluv se
-                </Link>{' '}
+                </LinkPreview>
                 . Za zmínku také stojí, že jsem vytvořil několik aplikací pro
                 úřad plzeňského kraje ve spolupráci s Microsoftem 👔, vedl jsem
                 výukové přednášky 🧑‍🏫 pro děti a také jsem úspěšně absolvoval
