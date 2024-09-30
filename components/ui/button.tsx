@@ -19,7 +19,7 @@ const buttonVariants = cva(
         ghost: 'hover:bg-accent hover:text-accent-foreground',
         link: 'text-primary underline-offset-4 hover:underline',
         rainbow:
-          'font-bold text-base rounded bg-gradient-to-br from-sky-600 via-indigo-700 to-purple-500 text-zinc-50 transition hover:shadow-[0_0_20px_5px_rgba(168,85,247,0.5)]',
+          'font-bold text-base rounded-lg bg-gradient-to-br from-sky-600 via-indigo-700 to-purple-500 text-zinc-50 transition hover:shadow-[0_0_20px_5px_rgba(168,85,247,0.5)]',
         category: 'rounded-full border border-zinc-400/50',
       },
       size: {

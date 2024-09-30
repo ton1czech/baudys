@@ -95,6 +95,9 @@ export const Contact = () => {
         </div>
 
         <motion.img
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ delay: 0.3 }}
           src='/contact/contact.webp'
           alt='contact me'
           className='mx-auto w-full rounded-2xl'

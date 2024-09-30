@@ -37,7 +37,7 @@ export const GalleryItem = ({ item }: Props) => {
           src={item.images[0]}
           alt={language === 'en' ? item.labelEn : item.labelCs}
           onLoad={() => setIsLoading(false)}
-          className='rounded-xl transition duration-300'
+          className='rounded-lg transition duration-300'
           style={{
             display: isLoading ? 'none' : 'block',
             filter: isHovered ? 'brightness(100%)' : 'brightness(85%)',

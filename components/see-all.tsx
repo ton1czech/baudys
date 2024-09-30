@@ -21,7 +21,7 @@ export const SeeAll: FC<SeeAllProps> = ({ href }) => {
     >
       <Link
         href={href}
-        className='flex items-center gap-2 colorful-text text-lg font-semibold relative after:w-full after:h-[3px] after:bg-purple-500 after:-bottom-1 after:left-0 after:right-0 after:z-10 after:absolute after:opacity-0 after:scale-x-0 after:hover:scale-x-100 after:hover:opacity-100 after:transition after:rounded-lg'
+        className='colorful-text relative flex items-center gap-2 text-lg font-semibold after:absolute after:-bottom-1 after:left-0 after:right-0 after:z-10 after:h-[3px] after:w-full after:scale-x-0 after:rounded-lg after:bg-purple-500 after:opacity-0 after:transition after:hover:scale-x-100 after:hover:opacity-100'
       >
         {language === 'en' && 'See All'}
         {language === 'cs' && 'Zobrazit Vše'}
