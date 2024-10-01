@@ -29,16 +29,6 @@ export const ServiceCard: FC<ServiceCardProps> = ({
         whileInView={{ opacity: 1 }}
         transition={{ delay: 0.3 }}
       >
-        <h4
-          className={cn(
-            'mb-2 flex items-center justify-center gap-2 text-center text-lg font-semibold md:text-xl',
-            highlight && 'gold-text',
-          )}
-        >
-          <Icon size={23} className={cn(highlight && 'stroke-yellow-600')} />
-          {title}
-        </h4>
-
         <div className='relative aspect-video overflow-hidden rounded-lg'>
           <Image
             src={image}
@@ -47,6 +37,15 @@ export const ServiceCard: FC<ServiceCardProps> = ({
             className='rounded-lg object-cover object-center transition duration-300 hover:scale-110'
           />
         </div>
+        <h4
+          className={cn(
+            'mt-2 flex items-center gap-2 text-center text-lg font-semibold md:text-xl',
+            highlight && 'gold-text',
+          )}
+        >
+          <Icon size={23} className={cn(highlight && 'stroke-yellow-600')} />
+          {title}
+        </h4>
       </motion.div>
     </Link>
   )
