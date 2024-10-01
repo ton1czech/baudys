@@ -11,7 +11,7 @@ export const Edit = () => {
   const { language } = useLanguage()
 
   return (
-    <Container className='pb-40 lg:pb-60 xl:pb-80'>
+    <Container>
       <Title label={language === 'en' ? 'Post-Processing' : 'Postproces'} />
 
       <ReactCompareSlider

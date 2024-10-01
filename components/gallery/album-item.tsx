@@ -13,11 +13,14 @@ export const AlbumItem = ({ image }: Props) => {
 
   return (
     <>
-      {isLoading && <Skeleton className='h-[500px] w-full' />}
+      {isLoading && (
+        <Skeleton className='h-[200px] w-full md:h-[350px] lg:h-[500px]' />
+      )}
       <motion.img
         key={image.id}
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
+        transition={{ delay: 0.3 }}
         onLoad={() => setIsLoading(false)}
         src={image.url}
         alt='image'

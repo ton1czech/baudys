@@ -9,7 +9,7 @@ export const Gallery = () => {
   const { animals, cars, events, fitness, nature, monuments } = useGallery()
 
   const getFilteredGallery = () => {
-    return gallery.filter(item => {
+    return gallery.filter((item) => {
       return (
         (animals && item.categories.includes('animals')) ||
         (cars && item.categories.includes('cars')) ||
@@ -28,37 +28,37 @@ export const Gallery = () => {
   const itemsPer3Column = Math.ceil(totalItems / 3)
 
   return (
-    <Container className='pb-40 lg:pb-60 xl:pb-80'>
-      <div className='grid md:hidden grid-cols-2 gap-6'>
+    <Container>
+      <div className='grid grid-cols-2 gap-6 md:hidden'>
         <div className='flex flex-col gap-6'>
-          {filteredGallery.slice(0, itemsPer2Column).map(item => (
+          {filteredGallery.slice(0, itemsPer2Column).map((item) => (
             <GalleryItem key={item.slug} item={item} />
           ))}
         </div>
         <div className='flex flex-col gap-6'>
-          {filteredGallery.slice(itemsPer2Column).map(item => (
+          {filteredGallery.slice(itemsPer2Column).map((item) => (
             <GalleryItem key={item.slug} item={item} />
           ))}
         </div>
       </div>
 
-      <div className='hidden md:grid grid-cols-3 gap-6'>
+      <div className='hidden grid-cols-3 gap-6 md:grid'>
         <div className='flex flex-col gap-6'>
-          {filteredGallery.slice(0, itemsPer3Column).map(item => (
+          {filteredGallery.slice(0, itemsPer3Column).map((item) => (
             <GalleryItem key={item.slug} item={item} />
           ))}
         </div>
         <div className='flex flex-col gap-6'>
           {filteredGallery
             .slice(itemsPer3Column, itemsPer3Column * 2)
-            .map(item => (
+            .map((item) => (
               <GalleryItem key={item.slug} item={item} />
             ))}
         </div>
         <div className='flex flex-col gap-6'>
           {filteredGallery
             .slice(itemsPer3Column * 2, itemsPer3Column * 3)
-            .map(item => (
+            .map((item) => (
               <GalleryItem key={item.slug} item={item} />
             ))}
         </div>

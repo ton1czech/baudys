@@ -1,5 +1,8 @@
+'use client'
+
 import { Post } from '@/types/blog'
 import { Card } from './card'
+import { motion } from 'framer-motion'
 
 interface Props {
   posts: Post[]
@@ -7,7 +10,12 @@ interface Props {
 
 export const Posts = ({ posts }: Props) => {
   return (
-    <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-10 mt-10 mb-32 md:mb-44 lg:mb-60'>
+    <motion.div
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ delay: 0.3 }}
+      className='grid gap-10 md:grid-cols-2 lg:grid-cols-3'
+    >
       {posts.map(({ slug, title, image, publishDate, categories }) => (
         <Card
           key={slug}
@@ -18,6 +26,6 @@ export const Posts = ({ posts }: Props) => {
           categories={categories}
         />
       ))}
-    </div>
+    </motion.div>
   )
 }

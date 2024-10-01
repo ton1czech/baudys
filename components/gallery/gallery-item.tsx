@@ -1,5 +1,3 @@
-'use client'
-
 import { useState } from 'react'
 import { useLanguage } from '@/store/use-language'
 import Link from 'next/link'
@@ -32,7 +30,9 @@ export const GalleryItem = ({ item }: Props) => {
         href={`/gallery/${item.slug}`}
         className='group relative flex flex-col flex-nowrap'
       >
-        {isLoading && <Skeleton className='h-[450px] w-full' />}
+        {isLoading && (
+          <Skeleton className='h-[200px] w-full md:h-[350px] lg:h-[500px]' />
+        )}
         <img
           src={item.images[0]}
           alt={language === 'en' ? item.labelEn : item.labelCs}

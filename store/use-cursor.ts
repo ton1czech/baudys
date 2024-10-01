@@ -8,10 +8,10 @@ interface CursorStore {
   setType: (type: string) => void
 }
 
-export const useCursor = create<CursorStore>(set => ({
+export const useCursor = create<CursorStore>((set) => ({
   isHovering: false,
   setIsHovering: () => set({ isHovering: true }),
   setIsNotHovering: () => set({ isHovering: false }),
   type: '',
-  setType: type => set({ type: type }),
+  setType: (type) => set({ type: type }),
 }))

@@ -11,10 +11,10 @@ export const Projects = () => {
   const { language } = useLanguage()
 
   return (
-    <Container className='pb-40 lg:pb-60 xl:pb-80'>
+    <Container>
       <Title label={language === 'en' ? 'Projects' : 'Projekty'} />
 
-      <div className='grid sm:grid-cols-2 gap-20'>
+      <div className='grid gap-20 sm:grid-cols-2'>
         {projects
           .slice(0, 2)
           .map(({ name, year, image, href, servicesEn, servicesCs }) => (
@@ -30,7 +30,7 @@ export const Projects = () => {
           ))}
       </div>
 
-      <div className='flex justify-center mt-10'>
+      <div className='mt-10 flex justify-end'>
         <SeeAll href='/projects' />
       </div>
     </Container>

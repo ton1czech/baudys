@@ -1,5 +1,3 @@
-'use client'
-
 import { motion, useScroll } from 'framer-motion'
 import { FC, useRef } from 'react'
 
@@ -66,6 +64,7 @@ export const TimelineItem: FC<TimelineItemProps> = ({
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ delay: 0.3 }}
+          className='max-w-[80ch]'
         >
           {body}
         </motion.p>

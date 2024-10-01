@@ -5,7 +5,7 @@ import { motion } from 'framer-motion'
 
 export const Intro = () => {
   return (
-    <Container className='pb-40 lg:pb-60 xl:pb-80'>
+    <Container>
       <motion.video
         autoPlay
         playsInline

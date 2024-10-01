@@ -12,8 +12,8 @@ export const Container: FC<PropsWithChildren<ContainerProps>> = ({
 }) => (
   <div
     className={cn(
-      '2xl:max-w-screen-xl lg:max-w-screen-lg mx-auto px-4',
-      className
+      'mx-auto px-4 lg:max-w-screen-lg 2xl:max-w-screen-xl',
+      className,
     )}
   >
     {children}

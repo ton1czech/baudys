@@ -15,17 +15,17 @@ interface GalleryStore {
   setMonuments: () => void
 }
 
-export const useGallery = create<GalleryStore>(set => ({
+export const useGallery = create<GalleryStore>((set) => ({
   cars: true,
-  setCars: () => set(state => ({ cars: !state.cars })),
+  setCars: () => set((state) => ({ cars: !state.cars })),
   animals: true,
-  setAnimals: () => set(state => ({ animals: !state.animals })),
+  setAnimals: () => set((state) => ({ animals: !state.animals })),
   events: true,
-  setEvents: () => set(state => ({ events: !state.events })),
+  setEvents: () => set((state) => ({ events: !state.events })),
   fitness: true,
-  setFitness: () => set(state => ({ fitness: !state.fitness })),
+  setFitness: () => set((state) => ({ fitness: !state.fitness })),
   nature: true,
-  setNature: () => set(state => ({ nature: !state.nature })),
+  setNature: () => set((state) => ({ nature: !state.nature })),
   monuments: true,
-  setMonuments: () => set(state => ({ monuments: !state.monuments })),
+  setMonuments: () => set((state) => ({ monuments: !state.monuments })),
 }))

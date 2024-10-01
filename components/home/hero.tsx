@@ -50,7 +50,7 @@ export const Hero = () => {
 
   return (
     <motion.section
-      className='relative left-0 right-0 top-0 h-[90vh] overflow-hidden pb-40 md:h-screen lg:pb-60 xl:pb-80'
+      className='relative left-0 right-0 top-0 h-[90vh] overflow-hidden md:h-screen'
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ delay: 0.3 }}

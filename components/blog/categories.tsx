@@ -5,8 +5,9 @@ import { cn } from '@/lib/utils'
 import { ChevronDown } from 'lucide-react'
 import Link from 'next/link'
 import { useState } from 'react'
-import { Button, buttonVariants } from '../ui/button'
+import { Button } from '../ui/button'
 import { usePathname } from 'next/navigation'
+import { motion } from 'framer-motion'
 
 export const Categories = () => {
   const pathname = usePathname()
@@ -14,7 +15,12 @@ export const Categories = () => {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <div>
+    <motion.div
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ delay: 0.3 }}
+      className='mb-4'
+    >
       <h3
         onClick={() => setIsOpen((prev) => !prev)}
         className='inline-flex cursor-pointer select-none items-center gap-1'
@@ -42,6 +48,6 @@ export const Categories = () => {
           ))}
         </div>
       )}
-    </div>
+    </motion.div>
   )
 }

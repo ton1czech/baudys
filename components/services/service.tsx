@@ -1,5 +1,3 @@
-'use client'
-
 import { FC } from 'react'
 import { Button } from '../ui/button'
 import { useCursor } from '@/store/use-cursor'

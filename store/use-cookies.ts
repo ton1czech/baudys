@@ -17,7 +17,7 @@ interface CookiesStore {
 
 export const useCookies = create(
   persist<CookiesStore>(
-    set => ({
+    (set) => ({
       isOpen: false,
       openCookies: () => {
         set({ isOpen: true })
@@ -45,6 +45,6 @@ export const useCookies = create(
     {
       name: 'cookies-storage',
       storage: createJSONStorage(() => localStorage),
-    }
-  )
+    },
+  ),
 )

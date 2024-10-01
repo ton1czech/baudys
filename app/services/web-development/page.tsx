@@ -7,7 +7,7 @@ import { Timeline } from '@/components/services/web-development/timeline'
 
 export default function Page() {
   return (
-    <div className='mb-20 mt-28 lg:mb-32 lg:mt-32'>
+    <div className='space-y-20 lg:space-y-40'>
       <Intro />
       <Process />
       <Timeline />

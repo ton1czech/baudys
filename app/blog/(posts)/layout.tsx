@@ -1,18 +1,22 @@
-import { ChevronRight } from 'lucide-react'
-import Link from 'next/link'
+import { Breadcrumb } from '@/components/breadcrumb'
+import { Contact } from '@/components/contact'
+import { Container } from '@/components/container'
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <>
-      <p className='mb-4 inline-flex items-center gap-2 text-zinc-400'>
-        <Link href='/blog' className='hover:underline'>
-          blog
-        </Link>
-        <ChevronRight size={18} />
-        {/* @ts-ignore */}
-        <span className='font-bold'>{children.props.childPropSegment}</span>
-      </p>
-      {children}
-    </>
+    <div>
+      <Container>
+        <Breadcrumb
+          base='blog'
+          url='/blog'
+          // @ts-ignore
+          current={children.props.childPropSegment}
+        />
+
+        {children}
+      </Container>
+
+      <Contact />
+    </div>
   )
 }

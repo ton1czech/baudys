@@ -17,7 +17,7 @@ export const Timeline = () => {
   })
 
   return (
-    <Container className='pb-40 lg:pb-60 xl:pb-80'>
+    <Container>
       <Title
         label={
           language === 'en' ? 'collaboration timeline' : 'průběh spolupráce'
@@ -25,7 +25,7 @@ export const Timeline = () => {
       />
       <ol
         ref={ref}
-        className='relative mx-auto max-w-[80ch] space-y-20 border-l-2 border-zinc-600 lg:space-y-32'
+        className='relative -mt-16 space-y-20 border-l-2 border-zinc-600 lg:-mt-24 lg:space-y-32'
       >
         <motion.div
           className='absolute -left-[3px] z-10 h-full w-[4px] origin-top bg-purple-500'

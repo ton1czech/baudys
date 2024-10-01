@@ -11,7 +11,7 @@ export const About = () => {
   const { language } = useLanguage()
 
   return (
-    <Container className='pb-40 lg:pb-60 xl:pb-80'>
+    <Container>
       <Title label={language === 'en' ? 'Who am I?' : 'Kdo jsem?'} />
       <div className='grid gap-4 md:gap-8 xl:grid-cols-2'>
         <motion.img
@@ -19,8 +19,8 @@ export const About = () => {
           whileInView={{ opacity: 1 }}
           transition={{ delay: 0.3 }}
           src='/home/about.webp'
-          className='rounded-3xl'
           alt='photo of me'
+          className='rounded-3xl'
         />
 
         <motion.div

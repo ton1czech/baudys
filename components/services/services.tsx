@@ -8,7 +8,7 @@ export const Services = () => {
   const { language } = useLanguage()
 
   return (
-    <Container className='pb-40 lg:pb-60 xl:pb-80 space-y-32 md:space-y-20 lg:space-y-28'>
+    <Container className='space-y-32 md:space-y-20 lg:space-y-28'>
       <Service
         label={language === 'en' ? 'Web Development' : 'Tvorba Webu'}
         body={

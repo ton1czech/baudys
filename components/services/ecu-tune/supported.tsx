@@ -29,11 +29,11 @@ export const Supported = () => {
   const { language } = useLanguage()
 
   return (
-    <Container className='pb-40 lg:pb-60 xl:pb-80'>
+    <Container>
       <Title
         label={language === 'en' ? 'Supported Cars' : 'Podporovaná vozidla'}
       />
-      <div className='grid lg:grid-cols-3 gap-4 lg:gap-8'>
+      <div className='grid gap-4 lg:grid-cols-3 lg:gap-8'>
         <Accordion type='multiple'>
           <motion.div
             initial={{ opacity: 0 }}

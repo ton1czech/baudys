@@ -10,6 +10,7 @@ import { useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { Title } from '@/components/title'
 import { ChevronRight } from 'lucide-react'
+import { Breadcrumb } from '@/components/breadcrumb'
 
 interface PageProps {
   params: {
@@ -39,16 +40,13 @@ export default function Page({ params }: PageProps) {
   }, [])
 
   return (
-    <div className='mb-20 mt-28 lg:mb-32 lg:mt-32'>
+    <div>
       <Container className='pb-40 lg:pb-60 xl:pb-80'>
-        <p className='mb-4 inline-flex items-center gap-2 text-zinc-400'>
-          <Link href='/projects' className='hover:underline'>
-            {language === 'en' && 'projects'}
-            {language === 'cs' && 'projekty'}
-          </Link>
-          <ChevronRight size={18} />
-          <span className='font-bold'>{name}</span>
-        </p>
+        <Breadcrumb
+          base={language === 'en' ? 'projects' : 'projekty'}
+          url='/projects'
+          current={name}
+        />
 
         <div className='mb-10 grid md:grid-cols-[3fr_1fr] lg:mb-20 xl:mb-32'>
           <motion.div

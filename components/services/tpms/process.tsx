@@ -8,7 +8,7 @@ export const Process = () => {
   const { language } = useLanguage()
 
   return (
-    <Container className='pb-40 lg:pb-60 xl:pb-80 space-y-8 lg:space-y-20 xl:space-y-40'>
+    <Container className='space-y-8 lg:space-y-20'>
       <ProcessItem
         align='right'
         label={language === 'en' ? 'Programming' : 'Programování'}

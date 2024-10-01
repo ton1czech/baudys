@@ -14,7 +14,7 @@ export default function Page() {
   }, [])
 
   return (
-    <div className='mb-20 mt-28 lg:mb-32 lg:mt-32'>
+    <div className='mt-28 space-y-20 lg:mt-32 lg:space-y-40'>
       <Services />
       <Everything />
       <Contact />

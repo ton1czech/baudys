@@ -6,11 +6,11 @@ import { Services } from '@/components/home/services'
 
 export default function Page() {
   return (
-    <main className='mb-20 lg:mb-32'>
+    <main className='space-y-20 lg:space-y-40'>
       <Hero />
+      <Projects />
       <About />
       <Services />
-      <Projects />
       <Contact />
     </main>
   )

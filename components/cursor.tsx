@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import { useCursor } from '@/store/use-cursor'
-import { ArrowRight, Camera, ExternalLink } from 'lucide-react'
+import { ArrowRight, ExternalLink } from 'lucide-react'
 
 export const Cursor = () => {
   const { isHovering, type } = useCursor()

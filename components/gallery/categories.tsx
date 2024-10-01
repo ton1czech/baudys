@@ -7,6 +7,7 @@ import { useState } from 'react'
 import { Button } from '../ui/button'
 import { useGallery } from '@/store/use-gallery'
 import { Container } from '../container'
+import { motion } from 'framer-motion'
 
 export const Categories = () => {
   const { language } = useLanguage()
@@ -28,8 +29,12 @@ export const Categories = () => {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <Container className='mb-10 flex justify-between'>
-      <div>
+    <Container className='mb-4 flex justify-between'>
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ delay: 0.3 }}
+      >
         <h3
           onClick={() => setIsOpen((prev) => !prev)}
           className='inline-flex cursor-pointer select-none items-center gap-1'
@@ -93,7 +98,7 @@ export const Categories = () => {
             </Button>
           </div>
         )}
-      </div>
+      </motion.div>
     </Container>
   )
 }

@@ -8,7 +8,7 @@ export const Intro = () => {
   const { language } = useLanguage()
 
   return (
-    <Container className='pb-40 lg:pb-60 xl:pb-80'>
+    <Container>
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}

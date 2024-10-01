@@ -11,19 +11,19 @@ interface LanguageStore {
 
 export const useLanguage = create(
   persist<LanguageStore>(
-    set => ({
+    (set) => ({
       language:
         typeof localStorage !== 'undefined'
           ? localStorage.getItem('language-storage') || 'cs'
           : 'cs',
-      imgSrc: lang => `/flags/${lang}.webp`,
-      setLanguage: value => {
+      imgSrc: (lang) => `/flags/${lang}.webp`,
+      setLanguage: (value) => {
         set({ language: value })
       },
     }),
     {
       name: 'language-storage',
       storage: createJSONStorage(() => localStorage),
-    }
-  )
+    },
+  ),
 )

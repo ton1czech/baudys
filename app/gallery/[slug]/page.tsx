@@ -1,5 +1,6 @@
 'use client'
 
+import { Breadcrumb } from '@/components/breadcrumb'
 import { Contact } from '@/components/contact'
 import { Container } from '@/components/container'
 import { AlbumItem } from '@/components/gallery/album-item'
@@ -31,19 +32,13 @@ export default function Page({ params }: Props) {
   }))
 
   return (
-    <div className='mb-20 mt-28 lg:mb-32 lg:mt-32'>
-      <Container className='pb-40 lg:pb-60 xl:pb-80'>
-        <p className='mb-4 inline-flex items-center gap-2 text-zinc-400'>
-          <Link href='/gallery' className='hover:underline'>
-            {language === 'en' && 'gallery'}
-            {language === 'cs' && 'galerie'}
-          </Link>
-          <ChevronRight size={18} />
-          <span className='font-bold'>
-            {language === 'en' && labelEn}
-            {language === 'cs' && labelCs}
-          </span>
-        </p>
+    <div className='space-y-20 lg:space-y-40'>
+      <Container>
+        <Breadcrumb
+          base={language === 'en' ? 'gallery' : 'galerie'}
+          url='/gallery'
+          current={language === 'en' ? labelEn : labelCs}
+        />
 
         <Title label={language === 'en' ? labelEn : labelCs} />
 
