@@ -13,7 +13,7 @@ export const Title: FC<TitleProps> = ({ label }) => {
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ delay: 0.3 }}
-      className='text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-center mb-6 xl:mb-10 uppercase py-2'
+      className='mb-6 py-2 text-3xl font-bold uppercase md:text-4xl lg:text-5xl xl:text-6xl'
     >
       {label}
     </motion.h3>
