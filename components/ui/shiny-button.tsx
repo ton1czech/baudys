@@ -9,6 +9,7 @@ const animationProps = {
   initial: { '--x': '100%', scale: 0.8 },
   animate: { '--x': '-100%', scale: 1 },
   whileTap: { scale: 0.95 },
+  whileHover: { scale: 0.99 },
   transition: {
     repeat: Infinity,
     repeatType: 'loop',
@@ -34,12 +35,11 @@ const ShinyButton = ({ children, className, ...props }: ShinyButtonProps) => {
     <motion.button
       {...animationProps}
       {...props}
-      className='relative rounded-lg bg-zinc-800/80 px-6 py-2 font-medium backdrop-blur-xl transition-shadow duration-300 ease-in-out hover:shadow'
+      className='relative rounded-lg bg-zinc-800/80 px-6 py-2 font-medium backdrop-blur-xl transition-shadow duration-300 ease-in-out'
     >
       <span
         className={cn(
           'size-full relative block whitespace-nowrap text-sm tracking-wide text-[rgb(255,255,255,85%)]',
-
           className,
         )}
         style={{

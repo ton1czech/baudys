@@ -32,7 +32,7 @@ export const ServiceCard: FC<ServiceCardProps> = ({
             src={image}
             alt={title}
             fill
-            className='rounded-lg object-cover object-center transition duration-300 hover:scale-110'
+            className='rounded-lg object-cover object-center transition duration-300 hover:scale-105'
           />
         </div>
         <h4
