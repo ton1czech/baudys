@@ -27,7 +27,7 @@ export const About = () => {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ delay: 0.3 }}
-          className='sticky top-20 h-min'
+          className='sticky top-24 h-min'
         >
           <p className='text-justify text-zinc-400 md:text-lg lg:text-xl'>
             {language === 'en' && (
