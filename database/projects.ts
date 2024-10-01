@@ -34,8 +34,8 @@ export const projects = [
     year: 2024,
     servicesEn: ['programming'],
     servicesCs: ['programování'],
-    featuresEn: ['Blog', 'CMS'],
-    featuresCs: ['Blog', 'CMS'],
+    featuresEn: ['Blog', 'CMS', 'Animations', 'Admin Dashboard'],
+    featuresCs: ['Blog', 'CMS', 'Animace', 'Admin Rozhraní'],
     descriptionEn: 'Language studio',
     descriptionCs: 'Jazykové studio',
 
