@@ -2,12 +2,10 @@
 
 import { Container } from '@/components/container'
 import { useLanguage } from '@/store/use-language'
-import { MapPin } from 'lucide-react'
 import { AnimatePresence, motion } from 'framer-motion'
 import Link from 'next/link'
 import { useCallback, useEffect, useState } from 'react'
 import { cn } from '@/lib/utils'
-import ShinyButton from '../ui/shiny-button'
 import { RainbowButton } from '../ui/rainbow-button'
 
 const images = [

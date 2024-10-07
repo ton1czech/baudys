@@ -12,26 +12,26 @@ export const Card = ({
 }: Props) => {
   return (
     <Link href={`/blog/${slug}`} className='group'>
-      <div className='relative border border-zinc-400/40 rounded-2xl overflow-hidden aspect-square'>
+      <div className='relative aspect-square overflow-hidden rounded-2xl border border-zinc-400/40'>
         <img
           src={image}
           alt={title}
-          className='absolute w-full group-hover:scale-105 transition object-center left-0 -top-1/2'
+          className='absolute inset-0 h-full w-full object-cover object-center transition group-hover:scale-105'
         />
 
-        <span className='absolute right-3 bottom-3 text-zinc-100 text-xs bg-black/20 p-1 rounded-md'>
-          {new Date(publishDate).toLocaleDateString()}
+        <span className='absolute bottom-3 right-3 rounded-md bg-black/40 p-1 text-xs text-zinc-100'>
+          {new Date(publishDate).toLocaleDateString('cs-CS')}
         </span>
       </div>
 
-      <div className='flex justify-between items-center'>
-        <h2 className='font-semibold text-lg md:text-xl mt-2'>{title}</h2>
+      <div className='flex items-center justify-between'>
+        <h2 className='mt-2 text-lg font-semibold md:text-xl'>{title}</h2>
         <div className='flex gap-1'>
           {categories.map((cat, i) => (
             <Link
               key={i}
               href={`/blog/${cat}`}
-              className='bg-violet-700 px-2 py-0.5 rounded-md text-zinc-100 text-sm'
+              className='rounded-md bg-violet-700 px-2 py-0.5 text-sm text-zinc-100'
             >
               {cat}
             </Link>
