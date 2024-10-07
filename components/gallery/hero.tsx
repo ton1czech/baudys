@@ -31,7 +31,7 @@ const images = [
 export const Hero = () => {
   const { language } = useLanguage()
 
-  const [isTopOfTheScreen, setIsTopOfTheScreen] = useState<boolean>(false)
+  const [isTopOfTheScreen, setIsTopOfTheScreen] = useState<boolean>(true)
   const [currentIndex, setCurrentImageIndex] = useState(0)
   const [isAnimating, setIsAnimating] = useState(false)
 

@@ -17,7 +17,7 @@ export const Navbar = () => {
   const { language } = useLanguage()
 
   const [isOpen, setIsOpen] = useState<boolean>(false)
-  const [isTopOfTheScreen, setIsTopOfTheScreen] = useState<boolean>(false)
+  const [isTopOfTheScreen, setIsTopOfTheScreen] = useState<boolean>(true)
   const [isServicesPage, setIsServicesPage] = useState<boolean>(false)
 
   useEffect(() => {
