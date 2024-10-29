@@ -6,8 +6,6 @@ import { Cursor } from '@/components/cursor'
 import { Footer } from '@/components/footer/footer'
 import { siteConfig } from '@/config/site'
 import './globals.css'
-import { Cookies } from '@/components/cookies'
-import { AnalyticsProvider } from '@/providers/analytics-provider'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -32,8 +30,6 @@ export const viewport: Viewport = {
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <html lang='en'>
-      <AnalyticsProvider />
-
       <body
         className={cn(
           'overflow-x-hidden scroll-smooth antialiased',
@@ -41,7 +37,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         )}
       >
         <Cursor />
-        <Cookies />
 
         <Navbar />
         {children}
