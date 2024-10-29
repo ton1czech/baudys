@@ -40,8 +40,8 @@ export const Hero = () => {
 
             <div className='space-y-1 text-2xl font-bold md:space-y-2 lg:text-4xl 2xl:text-5xl'>
               <p className='flex items-center gap-4'>
-                {language === 'cs' && 'Full Stack Vývojář'}
-                {language === 'en' && 'Full Stack Developer'}
+                {language === 'cs' && 'Programátor'}
+                {language === 'en' && 'Programmer'}
                 <span className='rounded-md border border-zinc-200/10 bg-fuchsia-500/20 p-1 text-sm text-fuchsia-500 md:p-2 md:text-base'>
                   4 {language === 'cs' && 'roky'}
                   {language === 'en' && 'years'}
