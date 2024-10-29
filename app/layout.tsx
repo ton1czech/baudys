@@ -1,4 +1,4 @@
-import type { Metadata, Viewport } from 'next'
+import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import { cn } from '@/lib/utils'
 import { Navbar } from '@/components/navbar/navbar'
@@ -18,12 +18,6 @@ export const metadata: Metadata = {
   authors: [
     { name: 'Daniel Anthony Baudyš', url: 'https://github.com/ton1czech' },
   ],
-}
-
-export const viewport: Viewport = {
-  initialScale: 1,
-  width: 'device-width',
-  maximumScale: 1,
 }
 
 export default function Layout({ children }: { children: React.ReactNode }) {

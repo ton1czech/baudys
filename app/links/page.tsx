@@ -42,7 +42,7 @@ const LinkItem: FC<LinkItemProps> = ({ icon: Icon, label, href, color }) => {
       <Button
         className={cn(
           'w-full border border-zinc-200/50 text-lg font-semibold text-zinc-200 lg:w-1/2',
-          color ? color : 'bg-zinc-800/80 text-zinc-800 hover:bg-zinc-900/70',
+          color ? color : 'bg-zinc-800/80 text-zinc-200 hover:bg-zinc-900/70',
         )}
       >
         <Link

@@ -109,7 +109,7 @@ export default function Page({ params }: PageProps) {
           transition={{ delay: 0.3 }}
           src={macbook}
           alt={name}
-          className='-mt-10 mb-10 lg:-mt-20 lg:mb-20'
+          className='mb-10'
         />
         {images.map((image) => (
           <motion.img

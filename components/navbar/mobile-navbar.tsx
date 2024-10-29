@@ -45,11 +45,6 @@ export const MobileNavbar: FC<MobileNavbarProps> = ({ setIsOpen }) => {
         className='absolute left-1/2 top-60 flex -translate-x-1/2 flex-col items-center gap-6 text-center'
       >
         <MobileNavItem
-          label={language === 'en' ? 'Services' : 'Služby'}
-          href='/services'
-          setIsOpen={setIsOpen}
-        />
-        <MobileNavItem
           label={language === 'en' ? 'Projects' : 'Projekty'}
           href='/projects'
           setIsOpen={setIsOpen}

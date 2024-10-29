@@ -2,7 +2,6 @@ import { Contact } from '@/components/contact'
 import { About } from '@/components/home/about'
 import { Hero } from '@/components/home/hero'
 import { Projects } from '@/components/projects'
-import { Services } from '@/components/home/services'
 
 export default function Page() {
   return (
@@ -10,7 +9,6 @@ export default function Page() {
       <Hero />
       <Projects />
       <About />
-      <Services />
       <Contact />
     </main>
   )
