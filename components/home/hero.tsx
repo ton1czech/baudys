@@ -12,8 +12,8 @@ export const Hero = () => {
     <section>
       <Container className='flex flex-col gap-1 md:grid md:grid-cols-2 md:gap-5'>
         <div className='order-2 mt-2 md:order-1'>
-          <img src='/home/hero.webp' alt='me' className='rounded-md' />
-          <div className='mt-3 flex items-center gap-2 rounded-md border border-zinc-200/10 bg-zinc-800/80 p-2 md:hidden'>
+          <img src='/home/hero.webp' alt='me' className='rounded-xl' />
+          <div className='mt-3 flex items-center gap-2 rounded-xl border border-zinc-200/10 bg-zinc-800/80 p-2 md:hidden'>
             <div className='flex items-center gap-1'>
               <MapPin className='size-5' />
               {language === 'cs' && 'Plzeňský kraj, Česká republika'}
@@ -68,7 +68,7 @@ export const Hero = () => {
             </div>
           </div>
 
-          <div className='hidden items-center gap-2 rounded-md border border-zinc-200/10 bg-zinc-800/80 p-2 md:flex'>
+          <div className='hidden items-center gap-2 rounded-xl border border-zinc-200/10 bg-zinc-800/80 p-2 md:flex'>
             <div className='flex items-center gap-1'>
               <MapPin className='size-5' />
               {language === 'cs' && 'Plzeňský kraj, Česká republika'}
