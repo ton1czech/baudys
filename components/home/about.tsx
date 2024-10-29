@@ -4,7 +4,6 @@ import { useLanguage } from '@/store/use-language'
 import { Container } from '../container'
 import { Title } from '../title'
 import { motion } from 'framer-motion'
-import Link from 'next/link'
 import { LinkPreview } from '../ui/link-preview'
 
 export const About = () => {

@@ -3,13 +3,13 @@
 import { Contact } from '@/components/contact'
 import { Container } from '@/components/container'
 import { projects } from '@/database/projects'
-import { useCursor } from '@/store/use-cursor'
 import { useLanguage } from '@/store/use-language'
 import Link from 'next/link'
 import { useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { Title } from '@/components/title'
 import { Breadcrumb } from '@/components/breadcrumb'
+import { Cursor } from '@/components/cursor'
 
 interface PageProps {
   params: {
@@ -19,7 +19,6 @@ interface PageProps {
 
 export default function Page({ params }: PageProps) {
   const { language } = useLanguage()
-  const { setIsNotHovering, setIsHovering, setType } = useCursor()
 
   const {
     images,
@@ -33,10 +32,6 @@ export default function Page({ params }: PageProps) {
     featuresEn,
     featuresCs,
   } = projects.filter((data: any) => data.slug === params.slug)[0]
-
-  useEffect(() => {
-    setIsNotHovering()
-  }, [])
 
   return (
     <div>
@@ -60,21 +55,15 @@ export default function Page({ params }: PageProps) {
                   {language === 'en' && 'client'}
                   {language === 'cs' && 'klient'}
                 </h4>
-                <Link
-                  onMouseEnter={() => {
-                    setIsHovering()
-                    setType('external')
-                  }}
-                  onMouseLeave={() => {
-                    setIsNotHovering()
-                    setType('')
-                  }}
-                  href={url}
-                  target='_blank'
-                  className='cursor-none text-2xl font-light underline lg:text-3xl'
-                >
-                  {name}
-                </Link>
+                <Cursor type='external'>
+                  <Link
+                    href={url}
+                    target='_blank'
+                    className='cursor-none text-2xl font-light underline lg:text-3xl'
+                  >
+                    {name}
+                  </Link>
+                </Cursor>
               </div>
               <div className='flex flex-col'>
                 <h4 className='font-medium uppercase text-zinc-400'>

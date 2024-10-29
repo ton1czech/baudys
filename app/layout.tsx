@@ -2,7 +2,6 @@ import type { Metadata, Viewport } from 'next'
 import { Inter } from 'next/font/google'
 import { cn } from '@/lib/utils'
 import { Navbar } from '@/components/navbar/navbar'
-import { Cursor } from '@/components/cursor'
 import { Footer } from '@/components/footer/footer'
 import { siteConfig } from '@/config/site'
 import './globals.css'
@@ -36,8 +35,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           inter.className,
         )}
       >
-        <Cursor />
-
         <Navbar />
         {children}
         <Footer />

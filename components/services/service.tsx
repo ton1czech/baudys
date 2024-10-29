@@ -1,11 +1,11 @@
 import { FC } from 'react'
 import { Button } from '../ui/button'
-import { useCursor } from '@/store/use-cursor'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import { cn } from '@/lib/utils'
 import { useLanguage } from '@/store/use-language'
+import { Cursor } from '../cursor'
 
 interface ServiceProps {
   img: string
@@ -26,7 +26,6 @@ export const Service: FC<ServiceProps> = ({
   tagLink,
   center,
 }) => {
-  const { setIsHovering, setIsNotHovering, setType } = useCursor()
   const { language } = useLanguage()
 
   return (
@@ -50,22 +49,16 @@ export const Service: FC<ServiceProps> = ({
           {tag && (
             <p className='absolute bottom-2 right-2 rounded-md bg-zinc-700/50 px-2 py-1 text-sm text-white backdrop-blur-sm'>
               {tag}
-              <Link
-                onClick={(e) => e.stopPropagation()}
-                onMouseEnter={() => {
-                  setIsHovering()
-                  setType('external')
-                }}
-                onMouseLeave={() => {
-                  setIsNotHovering()
-                  setType('')
-                }}
-                href={`https://${tagLink}`}
-                target='_blank'
-                className='relative cursor-none font-bold underline'
-              >
-                {tagLink}
-              </Link>
+              <Cursor type='external'>
+                <Link
+                  onClick={(e) => e.stopPropagation()}
+                  href={`https://${tagLink}`}
+                  target='_blank'
+                  className='relative cursor-none font-bold underline'
+                >
+                  {tagLink}
+                </Link>
+              </Cursor>
             </p>
           )}
         </div>
