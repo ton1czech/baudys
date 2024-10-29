@@ -28,7 +28,8 @@ export default function GalleryPage() {
     return array
   }
 
-  const seed = 1111
+  //   const seed = 8935
+  const seed = 6422
   const shuffledGallery = shuffle([...gallery], seed)
 
   const totalItems = shuffledGallery.length
