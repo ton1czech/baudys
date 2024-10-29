@@ -51,7 +51,7 @@ export const MobileNavbar: FC<MobileNavbarProps> = ({ setIsOpen }) => {
         />
         <MobileNavItem
           label={language === 'en' ? 'Gallery' : 'Galerie'}
-          href='/projects'
+          href='/galler'
           setIsOpen={setIsOpen}
         />
         <li onClick={() => setIsOpen(false)}>
