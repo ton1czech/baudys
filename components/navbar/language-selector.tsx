@@ -58,7 +58,13 @@ const LanguageSelector = () => {
           aria-expanded={open}
           className='w-[70px] justify-between border-none bg-transparent text-zinc-200 hover:text-zinc-300'
         >
-          <Image src={imgSrc(language)} width={30} height={30} alt={language} />
+          <Image
+            src={imgSrc(language)}
+            width={30}
+            height={30}
+            alt={language}
+            className='rounded-sm'
+          />
           <ChevronsUpDown className='my-2 ml-1 h-4 w-4 shrink-0 opacity-70' />
         </Button>
       </PopoverTrigger>
@@ -80,7 +86,13 @@ const LanguageSelector = () => {
                     language === value ? 'opacity-100' : 'opacity-0',
                   )}
                 />
-                <Image src={src} width={30} height={30} alt={value} />
+                <Image
+                  src={src}
+                  width={30}
+                  height={30}
+                  alt={value}
+                  className='rounded-sm'
+                />
               </CommandItem>
             ))}
           </CommandGroup>
