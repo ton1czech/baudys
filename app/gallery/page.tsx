@@ -38,13 +38,13 @@ export default function GalleryPage() {
   return (
     <main className='mt-28 lg:mt-32'>
       <Container>
-        <div className='grid grid-cols-2 gap-6 md:hidden'>
-          <div className='flex flex-col gap-6'>
+        <div className='grid grid-cols-2 gap-2 md:hidden'>
+          <div className='flex flex-col gap-2'>
             {shuffledGallery.slice(0, itemsPer2Column).map((item) => (
               <Photo key={item} photo={item} />
             ))}
           </div>
-          <div className='flex flex-col gap-6'>
+          <div className='flex flex-col gap-2'>
             {shuffledGallery.slice(itemsPer2Column).map((item) => (
               <Photo key={item} photo={item} />
             ))}
