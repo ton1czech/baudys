@@ -54,11 +54,6 @@ export const MobileNavbar: FC<MobileNavbarProps> = ({ setIsOpen }) => {
           href='/projects'
           setIsOpen={setIsOpen}
         />
-        <MobileNavItem
-          label={language === 'en' ? 'Gallery' : 'Galerie'}
-          href='/gallery'
-          setIsOpen={setIsOpen}
-        />
         <li onClick={() => setIsOpen(false)}>
           <Link href='/contact'>
             <ShinyButton className='flex flex-nowrap items-center gap-2 rounded-lg text-4xl'>

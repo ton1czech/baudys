@@ -9,7 +9,6 @@ import Link from 'next/link'
 import { useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { Title } from '@/components/title'
-import { ChevronRight } from 'lucide-react'
 import { Breadcrumb } from '@/components/breadcrumb'
 
 interface PageProps {

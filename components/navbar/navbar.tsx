@@ -102,10 +102,6 @@ export const Navbar = () => {
                   label={language === 'en' ? 'Projects' : 'Projekty'}
                   href='/projects'
                 />
-                <NavItem
-                  label={language === 'en' ? 'Gallery' : 'Galerie'}
-                  href='/gallery'
-                />
                 <li>
                   <Link href='/contact'>
                     <ShinyButton className='flex items-center gap-1 text-base'>
