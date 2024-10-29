@@ -83,14 +83,6 @@ export const Navbar = () => {
                   label={language === 'en' ? 'Photography' : 'Fotografování'}
                   href='/services/photography'
                 />
-                <NavItem
-                  label={language === 'en' ? 'ECU Tune' : 'Ladění ECU'}
-                  href='/services/ecu-tune'
-                />
-                <NavItem
-                  label={language === 'en' ? 'TPMS' : 'TPMS'}
-                  href='/services/tpms'
-                />
               </ul>
             ) : (
               <ul className='flex items-center gap-6'>

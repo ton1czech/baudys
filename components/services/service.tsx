@@ -5,15 +5,12 @@ import { motion } from 'framer-motion'
 import Image from 'next/image'
 import { cn } from '@/lib/utils'
 import { useLanguage } from '@/store/use-language'
-import { Cursor } from '../cursor'
 
 interface ServiceProps {
   img: string
   label: string
   body: string
   href: string
-  tag?: string
-  tagLink?: string
   center?: boolean
 }
 
@@ -22,8 +19,6 @@ export const Service: FC<ServiceProps> = ({
   label,
   body,
   href,
-  tag,
-  tagLink,
   center,
 }) => {
   const { language } = useLanguage()
@@ -46,21 +41,6 @@ export const Service: FC<ServiceProps> = ({
               center ? 'object-center' : 'object-bottom',
             )}
           />
-          {tag && (
-            <p className='absolute bottom-2 right-2 rounded-md bg-zinc-700/50 px-2 py-1 text-sm text-white backdrop-blur-sm'>
-              {tag}
-              <Cursor type='external'>
-                <Link
-                  onClick={(e) => e.stopPropagation()}
-                  href={`https://${tagLink}`}
-                  target='_blank'
-                  className='relative cursor-none font-bold underline'
-                >
-                  {tagLink}
-                </Link>
-              </Cursor>
-            </p>
-          )}
         </div>
 
         <div className='grid place-content-center'>
