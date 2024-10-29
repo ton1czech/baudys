@@ -1,3 +1,4 @@
+import { Contact } from '@/components/contact'
 import { Container } from '@/components/container'
 import { Photo } from '@/components/gallery/photo'
 import { gallery } from '@/database/gallery'
@@ -37,7 +38,7 @@ export default function GalleryPage() {
   const itemsPer3Column = Math.ceil(totalItems / 3)
 
   return (
-    <main className='mt-28 lg:mt-32'>
+    <main className='mt-28 space-y-20 lg:mt-32 lg:space-y-40'>
       <Container>
         <div className='grid grid-cols-2 gap-2 md:hidden'>
           <div className='flex flex-col gap-2'>
@@ -74,6 +75,7 @@ export default function GalleryPage() {
           </div>
         </div>
       </Container>
+      <Contact />
     </main>
   )
 }
