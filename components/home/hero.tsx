@@ -9,7 +9,7 @@ export const Hero = () => {
   const { language } = useLanguage()
 
   return (
-    <section className='mt-32'>
+    <section>
       <Container className='flex flex-col gap-1 md:grid md:grid-cols-2 md:gap-5'>
         <div className='order-2 mt-2 md:order-1'>
           <img src='/home/hero.webp' alt='me' className='rounded-md' />
