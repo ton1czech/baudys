@@ -102,11 +102,6 @@ export default function Page() {
           icon={FolderKanban}
         />
         <LinkItem
-          href='/services'
-          label={language === 'en' ? 'Services' : 'Služby'}
-          icon={Hammer}
-        />
-        <LinkItem
           href='/gallery'
           label={language === 'en' ? 'Gallery' : 'Galerie'}
           icon={Camera}
@@ -136,27 +131,9 @@ export default function Page() {
           color='bg-teal-600/80 hover:bg-teal-700/80'
         />
         <LinkItem
-          href='https://gitlab.com/ton1czech/'
+          href='https://github.com/ton1czech/'
           label='Github'
           icon={Github}
-          color='bg-fuchsia-700/80 hover:bg-fuchsia-800/80'
-        />
-        <LinkItem
-          href='https://github.com/ton1czech/'
-          label='Gitlab'
-          icon={Gitlab}
-          color='bg-fuchsia-700/80 hover:bg-fuchsia-800/80'
-        />
-        <LinkItem
-          href='https://hub.docker.com/u/ton1czech'
-          label='DockerHub'
-          icon={FaDocker}
-          color='bg-fuchsia-700/80 hover:bg-fuchsia-800/80'
-        />
-        <LinkItem
-          href='https://www.kaggle.com/ton1czech'
-          label='Kaggle'
-          icon={FaKaggle}
           color='bg-fuchsia-700/80 hover:bg-fuchsia-800/80'
         />
       </div>
