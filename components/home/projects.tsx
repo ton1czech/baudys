@@ -1,11 +1,11 @@
 'use client'
 
 import { useLanguage } from '@/store/use-language'
-import { Container } from './container'
-import { Title } from './title'
+import { Container } from '../container'
+import { Title } from '../title'
 import { projects } from '@/database/projects'
-import { Project } from './project'
-import { SeeAll } from './see-all'
+import { Project } from '../project'
+import { SeeAll } from '../see-all'
 
 export const Projects = () => {
   const { language } = useLanguage()
