@@ -22,7 +22,7 @@ export const Gallery = () => {
         <Title label={language === 'en' ? 'Gallery' : 'Galerie'} />
         <div className='grid grid-cols-2 gap-2 md:grid-cols-3 md:gap-6'>
           {shuffledGallery.slice(0, 3).map((photo) => (
-            <Photo photo={photo} />
+            <Photo key={photo} photo={photo} />
           ))}
         </div>
 
