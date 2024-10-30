@@ -2,34 +2,9 @@ import { Contact } from '@/components/contact'
 import { Container } from '@/components/container'
 import { Photo } from '@/components/gallery/photo'
 import { gallery } from '@/database/gallery'
+import { shuffle } from '@/lib/utils'
 
 export default function GalleryPage() {
-  function seedRandom(seed: number) {
-    // Creates a seeded pseudo-random number generator
-    let m = 0x80000000, // 2**31
-      a = 1103515245,
-      c = 12345
-
-    seed = seed % m
-
-    return function () {
-      seed = (a * seed + c) % m
-      return seed / m
-    }
-  }
-
-  function shuffle(array: string[], seed: number) {
-    let random = seedRandom(seed)
-
-    for (let i = array.length - 1; i > 0; i--) {
-      const j = Math.floor(random() * (i + 1))
-      ;[array[i], array[j]] = [array[j], array[i]]
-    }
-
-    return array
-  }
-
-  //   const seed = 8935
   const seed = 6422
   const shuffledGallery = shuffle([...gallery], seed)
 
