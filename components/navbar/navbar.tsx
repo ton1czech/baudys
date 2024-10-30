@@ -70,6 +70,7 @@ export const Navbar = () => {
               <li>
                 <Link href='/contact'>
                   <ShinyButton className='flex items-center gap-1 text-base'>
+                    <div className='mr-2 size-3.5 rounded-full bg-green-500' />
                     {language === 'en' && <>Let&apos;s talk</>}
                     {language === 'cs' && <>Promluvme si</>}
                     <ArrowRight className='h-4 w-4' />
