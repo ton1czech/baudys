@@ -139,12 +139,26 @@ export const Hero = () => {
           transition={{ delay: 0.3 }}
           className='mt-4 text-justify md:text-lg xl:text-2xl'
         >
-          Pomáhám projektům ožít s jasnou vizí, funkčností a stylem. Mým cílem
-          je propojit
-          <span className='text-sky-500'> krásu</span>,{' '}
-          <span className='text-fuchsia-500'>účel</span> a
-          <span className='text-green-500'> efektivitu </span>
-          ve všech digitálních zážitcích.
+          {language === 'en' &&
+            'I help projects come to life with a clear vision, functionality and style. My goal is to combine beauty, purpose and efficiency'}
+          {language === 'cs' &&
+            'Pomáhám projektům ožít s jasnou vizí, funkčností a stylem. Mým cílem je propojit'}
+          <span className='text-sky-500'>
+            {language === 'en' && ' beauty'}
+            {language === 'cs' && ' krásu'}
+          </span>
+          ,
+          <span className='text-fuchsia-500'>
+            {language === 'en' && ' purpose '}
+            {language === 'cs' && ' účel '}
+          </span>
+          a
+          <span className='text-green-500'>
+            {language === 'en' && ' efficiency'}
+            {language === 'cs' && ' efektivitu'}
+          </span>
+          {language === 'en' && ' in all digital experiences.'}
+          {language === 'cs' && ' ve všech digitálních zážitcích.'}
         </motion.p>
       </Container>
     </section>
