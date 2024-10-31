@@ -10,6 +10,7 @@ import { useLanguage } from '@/store/use-language'
 import { AnimatePresence } from 'framer-motion'
 import { MobileNavbar } from './mobile-navbar'
 import ShinyButton from '../ui/shiny-button'
+import { ThemeToggle } from './theme-toggle'
 
 export const Navbar = () => {
   const { language } = useLanguage()
@@ -40,7 +41,7 @@ export const Navbar = () => {
           className={cn(
             'flex h-full w-full items-center justify-between rounded-xl border border-transparent px-2',
             !isTopOfTheScreen &&
-              'border-zinc-600/70 bg-zinc-800/40 shadow-xl backdrop-blur-lg',
+              'border-muted-foreground/30 bg-zinc-100/50 shadow-xl backdrop-blur-lg dark:bg-zinc-800/40',
           )}
         >
           <Link href='/' className='transition duration-300'>
@@ -52,11 +53,12 @@ export const Navbar = () => {
           </Link>
 
           <div className='hidden items-center md:flex'>
-            <div>
+            <div className='flex items-center gap-2'>
+              <ThemeToggle />
               <LanguageSelector />
             </div>
 
-            <hr className='ml-6 mr-8 h-8 w-px bg-zinc-400/50' />
+            <hr className='ml-6 mr-8 h-8 w-px bg-muted-foreground/70' />
 
             <ul className='flex items-center gap-6'>
               <NavItem
@@ -80,16 +82,10 @@ export const Navbar = () => {
             </ul>
           </div>
 
-          <div className='flex items-center md:hidden'>
-            <div>
-              <LanguageSelector />
-            </div>
-            <div>
-              <Menu
-                onClick={() => setIsOpen(true)}
-                className='mx-2 cursor-pointer'
-              />
-            </div>
+          <div className='flex items-center gap-2 md:hidden'>
+            <ThemeToggle />
+            <LanguageSelector />
+            <Menu onClick={() => setIsOpen(true)} className='cursor-pointer' />
           </div>
         </div>
       </nav>

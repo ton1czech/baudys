@@ -50,13 +50,13 @@ const LanguageSelector = () => {
 
   return (
     <Popover open={open} onOpenChange={setOpen}>
-      <PopoverTrigger asChild className='hover:bg-zinc-600/70'>
+      <PopoverTrigger asChild>
         <Button
           variant='outline'
           role='combobox'
           name='language selector'
           aria-expanded={open}
-          className='w-[70px] justify-between border-none bg-transparent text-zinc-200 hover:text-zinc-300'
+          className='w-[64px] border-none bg-transparent p-0'
         >
           <Image
             src={imgSrc(language)}
@@ -65,10 +65,10 @@ const LanguageSelector = () => {
             alt={language}
             className='rounded-sm'
           />
-          <ChevronsUpDown className='my-2 ml-1 h-4 w-4 shrink-0 opacity-70' />
+          <ChevronsUpDown className='my-2 ml-1 size-4 shrink-0 text-zinc-900 dark:text-zinc-100' />
         </Button>
       </PopoverTrigger>
-      <PopoverContent className='z-[1001] w-[100px] border-zinc-500/40 bg-zinc-900 p-2 backdrop-blur-lg'>
+      <PopoverContent className='z-[1001] w-[100px] p-2 backdrop-blur-lg'>
         <Command className='!bg-transparent'>
           <CommandGroup className='space-y-2'>
             {languages.map(({ src, value }: { src: string; value: string }) => (
@@ -78,11 +78,11 @@ const LanguageSelector = () => {
                   setLanguage(value)
                   setOpen(false)
                 }}
-                className='mb-2 !bg-transparent hover:!bg-zinc-400/20'
+                className='mb-2 cursor-pointer hover:!bg-muted-foreground/10'
               >
                 <Check
                   className={cn(
-                    'mr-2 h-4 w-4 text-zinc-100',
+                    'mr-2 h-4 w-4 text-zinc-900 dark:text-zinc-100',
                     language === value ? 'opacity-100' : 'opacity-0',
                   )}
                 />
