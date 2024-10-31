@@ -5,8 +5,7 @@ import { gallery } from '@/database/gallery'
 import { shuffle } from '@/lib/utils'
 
 export default function GalleryPage() {
-  const seed = 6422
-  const shuffledGallery = shuffle([...gallery], seed)
+  const shuffledGallery = shuffle([...gallery], Math.floor(Math.random() * 250))
 
   const totalItems = shuffledGallery.length
   const itemsPer2Column = Math.ceil(totalItems / 2)
