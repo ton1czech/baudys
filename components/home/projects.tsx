@@ -15,22 +15,18 @@ export const Projects = () => {
       <Title label={language === 'en' ? 'Projects' : 'Projekty'} />
 
       <div className='grid gap-20 sm:grid-cols-2'>
-        {projects
-          .slice(0, 2)
-          .map(({ name, year, image, href, servicesEn, servicesCs }) => (
-            <Project
-              key={href}
-              name={name}
-              year={year}
-              image={image}
-              href={href}
-              servicesCs={servicesCs}
-              servicesEn={servicesEn}
-            />
-          ))}
+        {projects.slice(0, 2).map(({ name, year, image, href }) => (
+          <Project
+            key={href}
+            name={name}
+            year={year}
+            image={image}
+            href={href}
+          />
+        ))}
       </div>
 
-      <div className='mt-10 flex justify-end'>
+      <div className='mt-4 flex justify-end'>
         <SeeAll href='/projects' />
       </div>
     </Container>

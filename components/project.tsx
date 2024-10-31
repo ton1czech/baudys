@@ -3,7 +3,6 @@
 import Link from 'next/link'
 import { FC } from 'react'
 import { motion } from 'framer-motion'
-import { useLanguage } from '@/store/use-language'
 import { Cursor } from './cursor'
 
 interface ProjectProps {
@@ -11,20 +10,9 @@ interface ProjectProps {
   year: number
   image: string
   href: string
-  servicesEn: string[]
-  servicesCs: string[]
 }
 
-export const Project: FC<ProjectProps> = ({
-  name,
-  year,
-  image,
-  href,
-  servicesEn,
-  servicesCs,
-}) => {
-  const { language } = useLanguage()
-
+export const Project: FC<ProjectProps> = ({ name, year, image, href }) => {
   return (
     <Cursor type='project'>
       <Link href={href} className='cursor-none'>
@@ -36,37 +24,12 @@ export const Project: FC<ProjectProps> = ({
           <img src={image} alt={name} />
 
           <div className='mt-3 flex items-center justify-between'>
-            <h3 className='italic text-zinc-300'>
+            <h3 className='italic'>
               {name}{' '}
-              <span className='text-sm font-light not-italic text-zinc-400'>
+              <span className='text-sm font-light not-italic text-muted-foreground'>
                 | {year}
               </span>
             </h3>
-
-            {language === 'cs' && (
-              <div className='flex gap-3'>
-                {servicesCs.map((service) => (
-                  <span
-                    key={service}
-                    className='rounded-md bg-violet-600/20 px-1 py-0.5 text-xs font-light text-zinc-200'
-                  >
-                    {service}
-                  </span>
-                ))}
-              </div>
-            )}
-            {language === 'en' && (
-              <div className='flex gap-3'>
-                {servicesEn.map((service) => (
-                  <span
-                    key={service}
-                    className='rounded-md bg-violet-600/20 px-1 py-0.5 text-xs font-light text-zinc-200'
-                  >
-                    {service}
-                  </span>
-                ))}
-              </div>
-            )}
           </div>
         </motion.div>
       </Link>

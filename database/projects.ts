@@ -5,8 +5,6 @@ export const projects = [
     url: 'https://farmahajek.cz',
     href: '/projects/farmahajek',
     year: 2023,
-    servicesEn: ['programming', 'design'],
-    servicesCs: ['programování', 'design'],
     featuresEn: [
       'Feedback form',
       'Embed Google Map',
@@ -32,13 +30,10 @@ export const projects = [
     url: 'https://rozmluv.se',
     href: '/projects/rozmluvse',
     year: 2024,
-    servicesEn: ['programming'],
-    servicesCs: ['programování'],
     featuresEn: ['Blog', 'CMS', 'Animations', 'Admin Dashboard'],
     featuresCs: ['Blog', 'CMS', 'Animace', 'Admin Rozhraní'],
     descriptionEn: 'Language studio',
     descriptionCs: 'Jazykové studio',
-
     image: '/projects/rozmluvse/mockups.webp',
     iphone: '/projects/rozmluvse/iphone.webp',
     macbook: '/projects/rozmluvse/macbook.webp',
@@ -59,8 +54,7 @@ export const projects = [
     url: 'https://pneuservisbaudys.cz',
     href: '/projects/pneuservisbaudys',
     year: 2022,
-    servicesEn: ['programming', 'design'],
-    servicesCs: ['programování', 'design'],
+
     featuresEn: ['3D model', 'Embed Google Map'],
     featuresCs: ['3D model', 'Integrovaná mapa Google'],
     descriptionEn: 'Local tyre workshop',
@@ -76,8 +70,6 @@ export const projects = [
     url: 'https://dhiffushi-inn.vercel.app',
     href: '/projects/dhiffushiinn',
     year: 2024,
-    servicesEn: ['programming', 'design'],
-    servicesCs: ['programování', 'design'],
     featuresEn: [
       'Booking system',
       'Forms',
