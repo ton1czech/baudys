@@ -35,7 +35,7 @@ const ShinyButton = ({ children, className, ...props }: ShinyButtonProps) => {
     <motion.button
       {...animationProps}
       {...props}
-      className='relative rounded-lg bg-zinc-200/80 px-6 py-2 font-medium backdrop-blur-xl transition-shadow duration-300 ease-in-out dark:bg-zinc-800/80'
+      className='relative rounded-lg bg-zinc-100/90 px-6 py-2 font-medium backdrop-blur-xl transition-shadow duration-300 ease-in-out dark:bg-zinc-900/90'
     >
       <span
         className={cn(
