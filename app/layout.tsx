@@ -32,8 +32,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       >
         <ThemeProvider
           attribute='class'
-          defaultTheme='system'
-          enableSystem
+          defaultTheme='dark'
           disableTransitionOnChange
         >
           <Navbar />
