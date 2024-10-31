@@ -21,11 +21,11 @@ export const SeeAll: FC<SeeAllProps> = ({ href }) => {
     >
       <Link
         href={href}
-        className='colorful-text relative flex items-center gap-2 text-lg font-semibold after:absolute after:-bottom-1 after:left-0 after:right-0 after:z-10 after:h-[3px] after:w-full after:scale-x-0 after:rounded-lg after:bg-purple-500 after:opacity-0 after:transition after:hover:scale-x-100 after:hover:opacity-100'
+        className='relative flex items-center gap-2 text-lg font-semibold text-muted-foreground after:absolute after:-bottom-1 after:left-0 after:right-0 after:z-10 after:h-[3px] after:w-full after:origin-left after:scale-x-0 after:rounded-lg after:bg-muted-foreground after:opacity-0 after:transition after:hover:scale-x-100 after:hover:opacity-100'
       >
         {language === 'en' && 'See All'}
         {language === 'cs' && 'Zobrazit Vše'}
-        <ArrowRight className='h-5 w-5 stroke-sky-500' />
+        <ArrowRight className='h-5 w-5 stroke-muted-foreground' />
       </Link>
     </motion.div>
   )
