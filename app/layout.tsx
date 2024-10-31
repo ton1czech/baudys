@@ -5,6 +5,7 @@ import { Navbar } from '@/components/navbar/navbar'
 import { Footer } from '@/components/footer/footer'
 import { siteConfig } from '@/config/site'
 import './globals.css'
+import { ThemeProvider } from '@/providers/theme-provider'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -29,9 +30,16 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           inter.className,
         )}
       >
-        <Navbar />
-        {children}
-        <Footer />
+        <ThemeProvider
+          attribute='class'
+          defaultTheme='system'
+          enableSystem
+          disableTransitionOnChange
+        >
+          <Navbar />
+          {children}
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   )

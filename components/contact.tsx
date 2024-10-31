@@ -60,7 +60,7 @@ export const Contact = () => {
                 <Phone className='h-4 w-4' />
                 <a
                   href='tel:+420777530096'
-                  className='relative font-bold text-purple-500 after:absolute after:-bottom-1 after:left-0 after:right-0 after:z-10 after:h-[3px] after:w-full after:scale-x-0 after:rounded-lg after:bg-purple-500 after:opacity-0 after:transition after:hover:scale-x-100 after:hover:opacity-100'
+                  className='relative font-bold text-sky-500 after:absolute after:-bottom-1 after:left-0 after:right-0 after:z-10 after:h-[3px] after:w-full after:scale-x-0 after:rounded-lg after:bg-sky-500 after:opacity-0 after:transition after:hover:scale-x-100 after:hover:opacity-100'
                 >
                   +420 777 530 096
                 </a>
@@ -80,7 +80,7 @@ export const Contact = () => {
                       'danielanthonybaudys@gmail.com',
                     )
                   }}
-                  className='relative cursor-pointer font-bold text-purple-500 after:absolute after:-bottom-1 after:left-0 after:right-0 after:z-10 after:h-[3px] after:w-full after:scale-x-0 after:rounded-lg after:bg-purple-500 after:opacity-0 after:transition after:hover:scale-x-100 after:hover:opacity-100'
+                  className='relative cursor-pointer font-bold text-sky-500 after:absolute after:-bottom-1 after:left-0 after:right-0 after:z-10 after:h-[3px] after:w-full after:scale-x-0 after:rounded-lg after:bg-sky-500 after:opacity-0 after:transition after:hover:scale-x-100 after:hover:opacity-100'
                 >
                   danielanthonybaudys@gmail.com
                 </span>
