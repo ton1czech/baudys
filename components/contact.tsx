@@ -26,7 +26,7 @@ export const Contact = () => {
       <Title
         label={language === 'en' ? "let's work together" : 'spolupracujme'}
       />
-      <div className='rounded-2xl bg-gradient-to-b from-purple-500/20 to-violet-800/10 p-4 md:p-10'>
+      <div className='rounded-2xl bg-gradient-to-b from-blue-300 to-sky-300 p-4 md:p-10 dark:from-blue-700 dark:to-sky-700'>
         <div className='grid gap-4 md:grid-cols-2 md:gap-10'>
           <div className='flex flex-col justify-between'>
             <div>
@@ -38,15 +38,23 @@ export const Contact = () => {
                 <h3 className='text-lg font-semibold md:text-xl'>
                   Daniel Anthony Baudyš
                 </h3>
-                <p className='text-sm text-zinc-300'>Hájek 29</p>
-                <p className='text-sm text-zinc-300'>345 06 Kdyně</p>
+                <p className='text-sm text-zinc-800 dark:text-zinc-200'>
+                  Hájek 29
+                </p>
+                <p className='text-sm text-zinc-800 dark:text-zinc-200'>
+                  345 06 Kdyně
+                </p>
                 <p className='mt-4 font-semibold'>
                   {language === 'en' && 'Id No.: '}
                   {language === 'cs' && 'IČO: '}
                   199 333 12
                 </p>
-                <p className='text-sm text-zinc-300'>fyzická osoba</p>
-                <p className='text-sm text-zinc-300'>neplátce DPH</p>
+                <p className='text-sm text-zinc-800 dark:text-zinc-200'>
+                  fyzická osoba
+                </p>
+                <p className='text-sm text-zinc-800 dark:text-zinc-200'>
+                  neplátce DPH
+                </p>
               </motion.div>
             </div>
 
@@ -60,7 +68,7 @@ export const Contact = () => {
                 <Phone className='h-4 w-4' />
                 <a
                   href='tel:+420777530096'
-                  className='relative font-bold text-sky-500 after:absolute after:-bottom-1 after:left-0 after:right-0 after:z-10 after:h-[3px] after:w-full after:scale-x-0 after:rounded-lg after:bg-sky-500 after:opacity-0 after:transition after:hover:scale-x-100 after:hover:opacity-100'
+                  className='relative font-bold after:absolute after:-bottom-1 after:left-0 after:right-0 after:z-10 after:h-[3px] after:w-full after:origin-left after:scale-x-0 after:rounded-lg after:bg-black after:opacity-0 after:transition after:hover:scale-x-100 after:hover:opacity-100 dark:after:bg-white'
                 >
                   +420 777 530 096
                 </a>
@@ -80,7 +88,7 @@ export const Contact = () => {
                       'danielanthonybaudys@gmail.com',
                     )
                   }}
-                  className='relative cursor-pointer font-bold text-sky-500 after:absolute after:-bottom-1 after:left-0 after:right-0 after:z-10 after:h-[3px] after:w-full after:scale-x-0 after:rounded-lg after:bg-sky-500 after:opacity-0 after:transition after:hover:scale-x-100 after:hover:opacity-100'
+                  className='relative cursor-pointer font-bold after:absolute after:-bottom-1 after:left-0 after:right-0 after:z-10 after:h-[3px] after:w-full after:origin-left after:scale-x-0 after:rounded-lg after:bg-black after:opacity-0 after:transition after:hover:scale-x-100 after:hover:opacity-100 dark:after:bg-white'
                 >
                   danielanthonybaudys@gmail.com
                 </span>
