@@ -26,7 +26,7 @@ export const Gallery = () => {
           ))}
         </div>
 
-        <div className='mt-10 flex justify-between'>
+        <div className='mt-10 flex justify-end'>
           <SeeAll href='/gallery' />
         </div>
       </Container>
