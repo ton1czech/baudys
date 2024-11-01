@@ -26,7 +26,7 @@ export const Contact = () => {
       <Title
         label={language === 'en' ? "let's work together" : 'spolupracujme'}
       />
-      <div className='dark:to-gray-90 rounded-2xl border border-zinc-300 bg-gradient-to-r from-zinc-100 to-gray-100 p-4 shadow-md md:p-10 dark:border-zinc-700 dark:from-zinc-900'>
+      <div className='dark:to-gray-90 rounded-2xl border border-zinc-300 bg-gradient-to-r from-zinc-100 to-gray-100 p-4 shadow-sm md:p-10 dark:border-zinc-700 dark:from-zinc-900'>
         <div className='grid gap-4 md:grid-cols-2 md:gap-10'>
           <div className='flex flex-col justify-between'>
             <div>

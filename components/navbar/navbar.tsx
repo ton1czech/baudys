@@ -41,7 +41,7 @@ export const Navbar = () => {
           className={cn(
             'flex h-full w-full items-center justify-between rounded-xl border border-transparent px-2',
             !isTopOfTheScreen &&
-              'border-muted-foreground/30 bg-zinc-100/50 shadow-xl backdrop-blur-lg dark:bg-zinc-800/40',
+              'border-muted-foreground/30 bg-zinc-100/60 shadow-sm backdrop-blur-lg dark:bg-zinc-800/40',
           )}
         >
           <Link href='/' className='transition duration-300'>
