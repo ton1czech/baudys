@@ -20,8 +20,15 @@ export const Gallery = () => {
     <section>
       <Container>
         <Title label={language === 'en' ? 'Gallery' : 'Galerie'} />
-        <div className='grid grid-cols-2 gap-2 md:grid-cols-3 md:gap-6'>
+
+        <div className='hidden md:grid md:grid-cols-3 md:gap-6'>
           {shuffledGallery.slice(0, 3).map((photo) => (
+            <Photo key={photo} photo={photo} />
+          ))}
+        </div>
+
+        <div className='grid grid-cols-2 gap-2 md:hidden'>
+          {shuffledGallery.slice(0, 2).map((photo) => (
             <Photo key={photo} photo={photo} />
           ))}
         </div>
